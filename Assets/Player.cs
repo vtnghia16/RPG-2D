@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     [Header("Move info")]
     public float moveSpeed = 12f;
     public float jumpForce;
+    public float dashSpeed;
+    public float dashDuration;
 
     [Header("Collision info")]
     [SerializeField] private Transform groundCheck;
@@ -34,6 +36,9 @@ public class Player : MonoBehaviour
     public PlayerJumpState jumpState { get; private set; }
 
     public playerAirState airState { get; private set; }
+
+    public PlayerDashState dashState { get; private set; }
+
     #endregion
 
     private void Awake()
@@ -43,7 +48,10 @@ public class Player : MonoBehaviour
         idleState = new PlayerIdleState(this, stateMachine, "Idle");
         moveState = new PlayerMoveState(this, stateMachine, "Move");
         jumpState = new PlayerJumpState(this, stateMachine, "Jump");
-        airState = new playerAirState(this, stateMachine, "Jump");
+        airState  = new playerAirState(this, stateMachine, "Jump");
+        dashState = new PlayerDashState(this, stateMachine, "Dash");
+
+
     }
 
     private void Start()
