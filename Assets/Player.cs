@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float wallCheckDistance;
     [SerializeField] private LayerMask whatIsGround;
 
-    public int facingDir { get; private set; }
+    public int facingDir { get; private set; } = 1;
     private bool facingRight = true;
 
     #region Components
