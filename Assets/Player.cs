@@ -7,8 +7,13 @@ public class Player : MonoBehaviour
     [Header("Move info")]
     public float moveSpeed = 12f;
     public float jumpForce;
+
+    [Header("Dash info")]
+    [SerializeField] private float dashCooldown;
+    private float dashUsageTimer;
     public float dashSpeed;
     public float dashDuration;
+    public float dashDir { get; private set; }
 
     [Header("Collision info")]
     [SerializeField] private Transform groundCheck;
@@ -37,6 +42,8 @@ public class Player : MonoBehaviour
 
     public playerAirState airState { get; private set; }
 
+    public PlayerWallSlideState wallSlide { get; private set; }
+
     public PlayerDashState dashState { get; private set; }
 
     #endregion
@@ -50,6 +57,7 @@ public class Player : MonoBehaviour
         jumpState = new PlayerJumpState(this, stateMachine, "Jump");
         airState  = new playerAirState(this, stateMachine, "Jump");
         dashState = new PlayerDashState(this, stateMachine, "Dash");
+        wallSlide = new PlayerWallSlideState(this, stateMachine, "WallSlide");
 
 
     }
@@ -68,6 +76,26 @@ public class Player : MonoBehaviour
     {
         stateMachine.currentState.Update();
 
+        CheckForDashInput();
+    }
+
+    // Kiểm tra sự kiện button Dash
+    private void CheckForDashInput()
+    {
+        dashUsageTimer -= Time.deltaTime;
+
+        if(Input.GetKeyDown(KeyCode.LeftShift) && dashUsageTimer < 0) 
+        {
+            dashUsageTimer = dashCooldown;
+            dashDir = Input.GetAxisRaw("Horizontal");
+
+            if(dashDir == 0)
+            {
+                dashDir = facingDir;
+            }
+
+            stateMachine.ChangeState(dashState);
+        }
     }
 
     // Set tốc độ cho nhân vật
@@ -77,8 +105,12 @@ public class Player : MonoBehaviour
         FlipController(_xVelocity);
     }
 
+    // Kiểm tra các bề mặt khi nhân vật phát hiện
     public bool IsGroundDetected() 
         => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
+    public bool IsWallDetected()
+        => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
+
 
     private void OnDrawGizmos()
     {
