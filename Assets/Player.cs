@@ -48,6 +48,8 @@ public class Player : MonoBehaviour
 
     public PlayerDashState dashState { get; private set; }
 
+    public PlayerPrimaryAttack primaryAttack { get; private set; }
+
     #endregion
 
     private void Awake()
@@ -62,6 +64,7 @@ public class Player : MonoBehaviour
         wallSlide = new PlayerWallSlideState(this, stateMachine, "WallSlide");
         wallJump = new PlayerWallJumpState(this, stateMachine, "Jump");
 
+        primaryAttack = new PlayerPrimaryAttack(this, stateMachine, "Attack");
 
     }
 
@@ -81,6 +84,9 @@ public class Player : MonoBehaviour
 
         CheckForDashInput();
     }
+
+    // Nhân vật tấn công
+    public void AnimationTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
     // Kiểm tra sự kiện button Dash
     private void CheckForDashInput()

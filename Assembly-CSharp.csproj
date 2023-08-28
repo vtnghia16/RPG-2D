@@ -63,11 +63,13 @@
     <Compile Include="Assets\PlayerAirState.cs" />
     <Compile Include="Assets\PlayerIdleState.cs" />
     <Compile Include="Assets\PlayerJumpState.cs" />
+    <Compile Include="Assets\PlayerWallJump.cs" />
     <Compile Include="Assets\PlayerWallSlideState.cs" />
     <Compile Include="Assets\PlayerGroundedState.cs" />
-    <Compile Include="Assets\Player.cs" />
     <Compile Include="Assets\PlayerWallJumpState.cs" />
-    <Compile Include="Assets\PlayerWallJump.cs" />
+    <Compile Include="Assets\Player.cs" />
+    <Compile Include="Assets\PlayerPrimaryAttack.cs" />
+    <Compile Include="Assets\PlayerAnimationTriggers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
