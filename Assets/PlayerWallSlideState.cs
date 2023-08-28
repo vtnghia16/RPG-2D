@@ -22,6 +22,12 @@ public class PlayerWallSlideState : PlayerState
     {
         base.Update();
 
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            stateMachine.ChangeState(player.wallJump);
+            return;
+        }
+
         // Kiểm tra trạng thái khi nhan vật bám tường
         if(xInput != 0 && player.facingDir != xInput)
         {

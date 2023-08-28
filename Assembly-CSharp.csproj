@@ -66,6 +66,8 @@
     <Compile Include="Assets\PlayerWallSlideState.cs" />
     <Compile Include="Assets\PlayerGroundedState.cs" />
     <Compile Include="Assets\Player.cs" />
+    <Compile Include="Assets\PlayerWallJumpState.cs" />
+    <Compile Include="Assets\PlayerWallJump.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
