@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Attack details")]
+    public Vector2[] attackMovement;
+
+    public bool isBusy { get; private set; }
     [Header("Move info")]
     public float moveSpeed = 12f;
     public float jumpForce;
@@ -85,7 +89,17 @@ public class Player : MonoBehaviour
         CheckForDashInput();
     }
 
-    // Nhân vật tấn công
+    public IEnumerator BusyFor(float _seconds)
+    {
+        isBusy = true;
+
+        yield return new WaitForSeconds(_seconds);
+
+        isBusy = false;
+
+    }
+
+    // Đặt trigger để nhân vật tấn công chuyển tiếp qua các attack
     public void AnimationTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
     // Kiểm tra sự kiện button Dash
@@ -110,13 +124,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    #region Velocity
+    public void ZeroVelocity() => rb.velocity = new Vector2(0, 0);
+
     // Set tốc độ cho nhân vật
     public void SetVelocity(float _xVelocity, float _yVelocity)
     {
         rb.velocity = new Vector2(_xVelocity, _yVelocity);
         FlipController(_xVelocity);
     }
+    #endregion
 
+    #region Collision
     // Kiểm tra các bề mặt khi nhân vật phát hiện
     public bool IsGroundDetected() 
         => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
@@ -132,7 +151,9 @@ public class Player : MonoBehaviour
         Gizmos.DrawLine(wallCheck.position,
             new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
     }
+    #endregion
 
+    #region Flip
     // Xoay nhân vật
     public void Flip()
     {
@@ -152,4 +173,5 @@ public class Player : MonoBehaviour
             Flip();
         }
     }
+    #endregion
 }

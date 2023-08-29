@@ -24,11 +24,20 @@ public class PlayerPrimaryAttack : PlayerState
         }
 
         player.anim.SetInteger("ComboCounter", comboCounter);
+
+        // Set tốc độ khi nhân vật vừa di chuyển và tấn công
+        player.SetVelocity(player.attackMovement[comboCounter].x * player.facingDir, 
+                           player.attackMovement[comboCounter].y);
+
+        stateTimer = .1f;
     }
 
     public override void Exit()
     {
         base.Exit();
+
+        // Kiểm tra xem nhân vật đang đứng yên hay hoạt động
+        player.StartCoroutine("BusyFor", .15f);
 
         comboCounter++;
         lastTimeAttacked = Time.time;
@@ -38,6 +47,12 @@ public class PlayerPrimaryAttack : PlayerState
     public override void Update()
     {
         base.Update();
+
+        // Điều khiển nhân vật dừng lại khi tấn công
+        if(stateTimer < 0 )
+        {
+            player.ZeroVelocity();
+        }
 
         if(triggerCalled)
         {
