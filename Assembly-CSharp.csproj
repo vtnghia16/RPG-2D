@@ -56,21 +56,24 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\PlayerPrimaryAttackState.cs" />
-    <Compile Include="Assets\Scripts\PlayerState.cs" />
-    <Compile Include="Assets\Scripts\PlayerStateMachine.cs" />
-    <Compile Include="Assets\Scripts\PlayerMoveState.cs" />
-    <Compile Include="Assets\Scripts\PlayerDashState.cs" />
-    <Compile Include="Assets\Scripts\PlayerAirState.cs" />
-    <Compile Include="Assets\Scripts\PlayerIdleState.cs" />
-    <Compile Include="Assets\Scripts\PlayerAnimationTriggers.cs" />
-    <Compile Include="Assets\Scripts\PlayerJumpState.cs" />
-    <Compile Include="Assets\Scripts\PlayerWallJump.cs" />
-    <Compile Include="Assets\Scripts\PlayerWallSlideState.cs" />
-    <Compile Include="Assets\Scripts\PlayerGroundedState.cs" />
-    <Compile Include="Assets\Scripts\PlayerWallJumpState.cs" />
-    <Compile Include="Assets\ParallaxBackground.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerPrimaryAttackState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerStateMachine.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMoveState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerDashState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerAirState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerIdleState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerAnimationTriggers.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerJumpState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerWallJump.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerWallSlideState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerGroundedState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerWallJumpState.cs" />
+    <Compile Include="Assets\Scripts\ParallaxBackground.cs" />
+    <Compile Include="Assets\Scripts\Player\Player.cs" />
+    <Compile Include="Assets\Enemy.cs" />
+    <Compile Include="Assets\EnemyState.cs" />
+    <Compile Include="Assets\EnemyStateMachine.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
