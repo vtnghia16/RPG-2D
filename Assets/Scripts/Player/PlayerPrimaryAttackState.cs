@@ -57,7 +57,7 @@ public class PlayerPrimaryAttackState : PlayerState
         // Điều khiển nhân vật dừng lại khi tấn công
         if(stateTimer < 0 )
         {
-            player.ZeroVelocity();
+            player.SetZeroVelocity();
         }
 
         if(triggerCalled)
