@@ -10,14 +10,17 @@ public class Enemy_Skeleton : Enemy
     public SkeletonIdleState idleState { get; private set; }
 
     public SkeletonMoveState moveState { get; private set; }
+
+    public SkeletonBattleState battleState { get; private set; }
     #endregion
 
     protected override void Awake()
     {
         base.Awake();
 
-        idleState = new SkeletonIdleState(this, stateMachine, "Idle", this);
-        moveState = new SkeletonMoveState(this, stateMachine, "Move", this);
+        idleState   = new SkeletonIdleState(this, stateMachine, "Idle", this);
+        moveState   = new SkeletonMoveState(this, stateMachine, "Move", this);
+        battleState = new SkeletonBattleState(this, stateMachine, "Move", this);
     }
 
     protected override void Start()
