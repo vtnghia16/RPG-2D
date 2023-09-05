@@ -73,15 +73,15 @@
     <Compile Include="Assets\Scripts\Player\PlayerAnimationTriggers.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerJumpState.cs" />
     <Compile Include="Assets\Enemy.cs" />
+    <Compile Include="Assets\SkeletonAttackState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerWallJump.cs" />
+    <Compile Include="Assets\Enemy_SkeletonAnimationTriggers.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerWallSlideState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerGroundedState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerWallJumpState.cs" />
     <Compile Include="Assets\Scripts\ParallaxBackground.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Enemy_Skeleton.cs" />
-    <Compile Include="Assets\SkeletonAttackState.cs" />
-    <Compile Include="Assets\Enemy_SkeletonAnimationTriggers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
