@@ -16,6 +16,7 @@ public class PlayerPrimaryAttackState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        xInput = 0;
 
         // Set combo tấn công của nhân vật
         if(comboCounter > 2 || Time.time >= lastTimeAttacked + comboWindow)

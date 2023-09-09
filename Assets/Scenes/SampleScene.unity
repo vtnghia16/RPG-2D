@@ -1040,6 +1040,8 @@ MonoBehaviour:
   WhatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
+  stunDuration: 1
+  stunDirection: {x: 10, y: 12}
   moveSpeed: 1.5
   idleTime: 2
   battleTime: 7

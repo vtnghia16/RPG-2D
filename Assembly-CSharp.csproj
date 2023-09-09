@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\ParallaxBackground.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_Skeleton.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonStunnedState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
