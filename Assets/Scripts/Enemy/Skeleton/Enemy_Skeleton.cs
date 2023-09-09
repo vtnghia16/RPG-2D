@@ -22,10 +22,10 @@ public class Enemy_Skeleton : Enemy
     {
         base.Awake();
 
-        idleState    = new SkeletonIdleState(this, stateMachine, "Idle", this);
-        moveState    = new SkeletonMoveState(this, stateMachine, "Move", this);
-        battleState  = new SkeletonBattleState(this, stateMachine, "Move", this);
-        attackState  = new SkeletonAttackState(this, stateMachine, "Attack", this);
+        idleState = new SkeletonIdleState(this, stateMachine, "Idle", this);
+        moveState = new SkeletonMoveState(this, stateMachine, "Move", this);
+        battleState = new SkeletonBattleState(this, stateMachine, "Move", this);
+        attackState = new SkeletonAttackState(this, stateMachine, "Attack", this);
         stunnedState = new SkeletonStunnedState(this, stateMachine, "Stunned", this);
 
     }
@@ -40,14 +40,14 @@ public class Enemy_Skeleton : Enemy
     {
         base.Update();
 
-        if(Input.GetKeyDown(KeyCode.U)) 
+        if (Input.GetKeyDown(KeyCode.U))
         {
             stateMachine.ChangeState(stunnedState);
         }
 
     }
 
-    protected override bool CanBeStunned()
+    public override bool CanBeStunned()
     {
         if (base.CanBeStunned())
         {

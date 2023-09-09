@@ -51,9 +51,9 @@ public class Enemy : Entity
         counterImage.SetActive(false);
     }
 
-    protected virtual bool CanBeStunned()
+    public virtual bool CanBeStunned()
     {
-        if(canBeStunned)
+        if (canBeStunned)
         {
             CloseCounterAttackWindow();
             return true;
@@ -72,7 +72,7 @@ public class Enemy : Entity
         base.OnDrawGizmos();
 
         Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, 
+        Gizmos.DrawLine(transform.position,
             new Vector3(transform.position.x + attackDistance * facingDir, transform.position.y));
     }
 }
