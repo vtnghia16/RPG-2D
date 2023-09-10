@@ -16,6 +16,7 @@ public class EntityFX : MonoBehaviour
         // Thay đổi màu sắc, và các thuộc tính khác của đối tượng
         sr = GetComponentInChildren<SpriteRenderer>();
         originalMat = sr.material;
+
     }
 
     // Hiệu ứng nhân vật và kẻ địch khi tấn công nhau
