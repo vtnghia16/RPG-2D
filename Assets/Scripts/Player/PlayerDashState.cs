@@ -12,6 +12,8 @@ public class PlayerDashState : PlayerState
     {
         base.Enter();
 
+        player.skill.clone.CreateClone(player.transform);
+
         // Set nhân vật lướt trong khoảng thời gian
         stateTimer = player.dashDuration;
     }
