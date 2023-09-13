@@ -59,7 +59,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerPrimaryAttackState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerState.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
-    <Compile Include="Assets\Clone_Skill_Controller.cs" />
+    <Compile Include="Assets\Scripts\Clone_Skill_Controller.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonMoveState.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
     <Compile Include="Assets\Scripts\Skills\Skill.cs" />
@@ -91,6 +91,9 @@
     <Compile Include="Assets\Scripts\ParallaxBackground.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_Skeleton.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerAimSwordState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerCatchSwordState.cs" />
+    <Compile Include="Assets\Scripts\Skills\Sword_Skill.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

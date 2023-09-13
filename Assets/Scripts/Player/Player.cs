@@ -39,8 +39,16 @@ public class Player : Entity
 
     public PlayerDashState dashState { get; private set; }
 
+
     public PlayerPrimaryAttackState primaryAttack { get; private set; }
+
     public PlayerCounterAttackState counterAttack { get; private set; }
+
+
+    public PlayerAimSwordState aimSword { get; private set; }
+
+    public PlayerCatchSwordState catchSword { get; private set; }
+
 
     #endregion
 
@@ -59,6 +67,9 @@ public class Player : Entity
 
         primaryAttack = new PlayerPrimaryAttackState(this, stateMachine, "Attack");
         counterAttack = new PlayerCounterAttackState(this, stateMachine, "CounterAttack");
+
+        aimSword = new PlayerAimSwordState(this, stateMachine, "AimSword");
+        catchSword = new PlayerCatchSwordState(this, stateMachine, "CatchSword");
 
     }
 
