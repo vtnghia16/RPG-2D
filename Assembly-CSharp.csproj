@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonIdleState.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDashState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerAimSwordState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonBattleState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAirState.cs" />
     <Compile Include="Assets\Scripts\Skills\Clone_Skill.cs" />
@@ -81,9 +82,11 @@
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonAttackState.cs" />
     <Compile Include="Assets\Scripts\Skills\Dash_Skill.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerCatchSwordState.cs" />
     <Compile Include="Assets\Scripts\Skills\SkillManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerWallJump.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_SkeletonAnimationTriggers.cs" />
+    <Compile Include="Assets\Scripts\Skills\Sword_Skill.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerWallSlideState.cs" />
     <Compile Include="Assets\Scripts\EntityFX.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerGroundedState.cs" />
@@ -91,9 +94,7 @@
     <Compile Include="Assets\Scripts\ParallaxBackground.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_Skeleton.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerAimSwordState.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerCatchSwordState.cs" />
-    <Compile Include="Assets\Scripts\Skills\Sword_Skill.cs" />
+    <Compile Include="Assets\Sword_Skill_Controller.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
