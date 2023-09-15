@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonIdleState.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDashState.cs" />
+    <Compile Include="Assets\Sword_Skill_Controller.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAimSwordState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonBattleState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAirState.cs" />
@@ -94,7 +95,6 @@
     <Compile Include="Assets\Scripts\ParallaxBackground.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_Skeleton.cs" />
-    <Compile Include="Assets\Sword_Skill_Controller.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
