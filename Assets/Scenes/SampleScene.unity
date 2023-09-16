@@ -5458,9 +5458,9 @@ MonoBehaviour:
   counterAttackDuration: 0.2
   moveSpeed: 8
   jumpForce: 12
+  swordReturnImpact: 7
   dashSpeed: 25
   dashDuration: 0.2
-  sword: {fileID: 0}
 --- !u!4 &1133879411
 Transform:
   m_ObjectHideFlags: 0
