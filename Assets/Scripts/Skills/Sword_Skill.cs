@@ -51,6 +51,7 @@ public class Sword_Skill : Skill
 
         newSwordScript.SetupSword(finalDir, swordGravity, player);
 
+        // Chỉ định mỗi lần phóng tiêu là hướng mới
         player.AssignNewSword(newSword);
 
         DotsActive(false);
@@ -82,7 +83,6 @@ public class Sword_Skill : Skill
         for(int i = 0; i < numberOfDots; i++)
         {
             dots[i] = Instantiate(dotPrefab, player.transform.position, Quaternion.identity, dotsParent);
-
             dots[i].SetActive(false);
         }
     }

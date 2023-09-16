@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,7 +22,7 @@ public class Sword_Skill_Controller : MonoBehaviour
 
     public void SetupSword(Vector2 _dir, float _gravityScale, Player _player)
     {
-        player= _player;
+        player = _player;
 
         rb.velocity = _dir;
         rb.gravityScale = _gravityScale;
@@ -30,15 +30,15 @@ public class Sword_Skill_Controller : MonoBehaviour
         anim.SetBool("Rotation", true);
     }
 
+    // Thu về vũ khí khi đã phóng
     public void ReturnSword()
     {
         rb.isKinematic = false;
         transform.parent = null;
         isReturning = true;
-
     }
 
-    private void Update() 
+    private void Update()
     {
         if(canRotate)
         {
@@ -59,7 +59,6 @@ public class Sword_Skill_Controller : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
         anim.SetBool("Rotation", false);
 
         canRotate = false;

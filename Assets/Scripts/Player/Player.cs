@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : Entity
 {
+
     [Header("Attack details")]
     public Vector2[] attackMovement;
     public float counterAttackDuration = .2f;
