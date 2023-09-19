@@ -12,7 +12,7 @@ public class Sword_Skill : Skill
 {
     public SwordType swordType = SwordType.Regular;
 
-    // Vũ khí dịch chuyển qua các enemy
+    // Vũ khí dịch chuyển qua lại giữa các enemy
     [Header("Bounce info")]
     [SerializeField] private int bounceAmount;
     [SerializeField] private float bounceGravity;
@@ -21,6 +21,12 @@ public class Sword_Skill : Skill
     [Header("Pierce info")]
     [SerializeField] private int pierceAmount;
     [SerializeField] private float pierceGravity;
+
+    [Header("Spin info")]
+    [SerializeField] private float hitCooldown = .35f;
+    [SerializeField] private float maxTravelDistance = 7;
+    [SerializeField] private float spinDuration = 2;
+    [SerializeField] private float spinGravity = 1;
 
     [Header("Skill info")]
     [SerializeField] private GameObject swordPrefab;
@@ -57,6 +63,10 @@ public class Sword_Skill : Skill
         {
             swordGravity = pierceGravity;
         }
+        else if(swordType == SwordType.Spin)
+        {
+            swordGravity = spinGravity;
+        }
     }
 
     protected override void Update()
@@ -88,6 +98,10 @@ public class Sword_Skill : Skill
         else if(swordType == SwordType.Pierce)
         {
             newSwordScript.SetupPierce(pierceAmount);
+        }
+        else if(swordType == SwordType.Spin)
+        {
+            newSwordScript.SetupSpin(true, maxTravelDistance, spinDuration, hitCooldown);
         }
 
 

@@ -16,7 +16,7 @@ public class Sword_Skill_Controller : MonoBehaviour
 
     // Vũ khí khi xuyên qua các enemy
     [Header("Pierce info")]
-    [SerializeField] private float pierceAmount;
+    private float pierceAmount;
 
     // Vũ khí dịch chuyển qua các enemy
     [Header("Bounce info")]
@@ -25,6 +25,19 @@ public class Sword_Skill_Controller : MonoBehaviour
     private int bounceAmount;
     private List<Transform> enemyTarget;
     private int targetIndex;
+
+    [Header("Spin info")]
+    private float maxTravelDistance;
+    private float spinDuration;
+    private float spinTimer;
+    private bool wasStopped;
+    private bool isSpinning;
+
+    private float hitTimer;
+    private float hitCooldown;
+
+    private float spinDirection;
+
 
     private void Awake()
     {
@@ -40,10 +53,15 @@ public class Sword_Skill_Controller : MonoBehaviour
         rb.velocity = _dir;
         rb.gravityScale = _gravityScale;
 
-        if(pierceAmount <= 0)
+        if (pierceAmount <= 0)
         {
             anim.SetBool("Rotation", true);
         }
+
+
+        spinDirection = Mathf.Clamp(rb.velocity.x, -1, 1);
+
+        Invoke("DestroyMe", 7);
 
     }
 
@@ -58,6 +76,14 @@ public class Sword_Skill_Controller : MonoBehaviour
     public void SetupPierce(int _pierceAmount)
     {
         pierceAmount = _pierceAmount;
+    }
+
+    public void SetupSpin(bool _isSpinning, float _maxTravelDistance, float _spinDuration, float _hitCooldown)
+    {
+        isSpinning = _isSpinning;
+        maxTravelDistance = _maxTravelDistance;
+        spinDuration = _spinDuration;
+        hitCooldown = _hitCooldown;
     }
 
     // Thu về vũ khí khi đã phóng
@@ -87,6 +113,56 @@ public class Sword_Skill_Controller : MonoBehaviour
         }
 
         BounceLogic();
+        SpinLogic();
+
+    }
+
+    private void SpinLogic()
+    {
+        if (isSpinning)
+        {
+            if (Vector2.Distance(player.transform.position, transform.position) > maxTravelDistance && !wasStopped)
+            {
+                StopWhenSpinning();
+            }
+
+            if (wasStopped)
+            {
+                spinTimer -= Time.deltaTime;
+
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x + spinDirection, transform.position.y), 1.5f * Time.deltaTime);
+
+                if (spinTimer < 0)
+                {
+                    isReturning = true;
+                    isSpinning = false;
+                }
+
+                hitTimer -= Time.deltaTime;
+
+                if (hitTimer < 0)
+                {
+                    hitTimer = hitCooldown;
+
+                    Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 1);
+
+                    foreach (var hit in colliders)
+                    {
+                        if (hit.GetComponent<Enemy>() != null)
+                        {
+                            hit.GetComponent<Enemy>().Damage();
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private void StopWhenSpinning()
+    {
+        wasStopped = true;
+        rb.constraints = RigidbodyConstraints2D.FreezePosition;
+        spinTimer = spinDuration;
     }
 
     // Kiểm tra sự dịch chuyển vũ khí qua các Enemy
@@ -98,6 +174,8 @@ public class Sword_Skill_Controller : MonoBehaviour
 
             if (Vector2.Distance(transform.position, enemyTarget[targetIndex].position) < .1f)
             {
+                enemyTarget[targetIndex].GetComponent<Enemy>().Damage();
+
                 targetIndex++;
                 bounceAmount--;
 
@@ -124,6 +202,13 @@ public class Sword_Skill_Controller : MonoBehaviour
 
         collision.GetComponent<Enemy>()?.Damage();
 
+        SetupTargetForBounce(collision);
+
+        StuckInto(collision);
+    }
+
+    private void SetupTargetForBounce(Collider2D collision)
+    {
         if (collision.GetComponent<Rigidbody2D>() != null)
         {
             if (isBouncing && enemyTarget.Count <= 0)
@@ -139,16 +224,20 @@ public class Sword_Skill_Controller : MonoBehaviour
                 }
             }
         }
-
-        StuckInto(collision);
     }
 
     // Vũ khí ghim vào enemy
     private void StuckInto(Collider2D collision)
     {
-        if(pierceAmount > 0 && collision.GetComponent<Enemy>() != null)
+        if (pierceAmount > 0 && collision.GetComponent<Enemy>() != null)
         {
             pierceAmount--;
+            return;
+        }
+
+        if (isSpinning)
+        {
+            StopWhenSpinning();
             return;
         }
 
@@ -158,7 +247,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         rb.isKinematic = true;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
-        if(isBouncing && enemyTarget.Count > 0)
+        if (isBouncing && enemyTarget.Count > 0)
         {
             return;
         }
