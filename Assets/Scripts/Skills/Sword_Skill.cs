@@ -16,6 +16,7 @@ public class Sword_Skill : Skill
     [Header("Bounce info")]
     [SerializeField] private int bounceAmount;
     [SerializeField] private float bounceGravity;
+    [SerializeField] private float bounceSpeed;
 
     // Vũ khí khi xuyên qua các enemy
     [Header("Pierce info")]
@@ -32,6 +33,8 @@ public class Sword_Skill : Skill
     [SerializeField] private GameObject swordPrefab;
     [SerializeField] private Vector2 launchForce;
     [SerializeField] private float swordGravity;
+    [SerializeField] private float freezeTimeDuration;
+    [SerializeField] private float returnSpeed;
 
     private Vector2 finalDir;
 
@@ -93,7 +96,7 @@ public class Sword_Skill : Skill
 
         if (swordType == SwordType.Bounce)
         {
-            newSwordScript.SetupBounce(true, bounceAmount);
+            newSwordScript.SetupBounce(true, bounceAmount, bounceSpeed);
         }
         else if(swordType == SwordType.Pierce)
         {
@@ -105,7 +108,7 @@ public class Sword_Skill : Skill
         }
 
 
-        newSwordScript.SetupSword(finalDir, swordGravity, player);
+        newSwordScript.SetupSword(finalDir, swordGravity, player, freezeTimeDuration, returnSpeed);
 
         // Chỉ định mỗi lần phóng tiêu là hướng mới
         player.AssignNewSword(newSword);
