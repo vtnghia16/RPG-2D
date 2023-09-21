@@ -8,8 +8,9 @@ public class Entity : MonoBehaviour
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
     public EntityFX fx { get; private set; }
-
+    public SpriteRenderer sr { get; private set; }
     #endregion
+
     [Header("Knockback info")]
     [SerializeField] protected Vector2 knockbackDirection;
     [SerializeField] protected float knockbackDuration;
@@ -34,11 +35,11 @@ public class Entity : MonoBehaviour
 
     protected virtual void Start()
     {
-        fx = GetComponentInChildren<EntityFX>();
         // Lấy những thuộc tính trong object
+        sr = GetComponentInChildren<SpriteRenderer>();
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
-
+        fx = GetComponentInChildren<EntityFX>();
     }
 
     protected virtual void Update()
@@ -130,4 +131,16 @@ public class Entity : MonoBehaviour
         }
     }
     #endregion
+
+    public void MakeTransprent(bool _transprent)
+    {
+        if(_transprent)
+        {
+            sr.color = Color.clear;
+        }
+        else
+        {
+            sr.color = Color.white;
+        }
+    }
 }

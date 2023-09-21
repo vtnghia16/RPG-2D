@@ -52,6 +52,8 @@ public class Player : Entity
 
     public PlayerCatchSwordState catchSword { get; private set; }
 
+    public PlayerBlackholeState blackHole { get; private set; }
+
 
     #endregion
 
@@ -73,6 +75,7 @@ public class Player : Entity
 
         aimSword = new PlayerAimSwordState(this, stateMachine, "AimSword");
         catchSword = new PlayerCatchSwordState(this, stateMachine, "CatchSword");
+        blackHole = new PlayerBlackholeState(this, stateMachine, "Jump");
 
     }
 
@@ -103,6 +106,11 @@ public class Player : Entity
     {
         stateMachine.ChangeState(catchSword);
         Destroy(sword);
+    }
+
+    public void ExitBlackHoleAbility()
+    {
+        stateMachine.ChangeState(airState);
     }
 
     public IEnumerator BusyFor(float _seconds)
