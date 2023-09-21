@@ -58,6 +58,10 @@ public class PlayerBlackholeState : PlayerState
             }
 
             // Kết thúc trạng thái blackhole skills controller khi tất cả attack kết thúc
+            if (player.skill.blackhole.SkillCompleted())
+            {
+                stateMachine.ChangeState(player.airState);
+            }
         }
     }
 }

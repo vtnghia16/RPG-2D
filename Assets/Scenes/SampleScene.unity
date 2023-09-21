@@ -20137,8 +20137,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0
-  amountOfAttacks: 5
+  amountOfAttacks: 1
   cloneCooldown: 0.35
+  blackholeDuration: 3
   blackHolePrefab: {fileID: 7017747570111836790, guid: 2e971abbe8a237045aefdea236069a88, type: 3}
   maxSize: 15
   growSpeed: 3
