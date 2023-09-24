@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &78937885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6427,7 +6427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1263538913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20095,7 +20095,9 @@ MonoBehaviour:
   canAttack: 1
   createCloneOnDashStart: 0
   createCloneOnDashOver: 0
-  canCreateCloneOnCounterAttack: 0
+  canCreateCloneOnCounterAttack: 1
+  canDuplicateClone: 1
+  chanceToDuplicate: 0
 --- !u!114 &1664421064
 MonoBehaviour:
   m_ObjectHideFlags: 0
