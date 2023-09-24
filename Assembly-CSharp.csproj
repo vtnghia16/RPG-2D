@@ -87,7 +87,7 @@
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonAttackState.cs" />
     <Compile Include="Assets\Scripts\Skills\Dash_Skill.cs" />
-    <Compile Include="Assets\Crystal_Skill.cs" />
+    <Compile Include="Assets\Scripts\Skills\Crystal_Skill.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCatchSwordState.cs" />
     <Compile Include="Assets\Scripts\Skills\SkillManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerWallJump.cs" />
