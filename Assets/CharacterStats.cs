@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
-    public int damage;
-    public int maxHealth;
+    public Stat damage;
+    public Stat maxHealth;
+
 
     [SerializeField] private int currentHealth;
 
     void Start()
     {
-        currentHealth = maxHealth; 
+        currentHealth = maxHealth.GetValue();
+
+        // example quipt sword with 4 damage
+        damage.AddModifier(4);
     }
 
     public void TakeDamage(int _damage)
