@@ -6,9 +6,14 @@ public class Entity : MonoBehaviour
 {
     #region Components
     public Animator anim { get; private set; }
+
     public Rigidbody2D rb { get; private set; }
+
     public EntityFX fx { get; private set; }
+
     public SpriteRenderer sr { get; private set; }
+
+    public CharacterStats stats { get; private set; }
     #endregion
 
     [Header("Knockback info")]
@@ -40,6 +45,7 @@ public class Entity : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
         fx = GetComponentInChildren<EntityFX>();
+        stats = GetComponent<CharacterStats>();
     }
 
     protected virtual void Update()
