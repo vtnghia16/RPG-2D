@@ -1071,7 +1071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strength:
-    baseValue: 0
+    baseValue: 2
     modifiers: 
   agility:
     baseValue: 0
@@ -1082,6 +1082,15 @@ MonoBehaviour:
   vitality:
     baseValue: 0
     modifiers: 
+  damage:
+    baseValue: 13
+    modifiers: 
+  critChange:
+    baseValue: 99
+    modifiers: 
+  critPower:
+    baseValue: 0
+    modifiers: 
   maxHealth:
     baseValue: 1000
     modifiers: 
@@ -1090,9 +1099,6 @@ MonoBehaviour:
     modifiers: 
   evasion:
     baseValue: 0
-    modifiers: 
-  damage:
-    baseValue: 10
     modifiers: 
   currentHealth: 0
 --- !u!70 &865916850
@@ -5585,6 +5591,15 @@ MonoBehaviour:
   vitality:
     baseValue: 0
     modifiers: 
+  damage:
+    baseValue: 10
+    modifiers: 
+  critChange:
+    baseValue: 0
+    modifiers: 
+  critPower:
+    baseValue: 0
+    modifiers: 
   maxHealth:
     baseValue: 1000
     modifiers: 
@@ -5593,9 +5608,6 @@ MonoBehaviour:
     modifiers: 
   evasion:
     baseValue: 0
-    modifiers: 
-  damage:
-    baseValue: 10
     modifiers: 
   currentHealth: 0
 --- !u!1 &1137386326
