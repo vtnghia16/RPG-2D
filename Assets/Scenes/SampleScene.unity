@@ -1073,11 +1073,26 @@ MonoBehaviour:
   strength:
     baseValue: 0
     modifiers: 
-  damage:
-    baseValue: 10
+  agility:
+    baseValue: 0
+    modifiers: 
+  intelligence:
+    baseValue: 0
+    modifiers: 
+  vitality:
+    baseValue: 0
     modifiers: 
   maxHealth:
     baseValue: 1000
+    modifiers: 
+  armor:
+    baseValue: 0
+    modifiers: 
+  evasion:
+    baseValue: 0
+    modifiers: 
+  damage:
+    baseValue: 10
     modifiers: 
   currentHealth: 0
 --- !u!70 &865916850
@@ -5529,8 +5544,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.065179706, y: -0.27219772}
-  m_Size: {x: 0.79467463, y: 2.080308}
+  m_Offset: {x: -0.07474816, y: -0.27219772}
+  m_Size: {x: 0.7755377, y: 2.080308}
   m_Direction: 0
 --- !u!114 &1133879414
 MonoBehaviour:
@@ -5561,11 +5576,26 @@ MonoBehaviour:
   strength:
     baseValue: 0
     modifiers: 
-  damage:
-    baseValue: 5
+  agility:
+    baseValue: 0
+    modifiers: 
+  intelligence:
+    baseValue: 0
+    modifiers: 
+  vitality:
+    baseValue: 0
     modifiers: 
   maxHealth:
     baseValue: 1000
+    modifiers: 
+  armor:
+    baseValue: 20
+    modifiers: 
+  evasion:
+    baseValue: 0
+    modifiers: 
+  damage:
+    baseValue: 10
     modifiers: 
   currentHealth: 0
 --- !u!1 &1137386326

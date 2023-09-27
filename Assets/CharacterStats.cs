@@ -1,13 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
-    public Stat strength;
-    public Stat damage;
-    public Stat maxHealth;
+    [Header("Major stats")]
+    public Stat strength; // 1 point increase damage by 1 and crit.power by 1%
+    public Stat agility; // 1 point increase evasion by 1% and crit.chance by 1%
+    public Stat intelligence; // 1 point increase magic damage by 1 and magic resistance by 3
+    public Stat vitality; // 1 point increase health by 3 or 5 points
 
+    [Header("Defensive stats")]
+    public Stat maxHealth;
+    public Stat armor;
+    public Stat evasion;
+
+    public Stat damage;
 
     [SerializeField] private int currentHealth;
 
@@ -19,9 +25,17 @@ public class CharacterStats : MonoBehaviour
 
     public virtual void DoDamage(CharacterStats _targerStats)
     {
-        int totalDAmage = damage.GetValue() + strength.GetValue();
+        if (TargetCanAvoidAttack(_targerStats))
+        {
+            return;
+        }
 
-        _targerStats.TakeDamage(totalDAmage);
+        int totalDamage = damage.GetValue() + strength.GetValue();
+
+
+
+        totalDamage = CheckTargetArmor(_targerStats, totalDamage);
+        _targerStats.TakeDamage(totalDamage);
     }
 
     public virtual void TakeDamage(int _damage)
@@ -31,7 +45,7 @@ public class CharacterStats : MonoBehaviour
 
         Debug.Log(_damage);
 
-        if(currentHealth < 0)
+        if (currentHealth < 0)
         {
             Die();
         }
@@ -40,5 +54,25 @@ public class CharacterStats : MonoBehaviour
     protected virtual void Die()
     {
 
+    }
+
+    private int CheckTargetArmor(CharacterStats _targerStats, int totalDamage)
+    {
+        totalDamage -= _targerStats.armor.GetValue();
+        totalDamage = Mathf.Clamp(totalDamage, 0, int.MaxValue);
+        return totalDamage;
+    }
+
+    // Tránh những mục tiêu khi bị Enemy tấn công
+    private bool TargetCanAvoidAttack(CharacterStats _targerStats)
+    {
+        int totalEvasion = _targerStats.evasion.GetValue() + _targerStats.agility.GetValue();
+
+        if (Random.Range(0, 100) < totalEvasion)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
