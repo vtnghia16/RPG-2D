@@ -958,9 +958,9 @@ GameObject:
   - component: {fileID: 865916847}
   - component: {fileID: 865916846}
   - component: {fileID: 865916845}
-  - component: {fileID: 865916844}
   - component: {fileID: 865916848}
   - component: {fileID: 865916849}
+  - component: {fileID: 865916850}
   m_Layer: 7
   m_Name: Enemy_Skeleton
   m_TagString: Untagged
@@ -968,32 +968,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &865916844
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 865916843}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.26015246}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.5203049}
-  m_EdgeRadius: 0
 --- !u!50 &865916845
 Rigidbody2D:
   serializedVersion: 4
@@ -1103,9 +1077,25 @@ MonoBehaviour:
     baseValue: 10
     modifiers: 
   maxHealth:
-    baseValue: 500
+    baseValue: 1000
     modifiers: 
   currentHealth: 0
+--- !u!70 &865916850
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865916843}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0031187704, y: -0.25093615}
+  m_Size: {x: 0.8181363, y: 1.5018724}
+  m_Direction: 0
 --- !u!1 &914518538
 GameObject:
   m_ObjectHideFlags: 0
@@ -5493,7 +5483,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133879409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.91, y: -3.58, z: 0}
+  m_LocalPosition: {x: -18.91, y: -3.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5575,7 +5565,7 @@ MonoBehaviour:
     baseValue: 5
     modifiers: 
   maxHealth:
-    baseValue: 150
+    baseValue: 1000
     modifiers: 
   currentHealth: 0
 --- !u!1 &1137386326

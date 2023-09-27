@@ -14,6 +14,8 @@ public class Entity : MonoBehaviour
     public SpriteRenderer sr { get; private set; }
 
     public CharacterStats stats { get; private set; }
+
+    public CapsuleCollider2D cd { get; private set; }
     #endregion
 
     [Header("Knockback info")]
@@ -46,6 +48,7 @@ public class Entity : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         fx = GetComponentInChildren<EntityFX>();
         stats = GetComponent<CharacterStats>();
+        cd = GetComponent<CapsuleCollider2D>();
     }
 
     protected virtual void Update()
@@ -148,5 +151,10 @@ public class Entity : MonoBehaviour
         {
             sr.color = Color.white;
         }
+    }
+
+    public virtual void Die()
+    {
+
     }
 }
