@@ -2,22 +2,36 @@
 
 public class CharacterStats : MonoBehaviour
 {
+    // Số liệu thống kê chính
     [Header("Major stats")]
     public Stat strength; // 1 point increase damage by 1 and crit.power by 1%
     public Stat agility; // 1 point increase evasion by 1% and crit.chance by 1%
     public Stat intelligence; // 1 point increase magic damage by 1 and magic resistance by 3
     public Stat vitality; // 1 point increase health by 3 or 5 points
 
+    // Số liệu thống kê tấn công
     [Header("Offensive stats")]
     public Stat damage;
     public Stat critChange;
     public Stat critPower;   // Default value 150%
 
+    // Chỉ số phòng ngự
     [Header("Defensive stats")]
     public Stat maxHealth;
     public Stat armor;
     public Stat evasion;
+    public Stat magicResistance;
 
+    // Chỉ số ma thuật
+    [Header("Magic stats")]
+    public Stat fireDamage;
+    public Stat iceDamage;
+    public Stat lightingDamage;
+
+
+    public bool isIgnited;
+    public bool isChilled;
+    public bool isShocked;
 
 
     [SerializeField] private int currentHealth;
@@ -45,7 +59,43 @@ public class CharacterStats : MonoBehaviour
         }
 
         totalDamage = CheckTargetArmor(_targerStats, totalDamage);
-        _targerStats.TakeDamage(totalDamage);
+        // _targerStats.TakeDamage(totalDamage);
+        DoMagicalDamage(_targerStats);
+    }
+
+    public virtual void DoMagicalDamage(CharacterStats _targetStats)
+    {
+        int _fireDamage = fireDamage.GetValue();
+        int _iceDamage = iceDamage.GetValue();
+        int _lightingDamage = lightingDamage.GetValue();
+
+        int totalMagicalDamage = _fireDamage + _iceDamage + _lightingDamage + intelligence.GetValue();
+
+        totalMagicalDamage = CheckTargetResistance(_targetStats, totalMagicalDamage);
+        _targetStats.TakeDamage(totalMagicalDamage);
+
+
+
+
+    }
+
+    private static int CheckTargetResistance(CharacterStats _targetStats, int totalMagicalDamage)
+    {
+        totalMagicalDamage -= _targetStats.magicResistance.GetValue() + (_targetStats.intelligence.GetValue() * 3);
+        totalMagicalDamage = Mathf.Clamp(totalMagicalDamage, 0, int.MaxValue);
+        return totalMagicalDamage;
+    }
+
+    public void ApplyAilments(bool _ignite, bool _chill, bool _shock)
+    {
+        if(isIgnited || isChilled || isShocked) 
+        {
+            return;
+        }
+
+        isIgnited = _ignite;
+        isChilled = _chill;
+        isShocked = _shock;
     }
 
     public virtual void TakeDamage(int _damage)
