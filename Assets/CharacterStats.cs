@@ -2,6 +2,8 @@
 
 public class CharacterStats : MonoBehaviour
 {
+    private EntityFX fx;
+
     // Số liệu thống kê chính
     [Header("Major stats")]
     public Stat strength; // 1 point increase damage by 1 and crit.power by 1%
@@ -33,6 +35,8 @@ public class CharacterStats : MonoBehaviour
     public bool isChilled; // reduce armor by 20%
     public bool isShocked; // reduce accuracy by 20%
 
+
+    [SerializeField] private float ailmentsDuration = 4;
     private float ignitedTimer;
     private float chilledTimer;
     private float shockedTimer;
@@ -50,6 +54,8 @@ public class CharacterStats : MonoBehaviour
     {
         critPower.SetDefaultValue(150);
         currentHealth = GetMaxHealthValue();
+
+        fx = GetComponent<EntityFX>();
 
         Debug.Log("character stats called");
 
@@ -187,19 +193,25 @@ public class CharacterStats : MonoBehaviour
         if (_ignite)
         {
             isIgnited = _ignite;
-            ignitedTimer = 2;
+            ignitedTimer = ailmentsDuration;
+
+            fx.IgniteFxFor(ailmentsDuration);
         }
 
         if (_chill)
         {
-            chilledTimer = 2;
+            chilledTimer = ailmentsDuration;
             isChilled = _chill;
+
+            fx.ChillFxFor(ailmentsDuration);
         }
 
         if (_shock)
         {
-            shockedTimer = 2;
+            shockedTimer = ailmentsDuration;
             isShocked = _shock;
+
+            fx.ShockFxFor(ailmentsDuration);
         }
 
 
