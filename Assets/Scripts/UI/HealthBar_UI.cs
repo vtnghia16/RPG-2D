@@ -22,7 +22,7 @@ public class HealthBar_UI : MonoBehaviour
 
         UpdateHealthUI();
 
-        Debug.Log("health bar ui called");
+        // Debug.Log("health bar ui called");
     }
 
     private void UpdateHealthUI()

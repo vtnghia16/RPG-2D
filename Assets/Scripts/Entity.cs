@@ -68,13 +68,7 @@ public class Entity : MonoBehaviour
         anim.speed = 1;
     }
 
-    public virtual void DamageEffect()
-    {
-        fx.StartCoroutine("FlashFX");
-        StartCoroutine("HitKnockback");
-
-       // Debug.Log(gameObject.name + "  was damaged!");
-    }
+    public virtual void DamageImpact() => StartCoroutine("HitKnockback");
 
     // Hiệu ứng bay lên khi nhân vật bị tấn công
     protected virtual IEnumerator HitKnockback() 
@@ -157,18 +151,6 @@ public class Entity : MonoBehaviour
         }
     }
     #endregion
-
-    public void MakeTransprent(bool _transprent)
-    {
-        if(_transprent)
-        {
-            sr.color = Color.clear;
-        }
-        else
-        {
-            sr.color = Color.white;
-        }
-    }
 
     public virtual void Die()
     {

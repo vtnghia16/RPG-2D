@@ -24,6 +24,18 @@ public class EntityFX : MonoBehaviour
 
     }
 
+    public void MakeTransprent(bool _transprent)
+    {
+        if (_transprent)
+        {
+            sr.color = Color.clear;
+        }
+        else
+        {
+            sr.color = Color.white;
+        }
+    }
+
     // Hiệu ứng nhân vật và kẻ địch khi tấn công nhau
     private IEnumerator FlashFX()
     {
