@@ -109,6 +109,8 @@
     <Compile Include="Assets\Scripts\Stats\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_Skeleton.cs" />
+    <Compile Include="Assets\ItemData.cs" />
+    <Compile Include="Assets\ItemObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
