@@ -60,7 +60,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerState.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Clone_Skill_Controller.cs" />
-    <Compile Include="Assets\ItemObject.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\ItemObject.cs" />
     <Compile Include="Assets\Scripts\Stats\Stat.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonMoveState.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
@@ -72,15 +72,15 @@
     <Compile Include="Assets\Scripts\Player\PlayerStateMachine.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerBlackholeState.cs" />
     <Compile Include="Assets\Scripts\Entity.cs" />
-    <Compile Include="Assets\ItemData.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\ItemData.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMoveState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonIdleState.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDashState.cs" />
-    <Compile Include="Assets\UI_ItemSlot.cs" />
-    <Compile Include="Assets\InventoryItem.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_ItemSlot.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Crystal_Skill_Controller.cs" />
-    <Compile Include="Assets\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\Inventory.cs" />
     <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Sword_Skill_Controller.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAimSwordState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDeadState.cs" />
@@ -93,7 +93,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerJumpState.cs" />
     <Compile Include="Assets\Scripts\Stats\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonStunnedState.cs" />
-    <Compile Include="Assets\Scripts\UI\HealthBar_UI.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_HealthBar.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonAttackState.cs" />
     <Compile Include="Assets\Scripts\Skills\Dash_Skill.cs" />
@@ -114,6 +114,7 @@
     <Compile Include="Assets\Scripts\Stats\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_Skeleton.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\ItemData_Equipment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
