@@ -41,7 +41,7 @@ public class UI_ItemSlot : MonoBehaviour, IPointerDownHandler
     }
 
     // Click các vật phẩm trong kho
-    public void OnPointerDown(PointerEventData eventData)
+    public virtual void OnPointerDown(PointerEventData eventData)
     {
         if(item.data.itemType == ItemType.Equipment)
         {
