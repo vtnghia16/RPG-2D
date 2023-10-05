@@ -46,7 +46,7 @@ public class ItemData_Equipment : ItemData
         playerStats.vitality.AddModifier(vitality);
 
         playerStats.damage.AddModifier(damage);
-        playerStats.critChange.AddModifier(critChance);
+        playerStats.critChance.AddModifier(critChance);
         playerStats.critPower.AddModifier(critPower);
 
         playerStats.maxHealth.AddModifier(health);
@@ -70,7 +70,7 @@ public class ItemData_Equipment : ItemData
         playerStats.vitality.RemoveModifier(vitality);
 
         playerStats.damage.RemoveModifier(damage);
-        playerStats.critChange.RemoveModifier(critChance);
+        playerStats.critChance.RemoveModifier(critChance);
         playerStats.critPower.RemoveModifier(critPower);
 
         playerStats.maxHealth.RemoveModifier(health);

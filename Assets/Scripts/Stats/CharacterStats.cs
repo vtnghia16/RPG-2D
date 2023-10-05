@@ -14,7 +14,7 @@ public class CharacterStats : MonoBehaviour
     // Số liệu thống kê tấn công
     [Header("Offensive stats")]
     public Stat damage;
-    public Stat critChange;
+    public Stat critChance;
     public Stat critPower;   // Default value 150%
 
     // Chỉ số phòng ngự
@@ -374,7 +374,7 @@ public class CharacterStats : MonoBehaviour
 
     private bool CanCrit()
     {
-        int totalCriticalChance = critChange.GetValue() + agility.GetValue();
+        int totalCriticalChance = critChance.GetValue() + agility.GetValue();
 
         if(Random.Range(0, 100) <= totalCriticalChance)
         {
