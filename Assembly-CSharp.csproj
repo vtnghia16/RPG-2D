@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
     <Compile Include="Assets\Scripts\Skills\Skill.cs" />
     <Compile Include="Assets\Scripts\Controllers\ShockStrike_Controller.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_EquipmentSlot.cs" />
     <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Blackhole_Skill_Controller.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCounterAttackState.cs" />
     <Compile Include="Assets\Scripts\Skills\Blackhole_Skill.cs" />
@@ -115,7 +116,6 @@
     <Compile Include="Assets\Scripts\Stats\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_Skeleton.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_EquipmentSlot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
