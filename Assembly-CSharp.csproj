@@ -116,10 +116,10 @@
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonDeadState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerWallJumpState.cs" />
     <Compile Include="Assets\Scripts\ParallaxBackground.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\PlayerItemDrop.cs" />
     <Compile Include="Assets\Scripts\Stats\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_Skeleton.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\PlayerItemDrop.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
