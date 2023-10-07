@@ -3564,7 +3564,7 @@ MonoBehaviour:
     baseValue: 10
     modifiers: 
   damage:
-    baseValue: 100
+    baseValue: 10
     modifiers: 
   critChance:
     baseValue: 0
@@ -3573,7 +3573,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   maxHealth:
-    baseValue: 50
+    baseValue: 100
     modifiers: 
   armor:
     baseValue: 0
@@ -25326,6 +25326,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bdccafbad68d18f409aca88c28f23b55, type: 2}
   - {fileID: 11400000, guid: 334acd76eb57ca64187f47a9b64bde23, type: 2}
   - {fileID: 11400000, guid: 199a0eba28e91624999c8c36df48b74b, type: 2}
+  - {fileID: 11400000, guid: 7487af1772c280343a48199c73cb75f6, type: 2}
   equipment: []
   inventory: []
   stash: []
