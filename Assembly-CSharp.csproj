@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonGroundedState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimationTriggers.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerJumpState.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\Effects\ItemEffect.cs" />
     <Compile Include="Assets\Scripts\Stats\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonStunnedState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_HealthBar.cs" />
@@ -120,7 +121,8 @@
     <Compile Include="Assets\Scripts\Stats\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_Skeleton.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\ItemEffect.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\Effects\ThunderStrike_Effect.cs" />
+    <Compile Include="Assets\Scripts\Controllers\ThunderStrike_Controller.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
