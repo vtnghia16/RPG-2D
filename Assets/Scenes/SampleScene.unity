@@ -8986,7 +8986,7 @@ MonoBehaviour:
     baseValue: 100
     modifiers: 
   armor:
-    baseValue: 20
+    baseValue: 50
     modifiers: 
   evasion:
     baseValue: 0
@@ -8998,7 +8998,7 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   iceDamage:
-    baseValue: 1
+    baseValue: 0
     modifiers: 
   lightingDamage:
     baseValue: 0
@@ -24539,6 +24539,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7487af1772c280343a48199c73cb75f6, type: 2}
   - {fileID: 11400000, guid: 1f7c898b630cf21488be625fabe759e3, type: 2}
   - {fileID: 11400000, guid: 90d7c4715d207d74eb6aab40d3b5d051, type: 2}
+  - {fileID: 11400000, guid: 199a0eba28e91624999c8c36df48b74b, type: 2}
+  - {fileID: 11400000, guid: d79208a1176154a4a9a8b74e7d199b74, type: 2}
+  - {fileID: 11400000, guid: cb6ed4c9b525d6440a17ed03b600af47, type: 2}
   equipment: []
   inventory: []
   stash: []

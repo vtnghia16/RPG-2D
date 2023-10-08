@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -94,6 +95,20 @@ public class CharacterStats : MonoBehaviour
 
     }
 
+    public virtual void IncreaseStatBy(int _modifier, float _duration, Stat _statToModify)
+    {
+        StartCoroutine(StatModCoroutine(_modifier, _duration, _statToModify));
+    }
+
+    private IEnumerator StatModCoroutine(int _modifier, float _duration, Stat _statToModify)
+    {
+        _statToModify.AddModifier(_modifier);
+
+        yield return new WaitForSeconds(_duration);
+
+        _statToModify.RemoveModifier(_modifier);
+    }
+
     public virtual void DoDamage(CharacterStats _targerStats)
     {
         if (TargetCanAvoidAttack(_targerStats))
@@ -112,8 +127,7 @@ public class CharacterStats : MonoBehaviour
         totalDamage = CheckTargetArmor(_targerStats, totalDamage);
         _targerStats.TakeDamage(totalDamage);
 
-        // if inventory current weapon has fire effect
-        // DoMagicalDamage(_targerStats);
+        DoMagicalDamage(_targerStats); // Remove if you dont't want to apply magic hit on primary attack
     }
 
     #region Magical damage and ailments
