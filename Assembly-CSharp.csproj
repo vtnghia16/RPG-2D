@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Items and Inventory\ItemObject.cs" />
     <Compile Include="Assets\Scripts\Stats\Stat.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonMoveState.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\Effects\FreezeEnemies_Effect.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\Buff_Effect.cs" />
     <Compile Include="Assets\Scripts\Skills\Skill.cs" />
@@ -127,7 +128,6 @@
     <Compile Include="Assets\Scripts\Stats\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_Skeleton.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\Effects\FreezeEnemies_Effect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
