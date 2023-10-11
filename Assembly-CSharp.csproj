@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\Buff_Effect.cs" />
     <Compile Include="Assets\Scripts\Skills\Skill.cs" />
     <Compile Include="Assets\Scripts\Controllers\ShockStrike_Controller.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_ItemTooltip.cs" />
     <Compile Include="Assets\Scripts\Controllers\IceAndFire_Controller.cs" />
     <Compile Include="Assets\Scripts\UI\UI.cs" />
     <Compile Include="Assets\Scripts\UI\UI_EquipmentSlot.cs" />

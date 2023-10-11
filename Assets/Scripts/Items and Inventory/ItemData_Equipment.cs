@@ -20,7 +20,7 @@ public class ItemData_Equipment : ItemData
     [Header("Major stats")]
     public int strength;
     public int agility;
-    public int intelgenace;
+    public int intelligence;
     public int vitality;
 
     [Header("Offensive stats")]
@@ -42,6 +42,8 @@ public class ItemData_Equipment : ItemData
     [Header("Craft requirements")]
     public List<InventoryItem> craftingMaterials;
 
+    private int descriptionLength;
+
     public void Effect(Transform _enemyPosition)
     {
         foreach(var item in itemEffects)
@@ -56,7 +58,7 @@ public class ItemData_Equipment : ItemData
 
         playerStats.strength.AddModifier(strength);
         playerStats.agility.AddModifier(agility);
-        playerStats.intelligence.AddModifier(intelgenace);
+        playerStats.intelligence.AddModifier(intelligence);
         playerStats.vitality.AddModifier(vitality);
 
         playerStats.damage.AddModifier(damage);
@@ -80,7 +82,7 @@ public class ItemData_Equipment : ItemData
 
         playerStats.strength.RemoveModifier(strength);
         playerStats.agility.RemoveModifier(agility);
-        playerStats.intelligence.RemoveModifier(intelgenace);
+        playerStats.intelligence.RemoveModifier(intelligence);
         playerStats.vitality.RemoveModifier(vitality);
 
         playerStats.damage.RemoveModifier(damage);
@@ -96,4 +98,55 @@ public class ItemData_Equipment : ItemData
         playerStats.iceDamage.RemoveModifier(iceDamage);
         playerStats.lightingDamage.RemoveModifier(lightingDamage);
     }
+
+    public override string GetDescription()
+    {
+        sb.Length = 0;
+        descriptionLength = 0;
+
+        AddItemDescription(strength, "Strength");
+        AddItemDescription(agility, "Agility");
+        AddItemDescription(intelligence, "Intelligence");
+        AddItemDescription(vitality, "Vitality");
+
+        AddItemDescription(damage, "Damage");
+        AddItemDescription(critChance, "Crit.Chance");
+        AddItemDescription(critPower, "Crit.Power");
+
+        AddItemDescription(health, "Health");
+        AddItemDescription(evasion, "Evasion");
+        AddItemDescription(armor, "Armor");
+        AddItemDescription(magicResistance, "Magic Resist.");
+
+        AddItemDescription(fireDamage, "Fire damage");
+        AddItemDescription(iceDamage, "Ice damage");
+        AddItemDescription(lightingDamage, "Lighting dmg.");
+
+        if(descriptionLength < 5)
+        {
+            sb.AppendLine();
+            sb.Append("");
+        }
+
+        return sb.ToString();
+    }
+
+    private void AddItemDescription(int _value, string _name)
+    {
+        if(_value != 0)
+        {
+            if(sb.Length > 0)
+            {
+                sb.AppendLine();
+            }
+
+            if(_value > 0)
+            {
+                sb.Append("+ " + _value + " " + _name);
+            }
+
+            descriptionLength++;
+        }
+    }
+
 }
