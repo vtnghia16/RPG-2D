@@ -119,6 +119,7 @@
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_SkeletonAnimationTriggers.cs" />
     <Compile Include="Assets\Scripts\Skills\Sword_Skill.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerWallSlideState.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_StatToolTip.cs" />
     <Compile Include="Assets\Scripts\EntityFX.cs" />
     <Compile Include="Assets\Scripts\Stats\CharacterStats.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerGroundedState.cs" />
