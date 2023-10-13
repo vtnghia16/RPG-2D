@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc3089b38ae9e294b848ee447a90de1a, type: 3}
-  m_Name: Fire flask
+  m_Name: The book
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: Fire flask
-  itemIcon: {fileID: 1923829048, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemName: The book
+  itemIcon: {fileID: -1985898824, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
   dropChance: 0
-  equipmentType: 3
+  equipmentType: 2
   itemCooldown: 0
-  itemEffects:
-  - {fileID: 11400000, guid: e4191ca47a7beda4381eade5ca326311, type: 2}
+  itemEffects: []
   strength: 0
   agility: 0
   intelligence: 0
@@ -32,6 +31,6 @@ MonoBehaviour:
   evasion: 0
   magicResistance: 0
   fireDamage: 0
-  iceDamage: 0
+  iceDamage: 15
   lightingDamage: 0
   craftingMaterials: []

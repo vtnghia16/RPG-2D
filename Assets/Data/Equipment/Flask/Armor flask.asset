@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   itemName: Armor flask
-  icon: {fileID: -165920498, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
+  itemIcon: {fileID: -165920498, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
   dropChance: 0
   equipmentType: 3
   itemCooldown: 15
@@ -23,7 +23,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4f08fd4f927778c419bee2f5c0e8ebcb, type: 2}
   strength: 0
   agility: 0
-  intelgenace: 0
+  intelligence: 0
   vitality: 0
   damage: 0
   critChance: 0
