@@ -21,7 +21,5 @@ public class IceAndFire_Effect : ItemEffect
 
             Destroy(newIceAndFire, 10);
         }
-
-
     }
 }

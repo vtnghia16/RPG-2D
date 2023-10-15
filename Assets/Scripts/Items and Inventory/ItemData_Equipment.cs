@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+
 
 public enum EquipmentType
 {
@@ -14,8 +16,10 @@ public class ItemData_Equipment : ItemData
 {
     public EquipmentType equipmentType;
 
+    [Header("Unique effect")]
     public float itemCooldown;
     public ItemEffect[] itemEffects;
+
 
     [Header("Major stats")]
     public int strength;
@@ -39,6 +43,7 @@ public class ItemData_Equipment : ItemData
     public int iceDamage;
     public int lightingDamage;
 
+
     [Header("Craft requirements")]
     public List<InventoryItem> craftingMaterials;
 
@@ -46,7 +51,7 @@ public class ItemData_Equipment : ItemData
 
     public void Effect(Transform _enemyPosition)
     {
-        foreach(var item in itemEffects)
+        foreach (var item in itemEffects)
         {
             item.ExecuteEffect(_enemyPosition);
         }
@@ -73,10 +78,9 @@ public class ItemData_Equipment : ItemData
         playerStats.fireDamage.AddModifier(fireDamage);
         playerStats.iceDamage.AddModifier(iceDamage);
         playerStats.lightingDamage.AddModifier(lightingDamage);
-
     }
 
-    public void RemoveModifiers()
+    public void RemoveModifiers() 
     {
         PlayerStats playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
 
@@ -85,14 +89,17 @@ public class ItemData_Equipment : ItemData
         playerStats.intelligence.RemoveModifier(intelligence);
         playerStats.vitality.RemoveModifier(vitality);
 
+
         playerStats.damage.RemoveModifier(damage);
         playerStats.critChance.RemoveModifier(critChance);
         playerStats.critPower.RemoveModifier(critPower);
+        
 
         playerStats.maxHealth.RemoveModifier(health);
         playerStats.armor.RemoveModifier(armor);
         playerStats.evasion.RemoveModifier(evasion);
         playerStats.magicResistance.RemoveModifier(magicResistance);
+
 
         playerStats.fireDamage.RemoveModifier(fireDamage);
         playerStats.iceDamage.RemoveModifier(iceDamage);
@@ -120,33 +127,52 @@ public class ItemData_Equipment : ItemData
 
         AddItemDescription(fireDamage, "Fire damage");
         AddItemDescription(iceDamage, "Ice damage");
-        AddItemDescription(lightingDamage, "Lighting dmg.");
+        AddItemDescription(lightingDamage, "Lighting dmg. ");
 
-        if(descriptionLength < 5)
+
+
+
+
+        for (int i = 0; i < itemEffects.Length; i++)
         {
-            sb.AppendLine();
-            sb.Append("");
+            if (itemEffects[i].effectDescription.Length > 0)
+            {
+                sb.AppendLine();
+                sb.AppendLine("Unique: " + itemEffects[i].effectDescription);
+                descriptionLength++;
+            }
         }
 
+
+        if (descriptionLength < 5)
+        {
+            for (int i = 0; i < 5 - descriptionLength; i++)
+            {
+                sb.AppendLine();
+                sb.Append("");
+            }
+        }
+
+
+        
         return sb.ToString();
     }
 
+
+
     private void AddItemDescription(int _value, string _name)
     {
-        if(_value != 0)
+        if (_value != 0)
         {
-            if(sb.Length > 0)
-            {
+            if (sb.Length > 0)
                 sb.AppendLine();
-            }
 
-            if(_value > 0)
-            {
+            if (_value > 0)
                 sb.Append("+ " + _value + " " + _name);
-            }
 
             descriptionLength++;
-        }
-    }
+        }   
 
+       
+    }
 }

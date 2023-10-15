@@ -1,12 +1,12 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class PlayerBlackholeState : PlayerState
 {
     private float flyTime = .4f;
     private bool skillUsed;
 
-    private float defaultGravity;
 
+    private float defaultGravity;
     public PlayerBlackholeState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
     }
@@ -40,9 +40,7 @@ public class PlayerBlackholeState : PlayerState
         base.Update();
 
         if (stateTimer > 0)
-        {
             rb.velocity = new Vector2(0, 15);
-        }
 
         if (stateTimer < 0)
         {
@@ -50,18 +48,12 @@ public class PlayerBlackholeState : PlayerState
 
             if (!skillUsed)
             {
-                if (player.skill.blackhole.CanUseSkill())
-                {
+                if(player.skill.blackhole.CanUseSkill())
                     skillUsed = true;
-                } 
-
-            }
-
-            // Kết thúc trạng thái blackhole skills controller khi tất cả attack kết thúc
-            if (player.skill.blackhole.SkillCompleted())
-            {
-                stateMachine.ChangeState(player.airState);
             }
         }
+
+        if (player.skill.blackhole.SkillCompleted())
+            stateMachine.ChangeState(player.airState);
     }
 }

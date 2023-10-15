@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +8,7 @@ public class UI_HealthBar : MonoBehaviour
     private RectTransform myTransform;
     private Slider slider;
 
+
     private void Start()
     {
         myTransform = GetComponent<RectTransform>();
@@ -17,12 +16,11 @@ public class UI_HealthBar : MonoBehaviour
         slider = GetComponentInChildren<Slider>();
         myStats = GetComponentInParent<CharacterStats>();
 
+
         entity.onFlipped += FlipUI;
         myStats.onHealthChanged += UpdateHealthUI;
 
         UpdateHealthUI();
-
-        // Debug.Log("health bar ui called");
     }
 
     private void UpdateHealthUI()
@@ -31,12 +29,13 @@ public class UI_HealthBar : MonoBehaviour
         slider.value = myStats.currentHealth;
     }
 
-    private void FlipUI() => myTransform.Rotate(0, 180, 0);
 
+
+
+    private void FlipUI() => myTransform.Rotate(0, 180, 0);
     private void OnDisable()
     {
         entity.onFlipped -= FlipUI;
         myStats.onHealthChanged -= UpdateHealthUI;
     }
-
 }

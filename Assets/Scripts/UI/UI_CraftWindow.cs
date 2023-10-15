@@ -15,6 +15,7 @@ public class UI_CraftWindow : MonoBehaviour
 
     public void SetupCraftWindow(ItemData_Equipment _data)
     {
+
         craftButton.onClick.RemoveAllListeners();
 
         for (int i = 0; i < materialImage.Length; i++)
@@ -28,6 +29,7 @@ public class UI_CraftWindow : MonoBehaviour
             if (_data.craftingMaterials.Count > materialImage.Length)
                 Debug.LogWarning("You have more materials amount than you have material slots in craft window");
 
+
             materialImage[i].sprite = _data.craftingMaterials[i].data.itemIcon;
             materialImage[i].color = Color.white;
 
@@ -36,6 +38,7 @@ public class UI_CraftWindow : MonoBehaviour
             materialSlotText.text = _data.craftingMaterials[i].stackSize.ToString();
             materialSlotText.color = Color.white;
         }
+
 
         itemIcon.sprite = _data.itemIcon;
         itemName.text = _data.itemName;

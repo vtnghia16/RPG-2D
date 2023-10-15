@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class PlayerCounterAttackState : PlayerState
 {
@@ -20,6 +20,8 @@ public class PlayerCounterAttackState : PlayerState
     public override void Exit()
     {
         base.Exit();
+
+
     }
 
     public override void Update()
@@ -28,7 +30,6 @@ public class PlayerCounterAttackState : PlayerState
 
         player.SetZeroVelocity();
 
-        // Giới hạn phạm vi tiếp xúc khi tấn công
         Collider2D[] colliders = Physics2D.OverlapCircleAll(player.attackCheck.position, player.attackCheckRadius);
 
         foreach (var hit in colliders)
@@ -37,21 +38,21 @@ public class PlayerCounterAttackState : PlayerState
             {
                 if (hit.GetComponent<Enemy>().CanBeStunned())
                 {
-                    stateTimer = 10;
+                    stateTimer = 10; // any value bigger than 1
                     player.anim.SetBool("SuccessfulCounterAttack", true);
+
+                    player.skill.parry.UseSkill(); // goint to use to restore health on parry
 
                     if (canCreateClone)
                     {
                         canCreateClone = false;
-                        player.skill.clone.CreateCloneOnCounterAttack(hit.transform);
+                        player.skill.parry.MakeMirageOnParry(hit.transform);
                     }
                 }
             }
         }
 
         if (stateTimer < 0 || triggerCalled)
-        {
             stateMachine.ChangeState(player.idleState);
-        }
     }
 }

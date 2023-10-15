@@ -20,7 +20,7 @@ public class SkeletonAttackState : EnemyState
     {
         base.Exit();
 
-        enemy.lastTimeAttack = Time.time;
+        enemy.lastTimeAttacked = Time.time;
     }
 
     public override void Update()
@@ -30,8 +30,6 @@ public class SkeletonAttackState : EnemyState
         enemy.SetZeroVelocity();
 
         if (triggerCalled)
-        {
             stateMachine.ChangeState(enemy.battleState);
-        }
     }
 }

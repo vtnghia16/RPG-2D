@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,19 +22,13 @@ public class SkeletonGroundedState : EnemyState
     public override void Exit()
     {
         base.Exit();
-
-
     }
 
     public override void Update()
     {
         base.Update();
 
-        // Khi enemy phát hiện nhân vật sẽ tấn công
-        if (enemy.IsPlayerDetected() || Vector2.Distance(enemy.transform.position, player.position) < 2)
-        {
+        if (enemy.IsPlayerDetected() || Vector2.Distance(enemy.transform.position , player.transform.position) < 2)
             stateMachine.ChangeState(enemy.battleState);
-        }
     }
-
 }

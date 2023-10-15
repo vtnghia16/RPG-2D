@@ -1,16 +1,15 @@
-﻿using TMPro;
+using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UI_ItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
+public class UI_ItemSlot : MonoBehaviour , IPointerDownHandler ,IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] protected Image itemImage;
     [SerializeField] protected TextMeshProUGUI itemText;
 
     protected UI ui;
     public InventoryItem item;
-
 
     protected virtual void Start()
     {
@@ -47,13 +46,12 @@ public class UI_ItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHand
         itemText.text = "";
     }
 
-    // Click các vật phẩm trong kho
     public virtual void OnPointerDown(PointerEventData eventData)
     {
-        if(item == null)
-        {
+        if (item == null)
             return;
-        }
+
+        ui.itemToolTip.HideToolTip();
 
         if (Input.GetKey(KeyCode.LeftControl))
         {
@@ -61,30 +59,23 @@ public class UI_ItemSlot : MonoBehaviour, IPointerDownHandler, IPointerEnterHand
             return;
         }
 
-        if(item.data.itemType == ItemType.Equipment)
-        {
+        if (item.data.itemType == ItemType.Equipment)
             Inventory.instance.EquipItem(item.data);
-        }
 
-        ui.itemToolTip.HideToolTip();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(item == null)
-        {
+        if (item == null)
             return;
-        }
 
         ui.itemToolTip.ShowToolTip(item.data as ItemData_Equipment);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if(item == null)
-        {
+        if (item == null)
             return;
-        }
 
         ui.itemToolTip.HideToolTip();
     }

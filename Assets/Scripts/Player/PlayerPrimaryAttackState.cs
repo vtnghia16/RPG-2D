@@ -1,9 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class PlayerPrimaryAttackState : PlayerState
 {
+
     public int comboCounter { get; private set; }
 
     private float lastTimeAttacked;
@@ -16,25 +18,23 @@ public class PlayerPrimaryAttackState : PlayerState
     public override void Enter()
     {
         base.Enter();
-        xInput = 0;
 
-        // Set combo tấn công của nhân vật
-        if(comboCounter > 2 || Time.time >= lastTimeAttacked + comboWindow)
-        {
+        xInput = 0;  // we need this to fix bug on attack direction
+
+        if (comboCounter > 2 || Time.time >= lastTimeAttacked + comboWindow)
             comboCounter = 0;
-        }
 
         player.anim.SetInteger("ComboCounter", comboCounter);
 
+
         float attackDir = player.facingDir;
 
-        if(xInput != 0)
-        {
+        if (xInput != 0)
             attackDir = xInput;
-        }
+        
 
-        // Set tốc độ khi nhân vật vừa di chuyển và tấn công
         player.SetVelocity(player.attackMovement[comboCounter].x * attackDir, player.attackMovement[comboCounter].y);
+
 
         stateTimer = .1f;
     }
@@ -43,27 +43,22 @@ public class PlayerPrimaryAttackState : PlayerState
     {
         base.Exit();
 
-        // Kiểm tra xem nhân vật đang đứng yên hay hoạt động
         player.StartCoroutine("BusyFor", .15f);
 
         comboCounter++;
         lastTimeAttacked = Time.time;
-
     }
 
     public override void Update()
     {
         base.Update();
 
-        // Điều khiển nhân vật dừng lại khi tấn công
-        if(stateTimer < 0 )
-        {
+        if (stateTimer < 0)
             player.SetZeroVelocity();
-        }
 
-        if(triggerCalled)
-        {
+        if (triggerCalled)
             stateMachine.ChangeState(player.idleState);
-        }
     }
+
+    
 }

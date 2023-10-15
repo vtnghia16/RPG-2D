@@ -12,7 +12,7 @@ public class Blackhole_HotKey_Controller : MonoBehaviour
     private Transform myEnemy;
     private Blackhole_Skill_Controller blackHole;
 
-    public void SetupHotKey(KeyCode _myNewHotKey, Transform _myEnemy, Blackhole_Skill_Controller _myBlackHole)
+    public void SetupHotKey(KeyCode _myNewHotKey,Transform _myEnemy, Blackhole_Skill_Controller _myBlackHole)
     {
         sr = GetComponent<SpriteRenderer>();
         myText = GetComponentInChildren<TextMeshProUGUI>();
@@ -22,12 +22,11 @@ public class Blackhole_HotKey_Controller : MonoBehaviour
 
         myHotKey = _myNewHotKey;
         myText.text = _myNewHotKey.ToString();
-
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(myHotKey))
+        if (Input.GetKeyDown(myHotKey))
         {
             blackHole.AddEnemyToList(myEnemy);
 

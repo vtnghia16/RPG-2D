@@ -21,7 +21,6 @@ public class EnemyStats : CharacterStats
 
         enemy = GetComponent<Enemy>();
         myDropSystem = GetComponent<ItemDrop>();
-
     }
 
     private void ApplyLevelModifiers()
@@ -30,7 +29,7 @@ public class EnemyStats : CharacterStats
         Modify(agility);
         Modify(intelligence);
         Modify(vitality);
-  
+
         Modify(damage);
         Modify(critChance);
         Modify(critPower);
@@ -43,7 +42,6 @@ public class EnemyStats : CharacterStats
         Modify(fireDamage);
         Modify(iceDamage);
         Modify(lightingDamage);
-
     }
 
     private void Modify(Stat _stat)
@@ -56,7 +54,6 @@ public class EnemyStats : CharacterStats
         }
     }
 
-
     public override void TakeDamage(int _damage)
     {
         base.TakeDamage(_damage);
@@ -68,6 +65,5 @@ public class EnemyStats : CharacterStats
         enemy.Die();
 
         myDropSystem.GenerateDrop();
-
     }
 }

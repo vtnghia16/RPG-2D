@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaf3b0afc1d4c1943bf11ef2eb2b58d8, type: 3}
+  m_Script: {fileID: 11500000, guid: b3426656fa1b2114a97261c6dc4c66c5, type: 3}
   m_Name: Fire buff
   m_EditorClassIdentifier: 
   buffType: 11

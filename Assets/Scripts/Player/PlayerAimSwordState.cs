@@ -1,5 +1,6 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAimSwordState : PlayerState
@@ -29,21 +30,13 @@ public class PlayerAimSwordState : PlayerState
         player.SetZeroVelocity();
 
         if (Input.GetKeyUp(KeyCode.Mouse1))
-        {
             stateMachine.ChangeState(player.idleState);
-        }
 
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // Điều chỉnh nhân vật quay theo hướng của vũ khí
-        if(player.transform.position.x > mousePosition.x && player.facingDir == 1)
-        {
+        if (player.transform.position.x > mousePosition.x && player.facingDir == 1)
             player.Flip();
-        }
-        else if (player.transform.position.x < mousePosition.x && player.facingDir == -1)
-        {
+        else if(player.transform.position.x < mousePosition.x && player.facingDir == -1)
             player.Flip();
-        }
-
     }
 }

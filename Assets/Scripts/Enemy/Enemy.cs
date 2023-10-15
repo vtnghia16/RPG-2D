@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
-    [SerializeField] protected LayerMask WhatIsPlayer;
+    [SerializeField] protected LayerMask whatIsPlayer;
+
 
     [Header("Stunned info")]
     public float stunDuration;
@@ -18,15 +19,14 @@ public class Enemy : Entity
     public float battleTime;
     private float defaultMoveSpeed;
 
-    [Header("Attack Info")]
+    [Header("Attack info")]
     public float attackDistance;
     public float attackCooldown;
-    [HideInInspector] public float lastTimeAttack;
+    [HideInInspector] public float lastTimeAttacked;
 
     public EnemyStateMachine stateMachine { get; private set; }
-    public string lastAnimBoolName { get; private set; }
-
-
+    private Player player;
+    public string lastAnimBoolName {  get; private set; }
     protected override void Awake()
     {
         base.Awake();
@@ -39,11 +39,13 @@ public class Enemy : Entity
     {
         base.Update();
 
+
         stateMachine.currentState.Update();
 
     }
 
     public virtual void AssignLastAnimName(string _animBoolName) => lastAnimBoolName = _animBoolName;
+
 
     public override void SlowEntityBy(float _slowPercentage, float _slowDuration)
     {
@@ -112,15 +114,12 @@ public class Enemy : Entity
 
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
-    public virtual RaycastHit2D IsPlayerDetected()
-        => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 50, WhatIsPlayer);
-
+    public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 50, whatIsPlayer);
     protected override void OnDrawGizmos()
     {
         base.OnDrawGizmos();
 
         Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position,
-            new Vector3(transform.position.x + attackDistance * facingDir, transform.position.y));
+        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + attackDistance * facingDir, transform.position.y));
     }
 }

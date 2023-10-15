@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,17 +12,18 @@ public class PlayerDashState : PlayerState
     {
         base.Enter();
 
-        player.skill.clone.CreateCloneOnDashStart();
+        player.skill.dash.CloneOnDash();
 
-        // Set nhân vật lướt trong khoảng thời gian
         stateTimer = player.dashDuration;
+        
+        
     }
 
     public override void Exit()
     {
         base.Exit();
 
-        player.skill.clone.CreateCloneOnDashOver();
+        player.skill.dash.CloneOnArrival();
         player.SetVelocity(0, rb.velocity.y);
     }
 
@@ -30,16 +31,14 @@ public class PlayerDashState : PlayerState
     {
         base.Update();
 
-        if(!player.IsGroundDetected() && player.IsWallDetected())
-        {
+        if (!player.IsGroundDetected() && player.IsWallDetected())
             stateMachine.ChangeState(player.wallSlide);
-        }
 
         player.SetVelocity(player.dashSpeed * player.dashDir, 0);
 
-        if(stateTimer < 0)
-        {
+        if (stateTimer < 0)
             stateMachine.ChangeState(player.idleState);
-        }
+        
+
     }
 }

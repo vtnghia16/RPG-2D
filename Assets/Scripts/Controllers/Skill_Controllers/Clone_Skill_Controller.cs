@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,10 +10,12 @@ public class Clone_Skill_Controller : MonoBehaviour
     [SerializeField] private float colorLoosingSpeed;
 
     private float cloneTimer;
+    private float attackMultiplier;
     [SerializeField] private Transform attackCheck;
     [SerializeField] private float attackCheckRadius = .8f;
     private Transform closestEnemy;
     private int facingDir = 1;
+
 
     private bool canDuplicateClone;
     private float chanceToDuplicate;
@@ -33,29 +35,26 @@ public class Clone_Skill_Controller : MonoBehaviour
             sr.color = new Color(1, 1, 1, sr.color.a - (Time.deltaTime * colorLoosingSpeed));
 
             if (sr.color.a <= 0)
-            {
                 Destroy(gameObject);
-            }
         }
     }
 
-    public void SetupClone(Transform _newTransform, float _cloneDuration, bool _canAttack, Vector3 _offset, Transform _closestEnemy, bool _canDuplicate, float _chanceToDuplicate, Player _player)
+    public void SetupClone(Transform _newTransform, float _cloneDuration, bool _canAttack, Vector3 _offset, Transform _closestEnemy, bool _canDuplicate,float _chanceToDuplicate,Player _player,float _attackMultiplier)
     {
         if (_canAttack)
-        {
             anim.SetInteger("AttackNumber", Random.Range(1, 3));
-        }
 
+        attackMultiplier = _attackMultiplier;
         player = _player;
         transform.position = _newTransform.position + _offset;
         cloneTimer = _cloneDuration;
-
 
         canDuplicateClone = _canDuplicate;
         chanceToDuplicate = _chanceToDuplicate;
         closestEnemy = _closestEnemy;
         FaceClosestTarget();
     }
+
 
     private void AnimationTrigger()
     {
@@ -64,18 +63,29 @@ public class Clone_Skill_Controller : MonoBehaviour
 
     private void AttackTrigger()
     {
-        // Giới hạn phạm vi tiếp xúc khi tấn công
         Collider2D[] colliders = Physics2D.OverlapCircleAll(attackCheck.position, attackCheckRadius);
 
         foreach (var hit in colliders)
         {
             if (hit.GetComponent<Enemy>() != null)
             {
-                player.stats.DoDamage(hit.GetComponent<CharacterStats>());
+                //player.stats.DoDamage(hit.GetComponent<CharacterStats>()); // make a new function for clone damage to regulate damage;
+
+                PlayerStats playerStats = player.GetComponent<PlayerStats>();
+                EnemyStats enemyStats = hit.GetComponent<EnemyStats>();
+
+                playerStats.CloneDoDamage(enemyStats, attackMultiplier);
+
+                if (player.skill.clone.canApplyOnHitEffect)
+                {
+                    ItemData_Equipment weaponData = Inventory.instance.GetEquipment(EquipmentType.Weapon);
+
+                    if (weaponData != null)
+                        weaponData.Effect(hit.transform);
+                }
 
                 if (canDuplicateClone)
                 {
-                    // Random ngẫu nhiên số lần đánh của player lên Enemy khi combo
                     if (Random.Range(0, 100) < chanceToDuplicate)
                     {
                         SkillManager.instance.clone.CreateClone(hit.transform, new Vector3(.5f * facingDir, 0));
@@ -85,7 +95,6 @@ public class Clone_Skill_Controller : MonoBehaviour
         }
     }
 
-    // Điều chỉnh hướng quay của nhân vật ảo theo hướng quay của nhân vật thật
     private void FaceClosestTarget()
     {
         if (closestEnemy != null)

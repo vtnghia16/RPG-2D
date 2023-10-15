@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3089b38ae9e294b848ee447a90de1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 590ef18be3394f74b880d82fac385463, type: 3}
   m_Name: The book
   m_EditorClassIdentifier: 
   itemType: 1
@@ -19,6 +19,7 @@ MonoBehaviour:
   equipmentType: 2
   itemCooldown: 0
   itemEffects: []
+  itemEffectDescription: 
   strength: 0
   agility: 0
   intelligence: 0

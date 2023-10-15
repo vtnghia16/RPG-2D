@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class PlayerItemDrop : ItemDrop
 {
@@ -16,9 +15,9 @@ public class PlayerItemDrop : ItemDrop
         List<InventoryItem> itemsToUnequip = new List<InventoryItem>();
         List<InventoryItem> materialsToLoose = new List<InventoryItem>();
 
-        foreach (InventoryItem item in inventory.GetEquipmentList()) 
-        { 
-            if(Random.Range(0, 100) <= chanceToLooseItems)
+        foreach (InventoryItem item in inventory.GetEquipmentList())
+        {
+            if (Random.Range(0, 100) <= chanceToLooseItems)
             {
                 DropItem(item.data);
                 itemsToUnequip.Add(item);
@@ -27,12 +26,14 @@ public class PlayerItemDrop : ItemDrop
 
         for (int i = 0; i < itemsToUnequip.Count; i++)
         {
-            inventory.UnequipItem(itemsToUnequip[i].data as ItemData_Equipment);
+            inventory.UnequipItem(itemsToUnequip[i].data as ItemData_Equipment); 
         }
-        
-        foreach(InventoryItem item in inventory.GetStashList())
+
+
+
+        foreach (InventoryItem item in inventory.GetStashList())
         {
-            if(Random.Range(0, 100) <= chanceToLooseMaterials)
+            if (Random.Range(0, 100) <= chanceToLooseMaterials)
             {
                 DropItem(item.data);
                 materialsToLoose.Add(item);

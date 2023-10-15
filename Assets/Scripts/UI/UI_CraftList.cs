@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UI_CraftList : MonoBehaviour, IPointerDownHandler
+public class UI_CraftList : MonoBehaviour , IPointerDownHandler
 {
     [SerializeField] private Transform craftSlotParent;
     [SerializeField] private GameObject craftSlotPrefab;
@@ -16,7 +17,6 @@ public class UI_CraftList : MonoBehaviour, IPointerDownHandler
         transform.parent.GetChild(0).GetComponent<UI_CraftList>().SetupCraftList();
         SetupDefaultCraftWindow();
     }
-
 
     public void SetupCraftList()
     {

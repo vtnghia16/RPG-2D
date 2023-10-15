@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyState 
 {
+
     protected EnemyStateMachine stateMachine;
     protected Enemy enemyBase;
     protected Rigidbody2D rb;
@@ -25,14 +26,16 @@ public class EnemyState
         stateTimer -= Time.deltaTime;
     }
 
+
     public virtual void Enter()
     {
         triggerCalled = false;
         rb = enemyBase.rb;
         enemyBase.anim.SetBool(animBoolName, true);
+        
     }
 
-    public virtual void Exit() 
+    public virtual void Exit()
     {
         enemyBase.anim.SetBool(animBoolName, false);
         enemyBase.AssignLastAnimName(animBoolName);

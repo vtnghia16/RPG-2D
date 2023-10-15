@@ -1,41 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI : MonoBehaviour
 {
-    [SerializeField] private GameObject characterUI;
+    [SerializeField] private GameObject charcaterUI;
     [SerializeField] private GameObject skillTreeUI;
     [SerializeField] private GameObject craftUI;
     [SerializeField] private GameObject optionsUI;
-    // [SerializeField] private GameObject inGameUI;
+    [SerializeField] private GameObject inGameUI;
+
+
 
     public UI_SkillToolTip skillToolTip;
     public UI_ItemTooltip itemToolTip;
     public UI_StatToolTip statToolTip;
     public UI_CraftWindow craftWindow;
 
+
+    private void Awake()
+    {
+        SwitchTo(skillTreeUI); // we need this to assign events on skill tree slots before we asssign events on skill scripts
+    }
+
     void Start()
     {
-        SwitchTo(null);
+        SwitchTo(inGameUI);
 
         itemToolTip.gameObject.SetActive(false);
-        statToolTip.gameObject.SetActive(false);
+        statToolTip.gameObject.SetActive(false);   
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.C))
-            SwitchWithKeyTo(characterUI);
+            SwitchWithKeyTo(charcaterUI);
 
         if (Input.GetKeyDown(KeyCode.B))
             SwitchWithKeyTo(craftUI);
+        
 
         if (Input.GetKeyDown(KeyCode.K))
             SwitchWithKeyTo(skillTreeUI);
 
-        if (Input.GetKeyDown(KeyCode.O))
+        if(Input.GetKeyDown(KeyCode.O))
             SwitchWithKeyTo(optionsUI);
     }
 
@@ -47,9 +56,7 @@ public class UI : MonoBehaviour
         }
 
         if (_menu != null)
-        {
             _menu.SetActive(true);
-        }
     }
 
     public void SwitchWithKeyTo(GameObject _menu)
@@ -57,9 +64,21 @@ public class UI : MonoBehaviour
         if (_menu != null && _menu.activeSelf)
         {
             _menu.SetActive(false);
+            CheckForInGameUI();
             return;
         }
 
         SwitchTo(_menu);
+    }
+
+    private void CheckForInGameUI()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).gameObject.activeSelf)
+                return;
+        }
+
+        SwitchTo(inGameUI);
     }
 }

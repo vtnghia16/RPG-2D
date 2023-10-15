@@ -11,6 +11,5 @@ public class ThunderStrike_Effect : ItemEffect
     {
         GameObject newThunderStrike = Instantiate(thunderStrikePrefab, _enemyPosition.position, Quaternion.identity);
         Destroy(newThunderStrike, 1);
-
     }
 }

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8bef67c1051ef644ad067ed8083ab71, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e68041d7a6664343b78658217edc566, type: 3}
   m_Name: Iron
   m_EditorClassIdentifier: 
   itemType: 0

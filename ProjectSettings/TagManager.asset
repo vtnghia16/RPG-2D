@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - StatValue
+  - StatName
   layers:
   - Default
   - TransparentFX
@@ -42,17 +44,17 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Background
-    uniqueID: 2485630703
+    uniqueID: 3618260669
     locked: 0
   - name: Ground
-    uniqueID: 834202763
+    uniqueID: 4101806473
     locked: 0
   - name: Item
-    uniqueID: 1527754499
+    uniqueID: 348656065
     locked: 0
   - name: Enemy
-    uniqueID: 3201413935
+    uniqueID: 2526798035
     locked: 0
   - name: Player
-    uniqueID: 1065673853
+    uniqueID: 4033654217
     locked: 0

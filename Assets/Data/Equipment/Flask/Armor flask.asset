@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3089b38ae9e294b848ee447a90de1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 590ef18be3394f74b880d82fac385463, type: 3}
   m_Name: Armor flask
   m_EditorClassIdentifier: 
   itemType: 1
@@ -19,8 +19,8 @@ MonoBehaviour:
   equipmentType: 3
   itemCooldown: 15
   itemEffects:
-  - {fileID: 11400000, guid: fb85d2e3ef97b4744a18da8a62b11962, type: 2}
-  - {fileID: 11400000, guid: 4f08fd4f927778c419bee2f5c0e8ebcb, type: 2}
+  - {fileID: 11400000, guid: 53bd1140079402f4ba729fd68e091304, type: 2}
+  - {fileID: 11400000, guid: 1106161ba039dfb408f7a4587beb43a1, type: 2}
   strength: 0
   agility: 0
   intelligence: 0

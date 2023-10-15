@@ -9,22 +9,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc3089b38ae9e294b848ee447a90de1a, type: 3}
-  m_Name: Thunder Claw
+  m_Script: {fileID: 11500000, guid: 590ef18be3394f74b880d82fac385463, type: 3}
+  m_Name: Thunder claw
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: Thunder Claw
+  itemName: Thunder claw
   itemIcon: {fileID: 367297872, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
   dropChance: 0
   equipmentType: 0
   itemCooldown: 0
   itemEffects:
-  - {fileID: 11400000, guid: 7a6659ff54f3ca44a8376acb9cd45ab9, type: 2}
+  - {fileID: 11400000, guid: 96d164f1d9cffae45ba8731e7346df8c, type: 2}
+  effectDesription: 'ffffffffffffffffffffffffffffffffff
+
+    ffffffffffff
+
+    fffffffffffffffffffffffff
+
+    fff'
   strength: 0
   agility: 0
   intelligence: 0
   vitality: 0
-  damage: 12
+  damage: 99
   critChance: 0
   critPower: 0
   health: 0
@@ -35,7 +42,7 @@ MonoBehaviour:
   iceDamage: 0
   lightingDamage: 5
   craftingMaterials:
-  - data: {fileID: 11400000, guid: 03098109f711a4f449607e48bf2ed2ca, type: 2}
+  - data: {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
     stackSize: 7
-  - data: {fileID: 11400000, guid: bdccafbad68d18f409aca88c28f23b55, type: 2}
+  - data: {fileID: 11400000, guid: 6835c34bd80fc9c468d2f549f4b6220a, type: 2}
     stackSize: 15

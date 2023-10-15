@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{311B11F2-FF04-58AF-2418-80E151AE404D}</ProjectGuid>
+    <ProjectGuid>{6245339C-D84A-1342-0B7D-69E155D01BB7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,86 +56,90 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Player\PlayerPrimaryAttackState.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerState.cs" />
-    <Compile Include="Assets\Scripts\PlayerManager.cs" />
-    <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Clone_Skill_Controller.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\ItemObject.cs" />
-    <Compile Include="Assets\Scripts\Stats\Stat.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonMoveState.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\Effects\FreezeEnemies_Effect.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\Effects\Buff_Effect.cs" />
-    <Compile Include="Assets\Scripts\Skills\Skill.cs" />
-    <Compile Include="Assets\Scripts\Controllers\ShockStrike_Controller.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_ItemTooltip.cs" />
-    <Compile Include="Assets\Scripts\Controllers\IceAndFire_Controller.cs" />
-    <Compile Include="Assets\Scripts\UI\UI.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_EquipmentSlot.cs" />
-    <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Blackhole_Skill_Controller.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerCounterAttackState.cs" />
-    <Compile Include="Assets\Scripts\Skills\Blackhole_Skill.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerStateMachine.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerBlackholeState.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\ItemObject_Trigger.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_StatSlot.cs" />
-    <Compile Include="Assets\Scripts\Entity.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\ItemData_Equipment.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\Effects\ThunderStrike_Effect.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\ItemData.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_CraftSlot.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\Effects\IceAndFire_Effect.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerMoveState.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\ItemDrop.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonIdleState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\EnemyState.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerDashState.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_CraftWindow.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_ItemSlot.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\InventoryItem.cs" />
-    <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Crystal_Skill_Controller.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\Inventory.cs" />
-    <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Sword_Skill_Controller.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerAimSwordState.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerDeadState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonBattleState.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerAirState.cs" />
-    <Compile Include="Assets\Scripts\Skills\Clone_Skill.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerIdleState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonGroundedState.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerAnimationTriggers.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerJumpState.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\Effects\ItemEffect.cs" />
-    <Compile Include="Assets\Scripts\Stats\PlayerStats.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonStunnedState.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_HealthBar.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonAttackState.cs" />
-    <Compile Include="Assets\Scripts\Skills\Dash_Skill.cs" />
-    <Compile Include="Assets\Scripts\Skills\Crystal_Skill.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerCatchSwordState.cs" />
-    <Compile Include="Assets\Scripts\Skills\SkillManager.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerWallJump.cs" />
-    <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Blackhole_HotKey_Controller.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_CraftList.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_SkeletonAnimationTriggers.cs" />
-    <Compile Include="Assets\Scripts\Skills\Sword_Skill.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerWallSlideState.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_StatToolTip.cs" />
-    <Compile Include="Assets\Scripts\EntityFX.cs" />
-    <Compile Include="Assets\Scripts\Stats\CharacterStats.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerGroundedState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonDeadState.cs" />
-    <Compile Include="Assets\Scripts\Controllers\ThunderStrike_Controller.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerWallJumpState.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\Effects\Heal_Efect.cs" />
     <Compile Include="Assets\Scripts\ParallaxBackground.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\PlayerItemDrop.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerIdleState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonStunnedState.cs" />
+    <Compile Include="Assets\Scripts\Entity.cs" />
+    <Compile Include="Assets\Scripts\Skills\Clone_Skill.cs" />
     <Compile Include="Assets\Scripts\Stats\EnemyStats.cs" />
+    <Compile Include="Assets\Scripts\Controllers\ShockStrike_Controller.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerDashState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerGroundedState.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Blackhole_Skill_Controller.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerWallJumpState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMoveState.cs" />
+    <Compile Include="Assets\Scripts\Skills\Parry_Skill.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonIdleState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerAimSwordState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerAnimationTriggers.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_Skeleton.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_SkillTreeSlot.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\Effects\ThunderStrike_Effect.cs" />
+    <Compile Include="Assets\Scripts\Skills\Crystal_Skill.cs" />
+    <Compile Include="Assets\Scripts\Skills\Dash_Skill.cs" />
+    <Compile Include="Assets\Scripts\Skills\Blackhole_Skill.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerPrimaryAttackState.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\Effects\Heal_Effect.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\ItemObject_Trigger.cs" />
+    <Compile Include="Assets\Scripts\Skills\Dodge_Skill.cs" />
     <Compile Include="Assets\Scripts\UI\UI_SkillToolTip.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\Effects\Buff_Effect.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\ItemObject.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_CraftList.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_StatSlot.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Clone_Skill_Controller.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_EquipmentSlot.cs" />
+    <Compile Include="Assets\Scripts\Skills\Skill.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerState.cs" />
+    <Compile Include="Assets\Scripts\Skills\Sword_Skill.cs" />
+    <Compile Include="Assets\Scripts\EntityFX.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\ItemData.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerAirState.cs" />
+    <Compile Include="Assets\Scripts\Stats\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Sword_Skill_Controller.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_CraftSlot.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_Options.cs" />
+    <Compile Include="Assets\Scripts\Stats\Stat.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerStateMachine.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_StatToolTip.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\Effects\ItemEffect.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_SkeletonAnimationTriggers.cs" />
+    <Compile Include="Assets\Scripts\UI\UI.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerWallSlideState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonBattleState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Blackhole_HotKey_Controller.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonDeadState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerCatchSwordState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonMoveState.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_ToolTip.cs" />
+    <Compile Include="Assets\Scripts\Skills\SkillManager.cs" />
+    <Compile Include="Assets\Scripts\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_CraftWindow.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\PlayerItemDrop.cs" />
+    <Compile Include="Assets\Scripts\Stats\CharacterStats.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\ItemData_Equipment.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Crystal_Skill_Controller.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_SkillTreeSlot.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\InventoryItem.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_Skeleton.cs" />
+    <Compile Include="Assets\Scripts\Controllers\IceAndFire_Controller.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerCounterAttackState.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\Effects\FreezeEnemies_Effect.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonGroundedState.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_HealthBar.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerBlackholeState.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\ItemDrop.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Items and Inventory\Effects\IceAndFire_Effect.cs" />
+    <Compile Include="Assets\Scripts\Controllers\ThunderStrike_Controller.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_ItemSlot.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonAttackState.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerDeadState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyState.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_ItemTooltip.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerJumpState.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_InGame.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -419,11 +423,11 @@
     <Reference Include="Unity.Burst.Cecil">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.6\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
@@ -794,8 +798,14 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:\Program Files\Unity\Hub\Editor\Unity 2021.3.16f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Recorder.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.Flow.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
       <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
@@ -806,89 +816,17 @@
     <Reference Include="Unity.2D.PixelPerfect">
       <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="PsdPlugin">
       <HintPath>Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Formats.Fbx.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Formats.Fbx.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.IK.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Path.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Autodesk.Fbx">
-      <HintPath>Library\ScriptAssemblies\Autodesk.Fbx.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.IK.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Sequences.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Sequences.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Sequences">
-      <HintPath>Library\ScriptAssemblies\Unity.Sequences.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Formats.Fbx.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.Formats.Fbx.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Formats.Alembic.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.Formats.Alembic.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Recorder">
-      <HintPath>Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Extras">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Recorder.Base">
-      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Autodesk.Fbx.Editor">
-      <HintPath>Library\ScriptAssemblies\Autodesk.Fbx.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -899,23 +837,44 @@
     <Reference Include="Unity.TextMeshPro">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualScripting.State.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.IK.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Path.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Psdimporter.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Extras.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
@@ -929,11 +888,20 @@
     <Reference Include="Unity.Mathematics">
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.IK.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Services.Core.Analytics">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
@@ -950,14 +918,17 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Formats.Alembic.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Formats.Alembic.Editor.dll</HintPath>
+    <Reference Include="Unity.2D.Common.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>

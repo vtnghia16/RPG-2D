@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UI_StatSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class UI_StatSlot : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler
 {
     private UI ui;
 
@@ -20,26 +20,25 @@ public class UI_StatSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         gameObject.name = "Stat - " + statName;
 
-        if(statNameText != null)
-        {
-            statNameText.text = statName;
-        }
-    }
 
+        if(statNameText != null)
+            statNameText.text = statName;
+    }
     void Start()
     {
-        UpdateStatValueUI();        
+        UpdateStatValueUI();
 
         ui = GetComponentInParent<UI>();
     }
 
     public void UpdateStatValueUI()
     {
-        PlayerStats playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();    
+        PlayerStats playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
 
         if(playerStats != null)
         {
             statValueText.text = playerStats.GetStat(statType).GetValue().ToString();
+
 
 
             if (statType == StatType.health)
@@ -51,7 +50,7 @@ public class UI_StatSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             if (statType == StatType.critPower)
                 statValueText.text = (playerStats.critPower.GetValue() + playerStats.strength.GetValue()).ToString();
 
-            if (statType == StatType.critChance)
+            if(statType == StatType.critChance)
                 statValueText.text = (playerStats.critChance.GetValue() + playerStats.agility.GetValue()).ToString();
 
             if (statType == StatType.evasion)
@@ -62,12 +61,12 @@ public class UI_StatSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         }
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void OnPointerEnter(PointerEventData eventData)
     {
         ui.statToolTip.ShowStatToolTip(statDescription);
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void OnPointerExit(PointerEventData eventData)
     {
         ui.statToolTip.HideStatToolTip();
     }

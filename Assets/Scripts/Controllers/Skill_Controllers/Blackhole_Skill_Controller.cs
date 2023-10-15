@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Blackhole_Skill_Controller : MonoBehaviour
 {
     [SerializeField] private GameObject hotKeyPrefab;
-    [SerializeField] private List<KeyCode> KeyCodeList;
+    [SerializeField] private List<KeyCode> keyCodeList;
 
     private float maxSize;
     private float growSpeed;
@@ -14,7 +14,7 @@ public class Blackhole_Skill_Controller : MonoBehaviour
 
     private bool canGrow = true;
     private bool canShrink;
-    private bool canCreateHotKeys = true;
+    private bool canCreateHotKeys= true;
     private bool cloneAttackReleased;
     private bool playerCanDisapear = true;
 
@@ -25,22 +25,21 @@ public class Blackhole_Skill_Controller : MonoBehaviour
     private List<Transform> targets = new List<Transform>();
     private List<GameObject> createdHotKey = new List<GameObject>();
 
-    public bool playerCanExitState { get; private set; }
+    public bool playerCanExitState {  get; private set; }
 
-    public void SetupBlackhole(float _maxSize, float _growSpeed, float _shirinkSpeed, int _amountOfAttacks, float _cloneAttackCooldown, float _blackholeDuration)
+    public void SetupBlackhole(float _maxSize, float _growSpeed, float _shrinkSpeed, int _amountOfAttacks, float _cloneAttackCooldown, float _blackholeDuration)
     {
         maxSize = _maxSize;
         growSpeed = _growSpeed;
-        shrinkSpeed = _shirinkSpeed;
+        shrinkSpeed = _shrinkSpeed;
         amountOfAttacks = _amountOfAttacks;
         cloneAttackCooldown = _cloneAttackCooldown;
 
         blackholeTimer = _blackholeDuration;
 
-        if (SkillManager.instance.clone.crystalInsteadOfClone)
-        {
+
+        if (SkillManager.instance.clone.crystalInseadOfClone)
             playerCanDisapear = false;
-        }
     }
 
     private void Update()
@@ -48,19 +47,16 @@ public class Blackhole_Skill_Controller : MonoBehaviour
         cloneAttackTimer -= Time.deltaTime;
         blackholeTimer -= Time.deltaTime;
 
-        if(blackholeTimer < 0)
+        if (blackholeTimer < 0)
         {
             blackholeTimer = Mathf.Infinity;
 
-            if(targets.Count > 0)
-            {
+            if (targets.Count > 0)
                 ReleaseCloneAttack();
-            }
             else
-            {
                 FinishBlackHoleAbility();
-            }
         }
+
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -71,7 +67,6 @@ public class Blackhole_Skill_Controller : MonoBehaviour
 
         if (canGrow && !canShrink)
         {
-            // Phóng to lỗ đen
             transform.localScale = Vector2.Lerp(transform.localScale, new Vector2(maxSize, maxSize), growSpeed * Time.deltaTime);
         }
 
@@ -80,30 +75,26 @@ public class Blackhole_Skill_Controller : MonoBehaviour
             transform.localScale = Vector2.Lerp(transform.localScale, new Vector2(-1, -1), shrinkSpeed * Time.deltaTime);
 
             if (transform.localScale.x < 0)
-            {
                 Destroy(gameObject);
-            }
         }
     }
 
     private void ReleaseCloneAttack()
     {
-        // Nhấn nút R liên tục không error
-        if(targets.Count <= 0)
-        {
+        if (targets.Count <= 0)
             return;
-        }
 
         DestroyHotKeys();
         cloneAttackReleased = true;
         canCreateHotKeys = false;
 
-        if(playerCanDisapear)
+        if (playerCanDisapear)
         {
             playerCanDisapear = false;
-            PlayerManager.instance.player.fx.MakeTransprent(true);
-        }
 
+            PlayerManager.instance.player.fx.MakeTransprent(true);
+
+        }
     }
 
     private void CloneAttackLogic()
@@ -117,19 +108,14 @@ public class Blackhole_Skill_Controller : MonoBehaviour
             float xOffset;
 
             if (Random.Range(0, 100) > 50)
-            {
                 xOffset = 2;
-            }
             else
-            {
                 xOffset = -2;
-            }
 
-            if (SkillManager.instance.clone.crystalInsteadOfClone)
+            if (SkillManager.instance.clone.crystalInseadOfClone)
             {
                 SkillManager.instance.crystal.CreateCrystal();
                 SkillManager.instance.crystal.CurrentCrystalChooseRandomTarget();
-
             }
             else
             {
@@ -151,15 +137,12 @@ public class Blackhole_Skill_Controller : MonoBehaviour
         playerCanExitState = true;
         canShrink = true;
         cloneAttackReleased = false;
-
     }
 
     private void DestroyHotKeys()
     {
         if (createdHotKey.Count <= 0)
-        {
             return;
-        }
 
         for (int i = 0; i < createdHotKey.Count; i++)
         {
@@ -169,42 +152,37 @@ public class Blackhole_Skill_Controller : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Enemy>() != null)
+        if(collision.GetComponent<Enemy>() != null)
         {
             collision.GetComponent<Enemy>().FreezeTime(true);
 
             CreateHotKey(collision);
-
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<Enemy>() != null)
-        {
             collision.GetComponent<Enemy>().FreezeTime(false);
-        }
     }
 
 
     private void CreateHotKey(Collider2D collision)
     {
-        if (KeyCodeList.Count <= 0)
+        if (keyCodeList.Count <= 0)
         {
             Debug.LogWarning("Not enough hot keys in a key code list!");
             return;
         }
 
         if (!canCreateHotKeys)
-        {
             return;
-        }
 
         GameObject newHotKey = Instantiate(hotKeyPrefab, collision.transform.position + new Vector3(0, 2), Quaternion.identity);
         createdHotKey.Add(newHotKey);
 
-        KeyCode choosenKey = KeyCodeList[Random.Range(0, KeyCodeList.Count)];
-        KeyCodeList.Remove(choosenKey);
+        KeyCode choosenKey = keyCodeList[Random.Range(0, keyCodeList.Count)];
+        keyCodeList.Remove(choosenKey);
 
         Blackhole_HotKey_Controller newHotKeyScript = newHotKey.GetComponent<Blackhole_HotKey_Controller>();
 
@@ -212,4 +190,5 @@ public class Blackhole_Skill_Controller : MonoBehaviour
     }
 
     public void AddEnemyToList(Transform _enemyTransform) => targets.Add(_enemyTransform);
+
 }

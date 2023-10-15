@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Enemy_Skeleton : Enemy
 {
-
     #region States
 
     public SkeletonIdleState idleState { get; private set; }
-
     public SkeletonMoveState moveState { get; private set; }
-
     public SkeletonBattleState battleState { get; private set; }
-
     public SkeletonAttackState attackState { get; private set; }
 
     public SkeletonStunnedState stunnedState { get; private set; }
@@ -22,7 +18,7 @@ public class Enemy_Skeleton : Enemy
     protected override void Awake()
     {
         base.Awake();
-
+        
         idleState = new SkeletonIdleState(this, stateMachine, "Idle", this);
         moveState = new SkeletonMoveState(this, stateMachine, "Move", this);
         battleState = new SkeletonBattleState(this, stateMachine, "Move", this);
@@ -41,7 +37,7 @@ public class Enemy_Skeleton : Enemy
     {
         base.Update();
 
-        if (Input.GetKeyDown(KeyCode.U))
+        if(Input.GetKeyDown(KeyCode.U))
         {
             stateMachine.ChangeState(stunnedState);
         }
@@ -63,5 +59,6 @@ public class Enemy_Skeleton : Enemy
     {
         base.Die();
         stateMachine.ChangeState(deadState);
+
     }
 }

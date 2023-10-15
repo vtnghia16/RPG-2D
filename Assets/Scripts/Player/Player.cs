@@ -1,10 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player : Entity
 {
-
     [Header("Attack details")]
     public Vector2[] attackMovement;
     public float counterAttackDuration = .2f;
@@ -17,49 +17,35 @@ public class Player : Entity
     private float defaultMoveSpeed;
     private float defaultJumpForce;
 
-    [Header("Dash info")]
+    [Header("Dash info")]   
     public float dashSpeed;
     public float dashDuration;
     private float defaultDashSpeed;
-
     public float dashDir { get; private set; }
 
+
     public SkillManager skill { get; private set; }
-    public GameObject sword { get; private set; }
+    public GameObject sword {  get ; private set; }
 
 
     #region States
     public PlayerStateMachine stateMachine { get; private set; }
 
     public PlayerIdleState idleState { get; private set; }
-
     public PlayerMoveState moveState { get; private set; }
-
     public PlayerJumpState jumpState { get; private set; }
-
-    public playerAirState airState { get; private set; }
-
-    public PlayerWallSlideState wallSlide { get; private set; }
-
+    public PlayerAirState airState { get; private set; }
+    public PlayerWallSlideState wallSlide { get; private set; }    
     public PlayerWallJumpState wallJump { get; private set; }
-
     public PlayerDashState dashState { get; private set; }
 
-
     public PlayerPrimaryAttackState primaryAttack { get; private set; }
-
     public PlayerCounterAttackState counterAttack { get; private set; }
 
-
-    public PlayerAimSwordState aimSword { get; private set; }
-
+    public PlayerAimSwordState aimSowrd { get; private set; }
     public PlayerCatchSwordState catchSword { get; private set; }
-
     public PlayerBlackholeState blackHole { get; private set; }
-
     public PlayerDeadState deadState { get; private set; }
-
-
     #endregion
 
     protected override void Awake()
@@ -70,7 +56,7 @@ public class Player : Entity
         idleState = new PlayerIdleState(this, stateMachine, "Idle");
         moveState = new PlayerMoveState(this, stateMachine, "Move");
         jumpState = new PlayerJumpState(this, stateMachine, "Jump");
-        airState  = new playerAirState(this, stateMachine, "Jump");
+        airState  = new PlayerAirState(this, stateMachine, "Jump");
         dashState = new PlayerDashState(this, stateMachine, "Dash");
         wallSlide = new PlayerWallSlideState(this, stateMachine, "WallSlide");
         wallJump = new PlayerWallJumpState(this, stateMachine, "Jump");
@@ -78,12 +64,11 @@ public class Player : Entity
         primaryAttack = new PlayerPrimaryAttackState(this, stateMachine, "Attack");
         counterAttack = new PlayerCounterAttackState(this, stateMachine, "CounterAttack");
 
-        aimSword = new PlayerAimSwordState(this, stateMachine, "AimSword");
+        aimSowrd = new PlayerAimSwordState(this, stateMachine, "AimSword");
         catchSword = new PlayerCatchSwordState(this, stateMachine, "CatchSword");
         blackHole = new PlayerBlackholeState(this, stateMachine, "Jump");
 
         deadState = new PlayerDeadState(this, stateMachine, "Die");
-
     }
 
     protected override void Start()
@@ -94,28 +79,26 @@ public class Player : Entity
 
         stateMachine.Initialize(idleState);
 
-
         defaultMoveSpeed = moveSpeed;
         defaultJumpForce = jumpForce;
         defaultDashSpeed = dashSpeed;
     }
 
+
     protected override void Update()
     {
         base.Update();
+
         stateMachine.currentState.Update();
 
         CheckForDashInput();
 
-        if(Input.GetKeyDown(KeyCode.F)) 
-        {
+
+        if (Input.GetKeyDown(KeyCode.F) && skill.crystal.crystalUnlocked)
             skill.crystal.CanUseSkill();
-        }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
             Inventory.instance.UseFlask();
-        }
     }
 
     public override void SlowEntityBy(float _slowPercentage, float _slowDuration)
@@ -126,6 +109,7 @@ public class Player : Entity
         anim.speed = anim.speed * (1 - _slowPercentage);
 
         Invoke("ReturnDefaultSpeed", _slowDuration);
+        
     }
 
     protected override void ReturnDefaultSpeed()
@@ -150,35 +134,32 @@ public class Player : Entity
 
     public IEnumerator BusyFor(float _seconds)
     {
-        isBusy = true;
+        isBusy = true;        
 
         yield return new WaitForSeconds(_seconds);
-
         isBusy = false;
-
     }
 
-    // Đặt trigger để nhân vật tấn công chuyển tiếp qua các attack
     public void AnimationTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
-    // Kiểm tra sự kiện button Dash
     private void CheckForDashInput()
     {
         if (IsWallDetected())
             return;
 
+        if (skill.dash.dashUnlocked == false)
+            return;
 
 
-        if(Input.GetKeyDown(KeyCode.LeftShift) && SkillManager.instance.dash.CanUseSkill()) 
+        if (Input.GetKeyDown(KeyCode.LeftShift) && SkillManager.instance.dash.CanUseSkill())
         {
 
             dashDir = Input.GetAxisRaw("Horizontal");
 
-            if(dashDir == 0)
-            {
+            if (dashDir == 0)
                 dashDir = facingDir;
-            }
 
+            
             stateMachine.ChangeState(dashState);
         }
     }
