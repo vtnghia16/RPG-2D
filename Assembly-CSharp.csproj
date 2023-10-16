@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6245339C-D84A-1342-0B7D-69E155D01BB7}</ProjectGuid>
+    <ProjectGuid>{311B11F2-FF04-58AF-2418-80E151AE404D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ParallaxBackground.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerIdleState.cs" />
+    <Compile Include="Assets\Scripts\Save and Load\GameData.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonStunnedState.cs" />
     <Compile Include="Assets\Scripts\Entity.cs" />
     <Compile Include="Assets\Scripts\Skills\Clone_Skill.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Blackhole_Skill_Controller.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerWallJumpState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMoveState.cs" />
+    <Compile Include="Assets\Scripts\Save and Load\SaveManager.cs" />
     <Compile Include="Assets\Scripts\Skills\Parry_Skill.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonIdleState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAimSwordState.cs" />
@@ -111,6 +113,7 @@
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonDeadState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCatchSwordState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonMoveState.cs" />
+    <Compile Include="Assets\Scripts\Save and Load\ISaveManager.cs" />
     <Compile Include="Assets\Scripts\UI\UI_ToolTip.cs" />
     <Compile Include="Assets\Scripts\Skills\SkillManager.cs" />
     <Compile Include="Assets\Scripts\PlayerManager.cs" />
@@ -140,6 +143,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerJumpState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_InGame.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
+    <Compile Include="Assets\Scripts\Save and Load\FileDataHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

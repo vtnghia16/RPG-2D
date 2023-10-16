@@ -1,9 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerState 
 {
+    // Lấy những thuộc tính từ 2 class
     protected PlayerStateMachine stateMachine;
     protected Player player;
 
@@ -16,6 +17,7 @@ public class PlayerState
     protected float stateTimer;
     protected bool triggerCalled;
 
+    // Hàm xây dựng 
     public PlayerState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName)
     {
         this.player = _player;
