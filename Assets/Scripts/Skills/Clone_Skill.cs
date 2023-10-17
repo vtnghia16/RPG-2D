@@ -47,7 +47,13 @@ public class Clone_Skill : Skill
     }
 
     #region Unlock region
-
+    protected override void CheckUnlock()
+    {
+        UnlockCloneAttack();
+        UnlockAggresiveClone();
+        UnlockMultiClone();
+        UnlockCrystalInstead();
+    }
 
     private void UnlockCloneAttack()
     {
@@ -87,13 +93,6 @@ public class Clone_Skill : Skill
 
     #endregion
 
-    protected override void CheckUnlock()
-    {
-        UnlockCloneAttack();
-        UnlockAggresiveClone();
-        UnlockMultiClone();
-        UnlockCrystalInstead();
-    }
 
     public void CreateClone(Transform _clonePosition,Vector3 _offset)
     {

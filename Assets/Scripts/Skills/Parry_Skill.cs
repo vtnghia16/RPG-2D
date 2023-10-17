@@ -49,7 +49,6 @@ public class Parry_Skill : Skill
         UnlockParryRestore();
         UnlockParryWithMirage();
     }
-
     private void UnlockParry()
     {
         if (parryUnlockButton.unlocked)

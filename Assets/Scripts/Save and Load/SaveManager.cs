@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -8,24 +8,32 @@ public class SaveManager : MonoBehaviour
     public static SaveManager instance;
 
     [SerializeField] private string fileName;
-
+    [SerializeField] private bool encryptData;
     private GameData gameData;
     private List<ISaveManager> saveManagers;
     private FileDataHandler dataHandler;
 
 
+    [ContextMenu("Delete save file")]
+    private void DeleteSavedData()
+    {
+        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName,encryptData);
+        dataHandler.Delete();
+
+    }
+
     private void Awake()
     {
-
         if (instance != null)
             Destroy(instance.gameObject);
         else
             instance = this;
     }
 
+
     private void Start()
     {
-        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
+        dataHandler = new FileDataHandler(Application.persistentDataPath, fileName,encryptData);
         saveManagers = FindAllSaveManagers();
 
         LoadGame();
@@ -40,30 +48,27 @@ public class SaveManager : MonoBehaviour
     {
         gameData = dataHandler.Load();
 
-        if(this.gameData == null)
+        if (this.gameData == null)
         {
-            Debug.Log("No saved data found");
+            Debug.Log("No saved data found!");
             NewGame();
         }
 
-        foreach (ISaveManager saveManager in saveManagers) 
+        foreach(ISaveManager saveManager in saveManagers)
         {
             saveManager.LoadData(gameData);
         }
-
-        // Debug.Log("Loaded currency" + gameData.currency);
     }
 
     public void SaveGame()
     {
-        // Xử lý dữ liệu lưu gameData
-        foreach (ISaveManager saveManager in saveManagers)
+
+        foreach(ISaveManager saveManager in saveManagers)
         {
             saveManager.SaveData(ref gameData);
         }
 
         dataHandler.Save(gameData);
-        // Debug.Log("Saved currency" + gameData.currency);
     }
 
     private void OnApplicationQuit()

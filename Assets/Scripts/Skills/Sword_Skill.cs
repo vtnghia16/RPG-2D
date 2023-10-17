@@ -136,7 +136,6 @@ public class Sword_Skill : Skill
         UnlockTimeStop();
         UnlockVulnurable();
     }
-
     private void UnlockTimeStop()
     {
         if (timeStopUnlockButton.unlocked)

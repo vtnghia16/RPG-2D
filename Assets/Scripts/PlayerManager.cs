@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour, ISaveManager
+public class PlayerManager : MonoBehaviour , ISaveManager
 {
     public static PlayerManager instance;
     public Player player;
 
     public int currency;
-
     private void Awake()
     {
         if (instance != null)
@@ -16,7 +15,6 @@ public class PlayerManager : MonoBehaviour, ISaveManager
         else
             instance = this;
     }
-
     public bool HaveEnoughMoney(int _price)
     {
         if (_price > currency)

@@ -1,8 +1,9 @@
+using Newtonsoft.Json.Converters;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour, ISaveManager
+public class Inventory : MonoBehaviour , ISaveManager
 {
     public static Inventory instance;
 
@@ -41,7 +42,6 @@ public class Inventory : MonoBehaviour, ISaveManager
     [Header("Data base")]
     public List<InventoryItem> loadedItems;
     public List<ItemData_Equipment> loadedEquipment;
-
     private void Awake()
     {
         if (instance == null)
@@ -61,6 +61,7 @@ public class Inventory : MonoBehaviour, ISaveManager
         equipment = new List<InventoryItem>();
         equipmentDictionary = new Dictionary<ItemData_Equipment, InventoryItem>();
 
+
         inventoryItemSlot = inventorySlotParent.GetComponentsInChildren<UI_ItemSlot>();
         stashItemSlot = stashSlotParent.GetComponentsInChildren<UI_ItemSlot>();
         equipmentSlot = equpmentSlotParent.GetComponentsInChildren<UI_EquipmentSlot>();
@@ -75,12 +76,12 @@ public class Inventory : MonoBehaviour, ISaveManager
         {
             EquipItem(item);
         }
-
-        if(loadedItems.Count > 0)
+        
+        if (loadedItems.Count > 0)
         {
-            foreach(InventoryItem item in loadedItems)
+            foreach (InventoryItem item in loadedItems)
             {
-                for(int i = 0; i<item.stackSize; i++)
+                for (int i = 0; i < item.stackSize; i++)
                 {
                     AddItem(item.data);
                 }
@@ -88,6 +89,7 @@ public class Inventory : MonoBehaviour, ISaveManager
 
             return;
         }
+
 
         for (int i = 0; i < startingItems.Count; i++)
         {
@@ -266,7 +268,7 @@ public class Inventory : MonoBehaviour, ISaveManager
             {
                 if (stashValue.stackSize < _requiredMaterials[i].stackSize)
                 {
-                    Debug.Log("not enough materials");
+                    Debug.Log("Not enough materials");
                     return false;
                 }
                 else
@@ -277,7 +279,7 @@ public class Inventory : MonoBehaviour, ISaveManager
             }
             else
             {
-                Debug.Log("not enough materials");
+                Debug.Log("Materials not found");
                 return false;
             }
         }
@@ -361,11 +363,11 @@ public class Inventory : MonoBehaviour, ISaveManager
             }
         }
 
-        foreach (var loadedItemId in _data.equipmentId)
+        foreach (string loadedItemId in _data.equipmentId)
         {
             foreach (var item in GetItemDataBase())
             {
-                if(item != null && loadedItemId == item.itemId)
+                if (item != null && loadedItemId == item.itemId)
                 {
                     loadedEquipment.Add(item as ItemData_Equipment);
                 }
@@ -376,7 +378,6 @@ public class Inventory : MonoBehaviour, ISaveManager
     public void SaveData(ref GameData _data)
     {
         _data.inventory.Clear();
-        _data.equipmentId.Clear();
 
         foreach (KeyValuePair<ItemData, InventoryItem> pair in inventoryDictianory)
         {
@@ -397,9 +398,9 @@ public class Inventory : MonoBehaviour, ISaveManager
     private List<ItemData> GetItemDataBase()
     {
         List<ItemData> itemDataBase = new List<ItemData>();
-        string[] assetNames = AssetDatabase.FindAssets("", new[] { "Assets/Data/Items" });
+        string[] assetNames = AssetDatabase.FindAssets("", new[] { "Assets/Data/Items" }); 
 
-        foreach (string SOName in assetNames) 
+        foreach (string SOName in assetNames)
         {
             var SOpath = AssetDatabase.GUIDToAssetPath(SOName);
             var itemData = AssetDatabase.LoadAssetAtPath<ItemData>(SOpath);
