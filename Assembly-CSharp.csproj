@@ -100,6 +100,7 @@
     <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Sword_Skill_Controller.cs" />
     <Compile Include="Assets\Scripts\UI\UI_CraftSlot.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Options.cs" />
+    <Compile Include="Assets\Scripts\Save and Load\FileDataHandler.cs" />
     <Compile Include="Assets\Scripts\Stats\Stat.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStateMachine.cs" />
     <Compile Include="Assets\Scripts\UI\UI_StatToolTip.cs" />
@@ -143,7 +144,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerJumpState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_InGame.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
-    <Compile Include="Assets\Scripts\Save and Load\FileDataHandler.cs" />
+    <Compile Include="Assets\Scripts\Save and Load\Serializable Dictionary.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
