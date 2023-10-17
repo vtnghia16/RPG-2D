@@ -87,6 +87,13 @@ public class Clone_Skill : Skill
 
     #endregion
 
+    protected override void CheckUnlock()
+    {
+        UnlockCloneAttack();
+        UnlockAggresiveClone();
+        UnlockMultiClone();
+        UnlockCrystalInstead();
+    }
 
     public void CreateClone(Transform _clonePosition,Vector3 _offset)
     {
