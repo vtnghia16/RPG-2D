@@ -29656,8 +29656,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingItems:
   - {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
-  - {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
-  - {fileID: 11400000, guid: 6835c34bd80fc9c468d2f549f4b6220a, type: 2}
   - {fileID: 11400000, guid: d8f58e18c1da00143accd968a6c18188, type: 2}
   - {fileID: 11400000, guid: 7ff875b0438473344864b67d284e3630, type: 2}
   - {fileID: 11400000, guid: 5ece859a2341cf24880a2aed82b76148, type: 2}
@@ -29670,6 +29668,28 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9209f5c03870ad140b30358835f156bb, type: 2}
   - {fileID: 11400000, guid: 7d1998873a09b094e99b326bbbc9cccc, type: 2}
   - {fileID: 11400000, guid: 80c04e02cab30284c834fcee3d24d83c, type: 2}
+  - {fileID: 11400000, guid: 6835c34bd80fc9c468d2f549f4b6220a, type: 2}
+  - {fileID: 11400000, guid: 6835c34bd80fc9c468d2f549f4b6220a, type: 2}
+  - {fileID: 11400000, guid: 6835c34bd80fc9c468d2f549f4b6220a, type: 2}
+  - {fileID: 11400000, guid: 6835c34bd80fc9c468d2f549f4b6220a, type: 2}
+  - {fileID: 11400000, guid: 6835c34bd80fc9c468d2f549f4b6220a, type: 2}
+  - {fileID: 11400000, guid: 6835c34bd80fc9c468d2f549f4b6220a, type: 2}
+  - {fileID: 11400000, guid: 6835c34bd80fc9c468d2f549f4b6220a, type: 2}
+  - {fileID: 11400000, guid: 6835c34bd80fc9c468d2f549f4b6220a, type: 2}
+  - {fileID: 11400000, guid: 6835c34bd80fc9c468d2f549f4b6220a, type: 2}
+  - {fileID: 11400000, guid: 6835c34bd80fc9c468d2f549f4b6220a, type: 2}
+  - {fileID: 11400000, guid: 6835c34bd80fc9c468d2f549f4b6220a, type: 2}
+  - {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
+  - {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
+  - {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
+  - {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
+  - {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
+  - {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
+  - {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
+  - {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
+  - {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
+  - {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
+  - {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
   equipment: []
   inventory: []
   stash: []
@@ -29678,6 +29698,7 @@ MonoBehaviour:
   equpmentSlotParent: {fileID: 586833452}
   statSlotParent: {fileID: 779268895}
   loadedItems: []
+  loadedEquipment: []
 --- !u!4 &1447729553
 Transform:
   m_ObjectHideFlags: 0
@@ -34603,6 +34624,10 @@ PrefabInstance:
     - target: {fileID: 8730514117533583190, guid: 7aaa3324c1c4b054ebebaafe3343bf25, type: 3}
       propertyPath: m_Name
       value: Item object - No data
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730514117533583190, guid: 7aaa3324c1c4b054ebebaafe3343bf25, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8730514117533583193, guid: 7aaa3324c1c4b054ebebaafe3343bf25, type: 3}
       propertyPath: itemData
