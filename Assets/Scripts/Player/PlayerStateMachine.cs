@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +12,7 @@ public class PlayerStateMachine
         currentState.Enter();
     }
 
+    // Thay đổi trạng thái người chơi thành trạng thái mới
     public void ChangeState(PlayerState _newState)
     {
         currentState.Exit();

@@ -1,7 +1,8 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Class cơ sở trạng thái người chơi
 public class PlayerState 
 {
     protected PlayerStateMachine stateMachine;
@@ -16,6 +17,7 @@ public class PlayerState
     protected float stateTimer;
     protected bool triggerCalled;
 
+    // Hàm xây dựng
     public PlayerState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName)
     {
         this.player = _player;
@@ -25,7 +27,7 @@ public class PlayerState
 
     public virtual void Enter()
     {
-        player.anim.SetBool(animBoolName, true);
+        player.anim.SetBool(animBoolName, true); // Set tham số animation cho nhân vật
         rb = player.rb;
         triggerCalled = false;
     }

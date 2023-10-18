@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -50,6 +50,7 @@ public class Player : Entity
 
     protected override void Awake()
     {
+        // Truyền các trạng thái của nhân vật thông qua PlayerStateMachine
         base.Awake();
         stateMachine = new PlayerStateMachine();
 
@@ -77,6 +78,7 @@ public class Player : Entity
 
         skill = SkillManager.instance;
 
+        // Nhân vật đứung yên khi bắt đầu game
         stateMachine.Initialize(idleState);
 
         defaultMoveSpeed = moveSpeed;
