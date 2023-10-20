@@ -9,11 +9,11 @@ C:\Program Files\Unity\Hub\Editor\Unity 2021.3.16f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker0
+AssetImportWorker3
 -projectPath
 D:/GameDev/RPG-2D
 -logFile
-Logs/AssetImportWorker0.log
+Logs/AssetImportWorker3.log
 -srvPort
 65257
 Successfully changed project path to: D:/GameDev/RPG-2D
@@ -47,11 +47,11 @@ D:/GameDev/RPG-2D
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [7804] Host "[IP] 192.168.1.12 [Port] 0 [Flags] 2 [Guid] 2970397873 [EditorId] 2970397873 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-795K8U1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [18848] Host "[IP] 192.168.1.12 [Port] 0 [Flags] 2 [Guid] 2429838520 [EditorId] 2429838520 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-795K8U1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [7804] Host "[IP] 192.168.1.12 [Port] 0 [Flags] 2 [Guid] 2970397873 [EditorId] 2970397873 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-795K8U1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [18848] Host "[IP] 192.168.1.12 [Port] 0 [Flags] 2 [Guid] 2429838520 [EditorId] 2429838520 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-795K8U1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 119.68 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 100.46 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.16f1 (4016570cf34f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/Unity 2021.3.16f1/Editor/Data/Resources/UnitySubsystems
@@ -67,89 +67,89 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/Unity 2021.3.16f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/Unity 2021.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/Unity 2021.3.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56848
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56736
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/Unity 2021.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007829 seconds.
+Registered in 0.006269 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 128.25 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 132.91 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.007 seconds
+- Completed reload, in  0.721 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1008ms)
-		BeginReloadAssembly (154ms)
+	ReloadAssembly (722ms)
+		BeginReloadAssembly (72ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (3ms)
-		EndReloadAssembly (687ms)
-			LoadAssemblies (148ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (545ms)
+			LoadAssemblies (70ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (152ms)
+			SetupTypeCache (98ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (52ms)
-			SetupLoadedEditorAssemblies (410ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (363ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (18ms)
+				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (128ms)
+				RefreshPlugins (133ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (195ms)
-				ProcessInitializeOnLoadMethodAttributes (68ms)
+				ProcessInitializeOnLoadAttributes (162ms)
+				ProcessInitializeOnLoadMethodAttributes (58ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.007212 seconds.
+Registered in 0.006279 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 152.79 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 150.85 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.889 seconds
+- Completed reload, in  1.512 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1891ms)
-		BeginReloadAssembly (196ms)
+	ReloadAssembly (1513ms)
+		BeginReloadAssembly (104ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (9ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
-			ReleaseScriptingObjects (1ms)
-			CreateAndSetChildDomain (35ms)
-		EndReloadAssembly (1526ms)
-			LoadAssemblies (138ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (1301ms)
+			LoadAssemblies (80ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (487ms)
+			SetupTypeCache (239ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (107ms)
-			SetupLoadedEditorAssemblies (726ms)
+			RebuildScriptCaches (103ms)
+			SetupLoadedEditorAssemblies (763ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (9ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (153ms)
-				BeforeProcessingInitializeOnLoad (130ms)
-				ProcessInitializeOnLoadAttributes (378ms)
-				ProcessInitializeOnLoadMethodAttributes (50ms)
-				AfterProcessingInitializeOnLoad (9ms)
+				RefreshPlugins (151ms)
+				BeforeProcessingInitializeOnLoad (150ms)
+				ProcessInitializeOnLoadAttributes (373ms)
+				ProcessInitializeOnLoadMethodAttributes (72ms)
+				AfterProcessingInitializeOnLoad (8ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 1.49 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 2.27 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4309 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 56 unused Assets / (270.3 KB). Loaded Objects now: 4764.
-Memory consumption went from 162.3 MB to 162.1 MB.
-Total: 6.645800 ms (FindLiveObjects: 0.673600 ms CreateObjectMapping: 0.629200 ms MarkObjects: 5.001100 ms  DeleteObjects: 0.340900 ms)
+Unloading 4310 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 56 unused Assets / (270.3 KB). Loaded Objects now: 4765.
+Memory consumption went from 162.4 MB to 162.1 MB.
+Total: 8.284500 ms (FindLiveObjects: 2.002000 ms CreateObjectMapping: 0.983300 ms MarkObjects: 5.072300 ms  DeleteObjects: 0.223700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -163,16 +163,40 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 345168.014703 seconds.
-  path: Assets/Graphics/Surroundings/Medieval_Castle/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_4.png
-  artifactKey: Guid(24ff249242d2c4a47a126dcf3f1d3ae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Graphics/Surroundings/Medieval_Castle/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_4.png using Guid(24ff249242d2c4a47a126dcf3f1d3ae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5486534292d8365729e72b48b34967ea') in 0.243897 seconds 
+  Time since last request: 345753.151522 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_3.png
+  artifactKey: Guid(a9f2c39e92ad4974caf2302ee4101a33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_3.png using Guid(a9f2c39e92ad4974caf2302ee4101a33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27e1845c355d0f85c1b1fdcb2cb2e094') in 0.155669 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000026 seconds.
+  Time since last request: 20.555119 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_3.png
+  artifactKey: Guid(a9f2c39e92ad4974caf2302ee4101a33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_3.png using Guid(a9f2c39e92ad4974caf2302ee4101a33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d7823936d7d3180895412a56de90526') in 0.017738 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_6.png
+  artifactKey: Guid(3974f5f2313e81646945f8bdf76f688d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_6.png using Guid(3974f5f2313e81646945f8bdf76f688d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e323b23a31454cf9cd2aeb168c58e29') in 0.012666 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 355.816726 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_2.png
+  artifactKey: Guid(538aed2d25afdc84c8b4b4a1af936d09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_2.png using Guid(538aed2d25afdc84c8b4b4a1af936d09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f141a8e5e61457cdc1947d3785ee3ec') in 0.028343 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_6.png
+  artifactKey: Guid(3974f5f2313e81646945f8bdf76f688d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_6.png using Guid(3974f5f2313e81646945f8bdf76f688d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f502686af2abfa24239faca62e1385ba') in 0.028028 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
   path: Assets/Graphics/Surroundings/Medieval_Castle/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_nofire.png
   artifactKey: Guid(b734e413e9459164fbe133e972afe8bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Graphics/Surroundings/Medieval_Castle/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_nofire.png using Guid(b734e413e9459164fbe133e972afe8bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a50884d47c6689f501c9064267af286f') in 0.034379 seconds 
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Decorations/Animated Decorations/candelabrum_tall/candelabrum_tall_nofire.png using Guid(b734e413e9459164fbe133e972afe8bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6735cfc33924486c4511154f71b43d75') in 0.039669 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting
