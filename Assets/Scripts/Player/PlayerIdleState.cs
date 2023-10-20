@@ -26,6 +26,7 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.Update();
 
+        // Khi nhân vật IsWallDetected thì sẽ idle
         if (xInput == player.facingDir && player.IsWallDetected())
             return;
 

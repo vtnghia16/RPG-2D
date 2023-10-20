@@ -23,6 +23,7 @@ public class PlayerMoveState : PlayerGroundedState
     {
         base.Update();
 
+        // Set tốc độ di chuyển cho nhân vật (tăng tốc qua moveSpeed)
         player.SetVelocity(xInput * player.moveSpeed, rb.velocity.y);
 
 
