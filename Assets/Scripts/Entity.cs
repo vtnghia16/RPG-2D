@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Accessibility;
@@ -20,7 +20,6 @@ public class Entity : MonoBehaviour
     [SerializeField] protected float knockbackDuration;
     protected bool isKnocked;
 
-    // Xử lý va chạm
     [Header("Collision info")]
     public Transform attackCheck;
     public float attackCheckRadius;
@@ -28,9 +27,8 @@ public class Entity : MonoBehaviour
     [SerializeField] protected float groundCheckDistance;
     [SerializeField] protected Transform wallCheck;
     [SerializeField] protected float wallCheckDistance;
-    [SerializeField] protected LayerMask whatIsGround; 
+    [SerializeField] protected LayerMask whatIsGround;
 
-    // Check hướng của nhân vật
     public int facingDir { get; private set; } = 1;
     protected bool facingRight = true;
 
@@ -43,7 +41,6 @@ public class Entity : MonoBehaviour
 
     protected virtual void Start()
     {
-        // Lấy các object có trong unity
         sr = GetComponentInChildren<SpriteRenderer>();
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -88,7 +85,6 @@ public class Entity : MonoBehaviour
         rb.velocity = new Vector2(0, 0);
     }
 
-    // Hàm set tốc độ theo chiều x, y
     public void SetVelocity(float _xVelocity, float _yVelocity)
     {
         if (isKnocked)
@@ -97,24 +93,18 @@ public class Entity : MonoBehaviour
         rb.velocity = new Vector2(_xVelocity, _yVelocity);
         FlipController(_xVelocity);
     }
-
     #endregion
     #region Collision
-    // Xử lý va chạm các bề mặt nhân vật tiếp xúc
     public virtual bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
     public virtual bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
 
     protected virtual void OnDrawGizmos()
     {
-        // vẽ khoảng cách từ nhân vật xuống mặt đất
         Gizmos.DrawLine(groundCheck.position, new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));
-        // vẽ khoảng cách từ nhân vật đến tường
         Gizmos.DrawLine(wallCheck.position, new Vector3(wallCheck.position.x + wallCheckDistance, wallCheck.position.y));
         Gizmos.DrawWireSphere(attackCheck.position, attackCheckRadius);
     }
     #endregion
-
-    // Hướng quay
     #region Flip
     public virtual void Flip()
     {

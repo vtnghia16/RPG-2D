@@ -6,12 +6,11 @@ public class UI_FadeScreen : MonoBehaviour
 {
     private Animator anim;
 
-    private void Start()
+    void Start()
     {
-        anim = GetComponent<Animator>(); 
+        anim = GetComponent<Animator>();
     }
 
     public void FadeOut() => anim.SetTrigger("fadeOut");
-
     public void FadeIn() => anim.SetTrigger("fadeIn");
 }

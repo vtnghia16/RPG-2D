@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +7,6 @@ public class Checkpoint : MonoBehaviour
     private Animator anim;
     public string id;
     public bool activationStatus;
-
 
     private void Start()
     {
@@ -20,16 +19,15 @@ public class Checkpoint : MonoBehaviour
         id = System.Guid.NewGuid().ToString();
     }
 
-    // va chạm giữa nhân vật và checkpoint
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Player>() != null)
         {
-            ActivateCheckpoints();
+            ActivateCheckpoint();
         }
     }
 
-    public void ActivateCheckpoints()
+    public void ActivateCheckpoint()
     {
         activationStatus = true;
         anim.SetBool("active", true);

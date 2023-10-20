@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Skill : MonoBehaviour
 {
-    public float cooldown; // Thời gian hồi chiêu
-    protected float cooldownTimer; // Thời gian theo delta 
+    public float cooldown;
+    protected float cooldownTimer;
 
     protected Player player;
     

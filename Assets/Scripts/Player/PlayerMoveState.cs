@@ -1,10 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMoveState : PlayerGroundedState
 {
-    // Kế thừa và ghi đè lên playerState
     public PlayerMoveState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
     }
@@ -23,7 +22,6 @@ public class PlayerMoveState : PlayerGroundedState
     {
         base.Update();
 
-        // Set tốc độ di chuyển cho nhân vật (tăng tốc qua moveSpeed)
         player.SetVelocity(xInput * player.moveSpeed, rb.velocity.y);
 
 

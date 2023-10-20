@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\UI\UI_FadeScreen.cs" />
     <Compile Include="Assets\Scripts\ParallaxBackground.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerIdleState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonStunnedState.cs" />
@@ -66,14 +67,14 @@
     <Compile Include="Assets\Scripts\Player\PlayerDashState.cs" />
     <Compile Include="Assets\Scripts\Save and Load\FileDataHandler.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerGroundedState.cs" />
-    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Blackhole_Skill_Controller.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerWallJumpState.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_FadeScreen.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMoveState.cs" />
+    <Compile Include="Assets\Scripts\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\Skills\Parry_Skill.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonIdleState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAimSwordState.cs" />
+    <Compile Include="Assets\Scripts\LostCurrencyController.cs" />
     <Compile Include="Assets\Scripts\Save and Load\SaveManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimationTriggers.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
@@ -97,7 +98,6 @@
     <Compile Include="Assets\Scripts\Player\PlayerState.cs" />
     <Compile Include="Assets\Scripts\Skills\Sword_Skill.cs" />
     <Compile Include="Assets\Scripts\EntityFX.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_MainMenu.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\ItemData.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAirState.cs" />
     <Compile Include="Assets\Scripts\Stats\PlayerStats.cs" />
@@ -107,6 +107,7 @@
     <Compile Include="Assets\Scripts\Stats\Stat.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStateMachine.cs" />
     <Compile Include="Assets\Scripts\UI\UI_StatToolTip.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_MainMenu.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\ItemEffect.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_SkeletonAnimationTriggers.cs" />
     <Compile Include="Assets\Scripts\UI\UI.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\IceAndFire_Effect.cs" />
     <Compile Include="Assets\Scripts\Controllers\ThunderStrike_Controller.cs" />
     <Compile Include="Assets\Scripts\UI\UI_ItemSlot.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonAttackState.cs" />
     <Compile Include="Assets\Scripts\Save and Load\GameData.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDeadState.cs" />
@@ -148,7 +150,6 @@
     <Compile Include="Assets\Scripts\Player\PlayerJumpState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_InGame.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
-    <Compile Include="Assets\Scripts\Checkpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

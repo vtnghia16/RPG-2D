@@ -374,12 +374,12 @@ public class Inventory : MonoBehaviour , ISaveManager
             }
         }
 
-        Debug.Log("Inventory loaded");
     }
 
     public void SaveData(ref GameData _data)
     {
         _data.inventory.Clear();
+        _data.equipmentId.Clear();
 
         foreach (KeyValuePair<ItemData, InventoryItem> pair in inventoryDictianory)
         {

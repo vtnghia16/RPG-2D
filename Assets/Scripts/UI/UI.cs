@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -63,13 +62,11 @@ public class UI : MonoBehaviour
 
         for (int i = 0; i < transform.childCount; i++)
         {
-            bool fadeScreen = transform.GetChild(i).GetComponent<UI_FadeScreen>() != null;
+            bool fadeScreen = transform.GetChild(i).GetComponent<UI_FadeScreen>() != null; // we need this to keep fade screen game object active
 
-            if (fadeScreen == false)
-            {
+
+            if(fadeScreen == false)
                 transform.GetChild(i).gameObject.SetActive(false);
-            }
-
         }
 
         if (_menu != null)
@@ -92,7 +89,7 @@ public class UI : MonoBehaviour
     {
         for (int i = 0; i < transform.childCount; i++)
         {
-            if (transform.GetChild(i).gameObject.activeSelf)
+            if (transform.GetChild(i).gameObject.activeSelf && transform.GetChild(i).GetComponent<UI_FadeScreen>() == null)
                 return;
         }
 
@@ -101,20 +98,18 @@ public class UI : MonoBehaviour
 
     public void SwitchOnEndScreen()
     {
-        fadeScreen.gameObject.SetActive(true);
         fadeScreen.FadeOut();
-        StartCoroutine(EndScreenCoroutine());
+        StartCoroutine(EndScreenCorutione());
     }
 
-    IEnumerator EndScreenCoroutine()
+    IEnumerator EndScreenCorutione()
     {
         yield return new WaitForSeconds(1);
         endText.SetActive(true);
-
         yield return new WaitForSeconds(1.5f);
         restartButton.SetActive(true);
+
     }
 
     public void RestartGameButton() => GameManager.instance.RestartScene();
-
 }

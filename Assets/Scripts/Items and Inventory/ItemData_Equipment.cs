@@ -45,6 +45,7 @@ public class ItemData_Equipment : ItemData
 
 
     [Header("Craft requirements")]
+    
     public List<InventoryItem> craftingMaterials;
 
     private int descriptionLength;
@@ -171,8 +172,6 @@ public class ItemData_Equipment : ItemData
                 sb.Append("+ " + _value + " " + _name);
 
             descriptionLength++;
-        }   
-
-       
+        }       
     }
 }
