@@ -24,7 +24,11 @@ public class PlayerGroundedState : PlayerState
 
         if (Input.GetKeyDown(KeyCode.R) && player.skill.blackhole.blackholeUnlocked)
         {
-            Debug.Log("IM CASTING BLAKSFA");
+            if(player.skill.blackhole.cooldownTimer > 0) 
+            {
+                return;
+            }
+
             stateMachine.ChangeState(player.blackHole);
         }
 
