@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
@@ -19,7 +19,7 @@ public class PlayerPrimaryAttackState : PlayerState
     {
         base.Enter();
 
-        // AudioManager.instance.PlaySFX(2); // Hiệu ứng âm thanh tấn công
+        //AudioManager.instance.PlaySFX(2); // attack sound effect
 
         xInput = 0;  // we need this to fix bug on attack direction
 

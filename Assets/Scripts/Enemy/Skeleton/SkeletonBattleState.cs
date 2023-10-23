@@ -45,9 +45,6 @@ public class SkeletonBattleState : EnemyState
 
 
 
-
-
-
         if (player.position.x > enemy.transform.position.x)
             moveDir = 1;
         else if (player.position.x < enemy.transform.position.x)

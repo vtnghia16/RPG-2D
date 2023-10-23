@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EntityFX : MonoBehaviour
@@ -17,6 +16,10 @@ public class EntityFX : MonoBehaviour
     [SerializeField] private Color[] igniteColor;
     [SerializeField] private Color[] chillColor;
     [SerializeField] private Color[] shockColor;
+    [Header("Ailment particles")]
+    [SerializeField] private ParticleSystem fireFx;
+    [SerializeField] private ParticleSystem iceFx;
+    [SerializeField] private ParticleSystem shockFx;
     private void Start()
     {
         sr = GetComponentInChildren<SpriteRenderer>();

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -11,17 +11,17 @@ public class Player : Entity
 
     public bool isBusy { get; private set; }
     [Header("Move info")]
-    public float moveSpeed = 12f;
-    public float jumpForce;
+    public float moveSpeed = 12f; // tốc độ di chuyển
+    public float jumpForce; // Lực nhảy
     public float swordReturnImpact;
     private float defaultMoveSpeed;
     private float defaultJumpForce;
 
     [Header("Dash info")]   
-    public float dashSpeed;
-    public float dashDuration;
+    public float dashSpeed; // tốc độ lướt
+    public float dashDuration; // khoảng thời gian lướt
     private float defaultDashSpeed;
-    public float dashDir { get; private set; }
+    public float dashDir { get; private set; } // hướng lướt
 
 
     public SkillManager skill { get; private set; }
@@ -50,6 +50,7 @@ public class Player : Entity
 
     protected override void Awake()
     {
+        // Truyền các trạng thái của nhân vật thông qua PlayerStateMachine
         base.Awake();
         stateMachine = new PlayerStateMachine();
 
@@ -77,6 +78,7 @@ public class Player : Entity
 
         skill = SkillManager.instance;
 
+        // Nhân vật đứung yên khi bắt đầu game
         stateMachine.Initialize(idleState);
 
         defaultMoveSpeed = moveSpeed;
@@ -142,6 +144,7 @@ public class Player : Entity
 
     public void AnimationTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
+    // Kiểm tra các tham số khi lướt 
     private void CheckForDashInput()
     {
         if (IsWallDetected())
@@ -150,12 +153,13 @@ public class Player : Entity
         if (skill.dash.dashUnlocked == false)
             return;
 
-
+        // Sự kiện lướt của nhân vật
         if (Input.GetKeyDown(KeyCode.LeftShift) && SkillManager.instance.dash.CanUseSkill())
         {
 
             dashDir = Input.GetAxisRaw("Horizontal");
 
+            // hướng lướt phải cùng facingDir
             if (dashDir == 0)
                 dashDir = facingDir;
 

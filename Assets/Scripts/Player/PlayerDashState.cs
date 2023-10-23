@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,6 +14,7 @@ public class PlayerDashState : PlayerState
 
         player.skill.dash.CloneOnDash();
 
+        // delta < 0 thì lướt trong khoảng thời gian set
         stateTimer = player.dashDuration;
         
         
@@ -36,6 +37,7 @@ public class PlayerDashState : PlayerState
 
         player.SetVelocity(player.dashSpeed * player.dashDir, 0);
 
+        // Nếu deltaTime < 0 thì nhân vật sẽ idle
         if (stateTimer < 0)
             stateMachine.ChangeState(player.idleState);
         

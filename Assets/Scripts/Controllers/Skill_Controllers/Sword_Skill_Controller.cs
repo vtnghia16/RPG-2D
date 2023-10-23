@@ -62,7 +62,6 @@ public class Sword_Skill_Controller : MonoBehaviour
         if (pierceAmount <= 0)
             anim.SetBool("Rotation", true);
 
-
         Invoke("DestroyMe", 7);
     }
 

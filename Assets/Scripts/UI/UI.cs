@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class UI : MonoBehaviour, ISaveManager
+public class UI : MonoBehaviour ,ISaveManager
 {
     [Header("End screen")]
     [SerializeField] private UI_FadeScreen fadeScreen;
@@ -27,9 +28,9 @@ public class UI : MonoBehaviour, ISaveManager
 
     [SerializeField] private UI_VolumeSlider[] volumeSettings;
 
-
     private void Awake()
     {
+
         SwitchTo(skillTreeUI); // we need this to assign events on skill tree slots before we asssign events on skill scripts
         fadeScreen.gameObject.SetActive(true);
     }
@@ -73,7 +74,10 @@ public class UI : MonoBehaviour, ISaveManager
         }
 
         if (_menu != null)
+        {
+            AudioManager.instance.PlaySFX(5, null);
             _menu.SetActive(true);
+        }
     }
 
     public void SwitchWithKeyTo(GameObject _menu)
@@ -122,10 +126,8 @@ public class UI : MonoBehaviour, ISaveManager
         {
             foreach (UI_VolumeSlider item in volumeSettings)
             {
-                if(item.parametr == pair.Key)
-                {
+                if (item.parametr == pair.Key)
                     item.LoadSlider(pair.Value);
-                }
             }
         }
     }

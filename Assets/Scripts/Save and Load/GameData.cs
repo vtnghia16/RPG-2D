@@ -36,6 +36,6 @@ public class GameData
         closestCheckpointId = string.Empty;
         checkpoints = new SerializableDictionary<string, bool>();
 
-        volumeSettings = new SerializableDictionary<string, float>();
+        volumeSettings= new SerializableDictionary<string, float>();
     }
 }

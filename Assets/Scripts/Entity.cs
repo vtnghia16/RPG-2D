@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Accessibility;
@@ -20,6 +20,7 @@ public class Entity : MonoBehaviour
     [SerializeField] protected float knockbackDuration;
     protected bool isKnocked;
 
+    // Xử lý va chạm
     [Header("Collision info")]
     public Transform attackCheck;
     public float attackCheckRadius;
@@ -29,6 +30,7 @@ public class Entity : MonoBehaviour
     [SerializeField] protected float wallCheckDistance;
     [SerializeField] protected LayerMask whatIsGround;
 
+    // Check hướng của nhân vật
     public int facingDir { get; private set; } = 1;
     protected bool facingRight = true;
 
@@ -41,6 +43,7 @@ public class Entity : MonoBehaviour
 
     protected virtual void Start()
     {
+        // Lấy các object có trong unity
         sr = GetComponentInChildren<SpriteRenderer>();
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -94,6 +97,7 @@ public class Entity : MonoBehaviour
         FlipController(_xVelocity);
     }
     #endregion
+
     #region Collision
     public virtual bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
     public virtual bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
@@ -105,6 +109,8 @@ public class Entity : MonoBehaviour
         Gizmos.DrawWireSphere(attackCheck.position, attackCheckRadius);
     }
     #endregion
+
+    // Hướng quay
     #region Flip
     public virtual void Flip()
     {

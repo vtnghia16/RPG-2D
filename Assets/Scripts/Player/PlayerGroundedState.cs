@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,10 +24,9 @@ public class PlayerGroundedState : PlayerState
 
         if (Input.GetKeyDown(KeyCode.R) && player.skill.blackhole.blackholeUnlocked)
         {
-            if(player.skill.blackhole.cooldownTimer > 0) 
-            {
+            if (player.skill.blackhole.cooldownTimer > 0)
                 return;
-            }
+
 
             stateMachine.ChangeState(player.blackHole);
         }
@@ -44,6 +43,7 @@ public class PlayerGroundedState : PlayerState
         if (!player.IsGroundDetected())
             stateMachine.ChangeState(player.airState);
 
+        // Jump (ĐK: isGroundDectected)
         if (Input.GetKeyDown(KeyCode.Space) && player.IsGroundDetected())
             stateMachine.ChangeState(player.jumpState);
     }

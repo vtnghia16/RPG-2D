@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,15 +28,18 @@ public class PlayerWallSlideState : PlayerState
             return;
         }
 
+        // kiểm tra trạng thái idle khi nhân vật thoát wallSlide
         if (xInput != 0 && player.facingDir != xInput)
                 stateMachine.ChangeState(player.idleState);
 
+        // Giảm tốc độ wallSlide theo chiều Y
         if (yInput < 0)
             rb.velocity = new Vector2(0, rb.velocity.y);
         else
             rb.velocity = new Vector2(0, rb.velocity.y * .7f);
 
-        if(player.IsGroundDetected())
+        // khi nhân vật chạm đất quay về trạng thái idle
+        if (player.IsGroundDetected())
                 stateMachine.ChangeState(player.idleState);
 
     }
