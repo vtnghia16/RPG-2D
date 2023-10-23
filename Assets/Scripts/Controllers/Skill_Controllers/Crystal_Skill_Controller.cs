@@ -79,7 +79,7 @@ public class Crystal_Skill_Controller : MonoBehaviour
             {
                 player.stats.DoMagicalDamage(hit.GetComponent<CharacterStats>());
 
-
+                hit.GetComponent<Entity>().SetupKnockbackDir(transform);
                 ItemData_Equipment equipedAmulet = Inventory.instance.GetEquipment(EquipmentType.Amulet);
 
                 if (equipedAmulet != null)
