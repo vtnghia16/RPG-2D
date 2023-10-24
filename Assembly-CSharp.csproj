@@ -106,6 +106,7 @@
     <Compile Include="Assets\Scripts\UI\UI_CraftSlot.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Options.cs" />
     <Compile Include="Assets\Scripts\Stats\Stat.cs" />
+    <Compile Include="Assets\Scripts\DeadZone.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStateMachine.cs" />
     <Compile Include="Assets\Scripts\UI\UI_StatToolTip.cs" />
     <Compile Include="Assets\Scripts\UI\UI_MainMenu.cs" />
@@ -153,7 +154,6 @@
     <Compile Include="Assets\Scripts\Player\PlayerJumpState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_InGame.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
-    <Compile Include="Assets\Scripts\DeadZone.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
