@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +6,7 @@ public class PlayerAnimationTriggers : MonoBehaviour
 {
     private Player player => GetComponentInParent<Player>();
 
+    // Kích hoạt trạng thái anim ngay lập tức làm ngưng các state khác
     private void AnimationTrigger()
     {
         player.AnimationTrigger();

@@ -34,10 +34,11 @@ public class PlayerDashState : PlayerState
     {
         base.Update();
 
+        // Khi Dash vào tường thì nhân vật sẽ chuyển thành trạng thái wallSlide
         if (!player.IsGroundDetected() && player.IsWallDetected())
             stateMachine.ChangeState(player.wallSlide);
 
-        player.SetVelocity(player.dashSpeed * player.dashDir, 0);
+        player.SetVelocity(player.dashSpeed * player.dashDir, 0); // Nhân vật dash theo chiều X
 
         // Nếu deltaTime < 0 thì nhân vật sẽ idle
         if (stateTimer < 0)

@@ -52,11 +52,12 @@ public class Entity : MonoBehaviour
         fx = GetComponent<EntityFX>();
         stats = GetComponent<CharacterStats>();
         cd = GetComponent<CapsuleCollider2D>();
+
     }
 
     protected virtual void Update()
     {
-
+       
     }
 
     public virtual void SlowEntityBy(float _slowPercentage, float _slowDuration)
@@ -102,6 +103,7 @@ public class Entity : MonoBehaviour
     }
 
     #region Velocity
+    // Nhân vật bị ngừng lại bới Velocity(0, 0)
     public void SetZeroVelocity()
     {
         if (isKnocked)
@@ -121,6 +123,7 @@ public class Entity : MonoBehaviour
     #endregion
 
     #region Collision
+    // Xử lý va chạm với các bề mặt
     public virtual bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
     public virtual bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
 

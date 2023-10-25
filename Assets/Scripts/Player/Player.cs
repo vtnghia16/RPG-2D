@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class Player : Entity
 {
     [Header("Attack details")]
-    public Vector2[] attackMovement;
+    public Vector2[] attackMovement; // Di chuyển khi tấn công
     public float counterAttackDuration = .2f;
 
     public bool isBusy { get; private set; }
@@ -139,6 +139,7 @@ public class Player : Entity
         Destroy(sword);
     }
 
+    // Set nhân vật kết hợp thực hiện state trong vài giây
     public IEnumerator BusyFor(float _seconds)
     {
         isBusy = true;        
@@ -147,11 +148,13 @@ public class Player : Entity
         isBusy = false;
     }
 
+    // Kích hoạt anim của nhân vật
     public void AnimationTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
-    // Kiểm tra các tham số khi lướt 
+    // Kiểm tra đầu vào khi lướt 
     private void CheckForDashInput()
     {
+        // Khi dash đụng tường => wallSlide
         if (IsWallDetected())
             return;
 

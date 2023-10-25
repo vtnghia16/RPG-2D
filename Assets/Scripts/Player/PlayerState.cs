@@ -15,7 +15,7 @@ public class PlayerState
     private string animBoolName;
 
     protected float stateTimer; // Bộ đếm timer theo delta
-    protected bool triggerCalled;
+    protected bool triggerCalled; // kết hợp anim khi gọi
 
     // Hàm xây dựng
     public PlayerState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName)
@@ -30,6 +30,9 @@ public class PlayerState
         player.anim.SetBool(animBoolName, true); // Set tham số animation cho nhân vật
         rb = player.rb;
         triggerCalled = false;
+
+        // Debug.Log("stateTimer enter: " + stateTimer);
+
     }
 
     public virtual void Update()
@@ -41,6 +44,8 @@ public class PlayerState
         yInput = Input.GetAxisRaw("Vertical");
         player.anim.SetFloat("yVelocity", rb.velocity.y);
 
+
+        // Debug.Log("stateTimer update: " + stateTimer);
     }
 
     public virtual void Exit()
@@ -48,6 +53,7 @@ public class PlayerState
         player.anim.SetBool(animBoolName, false);
     }
 
+    // Trigger gọi anim với bất kì trạng thái nào
     public virtual void AnimationFinishTrigger()
     {
         triggerCalled = true;

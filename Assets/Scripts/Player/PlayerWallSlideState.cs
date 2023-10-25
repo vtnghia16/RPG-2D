@@ -27,7 +27,7 @@ public class PlayerWallSlideState : PlayerState
             stateMachine.ChangeState(player.airState);
         }
 
-
+        // Press Space chuyển wallJump trong State của player
         if (Input.GetKeyDown(KeyCode.Space))
         {
             stateMachine.ChangeState(player.wallJump);

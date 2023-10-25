@@ -13,6 +13,7 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.Enter();
 
+        // Khi jump khỏi wall nhân vật sẽ velocity(0, 0)
         player.SetZeroVelocity();
 
     }
@@ -30,6 +31,7 @@ public class PlayerIdleState : PlayerGroundedState
         if (xInput == player.facingDir && player.IsWallDetected())
             return;
 
+        // Nhân vật dịch chuyển khi tấn công
         if(xInput != 0 && !player.isBusy)
             stateMachine.ChangeState(player.moveState);
     }

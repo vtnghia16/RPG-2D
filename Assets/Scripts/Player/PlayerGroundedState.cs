@@ -37,9 +37,11 @@ public class PlayerGroundedState : PlayerState
         if (Input.GetKeyDown(KeyCode.Q) && player.skill.parry.parryUnlocked)
             stateMachine.ChangeState(player.counterAttack);
 
+        // Nhấn Mouse0 chuyển sang đòn tấn công chính của nhân vật
         if (Input.GetKeyDown(KeyCode.Mouse0))
             stateMachine.ChangeState(player.primaryAttack);
 
+        // Nhân vật ở airState khi không ở mặt đất
         if (!player.IsGroundDetected())
             stateMachine.ChangeState(player.airState);
 

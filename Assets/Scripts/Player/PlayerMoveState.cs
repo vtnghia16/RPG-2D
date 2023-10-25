@@ -30,7 +30,7 @@ public class PlayerMoveState : PlayerGroundedState
         // Set tốc độ di chuyển cho nhân vật (tăng tốc qua moveSpeed)
         player.SetVelocity(xInput * player.moveSpeed, rb.velocity.y);
 
-
+        // khi move đụng tường => Idle
         if (xInput == 0 || player.IsWallDetected())
             stateMachine.ChangeState(player.idleState);
     }
