@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 
@@ -363,6 +363,12 @@ public class CharacterStats : MonoBehaviour
             _damage = Mathf.RoundToInt( _damage * 1.1f);
 
         currentHealth -= _damage;
+
+        // Hiển thị % số máu khi bị đánh
+        if(_damage > 0)
+        {
+            fx.CreatePopUpText(_damage.ToString());
+        }
 
         if (onHealthChanged != null)
             onHealthChanged();

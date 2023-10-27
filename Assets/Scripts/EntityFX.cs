@@ -1,10 +1,22 @@
+﻿using Cinemachine; // Thư viện shake screen
 using Newtonsoft.Json.Bson;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class EntityFX : MonoBehaviour
 {
+    private Player player;
     private SpriteRenderer sr;
+
+    [Header("Pop Up Text")]
+    [SerializeField] private GameObject popUpTextPrefab;
+
+    [Header("Screen shake FX")]
+    [SerializeField] private float shakeMultiplier;
+    private CinemachineImpulseSource screenShake;
+    public Vector3 shakeSwordImpact;
+    public Vector3 shakeHighDamage;
 
     [Header("After image fx")]
     [SerializeField] private GameObject afterImagePrefab;
@@ -37,6 +49,8 @@ public class EntityFX : MonoBehaviour
     private void Start()
     {
         sr = GetComponentInChildren<SpriteRenderer>();
+        player = PlayerManager.instance.player;
+        screenShake = GetComponent<CinemachineImpulseSource>();
         originalMat = sr.material;
 
     }
@@ -44,6 +58,24 @@ public class EntityFX : MonoBehaviour
     private void Update()
     {
         afterImageCooldownTimer -= Time.deltaTime;
+    }
+
+    public void CreatePopUpText(string _text)
+    {
+        float randomX = Random.Range(-1, 1);
+        float randomY = Random.Range(1.5f, 3);
+
+        Vector3 positionOffset = new Vector3(randomX, randomY, 0);
+
+        GameObject newText = Instantiate(popUpTextPrefab, transform.position + positionOffset, Quaternion.identity);
+
+        newText.GetComponent<TextMeshPro>().text = _text;
+    }
+
+    public void ScreenShake(Vector3 _shakePower) 
+    {
+        screenShake.m_DefaultVelocity = new Vector3(_shakePower.x * player.facingDir, _shakePower.y) * shakeMultiplier;
+        screenShake.GenerateImpulse();
     }
 
     public void CreateAfterImage()
