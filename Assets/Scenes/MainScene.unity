@@ -34417,10 +34417,10 @@ GameObject:
   - component: {fileID: 1195560129}
   - component: {fileID: 1195560132}
   - component: {fileID: 1195560131}
-  - component: {fileID: 1195560133}
   - component: {fileID: 1195560134}
   - component: {fileID: 1195560135}
   - component: {fileID: 1195560136}
+  - component: {fileID: 1195560137}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -34523,42 +34523,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.06784159, y: -0.27535737}
   m_Size: {x: 0.79531085, y: 2.093448}
   m_Direction: 0
---- !u!114 &1195560133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195560128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e8dc0df107b9164a88d50d6dd9e09a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popUpTextPrefab: {fileID: 9131576063542419083, guid: 5438f31967bf207418546bbd3b326239, type: 3}
-  shakeMultiplier: 0.2
-  shakeSwordImpact: {x: 0, y: 0, z: 0}
-  shakeHighDamage: {x: 0, y: 0, z: 0}
-  afterImagePrefab: {fileID: 5337070986074043043, guid: 0385a0b27c035fd44854df4bfda4f1ed, type: 3}
-  colorLooseRate: 2.5
-  afterImageCooldown: 0.04
-  flashDuration: 0.2
-  hitMat: {fileID: 2100000, guid: 78758ed07969e5449922bd9487087aa7, type: 2}
-  igniteColor:
-  - {r: 0.990566, g: 0.38781592, b: 0.38781592, a: 1}
-  - {r: 0.9716981, g: 0.6737718, b: 0.6737718, a: 1}
-  chillColor:
-  - {r: 0.60784316, g: 0.83137256, b: 1, a: 1}
-  - {r: 0.6084906, g: 0.832423, b: 1, a: 1}
-  shockColor:
-  - {r: 1, g: 0.8901961, b: 0.38431373, a: 1}
-  - {r: 0.94509804, g: 0.8745098, b: 0.54901963, a: 1}
-  igniteFx: {fileID: 1606139356}
-  chillFx: {fileID: 1512873559}
-  shockFx: {fileID: 4756390}
-  hitFx: {fileID: 2830626986841171211, guid: 8ab1d9dd6dce0c34bba1f22b80eef904, type: 3}
-  criticalHitFx: {fileID: 2603444923851594897, guid: c7d0048abc4435f46b539ff9afacb365, type: 3}
-  dustFx: {fileID: 705412487}
 --- !u!114 &1195560134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34689,6 +34653,42 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0, y: 0, z: 0}
+--- !u!114 &1195560137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195560128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0be55860cf35934418166eab6c3e3ea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popUpTextPrefab: {fileID: 9131576063542419083, guid: 5438f31967bf207418546bbd3b326239, type: 3}
+  flashDuration: 0.2
+  hitMat: {fileID: 2100000, guid: 78758ed07969e5449922bd9487087aa7, type: 2}
+  igniteColor:
+  - {r: 0.99215686, g: 0.3882353, b: 0.3882353, a: 1}
+  - {r: 0.972549, g: 0.6745098, b: 0.6745098, a: 1}
+  chillColor:
+  - {r: 0.60784316, g: 0.83137256, b: 1, a: 1}
+  - {r: 0.60784316, g: 0.83137256, b: 1, a: 1}
+  shockColor:
+  - {r: 1, g: 0.8901961, b: 0.38431373, a: 1}
+  - {r: 0.94509804, g: 0.8745098, b: 0.54901963, a: 1}
+  igniteFx: {fileID: 1606139356}
+  chillFx: {fileID: 1512873559}
+  shockFx: {fileID: 4756390}
+  hitFx: {fileID: 2830626986841171211, guid: 8ab1d9dd6dce0c34bba1f22b80eef904, type: 3}
+  criticalHitFx: {fileID: 2603444923851594897, guid: c7d0048abc4435f46b539ff9afacb365, type: 3}
+  shakeMultiplier: 0.2
+  shakeSwordImpact: {x: 1, y: 0, z: 0}
+  shakeHighDamage: {x: 2, y: 2, z: 0}
+  afterImagePrefab: {fileID: 5337070986074043043, guid: 0385a0b27c035fd44854df4bfda4f1ed, type: 3}
+  colorLooseRate: 1.5
+  afterImageCooldown: 0.05
+  dustFx: {fileID: 705412487}
 --- !u!1 &1200188566
 GameObject:
   m_ObjectHideFlags: 0

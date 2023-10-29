@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Accessibility;
 
 public class Entity : MonoBehaviour
 {
@@ -9,10 +7,10 @@ public class Entity : MonoBehaviour
     #region Components
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
-    public EntityFX fx { get; private set; }
+
     public SpriteRenderer sr { get; private set; }
     public CharacterStats stats { get; private set; }
-    public CapsuleCollider2D cd {  get; private set; }
+    public CapsuleCollider2D cd { get; private set; }
     #endregion
 
     [Header("Knockback info")]
@@ -49,7 +47,7 @@ public class Entity : MonoBehaviour
         sr = GetComponentInChildren<SpriteRenderer>();
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        fx = GetComponent<EntityFX>();
+
         stats = GetComponent<CharacterStats>();
         cd = GetComponent<CapsuleCollider2D>();
 
@@ -57,12 +55,12 @@ public class Entity : MonoBehaviour
 
     protected virtual void Update()
     {
-       
+
     }
 
     public virtual void SlowEntityBy(float _slowPercentage, float _slowDuration)
     {
-        
+
     }
 
     protected virtual void ReturnDefaultSpeed()
@@ -71,14 +69,14 @@ public class Entity : MonoBehaviour
     }
 
     public virtual void DamageImpact() => StartCoroutine("HitKnockback");
- 
+
     public virtual void SetupKnockbackDir(Transform _damageDirection)
     {
-        if(_damageDirection.position.x > transform.position.x)
+        if (_damageDirection.position.x > transform.position.x)
         {
             knockbackDir = -1;
         }
-        else if(_damageDirection.position.x < transform.position.x)
+        else if (_damageDirection.position.x < transform.position.x)
         {
             knockbackDir = 1;
         }
@@ -143,7 +141,7 @@ public class Entity : MonoBehaviour
         facingRight = !facingRight;
         transform.Rotate(0, 180, 0);
 
-        if(onFlipped != null)
+        if (onFlipped != null)
             onFlipped();
     }
 
@@ -156,7 +154,7 @@ public class Entity : MonoBehaviour
     }
     #endregion
 
-    
+
 
     public virtual void Die()
     {

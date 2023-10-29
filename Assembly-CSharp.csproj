@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\UI\UI_FadeScreen.cs" />
-    <Compile Include="Assets\Scripts\ParallaxBackground.cs" />
+    <Compile Include="Assets\Scripts\Effects\ParallaxBackground.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerIdleState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonStunnedState.cs" />
     <Compile Include="Assets\Scripts\Entity.cs" />
@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerDashState.cs" />
     <Compile Include="Assets\Scripts\Save and Load\FileDataHandler.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerGroundedState.cs" />
+    <Compile Include="Assets\Scripts\Effects\PlayerFX.cs" />
     <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Blackhole_Skill_Controller.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerWallJumpState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMoveState.cs" />
@@ -76,7 +77,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerAimSwordState.cs" />
     <Compile Include="Assets\Scripts\LostCurrencyController.cs" />
     <Compile Include="Assets\Scripts\Save and Load\SaveManager.cs" />
-    <Compile Include="Assets\Scripts\AfterImageFX.cs" />
+    <Compile Include="Assets\Scripts\Effects\AfterImageFX.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimationTriggers.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\ThunderStrike_Effect.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\Scripts\Save and Load\SerializableDictionary.cs" />
     <Compile Include="Assets\Scripts\Skills\Blackhole_Skill.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerPrimaryAttackState.cs" />
+    <Compile Include="Assets\Scripts\Effects\PopUpText.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\Heal_Effect.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\ItemObject_Trigger.cs" />
     <Compile Include="Assets\Scripts\Skills\Dodge_Skill.cs" />
@@ -98,7 +100,7 @@
     <Compile Include="Assets\Scripts\Skills\Skill.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerState.cs" />
     <Compile Include="Assets\Scripts\Skills\Sword_Skill.cs" />
-    <Compile Include="Assets\Scripts\EntityFX.cs" />
+    <Compile Include="Assets\Scripts\Effects\EntityFX.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\ItemData.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAirState.cs" />
     <Compile Include="Assets\Scripts\AreaSound.cs" />
@@ -155,7 +157,6 @@
     <Compile Include="Assets\Scripts\Player\PlayerJumpState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_InGame.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
-    <Compile Include="Assets\Scripts\PopUpText.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

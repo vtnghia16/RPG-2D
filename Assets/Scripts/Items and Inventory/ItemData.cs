@@ -1,7 +1,10 @@
 using System.Text;
-using UnityEditor;
-using UnityEditor.VersionControl;
 using UnityEngine;
+
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public enum ItemType
 {
