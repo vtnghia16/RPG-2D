@@ -26,7 +26,7 @@ public class ParallaxBackground : MonoBehaviour
 
         transform.position = new Vector3(xPosition + distanceToMove, transform.position.y);
 
-        // Vị trí sẽ tăng theo vị trí của nhân vật và ngược lại
+        // Vị trí sẽ tăng theo vị trí của nhân vật và ngược lại.
         if (distanceMoved > xPosition + length) 
             xPosition = xPosition + length;
         else if (distanceMoved < xPosition - length)
