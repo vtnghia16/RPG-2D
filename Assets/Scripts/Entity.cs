@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+// kế thừa từ player và enemy
 public class Entity : MonoBehaviour
 {
 
@@ -30,7 +31,7 @@ public class Entity : MonoBehaviour
 
     public int knockbackDir { get; private set; }
 
-    // Check hướng của nhân vật
+    // Check hướng của vật thể
     public int facingDir { get; private set; } = 1;
     protected bool facingRight = true;
 
@@ -125,6 +126,7 @@ public class Entity : MonoBehaviour
     public virtual bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
     public virtual bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
 
+    // Vẽ khoảng cách từ vật thể đến bề mặt
     protected virtual void OnDrawGizmos()
     {
         Gizmos.DrawLine(groundCheck.position, new Vector3(groundCheck.position.x, groundCheck.position.y - groundCheckDistance));

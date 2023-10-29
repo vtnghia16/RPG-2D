@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,14 +15,14 @@ public class Enemy : Entity
     [SerializeField] protected GameObject counterImage;
 
     [Header("Move info")]
-    public float moveSpeed;
-    public float idleTime;
-    public float battleTime;
+    public float moveSpeed; // Tốc độ
+    public float idleTime; // Thời gian nhân vật Flip khi idle
+    public float battleTime; // Thời gian để quái vật ignore
     private float defaultMoveSpeed;
 
     [Header("Attack info")]
-    public float attackDistance;
-    public float attackCooldown;
+    public float attackDistance; // KC tấn công khi áp sát người chơi
+    public float attackCooldown; // Thời gian hồi chiêu 
     public float minAttackCooldown;
     public float maxAttackCooldown;
     [HideInInspector] public float lastTimeAttacked;
@@ -125,9 +125,13 @@ public class Enemy : Entity
         return false;
     }
 
+    // Kích hoạt anim của quái vật
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
+    // Check quái vật khi phát hiện người chơi
     public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 50, whatIsPlayer);
+
+    // Vẽ đường check phạm vi attack distance 
     protected override void OnDrawGizmos()
     {
         base.OnDrawGizmos();

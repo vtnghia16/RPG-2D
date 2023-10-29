@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +18,7 @@ public class Enemy_Skeleton : Enemy
 
     protected override void Awake()
     {
+        // Truyền các trạng thái của nhân vật thông qua EnemyStateMachine
         base.Awake();
         
         idleState = new SkeletonIdleState(this, stateMachine, "Idle", this);
