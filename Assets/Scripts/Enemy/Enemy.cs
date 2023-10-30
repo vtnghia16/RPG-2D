@@ -7,10 +7,10 @@ public class Enemy : Entity
 {
     [SerializeField] protected LayerMask whatIsPlayer;
 
-
+    // Quái vật bị choáng
     [Header("Stunned info")]
     public float stunDuration;
-    public Vector2 stunDirection;
+    public Vector2 stunDirection; // Hướng (x, y)
     protected bool canBeStunned;
     [SerializeField] protected GameObject counterImage;
 
@@ -100,6 +100,8 @@ public class Enemy : Entity
         FreezeTime(false);
     }
 
+    // Cửa sổ tấn công ô vuông đỏ của quái vật
+    // Xác định quái vật nào đang chuẩn bị tấn công
     #region Counter Attack Window
     public virtual void OpenCounterAttackWindow()
     {
@@ -114,6 +116,8 @@ public class Enemy : Entity
     }
     #endregion
 
+    // Khi cửa sổ tấn công ô vuông đỏ của quái vật
+    // Giống với stunState 
     public virtual bool CanBeStunned()
     {
         if (canBeStunned)

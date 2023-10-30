@@ -12,8 +12,9 @@ public class EntityFX : MonoBehaviour
     [Header("Pop Up Text")]
     [SerializeField] private GameObject popUpTextPrefab;
 
+    // Hiệu ứng chớp nhoáng khi bị tấn công
     [Header("Flash FX")]
-    [SerializeField] private float flashDuration;
+    [SerializeField] private float flashDuration; // Khoảng thời gian
     [SerializeField] private Material hitMat;
     private Material originalMat;
 
@@ -62,19 +63,20 @@ public class EntityFX : MonoBehaviour
             sr.color = Color.white;
     }
 
-
+    // Hiệu ứng chớp nhoáng
     private IEnumerator FlashFX()
     {
         sr.material = hitMat;
         Color currentColor = sr.color;
         sr.color = Color.white;
 
-        yield return new WaitForSeconds(flashDuration);
+        yield return new WaitForSeconds(flashDuration); // thời gian chớp nhoáng
 
         sr.color = currentColor;
         sr.material = originalMat;
     }
 
+    // Hiệu ứng đỏ nhấp nháy khi bị làm choáng
     private void RedColorBlink()
     {
         if (sr.color != Color.white)
@@ -83,6 +85,7 @@ public class EntityFX : MonoBehaviour
             sr.color = Color.red;
     }
 
+    // Hủy hiệu ứng màu khi FX
     private void CancelColorChange()
     {
         CancelInvoke();

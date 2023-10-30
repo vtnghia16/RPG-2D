@@ -14,15 +14,16 @@ public class Entity : MonoBehaviour
     public CapsuleCollider2D cd { get; private set; }
     #endregion
 
+    // Hiệu ứng đẩy lùi khi bị dính đòn
     [Header("Knockback info")]
-    [SerializeField] protected Vector2 knockbackPower;
+    [SerializeField] protected Vector2 knockbackPower; // Set (x, y)
     [SerializeField] protected float knockbackDuration;
     protected bool isKnocked;
 
     // Xử lý va chạm
     [Header("Collision info")]
     public Transform attackCheck;
-    public float attackCheckRadius;
+    public float attackCheckRadius; // bán kính tấn công 
     [SerializeField] protected Transform groundCheck;
     [SerializeField] protected float groundCheckDistance;
     [SerializeField] protected Transform wallCheck;
@@ -85,13 +86,14 @@ public class Entity : MonoBehaviour
 
     public void SetupKnockbackPower(Vector2 _knockbackpower) => knockbackPower = _knockbackpower;
 
+    // Hiệu ứng đẩy lùi khi bị dính đòn
     protected virtual IEnumerator HitKnockback()
     {
         isKnocked = true;
 
-        rb.velocity = new Vector2(knockbackPower.x * knockbackDir, knockbackPower.y);
+        rb.velocity = new Vector2(knockbackPower.x * knockbackDir, knockbackPower.y); // Tốc độ bị đẩy lùi theo hướng
 
-        yield return new WaitForSeconds(knockbackDuration);
+        yield return new WaitForSeconds(knockbackDuration); // Khoảng thời gian bị knockback
         isKnocked = false;
         SetupZeroKnockbackPower();
     }
@@ -111,6 +113,7 @@ public class Entity : MonoBehaviour
         rb.velocity = new Vector2(0, 0);
     }
 
+    // Set tốc độ (x, y) cho vật thể
     public void SetVelocity(float _xVelocity, float _yVelocity)
     {
         if (isKnocked)

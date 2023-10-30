@@ -31,7 +31,7 @@ public class PlayerPrimaryAttackState : PlayerState
 
         player.anim.SetInteger("ComboCounter", comboCounter); // Thực hiện primaryAttack 1/2/3 = ComboCounter 1/2/3
 
-        // Thay đổi hướng tấn công của nhân vật
+        // Thay đổi hướng tấn công của nhân vật (-1, 1)
         float attackDir = player.facingDir;
         if (xInput != 0)
             attackDir = xInput;

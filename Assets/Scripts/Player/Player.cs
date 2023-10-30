@@ -7,7 +7,7 @@ public class Player : Entity
 {
     [Header("Attack details")]
     public Vector2[] attackMovement; // Di chuyển khi tấn công
-    public float counterAttackDuration = .2f;
+    public float counterAttackDuration = .2f; // KTG phản công
 
     public bool isBusy { get; private set; }
     [Header("Move info")]

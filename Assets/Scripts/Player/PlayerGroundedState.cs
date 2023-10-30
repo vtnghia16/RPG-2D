@@ -37,6 +37,7 @@ public class PlayerGroundedState : PlayerState
         if (Input.GetKeyDown(KeyCode.Mouse1) && HasNoSword() && player.skill.sword.swordUnlocked)
             stateMachine.ChangeState(player.aimSowrd);
 
+        // Nhấn Q chuyển sàn trạng thái phản công của nhân vật
         if (Input.GetKeyDown(KeyCode.Q) && player.skill.parry.parryUnlocked)
             stateMachine.ChangeState(player.counterAttack);
 

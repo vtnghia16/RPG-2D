@@ -127,7 +127,7 @@ public class CharacterStats : MonoBehaviour
         _statToModify.RemoveModifier(_modifier);
     }
     
-
+    // Gây sát thương
     public virtual void DoDamage(CharacterStats _targetStats)
     {
         bool criticalStrike = false;
