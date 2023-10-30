@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.ExceptionServices;
@@ -12,7 +12,7 @@ public class Clone_Skill : Skill
     [Header("Clone info")]
     [SerializeField] private float attackMultiplier;
     [SerializeField] private GameObject clonePrefab;
-    [SerializeField] private float cloneDuration;
+    [SerializeField] private float cloneDuration; // KTG clone
     [Space]
 
     [Header("Clone attack")]
@@ -93,7 +93,7 @@ public class Clone_Skill : Skill
 
     #endregion
 
-
+    // Tạo đối tượng tạm thời
     public void CreateClone(Transform _clonePosition,Vector3 _offset)
     {
         if (crystalInseadOfClone)
@@ -104,6 +104,7 @@ public class Clone_Skill : Skill
 
         GameObject newClone = Instantiate(clonePrefab);
 
+        // Set vị trí nhân vật nhân bản theo vị trí của nhân vật chính khi dash
         newClone.GetComponent<Clone_Skill_Controller>().
             SetupClone(_clonePosition, cloneDuration, canAttack,_offset,FindClosestEnemy(newClone.transform),canDuplicateClone,chanceToDuplicate,player,attackMultiplier);
     }

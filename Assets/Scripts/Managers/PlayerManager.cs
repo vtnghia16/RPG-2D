@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,10 +10,11 @@ public class PlayerManager : MonoBehaviour , ISaveManager
     public int currency;
     private void Awake()
     {
+        // Kiểm tra gameObject trong trường hợp bị trùng
         if (instance != null)
             Destroy(instance.gameObject);
         else
-            instance = this;
+            instance = this; 
     }
     public bool HaveEnoughMoney(int _price)
     {

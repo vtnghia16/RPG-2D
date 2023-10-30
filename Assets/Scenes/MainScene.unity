@@ -60600,7 +60600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761e7cbfc1caf59438341c0941d21e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 60
+  cooldown: 6
   cooldownTimer: 0
   dashUnlockButton: {fileID: 1712030852}
   cloneOnDashUnlockButton: {fileID: 716669078}

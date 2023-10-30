@@ -19,7 +19,7 @@ public class Dash_Skill : Skill
     public bool cloneOnArrivalUnlocked { get; private set; }
 
 
-    
+    // Script skill
     public override void UseSkill()
     {
         base.UseSkill();

@@ -30,6 +30,7 @@ public class Skill : MonoBehaviour
     }
     public virtual bool CanUseSkill()
     {
+        // Tính thời gian sd skill
         if (cooldownTimer < 0)
         {
             UseSkill();

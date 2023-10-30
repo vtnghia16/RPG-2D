@@ -12,7 +12,7 @@ public class PlayerDashState : PlayerState
     {
         base.Enter();
 
-        player.skill.dash.CloneOnDash();
+        player.skill.dash.CloneOnDash(); // Tạo ra nhiều bản sao cho nhân vật
 
         // delta < 0 thì lướt trong khoảng thời gian set
         stateTimer = player.dashDuration;
