@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Bắt kiếm vào quái vật
 public class PlayerCatchSwordState : PlayerState
 {
     private Transform sword;
@@ -18,11 +19,13 @@ public class PlayerCatchSwordState : PlayerState
         player.fx.PlayDustFX();
         player.fx.ScreenShake(player.fx.shakeSwordImpact); // Hiện tượng rung lắc sword
 
+        // Bắt thanh kiếm cùng hướng hướng với thanh kiếm khi quay về
         if (player.transform.position.x > sword.position.x && player.facingDir == 1)
             player.Flip();
         else if (player.transform.position.x < sword.position.x && player.facingDir == -1)
             player.Flip();
 
+        // Tốc độ nhân vật khi thanh kiếm trả về 
         rb.velocity = new Vector2(player.swordReturnImpact * -player.facingDir, rb.velocity.y);
 
             
@@ -39,6 +42,7 @@ public class PlayerCatchSwordState : PlayerState
     {
         base.Update();
 
+        // Thanh kiếm được quay về nhân vật chuyển sang idle
         if (triggerCalled)
             stateMachine.ChangeState(player.idleState);
     }

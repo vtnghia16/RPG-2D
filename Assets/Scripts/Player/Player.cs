@@ -13,7 +13,7 @@ public class Player : Entity
     [Header("Move info")]
     public float moveSpeed = 12f; // tốc độ di chuyển
     public float jumpForce; // Lực nhảy
-    public float swordReturnImpact;
+    public float swordReturnImpact; // Tác động của thanh kiếm khi return
     private float defaultMoveSpeed;
     private float defaultJumpForce;
 
@@ -136,6 +136,7 @@ public class Player : Entity
         sword = _newSword;
     }
 
+    // Bắt lấy thanh kiếm và clear thanh kiếm khi tấn công quái vật
     public void CatchTheSword()
     {
         stateMachine.ChangeState(catchSword);

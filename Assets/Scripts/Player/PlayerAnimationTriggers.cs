@@ -38,6 +38,8 @@ public class PlayerAnimationTriggers : MonoBehaviour
             }
         }
     }
+
+    // Thực hiện kỹ năng ném kiếm
     private void ThrowSword()
     {
         SkillManager.instance.sword.CreateSword();

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 
@@ -9,12 +9,12 @@ public class Sword_Skill_Controller : MonoBehaviour
     private CircleCollider2D cd;
     private Player player;
 
-    private bool canRotate = true;
+    private bool canRotate = true; // Thanh kiếm khi xoay
     private bool isReturning;
 
 
-    private float freezeTimeDuration;
-    private float returnSpeed = 12;
+    private float freezeTimeDuration; // Set thời gian đóng băng của quái vật
+    private float returnSpeed = 12; // Tốc độ thanh kiếm khi trả về
 
     [Header("Pierce info")]
     private float pierceAmount;
@@ -22,13 +22,13 @@ public class Sword_Skill_Controller : MonoBehaviour
     [Header("Bounce info")]
     private float bounceSpeed;
     private bool isBouncing;
-    private int bounceAmount;
+    private int bounceAmount; // Độ nảy giữa các mục tiêu
     private List<Transform> enemyTarget;
     private int targetIndex;
 
     [Header("Spin info")]
-    private float maxTravelDistance;
-    private float spinDuration;
+    private float maxTravelDistance; // Khoảng cách di chuyển tối da khi spin
+    private float spinDuration; // KTG trong khí spin
     private float spinTimer;
     private bool wasStopped;
     private bool isSpinning;
@@ -50,6 +50,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         Destroy(gameObject);
     }
 
+    // Set thanh kiếm theo các thuộc tính
     public void SetupSword(Vector2 _dir, float _gravityScale, Player _player, float _freezeTimeDuration, float _returnSpeed)
     {
         player = _player;
@@ -59,12 +60,14 @@ public class Sword_Skill_Controller : MonoBehaviour
         rb.velocity = _dir;
         rb.gravityScale = _gravityScale;
 
+        // Check pierce bay theo 1 đường thẳng
         if (pierceAmount <= 0)
             anim.SetBool("Rotation", true);
 
         Invoke("DestroyMe", 7);
     }
 
+    // Set thanh kiếm theo kỹ năng bounce (nảy)
     public void SetupBounce(bool _isBouncing, int _amountOfBounces, float _bounceSpeed)
     {
         isBouncing = _isBouncing;
@@ -75,11 +78,13 @@ public class Sword_Skill_Controller : MonoBehaviour
         enemyTarget = new List<Transform>();
     }
 
+    // Set thanh kiếm theo kỹ năng bounce (đâm xuyên)
     public void SetupPierce(int _pierceAmount)
     {
         pierceAmount = _pierceAmount;
     }
 
+    // Set thanh kiếm theo kỹ năng bounce (Xoay)
     public void SetupSpin(bool _isSpinning, float _maxTravelDistance, float _spinDuration, float _hitCooldown)
     {
         isSpinning = _isSpinning;
@@ -88,6 +93,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         hitCooldown = _hitCooldown;
     }
 
+    // Thanh kiếm được trả về
     public void ReturnSword()
     {
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -104,7 +110,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         if (canRotate)
             transform.right = rb.velocity;
 
-
+        // Thanh kiếm khi được trả về
         if (isReturning)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, returnSpeed * Time.deltaTime);
@@ -113,10 +119,12 @@ public class Sword_Skill_Controller : MonoBehaviour
                 player.CatchTheSword();
         }
 
+        // Các logic kỹ năng sau khi update
         BounceLogic();
         SpinLogic();
     }
 
+    // Xử lý spin
     private void SpinLogic()
     {
         if (isSpinning)
@@ -165,6 +173,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         spinTimer = spinDuration;
     }
 
+    // Xử lý bounce
     private void BounceLogic()
     {
         if (isBouncing && enemyTarget.Count > 0)
@@ -173,6 +182,7 @@ public class Sword_Skill_Controller : MonoBehaviour
 
             transform.position = Vector2.MoveTowards(transform.position, enemyTarget[targetIndex].position, bounceSpeed * Time.deltaTime);
 
+            // Thanh kiếm dịch chuyển giữa các mục tiêu
             if (Vector2.Distance(transform.position, enemyTarget[targetIndex].position) < .1f)
             {
 
@@ -193,12 +203,13 @@ public class Sword_Skill_Controller : MonoBehaviour
         }
     }
 
+    // Check va chạm thanh kiếm và quái vật khi xoay
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (isReturning)
             return;
 
-
+       
         if (collision.GetComponent<Enemy>() != null)
         {
             Enemy enemy = collision.GetComponent<Enemy>();
@@ -248,6 +259,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         }
     }
 
+    // Thanh kiếm bị mặc kẹt để thực hiện Bounce & Pierce
     private void StuckInto(Collider2D collision)
     {
         if (pierceAmount > 0 && collision.GetComponent<Enemy>() != null)

@@ -18,7 +18,7 @@ public class Enemy : Entity
     public float moveSpeed; // Tốc độ
     public float idleTime; // Thời gian nhân vật Flip khi idle
     public float battleTime; // Thời gian để quái vật ignore
-    private float defaultMoveSpeed;
+    private float defaultMoveSpeed; // Tốc độ di chuyển của các enemies
 
     [Header("Attack info")]
     public float attackDistance; // KC tấn công khi áp sát người chơi
@@ -75,6 +75,7 @@ public class Enemy : Entity
         moveSpeed = defaultMoveSpeed;
     }
 
+    // Đóng băng thời gian khi thực hiện skill
     public virtual void FreezeTime(bool _timeFrozen)
     {
         if (_timeFrozen)
@@ -91,6 +92,7 @@ public class Enemy : Entity
 
     public virtual void FreezeTimeFor(float _duration) => StartCoroutine(FreezeTimerCoroutine(_duration));
 
+    // Hiệu chỉnh thời gian bị delay khi đóng băng
     protected virtual IEnumerator FreezeTimerCoroutine(float _seconds)
     {
         FreezeTime(true);

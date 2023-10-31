@@ -34,6 +34,7 @@ public class PlayerGroundedState : PlayerState
             stateMachine.ChangeState(player.blackHole);
         }
 
+        // Chức năng nhắm kiếm của nhân vật
         if (Input.GetKeyDown(KeyCode.Mouse1) && HasNoSword() && player.skill.sword.swordUnlocked)
             stateMachine.ChangeState(player.aimSowrd);
 
@@ -54,6 +55,7 @@ public class PlayerGroundedState : PlayerState
             stateMachine.ChangeState(player.jumpState);
     }
 
+    // Check ĐK khi nhân vật không có kiếm thì sẽ ReturnSword
     private bool HasNoSword()
     {
         if (!player.sword)

@@ -1,8 +1,9 @@
-using System;
+﻿using System;
 using System.Runtime.ExceptionServices;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Các kỹ năng của sword
 public enum SwordType
 {
     Regular,
@@ -17,30 +18,30 @@ public class Sword_Skill : Skill
 
     [Header("Bounce info")]
     [SerializeField] private UI_SkillTreeSlot bounceUnlockButton;
-    [SerializeField] private int bounceAmount;
-    [SerializeField] private float bounceGravity;
-    [SerializeField] private float bounceSpeed;
+    [SerializeField] private int bounceAmount;  // Số lần nảy
+    [SerializeField] private float bounceGravity; // Trọng lực bounce   
+    [SerializeField] private float bounceSpeed; // Tốc độ
 
     [Header("Peirce info")]
     [SerializeField] private UI_SkillTreeSlot pierceUnlockButton;
-    [SerializeField] private int pierceAmount;
-    [SerializeField] private float pierceGravity;
+    [SerializeField] private int pierceAmount; 
+    [SerializeField] private float pierceGravity; // Trọng lực pierce  
 
     [Header("Spin info")]
     [SerializeField] private UI_SkillTreeSlot spinUnlockButton;
-    [SerializeField] private float hitCooldown = .35f;
-    [SerializeField] private float maxTravelDistance = 7;
-    [SerializeField] private float spinDuration = 2;
-    [SerializeField] private float spinGravity = 1;
+    [SerializeField] private float hitCooldown = .35f; // Thời gian hồi chiêu
+    [SerializeField] private float maxTravelDistance = 7;    // KC tối đa khi spin
+    [SerializeField] private float spinDuration = 2; // KTG spin
+    [SerializeField] private float spinGravity = 1; // Trọng lực
 
     [Header("Skill info")]
     [SerializeField] private UI_SkillTreeSlot swordUnlockButton;
     public bool swordUnlocked { get; private set; }
     [SerializeField] private GameObject swordPrefab;
-    [SerializeField] private Vector2 launchForce;
-    [SerializeField] private float swordGravity;
-    [SerializeField] private float freezeTimeDuration;
-    [SerializeField] private float returnSpeed;
+    [SerializeField] private Vector2 launchForce; // lực phóng (x,y)
+    [SerializeField] private float swordGravity; // Trọng lực
+    [SerializeField] private float freezeTimeDuration; // Thời gian đóng băng của quái vật
+    [SerializeField] private float returnSpeed; // Tốc độ thanh kiếm khi trả về
 
     [Header("Passive skills")]
     [SerializeField] private UI_SkillTreeSlot timeStopUnlockButton;
@@ -50,11 +51,11 @@ public class Sword_Skill : Skill
 
 
 
-    private Vector2 finalDir;
+    private Vector2 finalDir; // Hướng mục tiêu
 
     [Header("Aim dots")]
-    [SerializeField] private int numberOfDots;
-    [SerializeField] private float spaceBeetwenDots;
+    [SerializeField] private int numberOfDots; // Số điểm trên mục tiêu
+    [SerializeField] private float spaceBeetwenDots; // khoảng cách giữa các điểm
     [SerializeField] private GameObject dotPrefab;
     [SerializeField] private Transform dotsParent;
 
@@ -64,10 +65,9 @@ public class Sword_Skill : Skill
     {
         base.Start();
 
+        // Tạo các dots hướng đến mục tiêu
         GenereateDots();
         SetupGraivty();
-
-
 
         swordUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockSword);
         bounceUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockBounceSword);
@@ -80,6 +80,7 @@ public class Sword_Skill : Skill
 
     private void SetupGraivty()
     {
+        // Lựa chọn kỹ năng
         if (swordType == SwordType.Bounce)
             swordGravity = bounceGravity;
         else if(swordType == SwordType.Pierce)
@@ -90,10 +91,11 @@ public class Sword_Skill : Skill
 
     protected override void Update()
     {
+        // Khi KeyUp thanh kiếm sẽ đi tới mục tiêu
         if (Input.GetKeyUp(KeyCode.Mouse1))
             finalDir = new Vector2(AimDirection().normalized.x * launchForce.x, AimDirection().normalized.y * launchForce.y);
 
-
+        // Giữ Key để tạo ra các dot để ngắm mục tiêu
         if (Input.GetKey(KeyCode.Mouse1))
         {
             for (int i = 0; i < dots.Length; i++)
@@ -103,12 +105,13 @@ public class Sword_Skill : Skill
         }
     }
 
+    // Tạo thanh kiếm cho nhân vật
     public void CreateSword()
     {
         GameObject newSword = Instantiate(swordPrefab, player.transform.position, transform.rotation);
         Sword_Skill_Controller newSwordScript = newSword.GetComponent<Sword_Skill_Controller>();
 
-
+        // Lựa chọn các kỹ năng trong SwordType
         if (swordType == SwordType.Bounce)
             newSwordScript.SetupBounce(true, bounceAmount,bounceSpeed);
         else if (swordType == SwordType.Pierce)
@@ -116,7 +119,7 @@ public class Sword_Skill : Skill
         else if (swordType == SwordType.Spin)
             newSwordScript.SetupSpin(true, maxTravelDistance, spinDuration,hitCooldown);
 
-
+        // Các thuộc tính của thanh kiếm
         newSwordScript.SetupSword(finalDir, swordGravity, player, freezeTimeDuration, returnSpeed);
 
         player.AssignNewSword(newSword);
@@ -178,7 +181,9 @@ public class Sword_Skill : Skill
 
 
     #endregion
+
     #region Aim region
+    // Hướng ngắm của thanh kiếm
     public Vector2 AimDirection()
     {
         Vector2 playerPosition = player.transform.position;
@@ -196,6 +201,7 @@ public class Sword_Skill : Skill
         }
     }
 
+    // Tạo ra các điểm
     private void GenereateDots()
     {
         dots = new GameObject[numberOfDots];
@@ -206,8 +212,10 @@ public class Sword_Skill : Skill
         }
     }
 
+    // Vị trí xác định các điểm theo chiều (x, y)
     private Vector2 DotsPosition(float t)
     {
+        // Lực phóng
         Vector2 position = (Vector2)player.transform.position + new Vector2(
             AimDirection().normalized.x * launchForce.x,
             AimDirection().normalized.y * launchForce.y) * t + .5f * (Physics2D.gravity * swordGravity) * (t * t);
