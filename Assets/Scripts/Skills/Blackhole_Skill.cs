@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,15 +8,15 @@ public class Blackhole_Skill : Skill
 
 
     [SerializeField] private UI_SkillTreeSlot blackHoleUnlockButton;
-    public bool blackholeUnlocked;// { get; private set; }
-    [SerializeField] private int amountOfAttacks;
-    [SerializeField] private float cloneCooldown;
-    [SerializeField] private float blackholeDuration;
+    public bool blackholeUnlocked; // { get; private set; }
+    [SerializeField] private int amountOfAttacks; // Số lần tấn công
+    [SerializeField] private float cloneCooldown; // Thời gian hồi chiêu
+    [SerializeField] private float blackholeDuration; // KTG blackHole
     [Space]
     [SerializeField] private GameObject blackHolePrefab;
-    [SerializeField] private float maxSize;
-    [SerializeField] private float growSpeed;
-    [SerializeField] private float shrinkSpeed;
+    [SerializeField] private float maxSize; // Kích thước blackHole
+    [SerializeField] private float growSpeed; // Tốc độ lớn của blackHole
+    [SerializeField] private float shrinkSpeed; // Tốc độ thu của blackHole
 
 
     Blackhole_Skill_Controller currentBlackhole;
@@ -39,11 +39,12 @@ public class Blackhole_Skill : Skill
         base.UseSkill();
 
 
-
+    
         GameObject newBlackHole = Instantiate(blackHolePrefab,player.transform.position,Quaternion.identity);
 
         currentBlackhole = newBlackHole.GetComponent<Blackhole_Skill_Controller>();
 
+        // Truyền thuộc tính vào hàm setup 
         currentBlackhole.SetupBlackhole(maxSize, growSpeed, shrinkSpeed, amountOfAttacks, cloneCooldown,blackholeDuration);
 
 
@@ -63,7 +64,7 @@ public class Blackhole_Skill : Skill
         base.Update();
     }
 
-
+    // Thoát khỏi trạng thái blackHole
     public bool SkillCompleted()
     {
         if (!currentBlackhole)

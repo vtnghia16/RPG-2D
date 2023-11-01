@@ -55,6 +55,7 @@ public class EntityFX : MonoBehaviour
         newText.GetComponent<TextMeshPro>().text = _text;
     }
 
+    // Hiệu ứng màu trong suốt
     public void MakeTransprent(bool _transprent)
     {
         if (_transprent)

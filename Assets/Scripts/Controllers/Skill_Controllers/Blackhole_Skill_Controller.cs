@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,9 +7,9 @@ public class Blackhole_Skill_Controller : MonoBehaviour
     [SerializeField] private GameObject hotKeyPrefab;
     [SerializeField] private List<KeyCode> keyCodeList;
 
-    private float maxSize;
-    private float growSpeed;
-    private float shrinkSpeed;
+    private float maxSize; 
+    private float growSpeed; // Tốc độ lớn của vòng tròn
+    private float shrinkSpeed; // Tốc độ thu nhỏ
     private float blackholeTimer;
 
     private bool canGrow = true;
@@ -18,8 +18,8 @@ public class Blackhole_Skill_Controller : MonoBehaviour
     private bool cloneAttackReleased;
     private bool playerCanDisapear = true;
 
-    private int amountOfAttacks = 4;
-    private float cloneAttackCooldown = .3f;
+    private int amountOfAttacks = 4; // Chỉ số tấn công
+    private float cloneAttackCooldown = .3f; // Thời gian hồi chiêu
     private float cloneAttackTimer;
 
     private List<Transform> targets = new List<Transform>();
@@ -27,6 +27,7 @@ public class Blackhole_Skill_Controller : MonoBehaviour
 
     public bool playerCanExitState {  get; private set; }
 
+    // Tạo circle Blackhole
     public void SetupBlackhole(float _maxSize, float _growSpeed, float _shrinkSpeed, int _amountOfAttacks, float _cloneAttackCooldown, float _blackholeDuration)
     {
         maxSize = _maxSize;
@@ -47,6 +48,7 @@ public class Blackhole_Skill_Controller : MonoBehaviour
         cloneAttackTimer -= Time.deltaTime;
         blackholeTimer -= Time.deltaTime;
 
+        // Điều kiện sử dụng blackHole
         if (blackholeTimer < 0)
         {
             blackholeTimer = Mathf.Infinity;
@@ -57,7 +59,7 @@ public class Blackhole_Skill_Controller : MonoBehaviour
                 FinishBlackHoleAbility();
         }
 
-
+        // Key R sử dụng blackHole
         if (Input.GetKeyDown(KeyCode.R))
         {
             ReleaseCloneAttack();
@@ -65,20 +67,24 @@ public class Blackhole_Skill_Controller : MonoBehaviour
 
         CloneAttackLogic();
 
+        // Tăng kích thước blackHole lớn dần theo thời gian
         if (canGrow && !canShrink)
         {
             transform.localScale = Vector2.Lerp(transform.localScale, new Vector2(maxSize, maxSize), growSpeed * Time.deltaTime);
         }
 
+        // Thu nhỏ kích thước blackHole sau khi tấn công
         if (canShrink)
         {
             transform.localScale = Vector2.Lerp(transform.localScale, new Vector2(-1, -1), shrinkSpeed * Time.deltaTime);
 
+            // Nếu kích thước nhỏ 0 - clear Circle
             if (transform.localScale.x < 0)
                 Destroy(gameObject);
         }
     }
 
+    // Xử lý nhân vật khi tấn công
     private void ReleaseCloneAttack()
     {
         if (targets.Count <= 0)
@@ -88,6 +94,7 @@ public class Blackhole_Skill_Controller : MonoBehaviour
         cloneAttackReleased = true;
         canCreateHotKeys = false;
 
+        // Khi nhân vật cloneAttack thì nhân vật blackHole transparent
         if (playerCanDisapear)
         {
             playerCanDisapear = false;
@@ -97,8 +104,10 @@ public class Blackhole_Skill_Controller : MonoBehaviour
         }
     }
 
+    // Xử lý tạo các nhân vật ảo khi tấn công BlackHole
     private void CloneAttackLogic()
     {
+        // Check thời gian sử dụng skill 
         if (cloneAttackTimer < 0 && cloneAttackReleased && amountOfAttacks > 0)
         {
             cloneAttackTimer = cloneAttackCooldown;
@@ -126,11 +135,13 @@ public class Blackhole_Skill_Controller : MonoBehaviour
 
             if (amountOfAttacks <= 0)
             {
+                // Độ trễ của nhân vật sau khi kết thúc blackHole 
                 Invoke("FinishBlackHoleAbility", 1f);
             }
         }
     }
 
+    // Kết thúc blackHole sau khi clone attack
     private void FinishBlackHoleAbility()
     {
         DestroyHotKeys();
@@ -139,6 +150,7 @@ public class Blackhole_Skill_Controller : MonoBehaviour
         cloneAttackReleased = false;
     }
 
+    // Clear key khi đã thực hiện CloneAttack
     private void DestroyHotKeys()
     {
         if (createdHotKey.Count <= 0)
@@ -159,11 +171,12 @@ public class Blackhole_Skill_Controller : MonoBehaviour
             CreateHotKey(collision);
         }
     }
-
+    // Xử lý các tình huống khi một đối tượng ra khỏi vùng va chạm của một đối tượng khác
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<Enemy>() != null)
-            collision.GetComponent<Enemy>().FreezeTime(false);
+            // Làm thời gian đóng băng để xử lý các mục tiêu
+            collision.GetComponent<Enemy>().FreezeTime(false); 
     }
 
 
@@ -178,14 +191,17 @@ public class Blackhole_Skill_Controller : MonoBehaviour
         if (!canCreateHotKeys)
             return;
 
+        // Tạo ra các hotKey tương ứng với các nhân vật
         GameObject newHotKey = Instantiate(hotKeyPrefab, collision.transform.position + new Vector3(0, 2), Quaternion.identity);
         createdHotKey.Add(newHotKey);
 
+        // KeyCode được random ngẫu nhiên các phím trong keyCodeList được tạo trong GameObject
         KeyCode choosenKey = keyCodeList[Random.Range(0, keyCodeList.Count)];
         keyCodeList.Remove(choosenKey);
 
         Blackhole_HotKey_Controller newHotKeyScript = newHotKey.GetComponent<Blackhole_HotKey_Controller>();
 
+       
         newHotKeyScript.SetupHotKey(choosenKey, collision.transform, this);
     }
 

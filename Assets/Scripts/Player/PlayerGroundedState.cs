@@ -22,6 +22,7 @@ public class PlayerGroundedState : PlayerState
     {
         base.Update();
 
+        // Kỹ năng blackHole của nhân vật
         if (Input.GetKeyDown(KeyCode.R) && player.skill.blackhole.blackholeUnlocked)
         {
             if (player.skill.blackhole.cooldownTimer > 0)
@@ -34,7 +35,7 @@ public class PlayerGroundedState : PlayerState
             stateMachine.ChangeState(player.blackHole);
         }
 
-        // Chức năng nhắm kiếm của nhân vật
+        // Kỹ năng nhắm kiếm của nhân vật
         if (Input.GetKeyDown(KeyCode.Mouse1) && HasNoSword() && player.skill.sword.swordUnlocked)
             stateMachine.ChangeState(player.aimSowrd);
 

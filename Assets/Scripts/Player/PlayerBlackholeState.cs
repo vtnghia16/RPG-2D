@@ -1,8 +1,8 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerBlackholeState : PlayerState
 {
-    private float flyTime = .4f;
+    private float flyTime = .4f; // Thời gian nhân vật bay khi thực hiện blackHole
     private bool skillUsed;
 
 
@@ -31,6 +31,7 @@ public class PlayerBlackholeState : PlayerState
     {
         base.Exit();
 
+        // hiện gravity và nhân vật sau khi đã cloneAttack
         player.rb.gravityScale = defaultGravity;
         player.fx.MakeTransprent(false);
     }
@@ -39,9 +40,11 @@ public class PlayerBlackholeState : PlayerState
     {
         base.Update();
 
+        // Set tốc độ bay lên của nhân vật theo chiều Y
         if (stateTimer > 0)
             rb.velocity = new Vector2(0, 15);
 
+        // Set tốc độ hạ xuống của nhân vật theo chiều Y
         if (stateTimer < 0)
         {
             rb.velocity = new Vector2(0, -.1f);
@@ -53,6 +56,7 @@ public class PlayerBlackholeState : PlayerState
             }
         }
 
+        // Nếu blackHole kết thúc nhân vật chuyển sang airState
         if (player.skill.blackhole.SkillCompleted())
             stateMachine.ChangeState(player.airState);
     }

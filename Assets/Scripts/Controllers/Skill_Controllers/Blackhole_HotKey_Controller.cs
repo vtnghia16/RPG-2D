@@ -1,8 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+// Các phim hotkey để đánh các mục tiêu trong phạm vi blackHole
 public class Blackhole_HotKey_Controller : MonoBehaviour
 {
     private SpriteRenderer sr;
@@ -26,8 +27,10 @@ public class Blackhole_HotKey_Controller : MonoBehaviour
 
     private void Update()
     {
+        // Set thực hiện các phím tấn công mục tiêu
         if (Input.GetKeyDown(myHotKey))
         {
+            // Tấn công các mục tiêu quái vật đã được chỉ định thông qua hotKey
             blackHole.AddEnemyToList(myEnemy);
 
             myText.color = Color.clear;
