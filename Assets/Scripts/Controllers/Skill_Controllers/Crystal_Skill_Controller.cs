@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,18 +8,19 @@ public class Crystal_Skill_Controller : MonoBehaviour
     private CircleCollider2D cd => GetComponent<CircleCollider2D>();
     private Player player;
 
-    private float crystalExistTimer;
+    private float crystalExistTimer; // Thời gian crystal tồn tại
     
 
     private bool canExplode;
     private bool canMove;
     private float moveSpeed;
-
+     
     private bool canGrow;
     private float growSpeed = 5;
 
-    private Transform closestTarget;
+    private Transform closestTarget; // Tìm mục tiêu gần nhất
     [SerializeField] private LayerMask whatIsEnemy;
+
     public void SetupCrystal(float _crystalDuration,bool _canExplode,bool _canMove,float _moveSpeed,Transform _closestTarget,Player _player)
     {
         player = _player;
@@ -30,6 +31,7 @@ public class Crystal_Skill_Controller : MonoBehaviour
         closestTarget = _closestTarget;
     }
 
+    // Chọn quái vật ngẫu nhiên để crystal trong bán kính blackHole
     public void ChooseRandomEnemy()
     {
         float radius = SkillManager.instance.blackhole.GetBlackholeRadius();
@@ -45,12 +47,14 @@ public class Crystal_Skill_Controller : MonoBehaviour
     {
         crystalExistTimer -= Time.deltaTime;
 
+        // time < 0 thì destroy crystal
         if (crystalExistTimer < 0)
         {
             FinishCrystal();
 
         }
 
+        // Crystal di chuyển tới mục tiêu quái vật gần nhất
         if (canMove)
         {
             if (closestTarget == null)
@@ -69,6 +73,7 @@ public class Crystal_Skill_Controller : MonoBehaviour
             transform.localScale = Vector2.Lerp(transform.localScale, new Vector2(3, 3), growSpeed * Time.deltaTime);
     }
 
+    // anim phát nổ của nhân vật
     private void AnimationExplodeEvent()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, cd.radius);
@@ -88,16 +93,18 @@ public class Crystal_Skill_Controller : MonoBehaviour
         }
     }
 
+    // SAu khi kết thúc skill Crystal
     public void FinishCrystal()
     {
         if (canExplode)
         {
             canGrow = true;
-            anim.SetTrigger("Explode");
+            anim.SetTrigger("Explode"); // Set anim
         }
         else
             SelfDestroy();
     }
 
+    // Tự destroy gameObject sau khi thực hiện Skill
     public void SelfDestroy() => Destroy(gameObject);   
 }

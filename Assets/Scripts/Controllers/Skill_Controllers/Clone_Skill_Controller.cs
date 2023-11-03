@@ -18,7 +18,7 @@ public class Clone_Skill_Controller : MonoBehaviour
 
 
     private bool canDuplicateClone;
-    private float chanceToDuplicate;
+    private float chanceToDuplicate; // Mặc định < 99%
 
     private void Awake()
     {
@@ -94,6 +94,7 @@ public class Clone_Skill_Controller : MonoBehaviour
 
                 if (canDuplicateClone)
                 {
+                    // Set random < 99 thực hiện Duplicate attack
                     if (Random.Range(0, 100) < chanceToDuplicate)
                     {
                         SkillManager.instance.clone.CreateClone(hit.transform, new Vector3(.5f * facingDir, 0));

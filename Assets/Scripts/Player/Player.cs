@@ -103,7 +103,7 @@ public class Player : Entity
 
         CheckForDashInput();
 
-
+        // Sử dụng skill Crystal
         if (Input.GetKeyDown(KeyCode.F) && skill.crystal.crystalUnlocked)
             skill.crystal.CanUseSkill();
 

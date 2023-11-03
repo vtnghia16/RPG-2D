@@ -49,6 +49,7 @@ public class Skill : MonoBehaviour
         // do some skill spesific things
     }
 
+    // Tìm kiếm quái vật trong phạm vi gần nhất
     protected virtual Transform FindClosestEnemy(Transform _checkTransform)
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(_checkTransform.position, 25);

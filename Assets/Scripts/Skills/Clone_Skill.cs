@@ -30,6 +30,7 @@ public class Clone_Skill : Skill
     [SerializeField] private float multiCloneAttackMultiplier;
     [SerializeField] private bool canDuplicateClone;
     [SerializeField] private float chanceToDuplicate;
+
     [Header("Crystal instead of clone")]
     [SerializeField] private UI_SkillTreeSlot crystalInseadUnlockButton;
     public bool crystalInseadOfClone;

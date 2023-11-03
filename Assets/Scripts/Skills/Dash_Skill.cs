@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -59,7 +59,7 @@ public class Dash_Skill : Skill
             cloneOnArrivalUnlocked = true;
     }
 
-
+    // Tạo nhân vật ảo khi Dash
     public void CloneOnDash()
     {
         if(cloneOnDashUnlocked)

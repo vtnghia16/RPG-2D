@@ -3,7 +3,7 @@
 // Kỹ năng phản công của người chơi
 public class PlayerCounterAttackState : PlayerState
 {
-    private bool canCreateClone;
+    private bool canCreateClone; // Tạo nhân vật clone
 
     public PlayerCounterAttackState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {

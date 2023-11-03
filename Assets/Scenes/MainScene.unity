@@ -5201,7 +5201,7 @@ MonoBehaviour:
 
 '
   lockedSkillColor: {r: 0.49056602, g: 0.40957633, b: 0.40957633, a: 1}
-  unlocked: 0
+  unlocked: 1
   shouldBeUnlocked:
   - {fileID: 1935701756}
   shouldBeLocked: []
@@ -21645,7 +21645,7 @@ MonoBehaviour:
   skillName: Dash - "Here I am"
   skillDescription: You leave mirage when you dash.
   lockedSkillColor: {r: 0.49056602, g: 0.40957633, b: 0.40957633, a: 1}
-  unlocked: 0
+  unlocked: 1
   shouldBeUnlocked:
   - {fileID: 1712030852}
   shouldBeLocked: []
@@ -24976,7 +24976,7 @@ MonoBehaviour:
   skillName: Dash - "Actually here I am"
   skillDescription: You create mirage at your arrival.
   lockedSkillColor: {r: 0.49056602, g: 0.40957633, b: 0.40957633, a: 1}
-  unlocked: 0
+  unlocked: 1
   shouldBeUnlocked:
   - {fileID: 716669078}
   shouldBeLocked: []
@@ -57121,7 +57121,7 @@ MonoBehaviour:
     You are invincible in the
     time of dash.'
   lockedSkillColor: {r: 0.49056602, g: 0.40957633, b: 0.40957633, a: 1}
-  unlocked: 0
+  unlocked: 1
   shouldBeUnlocked: []
   shouldBeLocked: []
 --- !u!114 &1712030853
@@ -60170,7 +60170,7 @@ MonoBehaviour:
     Your mirage has 30% of
     your damage.'
   lockedSkillColor: {r: 0.49056602, g: 0.40957633, b: 0.40957633, a: 1}
-  unlocked: 0
+  unlocked: 1
   shouldBeUnlocked: []
   shouldBeLocked: []
 --- !u!114 &1935701757
@@ -60691,7 +60691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86873055e088f6f4ba73123fc48328be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 60
+  cooldown: 15
   cooldownTimer: 0
   blackHoleUnlockButton: {fileID: 8259679}
   blackholeUnlocked: 0
@@ -60714,7 +60714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312955ab38245ab478f18f453b1fbdb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 3
+  cooldown: 1
   cooldownTimer: 0
   crystalDuration: 1.5
   crystalPrefab: {fileID: 4017398500736977651, guid: dc0a3fa34257af146a6a54bbdfdf5719, type: 3}
