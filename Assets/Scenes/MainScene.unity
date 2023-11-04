@@ -34525,28 +34525,28 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   vitality:
-    baseValue: 5
+    baseValue: 0
     modifiers: 
   damage:
-    baseValue: 10
+    baseValue: 50
     modifiers: 
   critChance:
-    baseValue: 100
+    baseValue: 0
     modifiers: 
   critPower:
     baseValue: 0
     modifiers: 
   maxHealth:
-    baseValue: 300
+    baseValue: 1000
     modifiers: 
   armor:
-    baseValue: 50
+    baseValue: 30
     modifiers: 
   evasion:
     baseValue: 0
     modifiers: 
   magicResistance:
-    baseValue: 1
+    baseValue: 0
     modifiers: 
   fireDamage:
     baseValue: 0
@@ -60580,7 +60580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761e7cbfc1caf59438341c0941d21e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 6
+  cooldown: 0
   cooldownTimer: 0
   dashUnlockButton: {fileID: 1712030852}
   cloneOnDashUnlockButton: {fileID: 716669078}
@@ -60630,8 +60630,8 @@ MonoBehaviour:
   clonePrefab: {fileID: 9160939646378215550, guid: 82e390aff33e3be438c8291885f243a7, type: 3}
   cloneDuration: 1.5
   cloneAttackUnlockButton: {fileID: 1935701756}
-  cloneAttackMultiplier: 0.3
-  canAttack: 0
+  cloneAttackMultiplier: 2
+  canAttack: 1
   aggresiveCloneUnlockButton: {fileID: 976701345}
   aggresiveCloneAttackMultiplier: 0.8
   multipleUnlockButton: {fileID: 1249616485}
@@ -60691,7 +60691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86873055e088f6f4ba73123fc48328be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 15
+  cooldown: 1
   cooldownTimer: 0
   blackHoleUnlockButton: {fileID: 8259679}
   blackholeUnlocked: 0
@@ -64780,8 +64780,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9131576063542419083, guid: 5438f31967bf207418546bbd3b326239, type: 3}
     - target: {fileID: 5413061283600725298, guid: c1a2356bb51a6194d985ea5b453dfdfb, type: 3}
+      propertyPath: armor.baseValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413061283600725298, guid: c1a2356bb51a6194d985ea5b453dfdfb, type: 3}
       propertyPath: damage.baseValue
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413061283600725298, guid: c1a2356bb51a6194d985ea5b453dfdfb, type: 3}
+      propertyPath: strength.baseValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413061283600725298, guid: c1a2356bb51a6194d985ea5b453dfdfb, type: 3}
+      propertyPath: vitality.baseValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413061283600725298, guid: c1a2356bb51a6194d985ea5b453dfdfb, type: 3}
+      propertyPath: iceDamage.baseValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413061283600725298, guid: c1a2356bb51a6194d985ea5b453dfdfb, type: 3}
+      propertyPath: maxHealth.baseValue
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413061283600725298, guid: c1a2356bb51a6194d985ea5b453dfdfb, type: 3}
+      propertyPath: critChance.baseValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5413061283600725298, guid: c1a2356bb51a6194d985ea5b453dfdfb, type: 3}
+      propertyPath: lightingDamage.baseValue
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5413061283600725300, guid: c1a2356bb51a6194d985ea5b453dfdfb, type: 3}
       propertyPath: m_Name

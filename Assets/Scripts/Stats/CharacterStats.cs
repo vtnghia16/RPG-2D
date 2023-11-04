@@ -72,7 +72,7 @@ public class CharacterStats : MonoBehaviour
 
     protected virtual void Start()
     {
-        critPower.SetDefaultValue(150);
+        // critPower.SetDefaultValue(150);
         currentHealth = GetMaxHealthValue();
 
         fx = GetComponent<EntityFX>();
@@ -137,7 +137,7 @@ public class CharacterStats : MonoBehaviour
 
         _targetStats.GetComponent<Entity>().SetupKnockbackDir(transform);
 
-        int totalDamage = damage.GetValue() + strength.GetValue();
+        int totalDamage = damage.GetValue();
 
         if (CanCrit())
         {
@@ -165,7 +165,7 @@ public class CharacterStats : MonoBehaviour
 
 
 
-        int totalMagicalDamage = _fireDamage + _iceDamage + _lightingDamage + intelligence.GetValue();
+        int totalMagicalDamage = 0;
 
         totalMagicalDamage = CheckTargetResistance(_targetStats, totalMagicalDamage);
         _targetStats.TakeDamage(totalMagicalDamage);
@@ -396,7 +396,7 @@ public class CharacterStats : MonoBehaviour
 
     private int CheckTargetResistance(CharacterStats _targetStats, int totalMagicalDamage)
     {
-        totalMagicalDamage -= _targetStats.magicResistance.GetValue() + (_targetStats.intelligence.GetValue() * 3);
+        totalMagicalDamage = 0;
         totalMagicalDamage = Mathf.Clamp(totalMagicalDamage, 0, int.MaxValue);
         return totalMagicalDamage;
     }
@@ -408,7 +408,7 @@ public class CharacterStats : MonoBehaviour
 
     protected bool TargetCanAvoidAttack(CharacterStats _targetStats)
     {
-        int totalEvasion = _targetStats.evasion.GetValue() + _targetStats.agility.GetValue();
+        int totalEvasion = 0;
 
         if (isShocked)
             totalEvasion += 20;
@@ -424,7 +424,7 @@ public class CharacterStats : MonoBehaviour
 
     protected bool CanCrit()
     {
-        int totalCriticalChance = critChance.GetValue() + agility.GetValue();
+        int totalCriticalChance = 0;
 
         if (Random.Range(0, 100) <= totalCriticalChance)
         {
@@ -437,7 +437,7 @@ public class CharacterStats : MonoBehaviour
 
     protected int CalculateCriticalDamage(int _damage)
     {
-        float totalCritPower = (critPower.GetValue() + strength.GetValue()) * .01f;
+        float totalCritPower = 0;
         float critDamage = _damage * totalCritPower;
 
         return Mathf.RoundToInt(critDamage);
