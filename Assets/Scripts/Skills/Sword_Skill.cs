@@ -103,6 +103,25 @@ public class Sword_Skill : Skill
                 dots[i].transform.position = DotsPosition(i * spaceBeetwenDots);
             }
         }
+
+        // Chuyển đổi các sword type
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            swordType = SwordType.Regular;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            swordType = SwordType.Bounce;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            swordType = SwordType.Pierce;
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            swordType = SwordType.Spin;
+        }
+
     }
 
     // Tạo thanh kiếm cho nhân vật

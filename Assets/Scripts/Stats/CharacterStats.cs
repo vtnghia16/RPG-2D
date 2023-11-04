@@ -22,36 +22,53 @@ public enum StatType
 
 public class CharacterStats : MonoBehaviour
 {
-    private EntityFX fx;
-
+                                                                                                                                                        #region Stats
     [Header("Major stats")]
+    [HideInInspector]
     public Stat strength; // 1 point increase damage by 1 and crit.power by 1%
+    [HideInInspector]
     public Stat agility;  // 1 point increase evasion by 1% and crit.chance by 1%
+    [HideInInspector]
     public Stat intelligence; // 1 point increase magic damage by 1 and magic resistance by 3
+    [HideInInspector]
     public Stat vitality; // 1 point incredase health by 5 points
 
     [Header("Offensive stats")]
-    public Stat damage;
+    [HideInInspector]
     public Stat critChance;
-    public Stat critPower;              // default value 150%
 
     [Header("Defensive stats")]
-    public Stat maxHealth;
-    public Stat armor;
+    [HideInInspector]
     public Stat evasion;
+    [HideInInspector]
     public Stat magicResistance;
 
     [Header("Magic stats")]
+    [HideInInspector]
     public Stat fireDamage;
+    [HideInInspector]
     public Stat iceDamage;
+    [HideInInspector]
     public Stat lightingDamage;
 
-
+    [HideInInspector]
     public bool isIgnited;   // does damage over time
+    [HideInInspector]
     public bool isChilled;   // reduce armor by 20%
+    [HideInInspector]
     public bool isShocked;   // reduce accuracy by 20%
+    #endregion
+    private EntityFX fx;
+
+    public Stat damage;
+    public Stat maxHealth;
+    public Stat armor;
+    public Stat critPower;              // default value 150%
 
 
+    [Space]
+    [Space]
+    [Space]
     [SerializeField] private float ailmentsDuration = 4;
     private float ignitedTimer;
     private float chilledTimer;
@@ -308,6 +325,7 @@ public class CharacterStats : MonoBehaviour
             newShockStrike.GetComponent<ShockStrike_Controller>().Setup(shockDamage, closestEnemy.GetComponent<CharacterStats>());
         }
     }
+
     private void ApplyIgniteDamage()
     {
         if (igniteDamageTimer < 0)
@@ -322,6 +340,7 @@ public class CharacterStats : MonoBehaviour
     }
 
     public void SetupIgniteDamage(int _damage) => igniteDamage = _damage;
+
     public void SetupShockStrikeDamage(int _damage) => shockDamage = _damage;
 
     #endregion
