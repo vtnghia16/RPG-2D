@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +6,7 @@ public class ItemObject : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private ItemData itemData;
+
     private void SetupVisuals()
     {
         if (itemData == null)
@@ -16,6 +17,7 @@ public class ItemObject : MonoBehaviour
     }
 
 
+    // Setup các vật phẩm
     public void SetupItem(ItemData _itemData, Vector2 _velocity)
     {
         itemData = _itemData;
@@ -24,6 +26,7 @@ public class ItemObject : MonoBehaviour
         SetupVisuals();
     }
 
+    // Nhặt vật phẩm vào kho đồ
     public void PickupItem()
     {
         if (!Inventory.instance.CanAddItem() && itemData.itemType == ItemType.Equipment)

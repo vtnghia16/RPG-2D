@@ -1,11 +1,11 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyStats : CharacterStats
 {
     private Enemy enemy;
-    private ItemDrop myDropSystem;
+    private ItemDrop myDropSystem; // Hệ thống rơi của vật phẩm
     public Stat soulsDropAmount;
 
     [Header("Level details")]
@@ -69,9 +69,9 @@ public class EnemyStats : CharacterStats
         enemy.Die();
 
         PlayerManager.instance.currency += soulsDropAmount.GetValue();
+
+        // Thả vật phẩm khi quái vật die
         myDropSystem.GenerateDrop();
-
-
         Destroy(gameObject, 5f);
     }
 }

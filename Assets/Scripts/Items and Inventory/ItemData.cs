@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using UnityEngine;
 
 
@@ -24,7 +24,7 @@ public class ItemData : ScriptableObject
     public string itemId;
 
     [Range(0,100)]
-    public float dropChance;
+    public float dropChance; // Cơ hội rớt vật liệu
 
     protected StringBuilder sb = new StringBuilder();
 
