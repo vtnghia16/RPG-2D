@@ -55,8 +55,6 @@ public class Clone_Skill_Controller : MonoBehaviour
         canDuplicateClone = _canDuplicate;
         chanceToDuplicate = _chanceToDuplicate;
         closestEnemy = _closestEnemy;
-
-
         FaceClosestTarget();
     }
 

@@ -36,7 +36,7 @@ public class SkeletonStunnedState : EnemyState
     {
         base.Update();
 
-        // Quái vật sẽ chuyển trạng thaisc idle khi bị dính choáng
+        // Quái vật sẽ chuyển trạng thái idle khi bị dính choáng
         if (stateTimer < 0)
             stateMachine.ChangeState(enemy.idleState);
     }

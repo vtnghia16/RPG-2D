@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Sword_Skill_Controller : MonoBehaviour
@@ -13,7 +14,7 @@ public class Sword_Skill_Controller : MonoBehaviour
     private bool isReturning;
 
 
-    private float freezeTimeDuration; // Set thời gian đóng băng của quái vật
+    private float freezeTimeDuration;  // Set thời gian đóng băng của quái vật
     private float returnSpeed = 12; // Tốc độ thanh kiếm khi trả về
 
     [Header("Pierce info")]
@@ -22,13 +23,13 @@ public class Sword_Skill_Controller : MonoBehaviour
     [Header("Bounce info")]
     private float bounceSpeed;
     private bool isBouncing;
-    private int bounceAmount; // Độ nảy giữa các mục tiêu
+    private int bounceAmount;  // Độ nảy giữa các mục tiêu
     private List<Transform> enemyTarget;
     private int targetIndex;
 
     [Header("Spin info")]
     private float maxTravelDistance; // Khoảng cách di chuyển tối da khi spin
-    private float spinDuration; // KTG trong khí spin
+    private float spinDuration;  // KTG trong khí spin
     private float spinTimer;
     private bool wasStopped;
     private bool isSpinning;
@@ -36,7 +37,7 @@ public class Sword_Skill_Controller : MonoBehaviour
     private float hitTimer;
     private float hitCooldown;
 
-
+    private float spinDirection;
 
     private void Awake()
     {
@@ -64,6 +65,9 @@ public class Sword_Skill_Controller : MonoBehaviour
         if (pierceAmount <= 0)
             anim.SetBool("Rotation", true);
 
+
+        spinDirection = Mathf.Clamp(rb.velocity.x, -1, 1);
+
         Invoke("DestroyMe", 7);
     }
 
@@ -84,7 +88,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         pierceAmount = _pierceAmount;
     }
 
-    // Set thanh kiếm theo kỹ năng bounce (Xoay)
+    // Set thanh kiếm theo kỹ năng bounce(Xoay)
     public void SetupSpin(bool _isSpinning, float _maxTravelDistance, float _spinDuration, float _hitCooldown)
     {
         isSpinning = _isSpinning;
@@ -138,8 +142,7 @@ public class Sword_Skill_Controller : MonoBehaviour
             {
                 spinTimer -= Time.deltaTime;
 
-
-               //transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x + 1 , transform.position.y), 2.4f * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x + spinDirection, transform.position.y), 1.5f * Time.deltaTime);
 
                 if (spinTimer < 0)
                 {
@@ -209,7 +212,7 @@ public class Sword_Skill_Controller : MonoBehaviour
         if (isReturning)
             return;
 
-       
+
         if (collision.GetComponent<Enemy>() != null)
         {
             Enemy enemy = collision.GetComponent<Enemy>();

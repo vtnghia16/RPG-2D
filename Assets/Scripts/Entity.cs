@@ -1,26 +1,26 @@
 ﻿using System.Collections;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 // kế thừa từ player và enemy
 public class Entity : MonoBehaviour
 {
 
+
     #region Components
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
-
+    
     public SpriteRenderer sr { get; private set; }
     public CharacterStats stats { get; private set; }
-    public CapsuleCollider2D cd { get; private set; }
+    public CapsuleCollider2D cd {  get; private set; }
     #endregion
 
-    // Hiệu ứng đẩy lùi khi bị dính đòn
     [Header("Knockback info")]
-    [SerializeField] protected Vector2 knockbackPower; // Set (x, y)
+    [SerializeField] protected Vector2 knockbackPower;  // Set (x, y)
     [SerializeField] protected float knockbackDuration;
     protected bool isKnocked;
 
-    // Xử lý va chạm
     [Header("Collision info")]
     public Transform attackCheck;
     public float attackCheckRadius; // bán kính tấn công 
@@ -31,9 +31,7 @@ public class Entity : MonoBehaviour
     [SerializeField] protected LayerMask whatIsGround;
 
     public int knockbackDir { get; private set; }
-
-    // Check hướng của vật thể
-    public int facingDir { get; private set; } = 1;
+    public int facingDir { get; private set; } = 1; // Check hướng của vật thể
     protected bool facingRight = true;
 
     public System.Action onFlipped;
@@ -45,24 +43,22 @@ public class Entity : MonoBehaviour
 
     protected virtual void Start()
     {
-        // Lấy các object có trong unity
         sr = GetComponentInChildren<SpriteRenderer>();
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
-
+        
         stats = GetComponent<CharacterStats>();
         cd = GetComponent<CapsuleCollider2D>();
-
     }
 
     protected virtual void Update()
     {
-
+        
     }
 
     public virtual void SlowEntityBy(float _slowPercentage, float _slowDuration)
     {
-
+        
     }
 
     protected virtual void ReturnDefaultSpeed()
@@ -71,17 +67,13 @@ public class Entity : MonoBehaviour
     }
 
     public virtual void DamageImpact() => StartCoroutine("HitKnockback");
-
+ 
     public virtual void SetupKnockbackDir(Transform _damageDirection)
     {
         if (_damageDirection.position.x > transform.position.x)
-        {
             knockbackDir = -1;
-        }
         else if (_damageDirection.position.x < transform.position.x)
-        {
             knockbackDir = 1;
-        }
     }
 
     public void SetupKnockbackPower(Vector2 _knockbackpower) => knockbackPower = _knockbackpower;
@@ -104,7 +96,6 @@ public class Entity : MonoBehaviour
     }
 
     #region Velocity
-    // Nhân vật bị ngừng lại bới Velocity(0, 0)
     public void SetZeroVelocity()
     {
         if (isKnocked)
@@ -123,9 +114,7 @@ public class Entity : MonoBehaviour
         FlipController(_xVelocity);
     }
     #endregion
-
     #region Collision
-    // Xử lý va chạm với các bề mặt
     public virtual bool IsGroundDetected() => Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, whatIsGround);
     public virtual bool IsWallDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, wallCheckDistance, whatIsGround);
 
@@ -137,8 +126,6 @@ public class Entity : MonoBehaviour
         Gizmos.DrawWireSphere(attackCheck.position, attackCheckRadius);
     }
     #endregion
-
-    // Hướng quay
     #region Flip
     public virtual void Flip()
     {
@@ -146,7 +133,7 @@ public class Entity : MonoBehaviour
         facingRight = !facingRight;
         transform.Rotate(0, 180, 0);
 
-        if (onFlipped != null)
+        if(onFlipped != null)
             onFlipped();
     }
 
@@ -159,7 +146,7 @@ public class Entity : MonoBehaviour
     }
     #endregion
 
-
+    
 
     public virtual void Die()
     {

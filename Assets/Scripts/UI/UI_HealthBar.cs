@@ -20,7 +20,7 @@ public class UI_HealthBar : MonoBehaviour
         entity.onFlipped += FlipUI;
         myStats.onHealthChanged += UpdateHealthUI;
 
-        UpdateHealthUI();
+        //UpdateHealthUI(); 
     }
 
     private void UpdateHealthUI()

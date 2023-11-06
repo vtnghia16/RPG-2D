@@ -5,27 +5,26 @@ using UnityEngine;
 
 public class PlayerFX : EntityFX
 {
+
+
     [Header("Screen shake FX")]
     [SerializeField] private float shakeMultiplier;
-    private CinemachineImpulseSource screenShake;
     public Vector3 shakeSwordImpact;
     public Vector3 shakeHighDamage;
+    private CinemachineImpulseSource screenShake;
 
     [Header("After image fx")]
     [SerializeField] private GameObject afterImagePrefab;
     [SerializeField] private float colorLooseRate;
     [SerializeField] private float afterImageCooldown;
     private float afterImageCooldownTimer;
-
     [Space]
     [SerializeField] private ParticleSystem dustFx;
 
     protected override void Start()
     {
         base.Start();
-
         screenShake = GetComponent<CinemachineImpulseSource>();
-
     }
 
     private void Update()
@@ -39,6 +38,7 @@ public class PlayerFX : EntityFX
         screenShake.GenerateImpulse();
     }
 
+
     public void CreateAfterImage()
     {
         if (afterImageCooldownTimer < 0)
@@ -47,14 +47,12 @@ public class PlayerFX : EntityFX
             GameObject newAfterImage = Instantiate(afterImagePrefab, transform.position, transform.rotation);
             newAfterImage.GetComponent<AfterImageFX>().SetupAfterImage(colorLooseRate, sr.sprite);
         }
-
     }
+
 
     public void PlayDustFX()
     {
         if (dustFx != null)
-        {
             dustFx.Play();
-        }
     }
 }

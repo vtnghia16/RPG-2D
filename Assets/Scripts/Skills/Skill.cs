@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Skill : MonoBehaviour
 {
-    public float cooldown; // Thời gian hồi chiêu
-    public float cooldownTimer; // Thời gian theo delta 
+    public float cooldown;
+    public float cooldownTimer;
 
     protected Player player;
     
@@ -38,8 +38,6 @@ public class Skill : MonoBehaviour
             return true;
         }
 
-
-        // Debug.Log("Skill is on cooldown");
         player.fx.CreatePopUpText("Cooldown");
         return false;
     }

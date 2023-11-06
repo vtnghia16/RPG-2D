@@ -7,7 +7,7 @@ public class Blackhole_Skill_Controller : MonoBehaviour
     [SerializeField] private GameObject hotKeyPrefab;
     [SerializeField] private List<KeyCode> keyCodeList;
 
-    private float maxSize; 
+    private float maxSize;
     private float growSpeed; // Tốc độ lớn của vòng tròn
     private float shrinkSpeed; // Tốc độ thu nhỏ
     private float blackholeTimer;
@@ -132,7 +132,7 @@ public class Blackhole_Skill_Controller : MonoBehaviour
             }
 
             amountOfAttacks--;
-
+            
             if (amountOfAttacks <= 0)
             {
                 // Độ trễ của nhân vật sau khi kết thúc blackHole 
@@ -162,21 +162,22 @@ public class Blackhole_Skill_Controller : MonoBehaviour
         }
     }
 
+    // Xử lý các tình huống khi một đối tượng ra khỏi vùng va chạm của một đối tượng khác
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.GetComponent<Enemy>() != null)
         {
+            // Làm thời gian đóng băng để xử lý các mục tiêu
             collision.GetComponent<Enemy>().FreezeTime(true);
 
             CreateHotKey(collision);
         }
     }
-    // Xử lý các tình huống khi một đối tượng ra khỏi vùng va chạm của một đối tượng khác
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<Enemy>() != null)
-            // Làm thời gian đóng băng để xử lý các mục tiêu
-            collision.GetComponent<Enemy>().FreezeTime(false); 
+            collision.GetComponent<Enemy>().FreezeTime(false);
     }
 
 
@@ -201,7 +202,6 @@ public class Blackhole_Skill_Controller : MonoBehaviour
 
         Blackhole_HotKey_Controller newHotKeyScript = newHotKey.GetComponent<Blackhole_HotKey_Controller>();
 
-       
         newHotKeyScript.SetupHotKey(choosenKey, collision.transform, this);
     }
 

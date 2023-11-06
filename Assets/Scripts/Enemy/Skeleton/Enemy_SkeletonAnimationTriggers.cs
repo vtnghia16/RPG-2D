@@ -20,7 +20,7 @@ public class Enemy_SkeletonAnimationTriggers : MonoBehaviour
 
         foreach (var hit in colliders)
         {
-            if (hit.GetComponent<Player>() != null) // Xử lý các điểm anim bên trong vòng tròn này 
+            if (hit.GetComponent<Player>() != null)
             {
                 
                 PlayerStats target = hit.GetComponent<PlayerStats>();

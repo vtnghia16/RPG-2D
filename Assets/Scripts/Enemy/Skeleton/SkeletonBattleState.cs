@@ -22,16 +22,15 @@ public class SkeletonBattleState : EnemyState
         player = PlayerManager.instance.player.transform;
 
         if (player.GetComponent<PlayerStats>().isDead)
-        {
             stateMachine.ChangeState(enemy.moveState);
-        }
+
         
     }
 
     public override void Update()
     {
         base.Update();
-        
+
         // Tấn công người chơi khi phát hiện
         if (enemy.IsPlayerDetected())
         {
@@ -53,7 +52,7 @@ public class SkeletonBattleState : EnemyState
 
 
         // Quái vật di chuyển sang trái vị trí nhân vật > và ngược lại
-        if (player.position.x > enemy.transform.position.x) 
+        if (player.position.x > enemy.transform.position.x)
             moveDir = 1;
         else if (player.position.x < enemy.transform.position.x)
             moveDir = -1;
@@ -76,7 +75,8 @@ public class SkeletonBattleState : EnemyState
             enemy.lastTimeAttacked = Time.time;
             return true;
         }
-        Debug.Log("Attack is on cooldown");
+
+        // Debug.Log("Attack is on cooldown");
         return false;
     }
 }

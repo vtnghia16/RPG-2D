@@ -20,6 +20,7 @@ public class PlayerBlackholeState : PlayerState
     {
         base.Enter();
 
+        // hiện gravity và nhân vật sau khi đã cloneAttack
         defaultGravity = player.rb.gravityScale;
 
         skillUsed = false;
@@ -31,7 +32,6 @@ public class PlayerBlackholeState : PlayerState
     {
         base.Exit();
 
-        // hiện gravity và nhân vật sau khi đã cloneAttack
         player.rb.gravityScale = defaultGravity;
         player.fx.MakeTransprent(false);
     }

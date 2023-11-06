@@ -22,7 +22,9 @@ public enum StatType
 
 public class CharacterStats : MonoBehaviour
 {
-                                                                                                                                                        #region Stats
+    private EntityFX fx;
+
+    #region Stats
     [Header("Major stats")]
     [HideInInspector]
     public Stat strength; // 1 point increase damage by 1 and crit.power by 1%
@@ -36,6 +38,8 @@ public class CharacterStats : MonoBehaviour
     [Header("Offensive stats")]
     [HideInInspector]
     public Stat critChance;
+    [HideInInspector]
+    public Stat critPower;              // default value 150%
 
     [Header("Defensive stats")]
     [HideInInspector]
@@ -58,13 +62,11 @@ public class CharacterStats : MonoBehaviour
     [HideInInspector]
     public bool isShocked;   // reduce accuracy by 20%
     #endregion
-    private EntityFX fx;
+
 
     public Stat damage;
     public Stat maxHealth;
     public Stat armor;
-    public Stat critPower;              // default value 150%
-
 
     [Space]
     [Space]
@@ -74,7 +76,9 @@ public class CharacterStats : MonoBehaviour
     private float chilledTimer;
     private float shockedTimer;
 
-
+    [Space]
+    [Space]
+    [Space]
     private float igniteDamageCoodlown = .3f;
     private float igniteDamageTimer;
     private int igniteDamage;
@@ -94,6 +98,7 @@ public class CharacterStats : MonoBehaviour
 
         fx = GetComponent<EntityFX>();
     }
+
 
     protected virtual void Update()
     {
@@ -115,7 +120,10 @@ public class CharacterStats : MonoBehaviour
 
         if(isIgnited)
             ApplyIgniteDamage();
+
     }
+
+
 
 
     public void MakeVulnerableFor(float _duration) => StartCoroutine(VulnerableCorutine(_duration));
@@ -143,7 +151,7 @@ public class CharacterStats : MonoBehaviour
 
         _statToModify.RemoveModifier(_modifier);
     }
-    
+
     // Gây sát thương
     public virtual void DoDamage(CharacterStats _targetStats)
     {
@@ -162,7 +170,7 @@ public class CharacterStats : MonoBehaviour
             criticalStrike = true;
         }
 
-        fx.CreateHitFx(_targetStats.transform, criticalStrike);
+        fx.CreateHitFx(_targetStats.transform,criticalStrike);
 
         totalDamage = CheckTargetArmor(_targetStats, totalDamage);
         _targetStats.TakeDamage(totalDamage);
@@ -330,7 +338,7 @@ public class CharacterStats : MonoBehaviour
     {
         if (igniteDamageTimer < 0)
         {
-            DecreaseHealthBy(igniteDamage);
+           DecreaseHealthBy(igniteDamage);
 
             if (currentHealth < 0 && !isDead)
                 Die();
@@ -340,19 +348,19 @@ public class CharacterStats : MonoBehaviour
     }
 
     public void SetupIgniteDamage(int _damage) => igniteDamage = _damage;
-
     public void SetupShockStrikeDamage(int _damage) => shockDamage = _damage;
 
     #endregion
 
     public virtual void TakeDamage(int _damage)
     {
+
         if (isInvincible)
-        {
             return;
-        }
 
         DecreaseHealthBy(_damage);
+
+
 
         GetComponent<Entity>().DamageImpact();
         fx.StartCoroutine("FlashFX");
@@ -360,17 +368,23 @@ public class CharacterStats : MonoBehaviour
         if (currentHealth < 0 && !isDead)
             Die();
 
+
     }
 
 
     public virtual void IncreaseHealthBy(int _amount)
     {
+
         currentHealth += _amount;
 
         if (currentHealth > GetMaxHealthValue())
+        {
             currentHealth = GetMaxHealthValue();
+        }
 
-        if(onHealthChanged != null)
+
+
+        if (onHealthChanged != null)
             onHealthChanged();
     }
 
@@ -383,20 +397,26 @@ public class CharacterStats : MonoBehaviour
 
         currentHealth -= _damage;
 
-        // Hiển thị % số máu khi bị đánh
-        if(_damage > 0)
-        {
+        if (_damage > 0)
             fx.CreatePopUpText(_damage.ToString());
-        }
 
         if (onHealthChanged != null)
             onHealthChanged();
+
     }
 
     protected virtual void Die()
     {
         isDead = true;
     }
+
+    public void KillEntity()
+    {
+        if (!isDead)
+            Die();
+    }
+
+    public void MakeInvincible(bool _invincible) => isInvincible = _invincible;
 
 
     #region Stat calculations
@@ -464,18 +484,9 @@ public class CharacterStats : MonoBehaviour
 
     public int GetMaxHealthValue()
     {
-        return maxHealth.GetValue() + vitality.GetValue() * 5;
+        return maxHealth.GetValue();
     }
 
-    public void KillEntity()
-    {
-        if (!isDead)
-        {
-            Die();
-        }
-    }
-
-    public void MakeInvincible(bool _invincible) => isInvincible = _invincible;
 
     #endregion
 

@@ -398,6 +398,8 @@ public class Inventory : MonoBehaviour , ISaveManager
         }
     }
 
+
+
 #if UNITY_EDITOR
     [ContextMenu("Fill up item data base")]
     private void FillUpItemDataBase() => itemDataBase = new List<ItemData>(GetItemDataBase());
@@ -417,5 +419,6 @@ public class Inventory : MonoBehaviour , ISaveManager
         return itemDataBase;
     }
 #endif
+    
 
 }

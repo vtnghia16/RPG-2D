@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,9 +6,9 @@ public class SkillManager : MonoBehaviour
 {
     public static SkillManager instance;
 
-    // Các kỹ năng
+
     public Dash_Skill dash { get; private set; }
-    public Clone_Skill clone { get; private set; } // Tạo ra bản sao cho nhân vật chính
+    public Clone_Skill clone { get; private set; }
     public Sword_Skill sword { get; private set; }
     public Blackhole_Skill blackhole { get; private set; }
     public Crystal_Skill crystal { get; private set; }
@@ -17,7 +17,6 @@ public class SkillManager : MonoBehaviour
 
     private void Awake()
     {
-        // Kiểm tra gameObject trong trường hợp bị trùng
         if (instance != null)
             Destroy(instance.gameObject);
         else

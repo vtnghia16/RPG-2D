@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 // Kỹ năng phản công của người chơi
 public class PlayerCounterAttackState : PlayerState
 {
@@ -38,13 +39,13 @@ public class PlayerCounterAttackState : PlayerState
         {
             if (hit.GetComponent<Enemy>() != null)
             {
-                if (hit.GetComponent<Enemy>().CanBeStunned()) // Làm choáng khi bị tấn công
+                if (hit.GetComponent<Enemy>().CanBeStunned())  // Làm choáng khi bị tấn công
                 {
                     stateTimer = 10; // Bất cứ giá trị lớn hơn 1
                     player.anim.SetBool("SuccessfulCounterAttack", true);
 
-                    player.skill.parry.UseSkill(); // goint to use to restore health on parry
-                     
+                    player.skill.parry.UseSkill(); 
+
                     if (canCreateClone)
                     {
                         canCreateClone = false;

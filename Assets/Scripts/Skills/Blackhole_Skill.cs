@@ -8,7 +8,7 @@ public class Blackhole_Skill : Skill
 
 
     [SerializeField] private UI_SkillTreeSlot blackHoleUnlockButton;
-    public bool blackholeUnlocked; // { get; private set; }
+    public bool blackholeUnlocked;// { get; private set; }
     [SerializeField] private int amountOfAttacks; // Số lần tấn công
     [SerializeField] private float cloneCooldown; // Thời gian hồi chiêu
     [SerializeField] private float blackholeDuration; // KTG blackHole
@@ -39,7 +39,7 @@ public class Blackhole_Skill : Skill
         base.UseSkill();
 
 
-    
+
         GameObject newBlackHole = Instantiate(blackHolePrefab,player.transform.position,Quaternion.identity);
 
         currentBlackhole = newBlackHole.GetComponent<Blackhole_Skill_Controller>();

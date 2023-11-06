@@ -9,10 +9,10 @@ public class EnemyState
     protected Enemy enemyBase;
     protected Rigidbody2D rb;
 
-    private string animBoolName;
+    private string animBoolName; // kết hợp anim khi gọi
 
     protected float stateTimer;
-    protected bool triggerCalled; // kết hợp anim khi gọi
+    protected bool triggerCalled;
 
     // Hàm xây dựng
     public EnemyState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName)
@@ -33,7 +33,7 @@ public class EnemyState
         triggerCalled = false;
         rb = enemyBase.rb;
         enemyBase.anim.SetBool(animBoolName, true); // Hiệu ứng nhân vật
-        
+
     }
 
     public virtual void Exit()
@@ -42,7 +42,6 @@ public class EnemyState
         enemyBase.AssignLastAnimName(animBoolName);
     }
 
-    // Trigger gọi anim với bất kì trạng thái nào
     public virtual void AnimationFinishTrigger()
     {
         triggerCalled = true;

@@ -11,7 +11,7 @@ public class Crystal_Skill : Skill
 
     [Header("Crystal mirage")]
     [SerializeField] private UI_SkillTreeSlot unlockCloneInstaedButton;
-    [SerializeField] private bool cloneInsteadOfCrystal;    
+    [SerializeField] private bool cloneInsteadOfCrystal;
 
     [Header("Crystal simple")]
     [SerializeField] private UI_SkillTreeSlot unlockCrystalButton;
@@ -19,7 +19,9 @@ public class Crystal_Skill : Skill
 
     [Header("Explosive crystal")]
     [SerializeField] private UI_SkillTreeSlot unlockExplosiveButton;
+    [SerializeField] private float explisoveCooldown;
     [SerializeField] private bool canExplode; // Crytal nổ
+
 
     [Header("Moving crystal")]
     [SerializeField] private UI_SkillTreeSlot unlockMovingCrystalButton;
@@ -76,7 +78,10 @@ public class Crystal_Skill : Skill
     private void UnlockExplosiveCrystal()
     {
         if (unlockExplosiveButton.unlocked)
+        {
             canExplode = true;
+            cooldown = explisoveCooldown;
+        }
     }
 
     private void UnlockMovingCrystal()
@@ -162,16 +167,14 @@ public class Crystal_Skill : Skill
                 // Check không có Crystal nào trong stack
                 if (crystalLeft.Count <= 0)
                 {
-                    cooldown = multiStackCooldown; // Set thời gian hồi chiêu
+                    cooldown = multiStackCooldown;  // Set thời gian hồi chiêu
                     RefilCrystal(); // Nạp số crystal vào stack
                 }
-
 
                 return true;
 
             }
         }
-
 
         return false;
     }

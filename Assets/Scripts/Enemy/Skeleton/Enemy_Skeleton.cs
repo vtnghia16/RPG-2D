@@ -46,10 +46,10 @@ public class Enemy_Skeleton : Enemy
 
     }
 
+    // Quay trở lại trạng thái stunnedState 
+    // Khi thực hiện cửa sổ tấn công ô vuông đỏ của quái vật
     public override bool CanBeStunned()
     {
-        // Quay trở lại trạng thái stunnedState 
-        // Khi thực hiện cửa sổ tấn công ô vuông đỏ của quái vật
         if (base.CanBeStunned())
         {
             stateMachine.ChangeState(stunnedState);

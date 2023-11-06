@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour , ISaveManager
         if (instance != null)
             Destroy(instance.gameObject);
         else
-            instance = this; 
+            instance = this;
     }
     public bool HaveEnoughMoney(int _price)
     {

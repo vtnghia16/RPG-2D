@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Audio;
-using UnityEngine.UI;
 
-public class UI : MonoBehaviour ,ISaveManager
+public class UI : MonoBehaviour, ISaveManager
 {
     [Header("End screen")]
     [SerializeField] private UI_FadeScreen fadeScreen;
@@ -40,7 +37,7 @@ public class UI : MonoBehaviour ,ISaveManager
         SwitchTo(inGameUI);
 
         itemToolTip.gameObject.SetActive(false);
-        statToolTip.gameObject.SetActive(false);   
+        statToolTip.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -52,12 +49,12 @@ public class UI : MonoBehaviour ,ISaveManager
 
         if (Input.GetKeyDown(KeyCode.B))
             SwitchWithKeyTo(craftUI);
-        
+
 
         if (Input.GetKeyDown(KeyCode.K))
             SwitchWithKeyTo(skillTreeUI);
 
-        if(Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.O))
             SwitchWithKeyTo(optionsUI);
     }
 
@@ -69,9 +66,11 @@ public class UI : MonoBehaviour ,ISaveManager
             bool fadeScreen = transform.GetChild(i).GetComponent<UI_FadeScreen>() != null; // we need this to keep fade screen game object active
 
 
-            if(fadeScreen == false)
+            if (fadeScreen == false)
                 transform.GetChild(i).gameObject.SetActive(false);
         }
+
+
 
         if (_menu != null)
         {
@@ -79,17 +78,13 @@ public class UI : MonoBehaviour ,ISaveManager
             _menu.SetActive(true);
         }
 
-        if(GameManager.instance != null)
-        {
-            if(_menu == inGameUI)
-            {
-                GameManager.instance.PauseGame(false);
-            }
-            else
-            {
-                GameManager.instance.PauseGame(true);
 
-            }
+        if (GameManager.instance != null)
+        {
+            if (_menu == inGameUI)
+                GameManager.instance.PauseGame(false);
+            else
+                GameManager.instance.PauseGame(true);
         }
     }
 

@@ -6,7 +6,6 @@ public class PlayerAnimationTriggers : MonoBehaviour
 {
     private Player player => GetComponentInParent<Player>();
 
-    // Kích hoạt trạng thái anim ngay lập tức làm ngưng các state khác
     private void AnimationTrigger()
     {
         player.AnimationTrigger();
@@ -20,18 +19,18 @@ public class PlayerAnimationTriggers : MonoBehaviour
         // Xử lý các điểm anim bên trong vòng tròn này 
         Collider2D[] colliders = Physics2D.OverlapCircleAll(player.attackCheck.position, player.attackCheckRadius);
 
-        foreach (var hit in colliders) 
+        foreach (var hit in colliders)
         {
-            if (hit.GetComponent<Enemy>() != null) // kiểm tra các va chạm nằm trong bán kính
+            if (hit.GetComponent<Enemy>() != null)
             {
                 EnemyStats _target = hit.GetComponent<EnemyStats>();
 
-                if(_target != null) 
+                if(_target != null)  // kiểm tra các va chạm nằm trong bán kính
                     player.stats.DoDamage(_target);
 
                 ItemData_Equipment weaponData = Inventory.instance.GetEquipment(EquipmentType.Weapon);
 
-                if (weaponData != null)
+                if (weaponData != null) 
                     weaponData.Effect(_target.transform);
 
 

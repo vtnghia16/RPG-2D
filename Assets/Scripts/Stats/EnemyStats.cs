@@ -25,19 +25,19 @@ public class EnemyStats : CharacterStats
         myDropSystem = GetComponent<ItemDrop>();
     }
 
-    //private void ApplyLevelModifiers()
-    //{
+    private void ApplyLevelModifiers()
+    {
     //    Modify(strength);
     //    Modify(agility);
     //    Modify(intelligence);
     //    Modify(vitality);
 
-    //    Modify(damage);
+        Modify(damage);
     //    Modify(critChance);
     //    Modify(critPower);
 
-    //    Modify(maxHealth);
-    //    Modify(armor);
+        Modify(maxHealth);
+        Modify(armor);
     //    Modify(evasion);
     //    Modify(magicResistance);
 
@@ -46,7 +46,7 @@ public class EnemyStats : CharacterStats
     //    Modify(lightingDamage);
 
     //    Modify(soulsDropAmount);
-    //}
+    }
 
     private void Modify(Stat _stat)
     {
@@ -70,6 +70,7 @@ public class EnemyStats : CharacterStats
 
         PlayerManager.instance.currency += soulsDropAmount.GetValue();
         myDropSystem.GenerateDrop();
+
 
         Destroy(gameObject, 5f);
     }

@@ -9,18 +9,17 @@ public class Crystal_Skill_Controller : MonoBehaviour
     private Player player;
 
     private float crystalExistTimer; // Thời gian crystal tồn tại
-    
+
 
     private bool canExplode;
     private bool canMove;
     private float moveSpeed;
-     
+
     private bool canGrow;
     private float growSpeed = 5;
 
     private Transform closestTarget; // Tìm mục tiêu gần nhất
     [SerializeField] private LayerMask whatIsEnemy;
-
     public void SetupCrystal(float _crystalDuration,bool _canExplode,bool _canMove,float _moveSpeed,Transform _closestTarget,Player _player)
     {
         player = _player;
@@ -82,9 +81,11 @@ public class Crystal_Skill_Controller : MonoBehaviour
         {
             if (hit.GetComponent<Enemy>() != null)
             {
-                player.stats.DoMagicalDamage(hit.GetComponent<CharacterStats>());
 
                 hit.GetComponent<Entity>().SetupKnockbackDir(transform);
+                player.stats.DoMagicalDamage(hit.GetComponent<CharacterStats>());
+
+
                 ItemData_Equipment equipedAmulet = Inventory.instance.GetEquipment(EquipmentType.Amulet);
 
                 if (equipedAmulet != null)
@@ -93,13 +94,13 @@ public class Crystal_Skill_Controller : MonoBehaviour
         }
     }
 
-    // SAu khi kết thúc skill Crystal
+    // Sau khi kết thúc skill Crystal
     public void FinishCrystal()
     {
         if (canExplode)
         {
             canGrow = true;
-            anim.SetTrigger("Explode"); // Set anim
+            anim.SetTrigger("Explode");
         }
         else
             SelfDestroy();

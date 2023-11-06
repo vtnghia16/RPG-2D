@@ -6,22 +6,22 @@ using UnityEngine.UIElements;
 public class Player : Entity
 {
     [Header("Attack details")]
-    public Vector2[] attackMovement; // Di chuyển khi tấn công
+    public Vector2[] attackMovement;
     public float counterAttackDuration = .2f; // KTG phản công
 
     public bool isBusy { get; private set; }
     [Header("Move info")]
-    public float moveSpeed = 12f; // tốc độ di chuyển
-    public float jumpForce; // Lực nhảy
-    public float swordReturnImpact; // Tác động của thanh kiếm khi return
+    public float moveSpeed = 12f;
+    public float jumpForce;
+    public float swordReturnImpact;  // Tác động của thanh kiếm khi return
     private float defaultMoveSpeed;
     private float defaultJumpForce;
 
     [Header("Dash info")]   
-    public float dashSpeed; // tốc độ lướt
-    public float dashDuration; // khoảng thời gian lướt
+    public float dashSpeed;
+    public float dashDuration;
     private float defaultDashSpeed;
-    public float dashDir { get; private set; } // hướng lướt
+    public float dashDir { get; private set; }
 
 
     public SkillManager skill { get; private set; }
@@ -51,7 +51,6 @@ public class Player : Entity
 
     protected override void Awake()
     {
-        // Truyền các trạng thái của nhân vật thông qua PlayerStateMachine
         base.Awake();
         stateMachine = new PlayerStateMachine();
 
@@ -81,7 +80,6 @@ public class Player : Entity
 
         skill = SkillManager.instance;
 
-        // Nhân vật đứung yên khi bắt đầu game
         stateMachine.Initialize(idleState);
 
         defaultMoveSpeed = moveSpeed;
@@ -92,10 +90,9 @@ public class Player : Entity
 
     protected override void Update()
     {
-        if(Time.timeScale == 0)
-        {
+
+        if (Time.timeScale == 0)
             return;
-        }
 
         base.Update();
 
@@ -143,7 +140,6 @@ public class Player : Entity
         Destroy(sword);
     }
 
-    // Set nhân vật kết hợp thực hiện state trong vài giây
     public IEnumerator BusyFor(float _seconds)
     {
         isBusy = true;        
@@ -152,26 +148,22 @@ public class Player : Entity
         isBusy = false;
     }
 
-    // Kích hoạt anim của nhân vật
     public void AnimationTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
-    // Kiểm tra đầu vào khi lướt 
     private void CheckForDashInput()
     {
-        // Khi dash đụng tường => wallSlide
         if (IsWallDetected())
             return;
 
         if (skill.dash.dashUnlocked == false)
             return;
 
-        // Sự kiện lướt của nhân vật
+
         if (Input.GetKeyDown(KeyCode.LeftShift) && SkillManager.instance.dash.CanUseSkill())
         {
 
             dashDir = Input.GetAxisRaw("Horizontal");
 
-            // hướng lướt phải cùng facingDir
             if (dashDir == 0)
                 dashDir = facingDir;
 

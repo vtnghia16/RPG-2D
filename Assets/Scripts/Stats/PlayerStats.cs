@@ -11,7 +11,11 @@ public class PlayerStats : CharacterStats
         base.Start();
 
         player= GetComponent<Player>();
+
+        currentHealth = GetMaxHealthValue();
+
     }
+
 
     public override void TakeDamage(int _damage)
     {
@@ -33,13 +37,18 @@ public class PlayerStats : CharacterStats
     {
         base.DecreaseHealthBy(_damage);
 
-        if(_damage > GetMaxHealthValue() * .3f)
+        if (isDead)
+            return;
+
+        if (_damage > GetMaxHealthValue() * .3f )
         {
-            player.SetupKnockbackPower(new Vector2(10, 6));
+            player.SetupKnockbackPower(new Vector2(10,6));
             player.fx.ScreenShake(player.fx.shakeHighDamage);
+
 
             int randomSound = Random.Range(34, 35);
             AudioManager.instance.PlaySFX(randomSound, null);
+            
         }
 
         ItemData_Equipment currentArmor = Inventory.instance.GetEquipment(EquipmentType.Armor);
@@ -62,7 +71,6 @@ public class PlayerStats : CharacterStats
 
         if (_multiplier > 0)
             totalDamage = Mathf.RoundToInt(totalDamage * _multiplier);
-
 
         if (CanCrit())
         {

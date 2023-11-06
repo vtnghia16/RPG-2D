@@ -10,7 +10,7 @@ public class Enemy : Entity
     // Quái vật bị choáng
     [Header("Stunned info")]
     public float stunDuration;
-    public Vector2 stunDirection; // Hướng (x, y)
+    public Vector2 stunDirection;  // Hướng (x, y)
     protected bool canBeStunned;
     [SerializeField] protected GameObject counterImage;
 
@@ -21,7 +21,7 @@ public class Enemy : Entity
     private float defaultMoveSpeed; // Tốc độ di chuyển của các enemies
 
     [Header("Attack info")]
-    public float attackDistance; // KC tấn công khi áp sát người chơi
+    public float attackDistance;// KC tấn công khi áp sát người chơi
     public float attackCooldown; // Thời gian hồi chiêu 
     public float minAttackCooldown;
     public float maxAttackCooldown;
@@ -30,7 +30,6 @@ public class Enemy : Entity
     public EnemyStateMachine stateMachine { get; private set; }
     public EntityFX fx { get; private set; }
     private Player player;
-
     public string lastAnimBoolName {  get; private set; }
 
     protected override void Awake()
@@ -102,9 +101,9 @@ public class Enemy : Entity
         FreezeTime(false);
     }
 
+    #region Counter Attack Window
     // Cửa sổ tấn công ô vuông đỏ của quái vật
     // Xác định quái vật nào đang chuẩn bị tấn công
-    #region Counter Attack Window
     public virtual void OpenCounterAttackWindow()
     {
         canBeStunned = true;

@@ -1,8 +1,8 @@
-﻿using Cinemachine; // Thư viện shake screen
-using Newtonsoft.Json.Bson;
+﻿using Cinemachine;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class EntityFX : MonoBehaviour
 {
@@ -14,9 +14,10 @@ public class EntityFX : MonoBehaviour
 
     // Hiệu ứng chớp nhoáng khi bị tấn công
     [Header("Flash FX")]
-    [SerializeField] private float flashDuration; // Khoảng thời gian
+    [SerializeField] private float flashDuration;
     [SerializeField] private Material hitMat;
     private Material originalMat;
+
 
     [Header("Ailment colors")]
     [SerializeField] private Color[] igniteColor;
@@ -32,14 +33,13 @@ public class EntityFX : MonoBehaviour
     [SerializeField] private GameObject hitFx;
     [SerializeField] private GameObject criticalHitFx;
 
-
-
+    
     protected virtual void Start()
     {
         sr = GetComponentInChildren<SpriteRenderer>();
         player = PlayerManager.instance.player;
+        
         originalMat = sr.material;
-
     }
 
 
@@ -71,7 +71,7 @@ public class EntityFX : MonoBehaviour
         Color currentColor = sr.color;
         sr.color = Color.white;
 
-        yield return new WaitForSeconds(flashDuration); // thời gian chớp nhoáng
+        yield return new WaitForSeconds(flashDuration);  // thời gian chớp nhoáng
 
         sr.color = currentColor;
         sr.material = originalMat;
@@ -109,7 +109,6 @@ public class EntityFX : MonoBehaviour
     public void ChillFxFor(float _seconds)
     {
         chillFx.Play();
-
         InvokeRepeating("ChillColorFx", 0, .3f);
         Invoke("CancelColorChange", _seconds);
     }
@@ -118,7 +117,6 @@ public class EntityFX : MonoBehaviour
     public void ShockFxFor(float _seconds)
     {
         shockFx.Play();
-
         InvokeRepeating("ShockColorFx", 0, .3f);
         Invoke("CancelColorChange", _seconds);
     }
@@ -146,13 +144,15 @@ public class EntityFX : MonoBehaviour
             sr.color = shockColor[1];
     }
 
-    public void CreateHitFx(Transform _target, bool _critical)
+    public void CreateHitFx(Transform _target,bool _critical)
     {
-        float zRotation = Random.Range(-90, 90); // Xoay 360
+
+
+        float zRotation = Random.Range(-90, 90);
         float xPosition = Random.Range(-.5f, .5f);
         float yPosition = Random.Range(-.5f, .5f);
 
-        Vector3 hitFxRotation = new Vector3(0, 0, zRotation);
+        Vector3 hitFxRotaion = new Vector3(0,0,zRotation);
 
         GameObject hitPrefab = hitFx;
 
@@ -164,20 +164,16 @@ public class EntityFX : MonoBehaviour
             zRotation = Random.Range(-45, 45);
 
             if (GetComponent<Entity>().facingDir == -1)
-            {
                 yRotation = 180;
-            }
 
-            hitFxRotation = new Vector3(0, yRotation, zRotation);
+            hitFxRotaion = new Vector3(0, yRotation, zRotation);
+
         }
 
-        GameObject newHitFx = Instantiate(hitPrefab, _target.position + new Vector3(xPosition, yPosition), Quaternion.identity);
-
-        newHitFx.transform.Rotate(hitFxRotation);
-
+        GameObject newHitFx = Instantiate(hitPrefab, _target.position + new Vector3(xPosition, yPosition), Quaternion.identity); // uncomment this if you want particle to follow target ,_target);
+        newHitFx.transform.Rotate(hitFxRotaion);
         Destroy(newHitFx, .5f);
     }
-
 
 
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerDashState : PlayerState
 {
+
+
     public PlayerDashState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName) : base(_player, _stateMachine, _animBoolName)
     {
     }
@@ -13,12 +15,9 @@ public class PlayerDashState : PlayerState
         base.Enter();
 
         player.skill.dash.CloneOnDash(); // Tạo ra nhiều bản sao cho nhân vật
-
-        // delta < 0 thì lướt trong khoảng thời gian set
         stateTimer = player.dashDuration;
 
         player.stats.MakeInvincible(true);
-
 
     }
 
@@ -32,17 +31,20 @@ public class PlayerDashState : PlayerState
         player.stats.MakeInvincible(false);
     }
 
+
+
+
+
+
     public override void Update()
     {
         base.Update();
 
-        // Khi Dash vào tường thì nhân vật sẽ chuyển thành trạng thái wallSlide
         if (!player.IsGroundDetected() && player.IsWallDetected())
             stateMachine.ChangeState(player.wallSlide);
 
-        player.SetVelocity(player.dashSpeed * player.dashDir, 0); // Nhân vật dash theo chiều X
+        player.SetVelocity(player.dashSpeed * player.dashDir, 0);
 
-        // Nếu deltaTime < 0 thì nhân vật sẽ idle
         if (stateTimer < 0)
             stateMachine.ChangeState(player.idleState);
 
