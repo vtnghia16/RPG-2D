@@ -98,28 +98,28 @@ public class EntityFX : MonoBehaviour
     }
 
 
-    public void IgniteFxFor(float _seconds)
-    {
-        //igniteFx.Play();
+    //public void IgniteFxFor(float _seconds)
+    //{
+    //    igniteFx.Play();
 
-        InvokeRepeating("IgniteColorFx", 0, .3f);
-        Invoke("CancelColorChange", _seconds);
-    }
+    //    InvokeRepeating("IgniteColorFx", 0, .3f);
+    //    Invoke("CancelColorChange", _seconds);
+    //}
 
-    public void ChillFxFor(float _seconds)
-    {
-        //chillFx.Play();
-        InvokeRepeating("ChillColorFx", 0, .3f);
-        Invoke("CancelColorChange", _seconds);
-    }
+    //public void ChillFxFor(float _seconds)
+    //{
+    //    chillFx.Play();
+    //    InvokeRepeating("ChillColorFx", 0, .3f);
+    //    Invoke("CancelColorChange", _seconds);
+    //}
 
 
-    public void ShockFxFor(float _seconds)
-    {
-        //shockFx.Play();
-        InvokeRepeating("ShockColorFx", 0, .3f);
-        Invoke("CancelColorChange", _seconds);
-    }
+    //public void ShockFxFor(float _seconds)
+    //{
+    //    shockFx.Play();
+    //    InvokeRepeating("ShockColorFx", 0, .3f);
+    //    Invoke("CancelColorChange", _seconds);
+    //}
 
     //private void IgniteColorFx()
     //{

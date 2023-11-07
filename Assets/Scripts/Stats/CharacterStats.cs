@@ -87,7 +87,7 @@ public class CharacterStats : MonoBehaviour
     public int currentHealth;
 
     public System.Action onHealthChanged;
-    public bool isDead { get; private set; } // Khi nhân vật chết
+    public bool isDead { get; private set; }
     public bool isInvincible { get; private set; }
     private bool isVulnerable;
 
@@ -260,7 +260,7 @@ public class CharacterStats : MonoBehaviour
             isIgnited = _ignite;
             ignitedTimer = ailmentsDuration;
 
-            fx.IgniteFxFor(ailmentsDuration);
+            // fx.IgniteFxFor(ailmentsDuration);
         }
 
         if (_chill && canApplyChill)
@@ -271,7 +271,7 @@ public class CharacterStats : MonoBehaviour
             float slowPercentage = .2f;
 
             GetComponent<Entity>().SlowEntityBy(slowPercentage, ailmentsDuration);
-            fx.ChillFxFor(ailmentsDuration);
+            // fx.ChillFxFor(ailmentsDuration);
         }
 
         if (_shock && canApplyShock)
@@ -299,7 +299,7 @@ public class CharacterStats : MonoBehaviour
         shockedTimer = ailmentsDuration;
         isShocked = _shock;
 
-        fx.ShockFxFor(ailmentsDuration);
+        // fx.ShockFxFor(ailmentsDuration);
     }
 
     private void HitNearestTargetWithShockStrike()

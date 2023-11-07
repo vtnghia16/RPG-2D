@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Converters;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -297,7 +297,6 @@ public class Inventory : MonoBehaviour , ISaveManager
         return true;
     }
 
-    // Public danh sách trang bị
     public List<InventoryItem> GetEquipmentList() => equipment;
 
     public List<InventoryItem> GetStashList() => stash;

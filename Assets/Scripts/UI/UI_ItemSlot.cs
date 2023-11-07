@@ -1,4 +1,4 @@
-﻿using TMPro;
+using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -54,7 +54,6 @@ public class UI_ItemSlot : MonoBehaviour , IPointerDownHandler ,IPointerEnterHan
 
         ui.itemToolTip.HideToolTip();
 
-        // Xóa dữ liệu vật phẩm 
         if (Input.GetKey(KeyCode.LeftControl))
         {
             Inventory.instance.RemoveItem(item.data);

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,11 +10,10 @@ public class ItemObject_Trigger : MonoBehaviour
     {
         if (collision.GetComponent<Player>() != null)
         {
-            // Nếu nhân vật chết quái vật không nhặt vật phẩm 
             if (collision.GetComponent<CharacterStats>().isDead)
                 return;
 
-            Debug.Log("Vật phẩm nhặt được ");
+            Debug.Log("Picked up item ");
             myItemObject.PickupItem();
         }
     }
