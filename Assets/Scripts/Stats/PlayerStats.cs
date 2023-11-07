@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -30,6 +30,7 @@ public class PlayerStats : CharacterStats
         GameManager.instance.lostCurrencyAmount = PlayerManager.instance.currency;
         PlayerManager.instance.currency = 0;
 
+        // Nhân vật khi chết sẽ rơi vật phẩm
         GetComponent<PlayerItemDrop>()?.GenerateDrop();
     }
 

@@ -87,7 +87,7 @@ public class CharacterStats : MonoBehaviour
     public int currentHealth;
 
     public System.Action onHealthChanged;
-    public bool isDead { get; private set; }
+    public bool isDead { get; private set; } // Khi nhân vật chết
     public bool isInvincible { get; private set; }
     private bool isVulnerable;
 

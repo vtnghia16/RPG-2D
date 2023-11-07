@@ -19,15 +19,15 @@ public class EntityFX : MonoBehaviour
     private Material originalMat;
 
 
-    [Header("Ailment colors")]
-    [SerializeField] private Color[] igniteColor;
-    [SerializeField] private Color[] chillColor;
-    [SerializeField] private Color[] shockColor;
+    //[Header("Ailment colors")]
+    //[SerializeField] private Color[] igniteColor;
+    //[SerializeField] private Color[] chillColor;
+    //[SerializeField] private Color[] shockColor;
 
-    [Header("Ailment particles")]
-    [SerializeField] private ParticleSystem igniteFx;
-    [SerializeField] private ParticleSystem chillFx;
-    [SerializeField] private ParticleSystem shockFx;
+    //[Header("Ailment particles")]
+    //[SerializeField] private ParticleSystem igniteFx;
+    //[SerializeField] private ParticleSystem chillFx;
+    //[SerializeField] private ParticleSystem shockFx;
 
     [Header("Hit FX")]
     [SerializeField] private GameObject hitFx;
@@ -92,15 +92,15 @@ public class EntityFX : MonoBehaviour
         CancelInvoke();
         sr.color = Color.white;
 
-        igniteFx.Stop();
-        chillFx.Stop();
-        shockFx.Stop();
+        //igniteFx.Stop();
+        //chillFx.Stop();
+        //shockFx.Stop();
     }
 
 
     public void IgniteFxFor(float _seconds)
     {
-        igniteFx.Play();
+        //igniteFx.Play();
 
         InvokeRepeating("IgniteColorFx", 0, .3f);
         Invoke("CancelColorChange", _seconds);
@@ -108,7 +108,7 @@ public class EntityFX : MonoBehaviour
 
     public void ChillFxFor(float _seconds)
     {
-        chillFx.Play();
+        //chillFx.Play();
         InvokeRepeating("ChillColorFx", 0, .3f);
         Invoke("CancelColorChange", _seconds);
     }
@@ -116,33 +116,33 @@ public class EntityFX : MonoBehaviour
 
     public void ShockFxFor(float _seconds)
     {
-        shockFx.Play();
+        //shockFx.Play();
         InvokeRepeating("ShockColorFx", 0, .3f);
         Invoke("CancelColorChange", _seconds);
     }
 
-    private void IgniteColorFx()
-    {
-        if (sr.color != igniteColor[0])
-            sr.color = igniteColor[0];
-        else
-            sr.color = igniteColor[1];
-    }
-    private void ChillColorFx()
-    {
-        if (sr.color != chillColor[0])
-            sr.color = chillColor[0];
-        else
-            sr.color = chillColor[1];
-    }
+    //private void IgniteColorFx()
+    //{
+    //    if (sr.color != igniteColor[0])
+    //        sr.color = igniteColor[0];
+    //    else
+    //        sr.color = igniteColor[1];
+    //}
+    //private void ChillColorFx()
+    //{
+    //    if (sr.color != chillColor[0])
+    //        sr.color = chillColor[0];
+    //    else
+    //        sr.color = chillColor[1];
+    //}
 
-    private void ShockColorFx()
-    {
-        if (sr.color != shockColor[0])
-            sr.color = shockColor[0];
-        else
-            sr.color = shockColor[1];
-    }
+    //private void ShockColorFx()
+    //{
+    //    if (sr.color != shockColor[0])
+    //        sr.color = shockColor[0];
+    //    else
+    //        sr.color = shockColor[1];
+    //}
 
     public void CreateHitFx(Transform _target,bool _critical)
     {

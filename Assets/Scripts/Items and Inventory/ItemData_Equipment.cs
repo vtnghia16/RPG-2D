@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -50,6 +50,7 @@ public class ItemData_Equipment : ItemData
 
     private int descriptionLength;
 
+    // Các hiệu ứng của mỗi vật phẩm
     public void Effect(Transform _enemyPosition)
     {
         foreach (var item in itemEffects)

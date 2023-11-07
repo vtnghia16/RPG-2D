@@ -80,7 +80,6 @@
     <Compile Include="Assets\Scripts\Save and Load\SaveManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimationTriggers.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\Effects\ThunderStrike_Effect.cs" />
     <Compile Include="Assets\Scripts\Effects\AfterImageFX.cs" />
     <Compile Include="Assets\Scripts\Skills\Crystal_Skill.cs" />
     <Compile Include="Assets\Scripts\Skills\Dash_Skill.cs" />
@@ -144,7 +143,6 @@
     <Compile Include="Assets\Scripts\Player\PlayerBlackholeState.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\ItemDrop.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Inventory.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\Effects\IceAndFire_Effect.cs" />
     <Compile Include="Assets\Scripts\Controllers\ThunderStrike_Controller.cs" />
     <Compile Include="Assets\Scripts\UI\UI_ItemSlot.cs" />
     <Compile Include="Assets\Scripts\Effects\PopUpTextFx.cs" />
