@@ -18,6 +18,7 @@ public class Entity : MonoBehaviour
 
     [Header("Knockback info")]
     [SerializeField] protected Vector2 knockbackPower;  // Set (x, y)
+    [SerializeField] protected Vector2 knockbackOffset;
     [SerializeField] protected float knockbackDuration;
     protected bool isKnocked;
 
@@ -83,7 +84,11 @@ public class Entity : MonoBehaviour
     {
         isKnocked = true;
 
-        rb.velocity = new Vector2(knockbackPower.x * knockbackDir, knockbackPower.y); // Tốc độ bị đẩy lùi theo hướng
+        float xOffset = Random.Range(knockbackOffset.x, knockbackOffset.y);
+
+        if(knockbackPower.x > 0 || knockbackPower.y > 0)
+            rb.velocity = new Vector2((knockbackPower.x + xOffset) * knockbackDir, knockbackPower.y); // Tốc độ bị đẩy lùi theo hướng
+
 
         yield return new WaitForSeconds(knockbackDuration); // Khoảng thời gian bị knockback
         isKnocked = false;

@@ -55,6 +55,9 @@ public class SlimeBattleState : EnemyState
         else if (player.position.x < enemy.transform.position.x)
             moveDir = -1;
 
+        if (enemy.IsPlayerDetected() && enemy.IsPlayerDetected().distance < enemy.attackDistance - .1f)
+            return;
+
         // Set tốc độ di chuyển của nhân vật theo hướng di chuyển
         enemy.SetVelocity(enemy.moveSpeed * moveDir, rb.velocity.y);
     }

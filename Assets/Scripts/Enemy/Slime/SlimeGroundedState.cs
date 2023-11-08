@@ -29,7 +29,7 @@ public class SlimeGroundedState : EnemyState
         base.Update();
 
         // Tấn công khi phát hiện người chơi & khoảng các battle time
-        if (enemy.IsPlayerDetected() || Vector2.Distance(enemy.transform.position, player.transform.position) < 2)
+        if (enemy.IsPlayerDetected() || Vector2.Distance(enemy.transform.position, player.transform.position) < enemy.agroDistance)
         {
             stateMachine.ChangeState(enemy.battleState);
         }

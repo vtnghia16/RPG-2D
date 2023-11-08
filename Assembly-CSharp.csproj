@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Enemy\Slime\SlimeAttackState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_FadeScreen.cs" />
     <Compile Include="Assets\Scripts\Effects\ParallaxBackground.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerIdleState.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Blackhole_Skill_Controller.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerWallJumpState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMoveState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Slime\SlimeMoveState.cs" />
     <Compile Include="Assets\Scripts\DeadZone.cs" />
     <Compile Include="Assets\Scripts\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\Skills\Parry_Skill.cs" />
@@ -78,13 +80,16 @@
     <Compile Include="Assets\Scripts\Player\PlayerAimSwordState.cs" />
     <Compile Include="Assets\Scripts\LostCurrencyController.cs" />
     <Compile Include="Assets\Scripts\Save and Load\SaveManager.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Slime\SlimeDeadState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimationTriggers.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Slime\Enemy_Slime.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\ThunderStrike_Effect.cs" />
     <Compile Include="Assets\Scripts\Effects\AfterImageFX.cs" />
     <Compile Include="Assets\Scripts\Skills\Crystal_Skill.cs" />
     <Compile Include="Assets\Scripts\Skills\Dash_Skill.cs" />
     <Compile Include="Assets\Scripts\Save and Load\SerializableDictionary.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Slime\SlimeGroundedState.cs" />
     <Compile Include="Assets\Scripts\Skills\Blackhole_Skill.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerPrimaryAttackState.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\Heal_Effect.cs" />
@@ -136,6 +141,7 @@
     <Compile Include="Assets\Scripts\UI\UI_VolumeSlider.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_Skeleton.cs" />
     <Compile Include="Assets\Scripts\Controllers\IceAndFire_Controller.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Slime\SlimeIdleState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCounterAttackState.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\FreezeEnemies_Effect.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonGroundedState.cs" />
@@ -157,14 +163,8 @@
     <Compile Include="Assets\Scripts\Player\PlayerJumpState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_InGame.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Slime\Enemy_Slime.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Slime\SlimeGroundedState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime\SlimeBattleState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Slime\SlimeAttackState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Slime\SlimeIdleState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Slime\SlimeMoveState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime\SlimeStunnedState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Slime\SlimeDeadState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -26,6 +26,7 @@ public class Enemy : Entity
     private float defaultMoveSpeed; // Tốc độ di chuyển của các enemies
 
     [Header("Attack info")]
+    public float agroDistance = 2; // Khoảng cách quái vật bắt đầu tấn công
     public float attackDistance;// KC tấn công khi áp sát người chơi
     public float attackCooldown; // Thời gian hồi chiêu 
     public float minAttackCooldown;
