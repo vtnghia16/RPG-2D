@@ -1,7 +1,12 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+// Lấy chung các script cho tât cả enemies
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(CapsuleCollider2D))]
+[RequireComponent(typeof(EnemyStats))]
+[RequireComponent(typeof(EntityFX))]
+[RequireComponent(typeof(ItemDrop))]
 
 public class Enemy : Entity
 {
@@ -30,7 +35,7 @@ public class Enemy : Entity
     public EnemyStateMachine stateMachine { get; private set; }
     public EntityFX fx { get; private set; }
     private Player player;
-    public string lastAnimBoolName {  get; private set; }
+    public string lastAnimBoolName { get; private set; }
 
     protected override void Awake()
     {

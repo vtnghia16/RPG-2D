@@ -35,16 +35,16 @@ public class Enemy_Skeleton : Enemy
         stateMachine.Initialize(idleState);
     }
 
-    protected override void Update()
-    {
-        base.Update();
+    //protected override void Update()
+    //{
+    //    base.Update();
 
-        if(Input.GetKeyDown(KeyCode.U))
-        {
-            stateMachine.ChangeState(stunnedState);
-        }
+    //    if(Input.GetKeyDown(KeyCode.U))
+    //    {
+    //        stateMachine.ChangeState(stunnedState);
+    //    }
 
-    }
+    //}
 
     // Quay trở lại trạng thái stunnedState 
     // Khi thực hiện cửa sổ tấn công ô vuông đỏ của quái vật
