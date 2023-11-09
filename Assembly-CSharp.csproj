@@ -165,6 +165,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime\SlimeBattleState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime\SlimeStunnedState.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Arrow_Controller.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

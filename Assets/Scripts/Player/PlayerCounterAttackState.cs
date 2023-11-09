@@ -37,26 +37,37 @@ public class PlayerCounterAttackState : PlayerState
 
         foreach (var hit in colliders)
         {
+            if (hit.GetComponent<Arrow_Controller>() != null)
+            {
+                hit.GetComponent<Arrow_Controller>().FlipArrow();
+                SuccesfulCounterAttack();
+            }
+
             if (hit.GetComponent<Enemy>() != null)
             {
                 if (hit.GetComponent<Enemy>().CanBeStunned())  // Làm choáng khi bị tấn công
-                {
-                    stateTimer = 10; // Bất cứ giá trị lớn hơn 1
-                    player.anim.SetBool("SuccessfulCounterAttack", true);
-
-                    player.skill.parry.UseSkill(); 
-
-                    if (canCreateClone)
                     {
-                        canCreateClone = false;
-                        player.skill.parry.MakeMirageOnParry(hit.transform);
+                        SuccesfulCounterAttack();
+
+                        player.skill.parry.UseSkill();
+
+                        if (canCreateClone)
+                        {
+                            canCreateClone = false;
+                            player.skill.parry.MakeMirageOnParry(hit.transform);
+                        }
                     }
                 }
-            }
         }
 
         // Nếu phản công fail thì chuyển sang trạng thái idle
         if (stateTimer < 0 || triggerCalled)
             stateMachine.ChangeState(player.idleState);
+    }
+
+    private void SuccesfulCounterAttack()
+    {
+        stateTimer = 10; // Bất cứ giá trị lớn hơn 1
+        player.anim.SetBool("SuccessfulCounterAttack", true);
     }
 }
