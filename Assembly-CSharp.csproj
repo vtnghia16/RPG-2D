@@ -60,10 +60,12 @@
     <Compile Include="Assets\Scripts\UI\UI_FadeScreen.cs" />
     <Compile Include="Assets\Scripts\Effects\ParallaxBackground.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerIdleState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Shady\Enemy_Shady.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonStunnedState.cs" />
     <Compile Include="Assets\Scripts\Entity.cs" />
     <Compile Include="Assets\Scripts\Effects\PlayerFX.cs" />
     <Compile Include="Assets\Scripts\Skills\Clone_Skill.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Archer\ArcherDeadState.cs" />
     <Compile Include="Assets\Scripts\Stats\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\Controllers\ShockStrike_Controller.cs" />
     <Compile Include="Assets\Scripts\Enemy\Archer\ArcherGroundedState.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerWallJumpState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMoveState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime\SlimeMoveState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Shady\ShadyStunnedState.cs" />
     <Compile Include="Assets\Scripts\DeadZone.cs" />
     <Compile Include="Assets\Scripts\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\Skills\Parry_Skill.cs" />
@@ -90,10 +93,13 @@
     <Compile Include="Assets\Scripts\Skills\Crystal_Skill.cs" />
     <Compile Include="Assets\Scripts\Skills\Dash_Skill.cs" />
     <Compile Include="Assets\Scripts\Save and Load\SerializableDictionary.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Shady\ShadyIdleState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime\SlimeGroundedState.cs" />
     <Compile Include="Assets\Scripts\Skills\Blackhole_Skill.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerPrimaryAttackState.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\Heal_Effect.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Archer\ArcherAttackState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Shady\ShadyGroundedState.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\ItemObject_Trigger.cs" />
     <Compile Include="Assets\Scripts\Skills\Dodge_Skill.cs" />
     <Compile Include="Assets\Scripts\UI\UI_SkillToolTip.cs" />
@@ -111,12 +117,16 @@
     <Compile Include="Assets\Scripts\Player\PlayerAirState.cs" />
     <Compile Include="Assets\Scripts\AreaSound.cs" />
     <Compile Include="Assets\Scripts\Stats\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Explosive_Controller.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Archer\ArcherIdleState.cs" />
     <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Sword_Skill_Controller.cs" />
     <Compile Include="Assets\Scripts\Controllers\Arrow_Controller.cs" />
     <Compile Include="Assets\Scripts\UI\UI_CraftSlot.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Archer\ArcherStunnedState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Options.cs" />
     <Compile Include="Assets\Scripts\Stats\Stat.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStateMachine.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Shady\ShadyDeadState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_StatToolTip.cs" />
     <Compile Include="Assets\Scripts\UI\UI_MainMenu.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\ItemEffect.cs" />
@@ -127,6 +137,7 @@
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Blackhole_HotKey_Controller.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonDeadState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Archer\ArcherMoveState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCatchSwordState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonMoveState.cs" />
     <Compile Include="Assets\Scripts\Save and Load\ISaveManager.cs" />
@@ -139,11 +150,13 @@
     <Compile Include="Assets\Scripts\Items and Inventory\ItemData_Equipment.cs" />
     <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Crystal_Skill_Controller.cs" />
     <Compile Include="Assets\Scripts\UI\UI_SkillTreeSlot.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Shady\ShadyBattleState.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\UI\UI_VolumeSlider.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_Skeleton.cs" />
     <Compile Include="Assets\Scripts\Enemy\Archer\Enemy_Archer.cs" />
     <Compile Include="Assets\Scripts\Controllers\IceAndFire_Controller.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Archer\ArcherJumpState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime\SlimeIdleState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCounterAttackState.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\FreezeEnemies_Effect.cs" />
@@ -155,6 +168,7 @@
     <Compile Include="Assets\Scripts\Items and Inventory\Inventory.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\IceAndFire_Effect.cs" />
     <Compile Include="Assets\Scripts\Controllers\ThunderStrike_Controller.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Shady\ShadyMoveState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_ItemSlot.cs" />
     <Compile Include="Assets\Scripts\Effects\PopUpTextFx.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
@@ -164,17 +178,11 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_ItemTooltip.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerJumpState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Archer\ArcherBattleState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_InGame.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime\SlimeBattleState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime\SlimeStunnedState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Archer\ArcherBattleState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Archer\ArcherAttackState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Archer\ArcherDeadState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Archer\ArcherMoveState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Archer\ArcherIdleState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Archer\ArcherStunnedState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\Archer\ArcherJumpState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
