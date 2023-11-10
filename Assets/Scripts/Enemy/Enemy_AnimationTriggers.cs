@@ -29,6 +29,12 @@ public class Enemy_AnimationTriggers : MonoBehaviour
         }
     }
 
+    // Đòn tấn công đặc biệt
+    private void SpecialAttackTrigger() 
+    {
+        enemy.AnimationSpecialAttackTrigger();
+    }
+
     // Kích hoạt event trong anim, xác định quái vật chuẩn bị tấn công
     private void OpenCounterWindow() => enemy.OpenCounterAttackWindow();
     private void CloseCounterWindow() => enemy.CloseCounterAttackWindow();

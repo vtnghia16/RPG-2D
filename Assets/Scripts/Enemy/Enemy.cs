@@ -14,23 +14,23 @@ public class Enemy : Entity
 
     // Quái vật bị choáng
     [Header("Stunned info")]
-    public float stunDuration;
-    public Vector2 stunDirection;  // Hướng (x, y)
+    public float stunDuration = 1;
+    public Vector2 stunDirection = new Vector2(10, 12);  // Hướng (x, y)
     protected bool canBeStunned;
     [SerializeField] protected GameObject counterImage;
 
     [Header("Move info")]
-    public float moveSpeed; // Tốc độ
-    public float idleTime; // Thời gian nhân vật Flip khi idle
-    public float battleTime; // Thời gian để quái vật ignore
+    public float moveSpeed = 1.5f; // Tốc độ
+    public float idleTime = 2; // Thời gian nhân vật Flip khi idle
+    public float battleTime = 7; // Thời gian để quái vật ignore
     private float defaultMoveSpeed; // Tốc độ di chuyển của các enemies
 
     [Header("Attack info")]
     public float agroDistance = 2; // Khoảng cách quái vật bắt đầu tấn công
-    public float attackDistance;// KC tấn công khi áp sát người chơi
+    public float attackDistance = 2;// KC tấn công khi áp sát người chơi
     public float attackCooldown; // Thời gian hồi chiêu 
-    public float minAttackCooldown;
-    public float maxAttackCooldown;
+    public float minAttackCooldown = 1;
+    public float maxAttackCooldown = 2;
     [HideInInspector] public float lastTimeAttacked;
 
     public EnemyStateMachine stateMachine { get; private set; }
@@ -138,6 +138,10 @@ public class Enemy : Entity
 
     // Kích hoạt anim của quái vật
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
+    public virtual void AnimationSpecialAttackTrigger()
+    {
+
+    }
 
     // Check quái vật khi phát hiện người chơi
     public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 50, whatIsPlayer);

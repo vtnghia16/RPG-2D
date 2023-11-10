@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class Arrow_Controller : MonoBehaviour
@@ -14,6 +15,8 @@ public class Arrow_Controller : MonoBehaviour
     [SerializeField] private bool canMove;
     [SerializeField] private bool flipped;
 
+    private CharacterStats myStats;
+
     private void Update()
     {
         if (canMove)
@@ -23,11 +26,20 @@ public class Arrow_Controller : MonoBehaviour
         }
     }
 
+    public void SetupArrow(float _speed, CharacterStats _myStats)
+    {
+        xVelocity = _speed;
+        myStats = _myStats;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer(targetLayerName))
         {
-            collision.GetComponent<CharacterStats>()?.TakeDamage(damage);
+            //collision.GetComponent<CharacterStats>()?.TakeDamage(damage);
+
+            myStats.DoDamage(collision.GetComponent<CharacterStats>());
+
             StuckInto(collision);
         }
         else if(collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
