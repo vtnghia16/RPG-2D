@@ -33,6 +33,7 @@ public class EntityFX : MonoBehaviour
     [SerializeField] private GameObject hitFx;
     [SerializeField] private GameObject criticalHitFx;
 
+    private GameObject myHealthBar;
     
     protected virtual void Start()
     {
@@ -40,6 +41,8 @@ public class EntityFX : MonoBehaviour
         player = PlayerManager.instance.player;
         
         originalMat = sr.material;
+
+        myHealthBar = GetComponentInChildren<UI_HealthBar>().gameObject;
     }
 
 
@@ -59,9 +62,15 @@ public class EntityFX : MonoBehaviour
     public void MakeTransprent(bool _transprent)
     {
         if (_transprent)
+        {
+            myHealthBar.SetActive(false);
             sr.color = Color.clear;
+        }
         else
+        {
+            myHealthBar.SetActive(true);
             sr.color = Color.white;
+        }
     }
 
     // Hiệu ứng chớp nhoáng
@@ -174,6 +183,7 @@ public class EntityFX : MonoBehaviour
         newHitFx.transform.Rotate(hitFxRotaion);
         Destroy(newHitFx, .5f);
     }
+
 
 
 }

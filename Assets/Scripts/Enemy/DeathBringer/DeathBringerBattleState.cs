@@ -39,21 +39,19 @@ public class DeathBringerBattleState : EnemyState
             {
                 if (CanAttack())
                     stateMachine.ChangeState(enemy.attackState);
+                else
+                    stateMachine.ChangeState(enemy.idleState);
             }
         }
-        else
-        {
-            // check đk không tấn công & Flip
-            if (stateTimer < 0 || Vector2.Distance(player.transform.position, enemy.transform.position) > 5)
-                stateMachine.ChangeState(enemy.idleState);
-        }
-
 
         // Quái vật di chuyển sang trái vị trí nhân vật > và ngược lại
         if (player.position.x > enemy.transform.position.x)
             moveDir = 1;
         else if (player.position.x < enemy.transform.position.x)
             moveDir = -1;
+
+        if (enemy.IsPlayerDetected() && enemy.IsPlayerDetected().distance < enemy.attackDistance - .1f)
+            return;
 
         // Set tốc độ di chuyển của nhân vật theo hướng di chuyển
         enemy.SetVelocity(enemy.moveSpeed * moveDir, rb.velocity.y);

@@ -7591,6 +7591,7 @@ GameObject:
   - component: {fileID: 427457122}
   - component: {fileID: 427457124}
   - component: {fileID: 427457123}
+  - component: {fileID: 427457125}
   m_Layer: 0
   m_Name: Animator
   m_TagString: Untagged
@@ -7685,6 +7686,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &427457125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427457121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2cdc1ecdc6b9794794ec05aa2d5a52a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &431614948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19729,7 +19742,7 @@ GameObject:
   - component: {fileID: 863905269}
   - component: {fileID: 863905268}
   - component: {fileID: 863905267}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy_DeathBringer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19749,10 +19762,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackPower: {x: 7, y: 12}
-  knockbackOffset: {x: 0.5, y: 2}
+  knockbackOffset: {x: 0.5, y: 2.6}
   knockbackDuration: 0.07
   attackCheck: {fileID: 1717278114}
-  attackCheckRadius: 1.2
+  attackCheckRadius: 2
   groundCheck: {fileID: 617117056}
   groundCheckDistance: 1
   wallCheck: {fileID: 1281038027}
@@ -19766,8 +19779,8 @@ MonoBehaviour:
   stunDuration: 1
   stunDirection: {x: 10, y: 12}
   counterImage: {fileID: 962863189}
-  moveSpeed: 1.5
-  idleTime: 2
+  moveSpeed: 3
+  idleTime: 0.7
   battleTime: 7
   agroDistance: 2
   attackDistance: 2
@@ -19775,8 +19788,17 @@ MonoBehaviour:
   minAttackCooldown: 1
   maxAttackCooldown: 2
   lastTimeAttacked: 0
+  bossFightBegun: 0
+  spellPrefab: {fileID: 4736074401686017735, guid: 3f14e79636aa31646905d2d9d31f6b3c, type: 3}
+  amountOfSpells: 5
+  spellCooldown: 2
+  lastTimeCast: 0
+  spellStateCooldown: 10
+  spellOffset: {x: 3, y: 2.5}
   arena: {fileID: 1605822896}
   surroundingCheckSize: {x: 3, y: 3}
+  chanceToTeleport: 25
+  defaultChanceToTeleport: 25
 --- !u!114 &863905268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56136,7 +56158,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 17.280373, y: 0.71707344}
+  m_Offset: {x: -3.469883, y: -0.36420488}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56147,7 +56169,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 71.49878, y: 18.631573}
+  m_Size: {x: 32.057846, y: 16.469017}
   m_EdgeRadius: 0
 --- !u!4 &1605822897
 Transform:
@@ -58313,7 +58335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717278113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.86, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

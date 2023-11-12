@@ -76,8 +76,10 @@
     <Compile Include="Assets\Scripts\Player\PlayerWallJumpState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMoveState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime\SlimeMoveState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\DeathBringer\DeathBringerAttackState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Shady\ShadyStunnedState.cs" />
     <Compile Include="Assets\Scripts\DeadZone.cs" />
+    <Compile Include="Assets\Scripts\Enemy\DeathBringer\DeathBringerDeadState.cs" />
     <Compile Include="Assets\Scripts\Checkpoint.cs" />
     <Compile Include="Assets\Scripts\Skills\Parry_Skill.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonIdleState.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerPrimaryAttackState.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\Heal_Effect.cs" />
     <Compile Include="Assets\Scripts\Enemy\Archer\ArcherAttackState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy_DeathBringerTriggers.cs" />
     <Compile Include="Assets\Scripts\Enemy\Shady\ShadyGroundedState.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\ItemObject_Trigger.cs" />
     <Compile Include="Assets\Scripts\Skills\Dodge_Skill.cs" />
@@ -125,11 +128,13 @@
     <Compile Include="Assets\Scripts\Enemy\Archer\ArcherStunnedState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_Options.cs" />
     <Compile Include="Assets\Scripts\Stats\Stat.cs" />
+    <Compile Include="Assets\Scripts\Enemy\DeathBringer\DeathBringerTeleportState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStateMachine.cs" />
     <Compile Include="Assets\Scripts\Enemy\Shady\ShadyDeadState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_StatToolTip.cs" />
     <Compile Include="Assets\Scripts\UI\UI_MainMenu.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\ItemEffect.cs" />
+    <Compile Include="Assets\Scripts\Controllers\DeathBringerSpell_Controller.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy_AnimationTriggers.cs" />
     <Compile Include="Assets\Scripts\UI\UI.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerWallSlideState.cs" />
@@ -148,6 +153,7 @@
     <Compile Include="Assets\Scripts\Items and Inventory\PlayerItemDrop.cs" />
     <Compile Include="Assets\Scripts\Stats\CharacterStats.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\ItemData_Equipment.cs" />
+    <Compile Include="Assets\Scripts\Enemy\DeathBringer\DeathBringerBattleState.cs" />
     <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Crystal_Skill_Controller.cs" />
     <Compile Include="Assets\Scripts\UI\UI_SkillTreeSlot.cs" />
     <Compile Include="Assets\Scripts\Enemy\Shady\ShadyBattleState.cs" />
@@ -159,6 +165,7 @@
     <Compile Include="Assets\Scripts\Enemy\Archer\ArcherJumpState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime\SlimeIdleState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCounterAttackState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\DeathBringer\Enemy_DeathBringer.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\FreezeEnemies_Effect.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonGroundedState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_HealthBar.cs" />
@@ -167,8 +174,10 @@
     <Compile Include="Assets\Scripts\Items and Inventory\ItemDrop.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Inventory.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\IceAndFire_Effect.cs" />
+    <Compile Include="Assets\Scripts\Enemy\DeathBringer\DeathBringerSpellCastState.cs" />
     <Compile Include="Assets\Scripts\Controllers\ThunderStrike_Controller.cs" />
     <Compile Include="Assets\Scripts\Enemy\Shady\ShadyMoveState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\DeathBringer\DeathBringerIdleState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_ItemSlot.cs" />
     <Compile Include="Assets\Scripts\Effects\PopUpTextFx.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
@@ -183,13 +192,6 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime\SlimeBattleState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime\SlimeStunnedState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\DeathBringer\Enemy_DeathBringer.cs" />
-    <Compile Include="Assets\Scripts\Enemy\DeathBringer\DeathBringerBattleState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\DeathBringer\DeathBringerAttackState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\DeathBringer\DeathBringerIdleState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\DeathBringer\DeathBringerTeleportState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\DeathBringer\DeathBringerSpellCastState.cs" />
-    <Compile Include="Assets\Scripts\Enemy\DeathBringer\DeathBringerDeadState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
