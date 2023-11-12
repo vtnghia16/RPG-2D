@@ -144,7 +144,20 @@ public class Enemy : Entity
     }
 
     // Check quái vật khi phát hiện người chơi
-    public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 50, whatIsPlayer);
+    public virtual RaycastHit2D IsPlayerDetected()
+    {
+        float playerDistanceCheck = 50;
+
+        RaycastHit2D playerDetected = Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, playerDistanceCheck, whatIsPlayer);
+        RaycastHit2D wallDetected = Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, playerDistanceCheck + 1, whatIsGround);
+
+        if (wallDetected)
+        {
+            return default(RaycastHit2D);
+        }
+
+        return playerDetected;
+    }
 
     // Vẽ đường check phạm vi attack distance 
     protected override void OnDrawGizmos()
