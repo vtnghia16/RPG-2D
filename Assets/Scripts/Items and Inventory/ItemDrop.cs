@@ -13,6 +13,9 @@ public class ItemDrop : MonoBehaviour
     // Cho vật liệu tơi rớt ngẫu nhiên theo % cơ hội
     public virtual void GenerateDrop()
     {
+        if (possibleDrop.Length <= 0)
+            return;
+
         for (int i = 0; i < possibleDrop.Length; i++)
         {
             if (Random.Range(0, 100) <= possibleDrop[i].dropChance)
@@ -22,10 +25,14 @@ public class ItemDrop : MonoBehaviour
 
         for (int i = 0; i < possibleItemDrop; i++)
         {
-            ItemData randomItem = dropList[Random.Range(0,dropList.Count - 1)];
+            if (dropList.Count <= 0)
+                return;
+
+            ItemData randomItem = dropList[Random.Range(0, dropList.Count - 1)];
 
             dropList.Remove(randomItem);
             DropItem(randomItem);
+
         }
     }
 
