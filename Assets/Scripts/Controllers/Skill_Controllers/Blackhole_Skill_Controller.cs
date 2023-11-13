@@ -27,7 +27,6 @@ public class Blackhole_Skill_Controller : MonoBehaviour
 
     public bool playerCanExitState {  get; private set; }
 
-    // Tạo circle Blackhole
     public void SetupBlackhole(float _maxSize, float _growSpeed, float _shrinkSpeed, int _amountOfAttacks, float _cloneAttackCooldown, float _blackholeDuration)
     {
         maxSize = _maxSize;
@@ -107,7 +106,6 @@ public class Blackhole_Skill_Controller : MonoBehaviour
     // Xử lý tạo các nhân vật ảo khi tấn công BlackHole
     private void CloneAttackLogic()
     {
-        // Check thời gian sử dụng skill 
         if (cloneAttackTimer < 0 && cloneAttackReleased && amountOfAttacks > 0)
         {
             cloneAttackTimer = cloneAttackCooldown;
@@ -132,7 +130,7 @@ public class Blackhole_Skill_Controller : MonoBehaviour
             }
 
             amountOfAttacks--;
-            
+
             if (amountOfAttacks <= 0)
             {
                 // Độ trễ của nhân vật sau khi kết thúc blackHole 
@@ -185,7 +183,7 @@ public class Blackhole_Skill_Controller : MonoBehaviour
     {
         if (keyCodeList.Count <= 0)
         {
-            Debug.LogWarning("Not enough hot keys in a key code list!");
+            Debug.LogWarning("Không đủ hot keys trong danh sách mã khóa!");
             return;
         }
 

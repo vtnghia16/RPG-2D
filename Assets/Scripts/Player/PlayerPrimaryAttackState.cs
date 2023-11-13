@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
@@ -21,14 +21,14 @@ public class PlayerPrimaryAttackState : PlayerState
 
         //AudioManager.instance.PlaySFX(2); // attack sound effect
 
-        xInput = 0;  
+        xInput = 0;  // we need this to fix bug on attack direction
 
         if (comboCounter > 2 || Time.time >= lastTimeAttacked + comboWindow)
             comboCounter = 0;
 
-        player.anim.SetInteger("ComboCounter", comboCounter); // Thực hiện primaryAttack 1/2/3 = ComboCounter 1/2/3
+        player.anim.SetInteger("ComboCounter", comboCounter);
 
-        // Thay đổi hướng tấn công của nhân vật (-1, 1)
+
         float attackDir = player.facingDir;
 
         if (xInput != 0)

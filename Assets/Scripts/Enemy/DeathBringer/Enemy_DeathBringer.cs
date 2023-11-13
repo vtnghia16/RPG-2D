@@ -1,42 +1,40 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy_DeathBringer : Enemy
 {
-
     #region States
-    public DeathBringerBattleState battleState { get; private set; }
-    public DeathBringerAttackState attackState { get; private set; }
-    public DeathBringerIdleState idleState { get; private set; }
-    public DeathBringerDeadState deadState { get; private set; }
-    public DeathBringerSpellCastState spellCastState { get; private set; }
-    public DeathBringerTeleportState teleportState { get; private set; }
+    public DeathBringerBattleState battleState { get ; private set; }
+    public DeathBringerAttackState attackState { get ; private set; }
+    public DeathBringerIdleState idleState { get ; private set; }
+    public DeathBringerDeadState deadState { get ; private set; }
+    public DeathBringerSpellCastState spellCastState { get ; private set; }
+    public DeathBringerTeleportState teleportState { get ; private set; }
 
     #endregion
-
     public bool bossFightBegun;
 
     [Header("Spell cast details")]
     [SerializeField] private GameObject spellPrefab;
-    public int amountOfSpells; // Số lần spell
-    public float spellCooldown; // Thời gian hồi chiêu
+    public int amountOfSpells;
+    public float spellCooldown;
     public float lastTimeCast;
     [SerializeField] private float spellStateCooldown;
     [SerializeField] private Vector2 spellOffset;
 
     [Header("Teleport details")]
     [SerializeField] private BoxCollider2D arena;
-    [SerializeField] private Vector2 surroundingCheckSize; // Check kiểm tra xung quanh
+    [SerializeField] private Vector2 surroundingCheckSize;
     public float chanceToTeleport;
     public float defaultChanceToTeleport = 25;
-
 
     protected override void Awake()
     {
         base.Awake();
 
-        SetupDefaultFacingDir(-1);
+        SetupDefailtFacingDir(-1);
 
         idleState = new DeathBringerIdleState(this, stateMachine, "Idle", this);
 
@@ -55,6 +53,10 @@ public class Enemy_DeathBringer : Enemy
         stateMachine.Initialize(idleState);
     }
 
+    protected override void Update()
+    {
+        base.Update();
+    }
     public override void Die()
     {
         base.Die();
@@ -78,7 +80,6 @@ public class Enemy_DeathBringer : Enemy
         newSpell.GetComponent<DeathBringerSpell_Controller>().SetupSpell(stats);
     }
 
-    // Tìm vị trí cho quái vật đáp xuống
     public void FindPosition()
     {
         float x = Random.Range(arena.bounds.min.x + 3, arena.bounds.max.x - 3);
@@ -87,13 +88,13 @@ public class Enemy_DeathBringer : Enemy
         transform.position = new Vector3(x, y);
         transform.position = new Vector3(transform.position.x, transform.position.y - GroundBelow().distance + (cd.size.y / 2));
 
-        // Check chỉ đáp xuống mặt đất
         if (!GroundBelow() || SomethingIsAround())
         {
-            Debug.Log("Looking for new position");
+            //Debug.Log("Looking for new position");
             FindPosition();
         }
     }
+
 
     private RaycastHit2D GroundBelow() => Physics2D.Raycast(transform.position, Vector2.down, 100, whatIsGround);
     private bool SomethingIsAround() => Physics2D.BoxCast(transform.position, surroundingCheckSize, 0, Vector2.zero, 0, whatIsGround);
@@ -105,6 +106,7 @@ public class Enemy_DeathBringer : Enemy
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - GroundBelow().distance));
         Gizmos.DrawWireCube(transform.position, surroundingCheckSize);
     }
+
 
     public bool CanTeleport()
     {
@@ -128,4 +130,3 @@ public class Enemy_DeathBringer : Enemy
         return false;
     }
 }
-

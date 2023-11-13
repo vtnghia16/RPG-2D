@@ -98,7 +98,6 @@ public class CharacterStats : MonoBehaviour
 
         fx = GetComponent<EntityFX>();
     }
-     
 
     protected virtual void Update()
     {
@@ -120,10 +119,7 @@ public class CharacterStats : MonoBehaviour
 
         if(isIgnited)
             ApplyIgniteDamage();
-
     }
-
-
 
 
     public void MakeVulnerableFor(float _duration) => StartCoroutine(VulnerableCorutine(_duration));
@@ -157,6 +153,7 @@ public class CharacterStats : MonoBehaviour
     {
         bool criticalStrike = false;
 
+
         if (_targetStats.isInvincible)
             return;
 
@@ -165,7 +162,7 @@ public class CharacterStats : MonoBehaviour
 
         _targetStats.GetComponent<Entity>().SetupKnockbackDir(transform);
 
-        int totalDamage = damage.GetValue();
+        int totalDamage = damage.GetValue() + strength.GetValue();
 
         //if (CanCrit())
         //{
@@ -179,7 +176,7 @@ public class CharacterStats : MonoBehaviour
         _targetStats.TakeDamage(totalDamage);
 
 
-         DoMagicalDamage(_targetStats); // remove if you don't want to apply magic hit on primary attack
+         DoMagicalDamage(_targetStats); // xóa nếu bạn không muốn áp dụng đòn đánh phép thuật vào đòn tấn công chính
 
     }
 
@@ -193,7 +190,7 @@ public class CharacterStats : MonoBehaviour
 
 
 
-        int totalMagicalDamage = 0;
+        int totalMagicalDamage = _fireDamage + _iceDamage + _lightingDamage + intelligence.GetValue();
 
         totalMagicalDamage = CheckTargetResistance(_targetStats, totalMagicalDamage);
         _targetStats.TakeDamage(totalMagicalDamage);
@@ -336,12 +333,11 @@ public class CharacterStats : MonoBehaviour
             newShockStrike.GetComponent<ShockStrike_Controller>().Setup(shockDamage, closestEnemy.GetComponent<CharacterStats>());
         }
     }
-
     private void ApplyIgniteDamage()
     {
         if (igniteDamageTimer < 0)
         {
-           DecreaseHealthBy(igniteDamage);
+            DecreaseHealthBy(igniteDamage);
 
             if (currentHealth < 0 && !isDead)
                 Die();
@@ -377,17 +373,12 @@ public class CharacterStats : MonoBehaviour
 
     public virtual void IncreaseHealthBy(int _amount)
     {
-
         currentHealth += _amount;
 
         if (currentHealth > GetMaxHealthValue())
-        {
             currentHealth = GetMaxHealthValue();
-        }
 
-
-
-        if (onHealthChanged != null)
+        if(onHealthChanged != null)
             onHealthChanged();
     }
 
@@ -405,7 +396,6 @@ public class CharacterStats : MonoBehaviour
 
         if (onHealthChanged != null)
             onHealthChanged();
-
     }
 
     protected virtual void Die()
@@ -487,10 +477,8 @@ public class CharacterStats : MonoBehaviour
 
     public int GetMaxHealthValue()
     {
-
-        return maxHealth.GetValue();
+        return maxHealth.GetValue(); //+ vitality.GetValue() * 5;
     }
-
 
     #endregion
 

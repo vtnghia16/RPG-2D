@@ -20,8 +20,8 @@ public class DeathBringerSpell_Controller : MonoBehaviour
         {
             if (hit.GetComponent<Player>() != null)
             {
-               hit.GetComponent<Entity>().SetupKnockbackDir(transform);
-               myStats.DoDamage(hit.GetComponent<PlayerStats>());
+                hit.GetComponent<Entity>().SetupKnockbackDir(transform);
+                myStats.DoDamage(hit.GetComponent<PlayerStats>());
             }
         }
     }

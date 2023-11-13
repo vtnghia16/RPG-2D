@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using TMPro.EditorUtilities;
 using UnityEngine;
 
 public class Arrow_Controller : MonoBehaviour
 {
+
     [SerializeField] private int damage;
     [SerializeField] private string targetLayerName = "Player"; // Mục tiêu tấn công player
 
@@ -15,21 +16,18 @@ public class Arrow_Controller : MonoBehaviour
     [SerializeField] private bool canMove;
     [SerializeField] private bool flipped;
 
-    private CharacterStats myStats;
+    private CharacterStats stats;
 
     private void Update()
     {
-        if (canMove)
-        {
-            rb.velocity = new Vector2(xVelocity, rb.velocity.y);
-
-        }
+        if(canMove)
+            rb.velocity = new Vector2(xVelocity,rb.velocity.y);
     }
 
-    public void SetupArrow(float _speed, CharacterStats _myStats)
+    public void SetupArrow( float _speed,CharacterStats _stats)
     {
         xVelocity = _speed;
-        myStats = _myStats;
+        stats = _stats;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,14 +36,16 @@ public class Arrow_Controller : MonoBehaviour
         {
             //collision.GetComponent<CharacterStats>()?.TakeDamage(damage);
 
-            myStats.DoDamage(collision.GetComponent<CharacterStats>());
+
+            stats.DoDamage(collision.GetComponent<CharacterStats>());
+
+            if (targetLayerName == "Enemy")
+                Destroy(gameObject);
 
             StuckInto(collision);
         }
-        else if(collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
             StuckInto(collision);
-        }
     }
 
     // Bị mắc kẹt vào
@@ -54,7 +54,6 @@ public class Arrow_Controller : MonoBehaviour
         // Không gây sát thương khi arrow mắc kẹt vào nhân vật
         GetComponentInChildren<ParticleSystem>().Stop();
         GetComponent<CapsuleCollider2D>().enabled = false;
-
         canMove = false;
         rb.isKinematic = true;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;

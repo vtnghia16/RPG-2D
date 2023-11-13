@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -65,6 +65,7 @@ public class UI_ItemSlot : MonoBehaviour , IPointerDownHandler ,IPointerEnterHan
 
     }
 
+    // Hiển thị thông báo ghi rê chuột
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (item == null)
@@ -73,6 +74,7 @@ public class UI_ItemSlot : MonoBehaviour , IPointerDownHandler ,IPointerEnterHan
         ui.itemToolTip.ShowToolTip(item.data as ItemData_Equipment);
     }
 
+    // Tắt thông báo
     public void OnPointerExit(PointerEventData eventData)
     {
         if (item == null)

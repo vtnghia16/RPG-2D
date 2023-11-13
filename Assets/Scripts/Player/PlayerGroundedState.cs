@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,7 +22,6 @@ public class PlayerGroundedState : PlayerState
     {
         base.Update();
 
-        // Kỹ năng blackHole của nhân vật
         if (Input.GetKeyDown(KeyCode.R) && player.skill.blackhole.blackholeUnlocked)
         {
             if (player.skill.blackhole.cooldownTimer > 0)
@@ -35,11 +34,9 @@ public class PlayerGroundedState : PlayerState
             stateMachine.ChangeState(player.blackHole);
         }
 
-        // Kỹ năng nhắm kiếm của nhân vật
         if (Input.GetKeyDown(KeyCode.Mouse1) && HasNoSword() && player.skill.sword.swordUnlocked)
             stateMachine.ChangeState(player.aimSowrd);
 
-        // Nhấn Q chuyển sàn trạng thái phản công của nhân vật
         if (Input.GetKeyDown(KeyCode.Q) && player.skill.parry.parryUnlocked)
             stateMachine.ChangeState(player.counterAttack);
 
@@ -53,7 +50,6 @@ public class PlayerGroundedState : PlayerState
             stateMachine.ChangeState(player.jumpState);
     }
 
-    // Check ĐK khi nhân vật không có kiếm thì sẽ ReturnSword
     private bool HasNoSword()
     {
         if (!player.sword)

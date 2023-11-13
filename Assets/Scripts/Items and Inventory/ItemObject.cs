@@ -6,7 +6,6 @@ public class ItemObject : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private ItemData itemData;
-
     private void SetupVisuals()
     {
         if (itemData == null)
@@ -15,7 +14,6 @@ public class ItemObject : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = itemData.itemIcon;
         gameObject.name = "Item object - " + itemData.itemName;
     }
-
 
     // Setup các vật phẩm
     public void SetupItem(ItemData _itemData, Vector2 _velocity)

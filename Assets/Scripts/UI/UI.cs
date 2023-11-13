@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class UI : MonoBehaviour, ISaveManager
@@ -28,7 +29,7 @@ public class UI : MonoBehaviour, ISaveManager
     private void Awake()
     {
 
-        SwitchTo(skillTreeUI); 
+        SwitchTo(skillTreeUI); // we need this to assign events on skill tree slots before we asssign events on skill scripts
         fadeScreen.gameObject.SetActive(true);
     }
 
@@ -38,24 +39,29 @@ public class UI : MonoBehaviour, ISaveManager
 
         itemToolTip.gameObject.SetActive(false);
         statToolTip.gameObject.SetActive(false);
+
+        //gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.Tab))
             SwitchWithKeyTo(charcaterUI);
 
-        if (Input.GetKeyDown(KeyCode.B))
-            SwitchWithKeyTo(craftUI);
+        //if (Input.GetKeyDown(KeyCode.B))
+        //    SwitchWithKeyTo(craftUI);
 
 
-        if (Input.GetKeyDown(KeyCode.K))
-            SwitchWithKeyTo(skillTreeUI);
+        //if (Input.GetKeyDown(KeyCode.K))
+        //    SwitchWithKeyTo(skillTreeUI);
 
-        if (Input.GetKeyDown(KeyCode.O))
-            SwitchWithKeyTo(optionsUI);
+        //if (Input.GetKeyDown(KeyCode.O))
+        //    SwitchWithKeyTo(optionsUI);
+
+
+
     }
 
     // Chuyển đổi menu của game object
@@ -76,9 +82,8 @@ public class UI : MonoBehaviour, ISaveManager
         if (_menu != null)
         {
             AudioManager.instance.PlaySFX(5, null);
-            _menu.SetActive(true); 
+            _menu.SetActive(true);
         }
-
 
         // Pause khi bật game menu
         if (GameManager.instance != null)
@@ -90,6 +95,7 @@ public class UI : MonoBehaviour, ISaveManager
         }
     }
 
+    // Chuyển đổi meny bằng key
     public void SwitchWithKeyTo(GameObject _menu)
     {
         if (_menu != null && _menu.activeSelf)

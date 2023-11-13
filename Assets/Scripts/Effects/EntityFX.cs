@@ -12,12 +12,12 @@ public class EntityFX : MonoBehaviour
     [Header("Pop Up Text")]
     [SerializeField] private GameObject popUpTextPrefab;
 
+
     // Hiệu ứng chớp nhoáng khi bị tấn công
     [Header("Flash FX")]
     [SerializeField] private float flashDuration;
     [SerializeField] private Material hitMat;
     private Material originalMat;
-
 
     //[Header("Ailment colors")]
     //[SerializeField] private Color[] igniteColor;
@@ -34,6 +34,8 @@ public class EntityFX : MonoBehaviour
     [SerializeField] private GameObject criticalHitFx;
 
     private GameObject myHealthBar;
+
+
     
     protected virtual void Start()
     {
@@ -42,7 +44,8 @@ public class EntityFX : MonoBehaviour
         
         originalMat = sr.material;
 
-        myHealthBar = GetComponentInChildren<UI_HealthBar>().gameObject;
+
+        myHealthBar = GetComponentInChildren<UI_HealthBar>(true).gameObject;
     }
 
 
@@ -80,7 +83,7 @@ public class EntityFX : MonoBehaviour
         Color currentColor = sr.color;
         sr.color = Color.white;
 
-        yield return new WaitForSeconds(flashDuration);  // thời gian chớp nhoáng
+        yield return new WaitForSeconds(flashDuration); // thời gian chớp nhoáng
 
         sr.color = currentColor;
         sr.material = originalMat;
@@ -183,7 +186,4 @@ public class EntityFX : MonoBehaviour
         newHitFx.transform.Rotate(hitFxRotaion);
         Destroy(newHitFx, .5f);
     }
-
-
-
 }

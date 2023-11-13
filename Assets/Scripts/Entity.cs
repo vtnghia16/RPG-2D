@@ -1,11 +1,9 @@
 ﻿using System.Collections;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
-// kế thừa từ player và enemy
+
 public class Entity : MonoBehaviour
 {
-
 
     #region Components
     public Animator anim { get; private set; }
@@ -17,14 +15,14 @@ public class Entity : MonoBehaviour
     #endregion
 
     [Header("Knockback info")]
-    [SerializeField] protected Vector2 knockbackPower = new Vector2(7, 12);  // Set (x, y)
-    [SerializeField] protected Vector2 knockbackOffset = new Vector2(.5f, 2);
+    [SerializeField] protected Vector2 knockbackPower = new Vector2(7,12);  // Set (x, y)
+    [SerializeField] protected Vector2 knockbackOffset = new Vector2(.5f,2);
     [SerializeField] protected float knockbackDuration = .07f;
     protected bool isKnocked;
 
     [Header("Collision info")]
     public Transform attackCheck;
-    public float attackCheckRadius = 1.2f; // bán kính tấn công 
+    public float attackCheckRadius = 1.2f;  // bán kính tấn công 
     [SerializeField] protected Transform groundCheck;
     [SerializeField] protected float groundCheckDistance = 1;
     [SerializeField] protected Transform wallCheck;
@@ -54,7 +52,7 @@ public class Entity : MonoBehaviour
 
     protected virtual void Update()
     {
-        
+
     }
 
     public virtual void SlowEntityBy(float _slowPercentage, float _slowDuration)
@@ -84,11 +82,11 @@ public class Entity : MonoBehaviour
     {
         isKnocked = true;
 
-        float xOffset = Random.Range(knockbackOffset.x, knockbackOffset.y);
+        float xOffset = Random.Range(knockbackOffset.x, knockbackOffset.y); // Tốc độ bị đẩy lùi theo hướng
 
-        if(knockbackPower.x > 0 || knockbackPower.y > 0)
-            rb.velocity = new Vector2((knockbackPower.x + xOffset) * knockbackDir, knockbackPower.y); // Tốc độ bị đẩy lùi theo hướng
 
+        if (knockbackPower.x > 0 || knockbackPower.y > 0) // This line makes player immune to freeze effect when he takes hit
+            rb.velocity = new Vector2((knockbackPower.x + xOffset) * knockbackDir, knockbackPower.y);
 
         yield return new WaitForSeconds(knockbackDuration); // Khoảng thời gian bị knockback
         isKnocked = false;
@@ -131,7 +129,6 @@ public class Entity : MonoBehaviour
         Gizmos.DrawWireSphere(attackCheck.position, attackCheckRadius);
     }
     #endregion
-
     #region Flip
     public virtual void Flip()
     {
@@ -151,7 +148,7 @@ public class Entity : MonoBehaviour
             Flip();
     }
 
-    public virtual void SetupDefaultFacingDir(int _direction)
+    public virtual void SetupDefailtFacingDir(int _direction)
     {
         facingDir = _direction;
 
@@ -160,7 +157,7 @@ public class Entity : MonoBehaviour
     }
     #endregion
 
-
+    
 
     public virtual void Die()
     {

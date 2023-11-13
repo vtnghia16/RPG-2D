@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+
 public class ShadyMoveState : ShadyGroundedState
 {
     public ShadyMoveState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, Enemy_Shady _enemy) : base(_enemyBase, _stateMachine, _animBoolName, _enemy)
@@ -21,10 +22,8 @@ public class ShadyMoveState : ShadyGroundedState
     {
         base.Update();
 
-        // set tốc độ di chuyển của quái vật
         enemy.SetVelocity(enemy.moveSpeed * enemy.facingDir, rb.velocity.y);
 
-        // Khi quái vật phát hiện vật cản sẽ quay lại
         if (enemy.IsWallDetected() || !enemy.IsGroundDetected())
         {
             enemy.Flip();
@@ -33,3 +32,5 @@ public class ShadyMoveState : ShadyGroundedState
 
     }
 }
+
+

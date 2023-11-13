@@ -666,8 +666,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6206658356321360434, guid: 5a8289e8ec83b5d4494cd1673f89e114, type: 3}
-      propertyPath: filePath
-      value: idbfs/alexdev9379992jhfrytp
+      propertyPath: encryptData
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6206658356321360435, guid: 5a8289e8ec83b5d4494cd1673f89e114, type: 3}
       propertyPath: m_Name

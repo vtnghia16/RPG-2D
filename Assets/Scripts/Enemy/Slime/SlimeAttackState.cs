@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,7 +20,6 @@ public class SlimeAttackState : EnemyState
     {
         base.Exit();
 
-        // Get thời gian đòn tấn công cuối
         enemy.lastTimeAttacked = Time.time;
     }
 
@@ -28,11 +27,10 @@ public class SlimeAttackState : EnemyState
     {
         base.Update();
 
-        // khi quái vật tấn công set velocity = 0
         enemy.SetZeroVelocity();
 
 
-        // Gọi trigger khi quái vật tấn công (ngược lại)
+
         if (triggerCalled)
             stateMachine.ChangeState(enemy.battleState);
     }

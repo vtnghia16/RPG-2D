@@ -1,6 +1,7 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 
 public class Enemy_Skeleton : Enemy
@@ -18,7 +19,6 @@ public class Enemy_Skeleton : Enemy
 
     protected override void Awake()
     {
-        // Truyền các trạng thái của nhân vật thông qua EnemyStateMachine
         base.Awake();
         
         idleState = new SkeletonIdleState(this, stateMachine, "Idle", this);
@@ -35,19 +35,7 @@ public class Enemy_Skeleton : Enemy
         stateMachine.Initialize(idleState);
     }
 
-    //protected override void Update()
-    //{
-    //    base.Update();
 
-    //    if(Input.GetKeyDown(KeyCode.U))
-    //    {
-    //        stateMachine.ChangeState(stunnedState);
-    //    }
-
-    //}
-
-    // Quay trở lại trạng thái stunnedState 
-    // Khi thực hiện cửa sổ tấn công ô vuông đỏ của quái vật
     public override bool CanBeStunned()
     {
         if (base.CanBeStunned())
@@ -59,6 +47,10 @@ public class Enemy_Skeleton : Enemy
         return false;
     }
 
+    protected override void Update()
+    {
+        base.Update();
+    }
     public override void Die()
     {
         base.Die();

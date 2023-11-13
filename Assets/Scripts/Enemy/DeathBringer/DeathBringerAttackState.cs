@@ -4,7 +4,6 @@ using UnityEngine;
 public class DeathBringerAttackState : EnemyState
 {
     private Enemy_DeathBringer enemy;
-
     public DeathBringerAttackState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, Enemy_DeathBringer _enemy) : base(_enemyBase, _stateMachine, _animBoolName)
     {
         this.enemy = _enemy;
@@ -21,7 +20,6 @@ public class DeathBringerAttackState : EnemyState
     {
         base.Exit();
 
-        // Get thời gian đòn tấn công cuối
         enemy.lastTimeAttacked = Time.time;
     }
 
@@ -29,22 +27,17 @@ public class DeathBringerAttackState : EnemyState
     {
         base.Update();
 
-        // khi quái vật tấn công set velocity = 0
         enemy.SetZeroVelocity();
 
 
-        // Gọi trigger khi quái vật dịch chuyển (ngược lại)
+
         if (triggerCalled)
         {
             if (enemy.CanTeleport())
-            {
                 stateMachine.ChangeState(enemy.teleportState);
-            }
             else
-            {
                 stateMachine.ChangeState(enemy.battleState);
-
-            }
+                
         }
     }
 }

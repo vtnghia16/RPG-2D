@@ -167,14 +167,16 @@ public class Crystal_Skill : Skill
                 // Check không có Crystal nào trong stack
                 if (crystalLeft.Count <= 0)
                 {
-                    cooldown = multiStackCooldown;  // Set thời gian hồi chiêu
+                    cooldown = multiStackCooldown; // Set thời gian hồi chiêu
                     RefilCrystal(); // Nạp số crystal vào stack
                 }
+
 
                 return true;
 
             }
         }
+
 
         return false;
     }

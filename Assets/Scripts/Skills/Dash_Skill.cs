@@ -59,6 +59,7 @@ public class Dash_Skill : Skill
             cloneOnArrivalUnlocked = true;
     }
 
+
     // Tạo nhân vật ảo khi Dash
     public void CloneOnDash()
     {

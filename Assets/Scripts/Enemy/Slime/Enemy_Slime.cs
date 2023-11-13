@@ -1,34 +1,33 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using System.Xml;
 using UnityEngine;
 
-public enum SlimeType { big, medium, small }
+public enum SlimeType { big,medium,small}
 
 public class Enemy_Slime : Enemy
 {
     [Header("Slime spesific")]
-    [SerializeField] private SlimeType slimeType; // Các loại slime
-    [SerializeField] private int slimesToCreate; // Slime để tạo
+    [SerializeField] private SlimeType slimeType;
+    [SerializeField] private int slimesToCreate;
     [SerializeField] private GameObject slimePrefab;
-    [SerializeField] private Vector2 minCreationVelocity; // Vận tốc tạo tối thiểu
-    [SerializeField] private Vector2 maxCreationVelocity; // Vận tốc tạo tối đa
+    [SerializeField] private Vector2 minCreationVelocity;
+    [SerializeField] private Vector2 maxCreationVelocity;
 
     #region States
-    public SlimeIdleState idleState { get; private set; }
-    public SlimeMoveState moveState { get; private set; }
-    public SlimeBattleState battleState { get; private set; }
-    public SlimeAttackState attackState { get; private set; }
 
-    public SlimeStunnedState stunnedState { get; private set; }
-    public SlimeDeadState deadState { get; private set; }
+    public SlimeIdleState idleState { get ; private set; }
+    public SlimeMoveState moveState { get ; private set; }
+    public SlimeBattleState battleState { get ; private set; }
+    public SlimeAttackState attackState { get ; private set; }
+    public SlimeStunnedState stunnedState { get ; private set; }
+    public SlimeDeadState deadState { get ; private set; }
     #endregion
 
     protected override void Awake()
     {
         base.Awake();
 
-        SetupDefaultFacingDir(-1);
+        SetupDefailtFacingDir(-1);
 
         idleState = new SlimeIdleState(this, stateMachine, "Idle", this);
         moveState = new SlimeMoveState(this, stateMachine, "Move", this);
@@ -38,8 +37,8 @@ public class Enemy_Slime : Enemy
         stunnedState = new SlimeStunnedState(this, stateMachine, "Stunned", this);
         deadState = new SlimeDeadState(this, stateMachine, "Idle", this);
 
-
     }
+
 
     protected override void Start()
     {
@@ -48,9 +47,14 @@ public class Enemy_Slime : Enemy
         stateMachine.Initialize(idleState);
     }
 
+    protected override void Update()
+    {
+        base.Update();
 
-    // Quay trở lại trạng thái stunnedState 
-    // Khi thực hiện cửa sổ tấn công ô vuông đỏ của quái vật
+        //if(Input.GetKeyDown(KeyCode.D))
+        //    CreateSlimes(slimesToCreate, slimePrefab);
+    }
+
     public override bool CanBeStunned()
     {
         if (base.CanBeStunned())
@@ -62,18 +66,21 @@ public class Enemy_Slime : Enemy
         return false;
     }
 
+  
+
     public override void Die()
     {
         base.Die();
+
         stateMachine.ChangeState(deadState);
 
         if (slimeType == SlimeType.small)
             return;
 
         CreateSlimes(slimesToCreate, slimePrefab);
+
     }
 
-    // Tạo quái vật slime
     private void CreateSlimes(int _amountOfSlimes, GameObject _slimePrefab)
     {
         for (int i = 0; i < _amountOfSlimes; i++)
@@ -84,14 +91,12 @@ public class Enemy_Slime : Enemy
         }
     }
 
-
     public void SetupSlime(int _facingDir)
     {
 
         if (_facingDir != facingDir)
             Flip();
 
-        // Set tốc độ (x, y) ngẫu nhiên cho slime
         float xVelocity = Random.Range(minCreationVelocity.x, maxCreationVelocity.x);
         float yVelocity = Random.Range(minCreationVelocity.y, maxCreationVelocity.y);
 

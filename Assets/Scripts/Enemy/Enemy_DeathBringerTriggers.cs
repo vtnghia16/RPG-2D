@@ -9,7 +9,5 @@ public class Enemy_DeathBringerTriggers : Enemy_AnimationTriggers
     private void Relocate() => enemyDeathBringer.FindPosition();
 
     private void MakeInvisible() => enemyDeathBringer.fx.MakeTransprent(true);
-
     private void MakeVisible() => enemyDeathBringer.fx.MakeTransprent(false);
-
 }

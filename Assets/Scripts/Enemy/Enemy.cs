@@ -1,43 +1,41 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 
-// Lấy chung các script cho tât cả enemies
+
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CapsuleCollider2D))]
 [RequireComponent(typeof(EnemyStats))]
 [RequireComponent(typeof(EntityFX))]
 [RequireComponent(typeof(ItemDrop))]
-
 public class Enemy : Entity
 {
     [SerializeField] protected LayerMask whatIsPlayer;
 
-    // Quái vật bị choáng
+
     [Header("Stunned info")]
     public float stunDuration = 1;
-    public Vector2 stunDirection = new Vector2(10, 12);  // Hướng (x, y)
+    public Vector2 stunDirection = new Vector2(10,12);
     protected bool canBeStunned;
     [SerializeField] protected GameObject counterImage;
 
     [Header("Move info")]
-    public float moveSpeed = 1.5f; // Tốc độ
-    public float idleTime = 2; // Thời gian nhân vật Flip khi idle
-    public float battleTime = 7; // Thời gian để quái vật ignore
-    private float defaultMoveSpeed; // Tốc độ di chuyển của các enemies
+    public float moveSpeed = 1.5f;
+    public float idleTime = 2;
+    public float battleTime = 7;
+    private float defaultMoveSpeed;
 
     [Header("Attack info")]
-    public float agroDistance = 2; // Khoảng cách quái vật bắt đầu tấn công
-    public float attackDistance = 2;// KC tấn công khi áp sát người chơi
-    public float attackCooldown; // Thời gian hồi chiêu 
+    public float agroDistance = 2;
+    public float attackDistance = 2;
+    public float attackCooldown;
     public float minAttackCooldown = 1;
-    public float maxAttackCooldown = 2;
+    public float maxAttackCooldown= 2;
     [HideInInspector] public float lastTimeAttacked;
 
     public EnemyStateMachine stateMachine { get; private set; }
     public EntityFX fx { get; private set; }
     private Player player;
-    public string lastAnimBoolName { get; private set; }
-
+    public string lastAnimBoolName {  get; private set; }
     protected override void Awake()
     {
         base.Awake();
@@ -60,6 +58,7 @@ public class Enemy : Entity
 
         stateMachine.currentState.Update();
 
+
     }
 
     public virtual void AssignLastAnimName(string _animBoolName) => lastAnimBoolName = _animBoolName;
@@ -80,7 +79,6 @@ public class Enemy : Entity
         moveSpeed = defaultMoveSpeed;
     }
 
-    // Đóng băng thời gian khi thực hiện skill
     public virtual void FreezeTime(bool _timeFrozen)
     {
         if (_timeFrozen)
@@ -97,7 +95,6 @@ public class Enemy : Entity
 
     public virtual void FreezeTimeFor(float _duration) => StartCoroutine(FreezeTimerCoroutine(_duration));
 
-    // Hiệu chỉnh thời gian bị delay khi đóng băng
     protected virtual IEnumerator FreezeTimerCoroutine(float _seconds)
     {
         FreezeTime(true);
@@ -108,8 +105,6 @@ public class Enemy : Entity
     }
 
     #region Counter Attack Window
-    // Cửa sổ tấn công ô vuông đỏ của quái vật
-    // Xác định quái vật nào đang chuẩn bị tấn công
     public virtual void OpenCounterAttackWindow()
     {
         canBeStunned = true;
@@ -123,8 +118,6 @@ public class Enemy : Entity
     }
     #endregion
 
-    // Khi cửa sổ tấn công ô vuông đỏ của quái vật
-    // Giống với stunState 
     public virtual bool CanBeStunned()
     {
         if (canBeStunned)
@@ -136,30 +129,13 @@ public class Enemy : Entity
         return false;
     }
 
-    // Kích hoạt anim của quái vật
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
     public virtual void AnimationSpecialAttackTrigger()
     {
 
     }
 
-    // Check quái vật khi phát hiện người chơi
-    public virtual RaycastHit2D IsPlayerDetected()
-    {
-        float playerDistanceCheck = 50;
-
-        RaycastHit2D playerDetected = Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, playerDistanceCheck, whatIsPlayer);
-        RaycastHit2D wallDetected = Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, playerDistanceCheck + 1, whatIsGround);
-
-        if (wallDetected)
-        {
-            return default(RaycastHit2D);
-        }
-
-        return playerDetected;
-    }
-
-    // Vẽ đường check phạm vi attack distance 
+    public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 50, whatIsPlayer);
     protected override void OnDrawGizmos()
     {
         base.OnDrawGizmos();

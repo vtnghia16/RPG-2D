@@ -1,4 +1,4 @@
-using Newtonsoft.Json.Converters;
+﻿using Newtonsoft.Json.Converters;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -249,6 +249,7 @@ public class Inventory : MonoBehaviour , ISaveManager
         UpdateSlotUI();
     }
 
+    // Check số lượng thêm item 
     public bool CanAddItem()
     {
         if (inventory.Count >= inventoryItemSlot.Length)

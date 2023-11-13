@@ -18,6 +18,7 @@ public class UI_CraftList : MonoBehaviour , IPointerDownHandler
         SetupDefaultCraftWindow();
     }
 
+    // Show danh sách các craft trong kho
     public void SetupCraftList()
     {
         for (int i = 0; i < craftSlotParent.childCount; i++)

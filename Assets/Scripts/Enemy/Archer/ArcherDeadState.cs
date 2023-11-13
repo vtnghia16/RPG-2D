@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+
 public class ArcherDeadState : EnemyState
 {
     private Enemy_Archer enemy;
@@ -9,7 +10,6 @@ public class ArcherDeadState : EnemyState
     {
         this.enemy = _enemy;
     }
-
     public override void Enter()
     {
         base.Enter();

@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerFX : EntityFX
 {
 
-
     [Header("Screen shake FX")]
     [SerializeField] private float shakeMultiplier;
     public Vector3 shakeSwordImpact;

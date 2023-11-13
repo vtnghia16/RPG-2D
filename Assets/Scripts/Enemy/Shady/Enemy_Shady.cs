@@ -1,14 +1,18 @@
-﻿using System.Collections;
+using JetBrains.Annotations;
+using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 public class Enemy_Shady : Enemy
 {
+
     [Header("Shady spesifics")]
-    public float battleStateMoveSpeed; // Tốc độ di chuyển state tấn công
+    public float battleStateMoveSpeed;
 
     [SerializeField] private GameObject explosivePrefab;
-    [SerializeField] private float growSpeed; // Tốc độ lớn của chất nổ
-    [SerializeField] private float maxSize; // Kích thước tối đa
+    [SerializeField] private float growSpeed;
+    [SerializeField] private float maxSize;
+
 
     #region States
 
@@ -18,8 +22,8 @@ public class Enemy_Shady : Enemy
     public ShadyStunnedState stunnedState { get; private set; }
     public ShadyBattleState battleState { get; private set; }
 
-    #endregion
 
+    #endregion
     protected override void Awake()
     {
         base.Awake();
@@ -29,7 +33,7 @@ public class Enemy_Shady : Enemy
 
         deadState = new ShadyDeadState(this, stateMachine, "Dead", this);
 
-        stunnedState = new ShadyStunnedState(this, stateMachine, "Stunned", this);
+        stunnedState = new ShadyStunnedState(this, stateMachine, "Stunned",this);
         battleState = new ShadyBattleState(this, stateMachine, "MoveFast", this);
     }
 
@@ -40,8 +44,7 @@ public class Enemy_Shady : Enemy
         stateMachine.Initialize(idleState);
     }
 
-    // Quay trở lại trạng thái stunnedState 
-    // Khi thực hiện cửa sổ tấn công ô vuông đỏ của quái vật
+    
     public override bool CanBeStunned()
     {
         if (base.CanBeStunned())
@@ -59,12 +62,15 @@ public class Enemy_Shady : Enemy
         stateMachine.ChangeState(deadState);
 
     }
+    protected override void Update()
+    {
+        base.Update();
+    }
+
 
     public override void AnimationSpecialAttackTrigger()
     {
         GameObject newExplosive = Instantiate(explosivePrefab, attackCheck.position, Quaternion.identity);
-
-        // Gán các thuộc tính đã set cho explosive
         newExplosive.GetComponent<Explosive_Controller>().SetupExplosive(stats, growSpeed, maxSize, attackCheckRadius);
 
         cd.enabled = false;
@@ -72,4 +78,5 @@ public class Enemy_Shady : Enemy
     }
 
     public void SelfDestroy() => Destroy(gameObject);
+
 }

@@ -12,6 +12,9 @@ public class UI_SkillToolTip : UI_ToolTip
     
     public void ShowToolTip(string _skillDescprtion,string _skillName,int _price)
     {
+        if (Input.GetKey(KeyCode.LeftControl))
+            return;
+
         skillName.text = _skillName;
         skillText.text = _skillDescprtion;
         skillCost.text = "Cost: " + _price;

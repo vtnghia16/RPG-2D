@@ -73,7 +73,7 @@ public class Clone_Skill_Controller : MonoBehaviour
         {
             if (hit.GetComponent<Enemy>() != null)
             {
-                //player.stats.DoDamage(hit.GetComponent<CharacterStats>()); // make a new function for clone damage to regulate damage;
+                //player.stats.DoDamage(hit.GetComponent<CharacterStats>()); 
 
                 hit.GetComponent<Entity>().SetupKnockbackDir(transform);
 

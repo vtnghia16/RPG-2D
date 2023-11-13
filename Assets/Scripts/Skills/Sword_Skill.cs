@@ -3,7 +3,6 @@ using System.Runtime.ExceptionServices;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Các kỹ năng của sword
 public enum SwordType
 {
     Regular,
@@ -48,6 +47,7 @@ public class Sword_Skill : Skill
     public bool timeStopUnlocked { get; private set; }
     [SerializeField] private UI_SkillTreeSlot vulnerableUnlockButton;
     public bool vulnerableUnlocked { get; private set; }
+
 
 
     private Vector2 finalDir; // Hướng mục tiêu
@@ -211,7 +211,6 @@ public class Sword_Skill : Skill
         return direction;
     }
 
- 
     public void DotsActive(bool _isActive)
     {
         for (int i = 0; i < dots.Length; i++)

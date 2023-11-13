@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 public class DeathBringerSpellCastState : EnemyState
 {
@@ -27,10 +27,9 @@ public class DeathBringerSpellCastState : EnemyState
 
         spellTimer -= Time.deltaTime;
 
-        if(CanCast())
-        {
+        if (CanCast())
             enemy.CastSpell();
-        }
+
 
         if (amountOfSpells <= 0)
             stateMachine.ChangeState(enemy.teleportState);
@@ -45,7 +44,7 @@ public class DeathBringerSpellCastState : EnemyState
 
     private bool CanCast()
     {
-        if(amountOfSpells > 0 && spellTimer < 0)
+        if (amountOfSpells > 0 && spellTimer < 0)
         {
             amountOfSpells--;
             spellTimer = enemy.spellCooldown;

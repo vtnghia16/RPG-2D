@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 public class ShadyBattleState : EnemyState
 {
+
     private Transform player;
     private Enemy_Shady enemy;
     private int moveDir;
@@ -11,8 +12,10 @@ public class ShadyBattleState : EnemyState
 
     public ShadyBattleState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, Enemy_Shady _enemy) : base(_enemyBase, _stateMachine, _animBoolName)
     {
+  
         this.enemy = _enemy;
     }
+
 
     public override void Enter()
     {
@@ -20,7 +23,7 @@ public class ShadyBattleState : EnemyState
 
         defaultSpeed = enemy.moveSpeed;
 
-        enemy.moveSpeed = enemy.battleStateMoveSpeed; 
+        enemy.moveSpeed = enemy.battleStateMoveSpeed;
 
         player = PlayerManager.instance.player.transform;
 
@@ -34,32 +37,27 @@ public class ShadyBattleState : EnemyState
     {
         base.Update();
 
-        // Tấn công người chơi khi phát hiện
         if (enemy.IsPlayerDetected())
         {
             stateTimer = enemy.battleTime;
 
-            // check kc phát hiện người chơi < kc quái vật
             if (enemy.IsPlayerDetected().distance < enemy.attackDistance)
-            {
-                enemy.stats.KillEntity(); // Kích hoạt nổ và đánh rơi vật phẩm của người chơi
-            }
+                enemy.stats.KillEntity(); // this enteres dead state which triggers explosion + drop items and souls
+                
         }
         else
         {
-            // check đk không tấn công & Flip
-            if (stateTimer < 0 || Vector2.Distance(player.transform.position, enemy.transform.position) > 5)
+            if (stateTimer < 0 || Vector2.Distance(player.transform.position, enemy.transform.position) > 7)
                 stateMachine.ChangeState(enemy.idleState);
         }
 
 
-        // Quái vật di chuyển sang trái vị trí nhân vật > và ngược lại
+
         if (player.position.x > enemy.transform.position.x)
             moveDir = 1;
         else if (player.position.x < enemy.transform.position.x)
             moveDir = -1;
 
-        // Set tốc độ di chuyển của nhân vật theo hướng di chuyển
         enemy.SetVelocity(enemy.moveSpeed * moveDir, rb.velocity.y);
     }
 
@@ -72,7 +70,6 @@ public class ShadyBattleState : EnemyState
 
     private bool CanAttack()
     {
-        // Set đòn tấn công kế tiếp của quái vật
         if (Time.time >= enemy.lastTimeAttacked + enemy.attackCooldown)
         {
             enemy.attackCooldown = Random.Range(enemy.minAttackCooldown, enemy.maxAttackCooldown);
@@ -80,7 +77,6 @@ public class ShadyBattleState : EnemyState
             return true;
         }
 
-        // Debug.Log("Attack is on cooldown");
         return false;
     }
 }

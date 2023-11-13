@@ -1,20 +1,20 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy_Archer : Enemy
 {
+
     [Header("Archer spisifc info")]
     [SerializeField] private GameObject arrowPrefab;
     [SerializeField] private float arrowSpeed;
     [SerializeField] private float arrowDamage;
 
-    public Vector2 jumpVelocity; // Tốc độ nhảy
+    public Vector2 jumpVelocity;
     public float jumpCooldown;
-    public float safeDistance;
+    public float safeDistance; // how close palyer should be to trigger jump on battle state
     [HideInInspector] public float lastTimeJumped;
 
-    // Kiểm tra bề mặt phẳng phía sau nhân vật
     [Header("Additional collision check")]
     [SerializeField] private Transform groundBehindCheck;
     [SerializeField] private Vector2 groundBehindCheckSize;
@@ -32,6 +32,7 @@ public class Enemy_Archer : Enemy
     public ArcherJumpState jumpState { get; private set; }
     #endregion
 
+
     protected override void Awake()
     {
         base.Awake();
@@ -43,6 +44,7 @@ public class Enemy_Archer : Enemy
         deadState = new ArcherDeadState(this, stateMachine, "Move", this);
         stunnedState = new ArcherStunnedState(this, stateMachine, "Stunned", this);
         jumpState = new ArcherJumpState(this, stateMachine, "Jump", this);
+
     }
 
     protected override void Start()
@@ -52,8 +54,12 @@ public class Enemy_Archer : Enemy
         stateMachine.Initialize(idleState);
     }
 
-    // Quay trở lại trạng thái stunnedState 
-    // Khi thực hiện cửa sổ tấn công ô vuông đỏ của quái vật
+    protected override void Update()
+    {
+        base.Update();
+    }
+
+
     public override bool CanBeStunned()
     {
         if (base.CanBeStunned())
@@ -76,16 +82,15 @@ public class Enemy_Archer : Enemy
     {
         GameObject newArrow = Instantiate(arrowPrefab, attackCheck.position, Quaternion.identity);
         newArrow.GetComponent<Arrow_Controller>().SetupArrow(arrowSpeed * facingDir, stats);
-
     }
 
-    public bool GroundBehind() => Physics2D.BoxCast(groundBehindCheck.position, groundBehindCheckSize, 0, Vector2.zero, 0, whatIsGround);
+    public bool GroundBehind() => Physics2D.BoxCast(groundBehindCheck.position, groundBehindCheckSize, 0, Vector2.zero,0, whatIsGround);
     public bool WallBehind() => Physics2D.Raycast(wallCheck.position, Vector2.right * -facingDir, wallCheckDistance + 2, whatIsGround);
 
     protected override void OnDrawGizmos()
     {
         base.OnDrawGizmos();
 
-        Gizmos.DrawWireCube(groundBehindCheck.position, groundBehindCheckSize);
+        Gizmos.DrawWireCube(groundBehindCheck.position,groundBehindCheckSize);
     }
 }

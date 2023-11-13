@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
 
+
 public class ArcherBattleState : EnemyState
 {
     private Transform player;
     private Enemy_Archer enemy;
-    private int moveDir; // Hướng di chuyến
-
-
+    private int moveDir;
     public ArcherBattleState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, Enemy_Archer _enemy) : base(_enemyBase, _stateMachine, _animBoolName)
     {
         this.enemy = _enemy;
@@ -29,7 +28,6 @@ public class ArcherBattleState : EnemyState
     {
         base.Update();
 
-        // Tấn công người chơi khi phát hiện
         if (enemy.IsPlayerDetected())
         {
             stateTimer = enemy.battleTime;
@@ -40,7 +38,6 @@ public class ArcherBattleState : EnemyState
                     stateMachine.ChangeState(enemy.jumpState);
             }
 
-            // check kc phát hiện người chơi < kc quái vật
             if (enemy.IsPlayerDetected().distance < enemy.attackDistance)
             {
                 if (CanAttack())
@@ -49,19 +46,15 @@ public class ArcherBattleState : EnemyState
         }
         else
         {
-            // check đk không tấn công & Flip
-            if (stateTimer < 0 || Vector2.Distance(player.transform.position, enemy.transform.position) > 5)
+            if (stateTimer < 0 || Vector2.Distance(player.transform.position, enemy.transform.position) > 7)
                 stateMachine.ChangeState(enemy.idleState);
         }
 
-        BattleStateFlipControl();
 
-        // Set tốc độ di chuyển của nhân vật theo hướng di chuyển
-        //enemy.SetVelocity(enemy.moveSpeed * moveDir, rb.velocity.y);
+        BattleStateFlipControll();
     }
 
-    // Quái vật di chuyển sang trái vị trí nhân vật > và ngược lại
-    private void BattleStateFlipControl()
+    private void BattleStateFlipControll()
     {
         if (player.position.x > enemy.transform.position.x && enemy.facingDir == -1)
             enemy.Flip();
@@ -76,7 +69,6 @@ public class ArcherBattleState : EnemyState
 
     private bool CanAttack()
     {
-        // Set đòn tấn công kế tiếp của quái vật
         if (Time.time >= enemy.lastTimeAttacked + enemy.attackCooldown)
         {
             enemy.attackCooldown = Random.Range(enemy.minAttackCooldown, enemy.maxAttackCooldown);
@@ -84,7 +76,6 @@ public class ArcherBattleState : EnemyState
             return true;
         }
 
-        // Debug.Log("Attack is on cooldown");
         return false;
     }
 
@@ -104,3 +95,5 @@ public class ArcherBattleState : EnemyState
         return false;
     }
 }
+
+

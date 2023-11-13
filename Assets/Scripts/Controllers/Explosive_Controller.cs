@@ -24,15 +24,16 @@ public class Explosive_Controller : MonoBehaviour
             canGrow = false;
             anim.SetTrigger("Explode");
         }
+
     }
 
-    public void SetupExplosive(CharacterStats _myStats, float _growSpeed, float _maxSize, float _radius)
+    public void SetupExplosive(CharacterStats _myStats,float _growSpeed,float _maxSize,float _radius)
     {
-        anim = GetComponent<Animator>();
+        anim= GetComponent<Animator>();
 
-        myStats = _myStats;
-        growSpeed = _growSpeed;
-        maxSize = _maxSize;
+        myStats= _myStats;
+        growSpeed= _growSpeed;
+        maxSize= _maxSize;
         explosionRadius = _radius;
     }
 
@@ -48,7 +49,6 @@ public class Explosive_Controller : MonoBehaviour
 
                 hit.GetComponent<Entity>().SetupKnockbackDir(transform);
                 myStats.DoDamage(hit.GetComponent<CharacterStats>());
-
             }
         }
     }

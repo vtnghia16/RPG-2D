@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,8 +27,6 @@ public class SkeletonIdleState : SkeletonGroundedState
     {
         base.Update();
 
-
-        // chuyển trạng thái di chuyển của quái vật
         if (stateTimer < 0)
             stateMachine.ChangeState(enemy.moveState);
 

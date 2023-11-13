@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +14,7 @@ public class PlayerDashState : PlayerState
     {
         base.Enter();
 
-        player.skill.dash.CloneOnDash(); // Tạo ra nhiều bản sao cho nhân vật
+        player.skill.dash.CloneOnDash();
         stateTimer = player.dashDuration;
 
         player.stats.MakeInvincible(true);

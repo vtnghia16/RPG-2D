@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,7 +28,6 @@ public class SkeletonGroundedState : EnemyState
     {
         base.Update();
 
-        // Tấn công khi phát hiện người chơi & khoảng các battle time
         if (enemy.IsPlayerDetected() || Vector2.Distance(enemy.transform.position, player.transform.position) < enemy.agroDistance)
         {
             stateMachine.ChangeState(enemy.battleState);

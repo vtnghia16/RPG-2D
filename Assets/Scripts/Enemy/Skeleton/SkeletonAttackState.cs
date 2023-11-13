@@ -1,10 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SkeletonAttackState : EnemyState
 {
-    // Quái vật tấn công
     private Enemy_Skeleton enemy;
 
     public SkeletonAttackState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, Enemy_Skeleton _enemy) : base(_enemyBase, _stateMachine, _animBoolName)
@@ -21,7 +20,6 @@ public class SkeletonAttackState : EnemyState
     {
         base.Exit();
 
-        // Get thời gian đòn tấn công cuối
         enemy.lastTimeAttacked = Time.time;
     }
 
@@ -29,11 +27,10 @@ public class SkeletonAttackState : EnemyState
     {
         base.Update();
 
-        // khi quái vật tấn công set velocity = 0
         enemy.SetZeroVelocity();
 
+       
 
-        // Gọi trigger khi quái vật tấn công (ngược lại)
         if (triggerCalled)
             stateMachine.ChangeState(enemy.battleState);
     }

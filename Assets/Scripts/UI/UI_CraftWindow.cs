@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -27,7 +27,7 @@ public class UI_CraftWindow : MonoBehaviour
         for (int i = 0; i < _data.craftingMaterials.Count; i++)
         {
             if (_data.craftingMaterials.Count > materialImage.Length)
-                Debug.LogWarning("You have more materials amount than you have material slots in craft window");
+                Debug.LogWarning("Bạn có nhiều vật liệu hơn số lượng vật liệu bạn có trong cửa sổ chế tạo");
 
 
             materialImage[i].sprite = _data.craftingMaterials[i].data.itemIcon;

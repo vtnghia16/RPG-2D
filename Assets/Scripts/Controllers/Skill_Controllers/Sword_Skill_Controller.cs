@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Sword_Skill_Controller : MonoBehaviour
@@ -14,7 +13,7 @@ public class Sword_Skill_Controller : MonoBehaviour
     private bool isReturning;
 
 
-    private float freezeTimeDuration;  // Set thời gian đóng băng của quái vật
+    private float freezeTimeDuration; // Set thời gian đóng băng của quái vật
     private float returnSpeed = 12; // Tốc độ thanh kiếm khi trả về
 
     [Header("Pierce info")]
@@ -23,13 +22,13 @@ public class Sword_Skill_Controller : MonoBehaviour
     [Header("Bounce info")]
     private float bounceSpeed;
     private bool isBouncing;
-    private int bounceAmount;  // Độ nảy giữa các mục tiêu
+    private int bounceAmount; // Độ nảy giữa các mục tiêu
     private List<Transform> enemyTarget;
     private int targetIndex;
 
     [Header("Spin info")]
     private float maxTravelDistance; // Khoảng cách di chuyển tối da khi spin
-    private float spinDuration;  // KTG trong khí spin
+    private float spinDuration; // KTG trong khí spin
     private float spinTimer;
     private bool wasStopped;
     private bool isSpinning;
@@ -271,12 +270,12 @@ public class Sword_Skill_Controller : MonoBehaviour
             return;
         }
 
+
         if (isSpinning)
         {
             StopWhenSpinning();
             return;
         }
-
 
         canRotate = false;
         cd.enabled = false;

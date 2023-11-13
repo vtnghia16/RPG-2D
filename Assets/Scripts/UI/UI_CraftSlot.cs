@@ -8,6 +8,7 @@ public class UI_CraftSlot : UI_ItemSlot
         base.Start();
     }
 
+    // Setup craft slot theo name, icon
     public void SetupCraftSlot(ItemData_Equipment _data)
     {
         if (_data == null)
