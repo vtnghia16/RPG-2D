@@ -10,11 +10,10 @@ public class PlayerStats : CharacterStats
     {
         base.Start();
 
-        player= GetComponent<Player>();
-
-        currentHealth = GetMaxHealthValue();
+        player = GetComponent<Player>();
 
     }
+
 
 
     public override void TakeDamage(int _damage)

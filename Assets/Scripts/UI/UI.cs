@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,7 +28,7 @@ public class UI : MonoBehaviour, ISaveManager
     private void Awake()
     {
 
-        SwitchTo(skillTreeUI); // we need this to assign events on skill tree slots before we asssign events on skill scripts
+        SwitchTo(skillTreeUI); 
         fadeScreen.gameObject.SetActive(true);
     }
 
@@ -58,6 +58,7 @@ public class UI : MonoBehaviour, ISaveManager
             SwitchWithKeyTo(optionsUI);
     }
 
+    // Chuyển đổi menu của game object
     public void SwitchTo(GameObject _menu)
     {
 
@@ -75,10 +76,11 @@ public class UI : MonoBehaviour, ISaveManager
         if (_menu != null)
         {
             AudioManager.instance.PlaySFX(5, null);
-            _menu.SetActive(true);
+            _menu.SetActive(true); 
         }
 
 
+        // Pause khi bật game menu
         if (GameManager.instance != null)
         {
             if (_menu == inGameUI)

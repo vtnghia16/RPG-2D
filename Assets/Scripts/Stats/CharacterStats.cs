@@ -98,7 +98,7 @@ public class CharacterStats : MonoBehaviour
 
         fx = GetComponent<EntityFX>();
     }
-
+     
 
     protected virtual void Update()
     {
@@ -167,11 +167,11 @@ public class CharacterStats : MonoBehaviour
 
         int totalDamage = damage.GetValue();
 
-        if (CanCrit())
-        {
-            totalDamage = CalculateCriticalDamage(totalDamage);
-            criticalStrike = true;
-        }
+        //if (CanCrit())
+        //{
+        //    totalDamage = CalculateCriticalDamage(totalDamage);
+        //    criticalStrike = true;
+        //}
 
         fx.CreateHitFx(_targetStats.transform,criticalStrike);
 
@@ -487,6 +487,7 @@ public class CharacterStats : MonoBehaviour
 
     public int GetMaxHealthValue()
     {
+
         return maxHealth.GetValue();
     }
 
