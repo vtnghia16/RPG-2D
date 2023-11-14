@@ -39,7 +39,7 @@ public class UI_InGame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift)) //&& skills.dash.dashUnlocked)
             SetCooldownOf(dashImage);
 
-        if (Input.GetKeyDown(KeyCode.Q) && skills.parry.parryUnlocked)
+        if (Input.GetKeyDown(KeyCode.Q)) // && skills.parry.parryUnlocked
             SetCooldownOf(parryImage);
 
         if (Input.GetKeyDown(KeyCode.F)) // && skills.crystal.crystalUnlocked
