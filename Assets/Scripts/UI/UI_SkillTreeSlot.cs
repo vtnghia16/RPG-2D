@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,17 +10,18 @@ public class UI_SkillTreeSlot : MonoBehaviour , IPointerEnterHandler , IPointerE
     private UI ui;
     private Image skillImage;
 
-    [SerializeField] private int skillCost;
-    [SerializeField] private string skillName;
+    [SerializeField] private int skillCost; // Giá
+    [SerializeField] private string skillName; // Tên skill
+
     [TextArea]
     [SerializeField] private string skillDescription;
     [SerializeField] private Color lockedSkillColor;
 
 
-    public bool unlocked;
+    public bool unlocked; 
 
-    [SerializeField] private UI_SkillTreeSlot[] shouldBeUnlocked;
-    [SerializeField] private UI_SkillTreeSlot[] shouldBeLocked;
+    [SerializeField] private UI_SkillTreeSlot[] shouldBeUnlocked; // Mở khóa
+    [SerializeField] private UI_SkillTreeSlot[] shouldBeLocked; // Khóa
 
     private void OnValidate()
     {
@@ -43,6 +44,7 @@ public class UI_SkillTreeSlot : MonoBehaviour , IPointerEnterHandler , IPointerE
             skillImage.color = Color.white;
     }
 
+    // Check điều kiện để mở khóa
     public void UnlockSkillSlot()
     {
         if (PlayerManager.instance.HaveEnoughMoney(skillCost) == false)
@@ -70,6 +72,7 @@ public class UI_SkillTreeSlot : MonoBehaviour , IPointerEnterHandler , IPointerE
         unlocked = true;
         skillImage.color = Color.white;
     }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         ui.skillToolTip.ShowToolTip(skillDescription,skillName,skillCost);

@@ -62,6 +62,8 @@ public class Clone_Skill : Skill
             canAttack = true;
             attackMultiplier = cloneAttackMultiplier;
         }
+
+
     }
 
     private void UnlockAggresiveClone()
