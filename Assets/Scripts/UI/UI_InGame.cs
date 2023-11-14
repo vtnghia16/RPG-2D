@@ -45,7 +45,7 @@ public class UI_InGame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && skills.crystal.crystalUnlocked)
             SetCooldownOf(crystalImage);
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && skills.sword.swordUnlocked)
+        if (Input.GetKeyDown(KeyCode.Mouse1)) // && skills.sword.swordUnlocked
             SetCooldownOf(swordImage);
 
         if (Input.GetKeyDown(KeyCode.R)) // && skills.blackhole.blackholeUnlocked

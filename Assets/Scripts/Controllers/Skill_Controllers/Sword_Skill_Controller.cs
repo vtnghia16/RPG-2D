@@ -230,11 +230,11 @@ public class Sword_Skill_Controller : MonoBehaviour
 
         player.stats.DoDamage(enemyStats);
 
-        if(player.skill.sword.timeStopUnlocked)
+        if(player.skill.sword.timeStop)
             enemy.FreezeTimeFor(freezeTimeDuration);
 
-        if (player.skill.sword.vulnerableUnlocked)
-            enemyStats.MakeVulnerableFor(freezeTimeDuration);
+        //if (player.skill.sword.vulnerableUnlocked)
+        //    enemyStats.MakeVulnerableFor(freezeTimeDuration);
             
 
 

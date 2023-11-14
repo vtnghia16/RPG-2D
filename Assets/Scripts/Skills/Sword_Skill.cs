@@ -15,39 +15,38 @@ public class Sword_Skill : Skill
 {
     public SwordType swordType = SwordType.Regular;
 
-    [Header("Bounce info")]
-    [SerializeField] private UI_SkillTreeSlot bounceUnlockButton;
+    [Header("Bounce info - key 3")]
+    // [SerializeField] private UI_SkillTreeSlot bounceUnlockButton;
     [SerializeField] private int bounceAmount; // Số lần nảy
     [SerializeField] private float bounceGravity; // Trọng lực bounce   
     [SerializeField] private float bounceSpeed; // Tốc độ
 
-    [Header("Peirce info")]
-    [SerializeField] private UI_SkillTreeSlot pierceUnlockButton;
+    [Header("Peirce info - key 4")]
+    // [SerializeField] private UI_SkillTreeSlot pierceUnlockButton;
     [SerializeField] private int pierceAmount;
     [SerializeField] private float pierceGravity; // Trọng lực pierce  
 
-    [Header("Spin info")]
-    [SerializeField] private UI_SkillTreeSlot spinUnlockButton;
+    [Header("Spin info - key 5")]
+    // [SerializeField] private UI_SkillTreeSlot spinUnlockButton;
     [SerializeField] private float hitCooldown = .35f; // Thời gian hồi chiêu
     [SerializeField] private float maxTravelDistance = 7; // KC tối đa khi spin
     [SerializeField] private float spinDuration = 2;  // KTG spin
     [SerializeField] private float spinGravity = 1;  // Trọng lực
 
-    [Header("Skill info")]
-    [SerializeField] private UI_SkillTreeSlot swordUnlockButton;
-    public bool swordUnlocked { get; private set; }
+    [Header("Skill info - key 2")]
+    //[SerializeField] private UI_SkillTreeSlot swordUnlockButton;
+    // public bool swordUnlocked { get; private set; }
     [SerializeField] private GameObject swordPrefab;
     [SerializeField] private Vector2 launchForce; // lực phóng (x,y)
     [SerializeField] private float swordGravity; // Trọng lực
-    [SerializeField] private float freezeTimeDuration;  // Thời gian đóng băng của quái vật
     [SerializeField] private float returnSpeed; // Thời gian đóng băng của quái vật
 
-    [Header("Passive skills")]
-    [SerializeField] private UI_SkillTreeSlot timeStopUnlockButton;
-    public bool timeStopUnlocked { get; private set; }
-    [SerializeField] private UI_SkillTreeSlot vulnerableUnlockButton;
-    public bool vulnerableUnlocked { get; private set; }
-
+    [Header("Time stop skills")]
+    public bool timeStop;
+    [SerializeField] private float freezeTimeDuration;  // Thời gian đóng băng của quái vật
+    //[SerializeField] private UI_SkillTreeSlot timeStopUnlockButton;
+    //[SerializeField] private UI_SkillTreeSlot vulnerableUnlockButton;
+    //public bool vulnerableUnlocked { get; private set; }
 
 
     private Vector2 finalDir; // Hướng mục tiêu
@@ -68,14 +67,15 @@ public class Sword_Skill : Skill
         GenereateDots();
         SetupGraivty();
 
+        // Nhân vật đóng băng vài giây
+        timeStop = true;
 
-
-        swordUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockSword);
-        bounceUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockBounceSword);
-        pierceUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockPierceSword);
-        spinUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockSpinSword);
-        timeStopUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockTimeStop);
-        vulnerableUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockVulnurable);
+        // swordUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockSword);
+        //bounceUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockBounceSword);
+        // pierceUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockPierceSword);
+        // spinUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockSpinSword);
+        // timeStopUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockTimeStop);
+        // vulnerableUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockVulnurable);
 
     }
 
@@ -149,53 +149,54 @@ public class Sword_Skill : Skill
 
     #region Unlock region
 
-    protected override void CheckUnlock()
-    {
-        UnlockSword();
-        UnlockBounceSword();
-        UnlockSpinSword();
-        UnlockPierceSword();
-        UnlockTimeStop();
-        UnlockVulnurable();
-    }
-    private void UnlockTimeStop()
-    {
-        if (timeStopUnlockButton.unlocked)
-            timeStopUnlocked = true;
-    }
+    //protected override void CheckUnlock()
+    //{
+    //    // UnlockSword();
+    //    // UnlockBounceSword();
+    //    //UnlockSpinSword();
+    //    // UnlockPierceSword();
+    //    // UnlockTimeStop();
+    //    UnlockVulnurable();
+    //}
+
+    //private void UnlockTimeStop()
+    //{
+    //    if (timeStopUnlockButton.unlocked)
+    //        timeStopUnlocked = true;
+    //}
     
-    private void UnlockVulnurable()
-    {
-        if (vulnerableUnlockButton.unlocked)
-            vulnerableUnlocked = true;
-    }
+    //private void UnlockVulnurable()
+    //{
+    //    if (vulnerableUnlockButton.unlocked)
+    //        vulnerableUnlocked = true;
+    //}
 
-    private void UnlockSword()
-    {
-        if (swordUnlockButton.unlocked)
-        {
-            swordType = SwordType.Regular;
-            swordUnlocked = true;
-        }
-    }
+    //private void UnlockSword()
+    //{
+    //    if (swordUnlockButton.unlocked)
+    //    {
+    //        swordType = SwordType.Regular;
+    //        swordUnlocked = true;
+    //    }
+    //}
 
-    private void UnlockBounceSword()
-    {
-        if (bounceUnlockButton.unlocked)
-            swordType = SwordType.Bounce;
-    }
+    //private void UnlockBounceSword()
+    //{
+    //    if (bounceUnlockButton.unlocked)
+    //        swordType = SwordType.Bounce;
+    //}
 
-    private void UnlockPierceSword()
-    {
-        if (pierceUnlockButton.unlocked)
-            swordType = SwordType.Pierce;
-    }
+    //private void UnlockPierceSword()
+    //{
+    //    if (pierceUnlockButton.unlocked)
+    //        swordType = SwordType.Pierce;
+    //}
 
-    private void UnlockSpinSword()
-    {
-        if (spinUnlockButton.unlocked)
-            swordType = SwordType.Spin;
-    }
+    //private void UnlockSpinSword()
+    //{
+    //    if (spinUnlockButton.unlocked)
+    //        swordType = SwordType.Spin;
+    //}
 
 
 
