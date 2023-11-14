@@ -7,8 +7,8 @@ public class Blackhole_Skill : Skill
 {
 
 
-    [SerializeField] private UI_SkillTreeSlot blackHoleUnlockButton;
-    public bool blackholeUnlocked;// { get; private set; }
+    //[SerializeField] private UI_SkillTreeSlot blackHoleUnlockButton;
+    //public bool blackholeUnlocked;// { get; private set; }
     [SerializeField] private int amountOfAttacks; // Số lần tấn công
     [SerializeField] private float cloneCooldown; // Thời gian hồi chiêu
     [SerializeField] private float blackholeDuration; // KTG blackHole
@@ -23,12 +23,13 @@ public class Blackhole_Skill : Skill
 
     
 
-    private void UnlockBlackhole()
-    {
-        //if (blackHoleUnlockButton.unlocked)
-            blackholeUnlocked = true;
+    //private void UnlockBlackhole()
+    //{
+    //    //if (blackHoleUnlockButton.unlocked)
+    //        blackholeUnlocked = true;
 
-    }
+    //}
+
     public override bool CanUseSkill()
     {
         return base.CanUseSkill();
@@ -86,10 +87,10 @@ public class Blackhole_Skill : Skill
         return maxSize / 2;
     }
 
-    protected override void CheckUnlock()
-    {
-        base.CheckUnlock();
+    //protected override void CheckUnlock()
+    //{
+    //    base.CheckUnlock();
 
-        UnlockBlackhole();
-    }
+    //    UnlockBlackhole();
+    //}
 }

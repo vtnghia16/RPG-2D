@@ -22,7 +22,7 @@ public class PlayerGroundedState : PlayerState
     {
         base.Update();
 
-        if (Input.GetKeyDown(KeyCode.R) && player.skill.blackhole.blackholeUnlocked)
+        if (Input.GetKeyDown(KeyCode.R)) // && player.skill.blackhole.blackholeUnlocked
         {
             if (player.skill.blackhole.cooldownTimer > 0)
             {

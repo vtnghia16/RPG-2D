@@ -48,7 +48,7 @@ public class UI_InGame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse1) && skills.sword.swordUnlocked)
             SetCooldownOf(swordImage);
 
-        if (Input.GetKeyDown(KeyCode.R) && skills.blackhole.blackholeUnlocked)
+        if (Input.GetKeyDown(KeyCode.R)) // && skills.blackhole.blackholeUnlocked
             SetCooldownOf(blackholeImage);
 
 
