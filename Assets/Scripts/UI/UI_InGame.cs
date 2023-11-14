@@ -42,7 +42,7 @@ public class UI_InGame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && skills.parry.parryUnlocked)
             SetCooldownOf(parryImage);
 
-        if (Input.GetKeyDown(KeyCode.F) && skills.crystal.crystalUnlocked)
+        if (Input.GetKeyDown(KeyCode.F)) // && skills.crystal.crystalUnlocked
             SetCooldownOf(crystalImage);
 
         if (Input.GetKeyDown(KeyCode.Mouse1)) // && skills.sword.swordUnlocked

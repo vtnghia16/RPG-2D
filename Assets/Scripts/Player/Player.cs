@@ -101,7 +101,7 @@ public class Player : Entity
         CheckForDashInput();
 
 
-        if (Input.GetKeyDown(KeyCode.F) && skill.crystal.crystalUnlocked)
+        if (Input.GetKeyDown(KeyCode.F)) // && skill.crystal.crystalUnlockedv
             skill.crystal.CanUseSkill();
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
