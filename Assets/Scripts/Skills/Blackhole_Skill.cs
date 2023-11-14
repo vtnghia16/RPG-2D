@@ -56,7 +56,7 @@ public class Blackhole_Skill : Skill
     {
         base.Start();
 
-        blackHoleUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockBlackhole);
+        //blackHoleUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockBlackhole);
     }
 
     protected override void Update()

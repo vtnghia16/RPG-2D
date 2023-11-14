@@ -16,81 +16,84 @@ public class Clone_Skill : Skill
     [Space]
 
     [Header("Clone attack")]
-    [SerializeField] private UI_SkillTreeSlot cloneAttackUnlockButton;
+    // [SerializeField] private UI_SkillTreeSlot cloneAttackUnlockButton;
     [SerializeField] private float cloneAttackMultiplier;
     [SerializeField] private bool canAttack;
 
-    [Header("Aggresive clone")]
-    [SerializeField] private UI_SkillTreeSlot aggresiveCloneUnlockButton;
-    [SerializeField] private float aggresiveCloneAttackMultiplier;
-    public bool canApplyOnHitEffect { get; private set; }
+    //[Header("Aggresive clone")]
+    //[SerializeField] private UI_SkillTreeSlot aggresiveCloneUnlockButton;
+    //[SerializeField] private float aggresiveCloneAttackMultiplier;
+    // public bool canApplyOnHitEffect { get; private set; }
 
-    [Header("Multiple clone")]
-    [SerializeField] private UI_SkillTreeSlot multipleUnlockButton;
-    [SerializeField] private float multiCloneAttackMultiplier;
+    //[Header("Multiple clone")]
+    //[SerializeField] private UI_SkillTreeSlot multipleUnlockButton;
+    //[SerializeField] private float multiCloneAttackMultiplier;
     [SerializeField] private bool canDuplicateClone;
     [SerializeField] private float chanceToDuplicate;
-    [Header("Crystal instead of clone")]
-    [SerializeField] private UI_SkillTreeSlot crystalInseadUnlockButton;
-    public bool crystalInseadOfClone;
+
+    //[Header("Crystal instead of clone")]
+    //[SerializeField] private UI_SkillTreeSlot crystalInseadUnlockButton;
+    //public bool crystalInseadOfClone;
 
 
     protected override void Start()
     {
         base.Start();
 
+        canAttack = true;
+        attackMultiplier = cloneAttackMultiplier;
 
-        cloneAttackUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockCloneAttack);
-        aggresiveCloneUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockAggresiveClone);
-        multipleUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockMultiClone);
-        crystalInseadUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockCrystalInstead);
+        // cloneAttackUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockCloneAttack);
+        // aggresiveCloneUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockAggresiveClone);
+        //multipleUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockMultiClone);
+        //crystalInseadUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockCrystalInstead);
     }
+
 
     #region Unlock region
     protected override void CheckUnlock()
     {
         UnlockCloneAttack();
-        UnlockAggresiveClone();
-        UnlockMultiClone();
-        UnlockCrystalInstead();
+        //UnlockAggresiveClone();
+        //UnlockMultiClone();
+        //UnlockCrystalInstead();
     }
 
     private void UnlockCloneAttack()
     {
-        if (cloneAttackUnlockButton.unlocked)
-        {
-            canAttack = true;
-            attackMultiplier = cloneAttackMultiplier;
-        }
+        //if (cloneAttackUnlockButton.unlocked)
+        //{
+
+        //}
 
 
     }
 
-    private void UnlockAggresiveClone()
-    {
-        if (aggresiveCloneUnlockButton.unlocked)
-        {
-            canApplyOnHitEffect = true;
-            attackMultiplier = aggresiveCloneAttackMultiplier;
-        }
-    }
+    //private void UnlockAggresiveClone()
+    //{
+    //    if (aggresiveCloneUnlockButton.unlocked)
+    //    {
+    //        canApplyOnHitEffect = true;
+    //        attackMultiplier = aggresiveCloneAttackMultiplier;
+    //    }
+    //}
 
-    private void UnlockMultiClone()
-    {
-        if (multipleUnlockButton.unlocked)
-        {
-            canDuplicateClone = true;
-            attackMultiplier = multiCloneAttackMultiplier;
-        }
-    }
+    //private void UnlockMultiClone()
+    //{
+    //    if (multipleUnlockButton.unlocked)
+    //    {
+    //        canDuplicateClone = true;
+    //        attackMultiplier = multiCloneAttackMultiplier;
+    //    }
+    //}
 
-    private void UnlockCrystalInstead()
-    {
-        if(crystalInseadUnlockButton.unlocked)
-        {
-            crystalInseadOfClone = true;
-        }
-    }
+    //private void UnlockCrystalInstead()
+    //{
+    //    if(crystalInseadUnlockButton.unlocked)
+    //    {
+    //        crystalInseadOfClone = true;
+    //    }
+    //}
 
 
     #endregion
@@ -98,11 +101,11 @@ public class Clone_Skill : Skill
     // Tạo đối tượng tạm thời
     public void CreateClone(Transform _clonePosition,Vector3 _offset)
     {
-        if (crystalInseadOfClone)
-        {
-            SkillManager.instance.crystal.CreateCrystal();
-            return;
-        }
+        //if (crystalInseadOfClone)
+        //{
+        //    SkillManager.instance.crystal.CreateCrystal();
+        //    return;
+        //}
 
         GameObject newClone = Instantiate(clonePrefab);
 
