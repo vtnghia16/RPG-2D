@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour , ISaveManager
 
     private void Start()
     {
-        currency += 458;
+        currency += 10;
     }
     public bool HaveEnoughMoney(int _price)
     {

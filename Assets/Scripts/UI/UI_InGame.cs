@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,13 +15,19 @@ public class UI_InGame : MonoBehaviour
     [SerializeField] private Image blackholeImage;
     [SerializeField] private Image flaskImage;
 
+    [Header("Skill sword info")]
+    [SerializeField] private Image regularImage;
+    [SerializeField] private Image BounceImage;
+    [SerializeField] private Image PierceImage; 
+    [SerializeField] private Image SpinImage;
+
     private SkillManager skills;
 
 
     [Header("Souls info")]
     [SerializeField] private TextMeshProUGUI currentSouls;
     [SerializeField] private float soulsAmount;
-    [SerializeField] private float increaseRate = 100;
+    [SerializeField] private float increaseRate = 10;
 
     void Start()
     {
@@ -51,10 +57,41 @@ public class UI_InGame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R)) // && skills.blackhole.blackholeUnlocked
             SetCooldownOf(blackholeImage);
 
-
         if (Input.GetKeyDown(KeyCode.Alpha1) && Inventory.instance.GetEquipment(EquipmentType.Flask) != null)
             SetCooldownOf(flaskImage);
 
+
+        // switch keycode sword
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SetFillAmount(regularImage);
+            SetNotFillAmount(BounceImage);
+            SetNotFillAmount(PierceImage);
+            SetNotFillAmount(SpinImage);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            SetFillAmount(BounceImage);
+            SetNotFillAmount(regularImage);
+            SetNotFillAmount(PierceImage);
+            SetNotFillAmount(SpinImage);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            SetFillAmount(PierceImage);
+            SetNotFillAmount(regularImage);
+            SetNotFillAmount(BounceImage);
+            SetNotFillAmount(SpinImage);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            SetFillAmount(SpinImage);
+            SetNotFillAmount(regularImage);
+            SetNotFillAmount(BounceImage);
+            SetNotFillAmount(PierceImage);
+        }
+
+        // Check thời gian cooldown của vòng tròn
         CheckCooldownOf(dashImage, skills.dash.cooldown);
         CheckCooldownOf(parryImage, skills.parry.cooldown);
         CheckCooldownOf(crystalImage, skills.crystal.cooldown);
@@ -82,13 +119,24 @@ public class UI_InGame : MonoBehaviour
         slider.value = playerStats.currentHealth;
     }
 
-
+    // Set giao diện vòng tròn hồi chiêu
     private void SetCooldownOf(Image _image)
     {
         if (_image.fillAmount <= 0)
             _image.fillAmount = 1;
     }
 
+    private void SetFillAmount(Image _image)
+    {
+        _image.fillAmount = 1;
+    }
+
+    private void SetNotFillAmount(Image _image)
+    {
+        _image.fillAmount = 0;
+    }
+
+    // Check thời gian vòng tròn hồi chiêu
     private void CheckCooldownOf(Image _image, float _cooldown)
     {
         if (_image.fillAmount > 0)
