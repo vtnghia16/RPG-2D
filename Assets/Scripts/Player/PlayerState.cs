@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,12 +9,13 @@ public class PlayerState
 
     protected Rigidbody2D rb;
 
+    // Vị trí của nhân vật theo chiều (x, y)
     protected float xInput;
     protected float yInput;
     private string animBoolName;
 
     protected float stateTimer;
-    protected bool triggerCalled;
+    protected bool triggerCalled; // Gọi trigger của mỗi anim
 
     public PlayerState(Player _player, PlayerStateMachine _stateMachine, string _animBoolName)
     {

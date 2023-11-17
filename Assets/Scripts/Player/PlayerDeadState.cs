@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +17,7 @@ public class PlayerDeadState : PlayerState
     {
         base.Enter();
 
+        // Chuyển Screen khi nhân vật die
         GameObject.Find("Canvas").GetComponent<UI>().SwitchOnEndScreen();
     }
 

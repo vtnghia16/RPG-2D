@@ -155,7 +155,6 @@
     <Compile Include="Assets\Scripts\Stats\CharacterStats.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\ItemData_Equipment.cs" />
     <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Crystal_Skill_Controller.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_SkillTreeSlot.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\UI\UI_VolumeSlider.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_Skeleton.cs" />

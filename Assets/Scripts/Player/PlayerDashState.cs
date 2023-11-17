@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +14,7 @@ public class PlayerDashState : PlayerState
     {
         base.Enter();
 
-        player.skill.dash.CloneOnDash();
+        player.skill.dash.CloneOnDash(); // Tạo ra nhiều bản sao cho nhân vật
         stateTimer = player.dashDuration;
 
         player.stats.MakeInvincible(true);
@@ -26,15 +26,12 @@ public class PlayerDashState : PlayerState
         base.Exit();
 
         player.skill.dash.CloneOnArrival();
+
+        // Thoát khỏi trạng thái dash x = 0
         player.SetVelocity(0, rb.velocity.y);
 
         player.stats.MakeInvincible(false);
     }
-
-
-
-
-
 
     public override void Update()
     {
@@ -43,8 +40,10 @@ public class PlayerDashState : PlayerState
         if (!player.IsGroundDetected() && player.IsWallDetected())
             stateMachine.ChangeState(player.wallSlide);
 
+        // Set tốc độ dash của nhân vật
         player.SetVelocity(player.dashSpeed * player.dashDir, 0);
 
+        // Hết thời gian state chuyển qua trạng thái idle
         if (stateTimer < 0)
             stateMachine.ChangeState(player.idleState);
 

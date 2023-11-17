@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,6 +29,7 @@ public class PlayerAirState : PlayerState
         if(player.IsGroundDetected())
             stateMachine.ChangeState(player.idleState);
 
+        // Check tốc độ di chuyển của quái vật
         if (xInput != 0) 
             player.SetVelocity(player.moveSpeed * .8f * xInput, rb.velocity.y);
     }

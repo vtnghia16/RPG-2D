@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -7,13 +7,13 @@ public class Player : Entity
 {
     [Header("Attack details")]
     public Vector2[] attackMovement;
-    public float counterAttackDuration = .2f;
+    public float counterAttackDuration = .2f; // KTG phản công
 
     public bool isBusy { get; private set; }
     [Header("Move info")]
     public float moveSpeed = 12f;
     public float jumpForce;
-    public float swordReturnImpact;
+    public float swordReturnImpact; // Tác động của thanh kiếm khi return
     private float defaultMoveSpeed;
     private float defaultJumpForce;
 
@@ -100,8 +100,8 @@ public class Player : Entity
 
         CheckForDashInput();
 
-
-        if (Input.GetKeyDown(KeyCode.F)) // && skill.crystal.crystalUnlockedv
+        // Sử dụng skill Crystal
+        if (Input.GetKeyDown(KeyCode.F)) 
             skill.crystal.CanUseSkill();
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -133,6 +133,7 @@ public class Player : Entity
         sword = _newSword;
     }
 
+    // Bắt lấy thanh kiếm và clear thanh kiếm khi tấn công quái vật
     public void CatchTheSword()
     {
         stateMachine.ChangeState(catchSword);
@@ -149,14 +150,11 @@ public class Player : Entity
 
     public void AnimationTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 
+    // Kiểm tra input của dash
     private void CheckForDashInput()
     {
         if (IsWallDetected())
             return;
-
-        //if (skill.dash.dashUnlocked == false)
-        //    return;
-
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && SkillManager.instance.dash.CanUseSkill())
         {

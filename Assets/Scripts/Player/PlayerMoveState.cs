@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,6 +26,7 @@ public class PlayerMoveState : PlayerGroundedState
     {
         base.Update();
 
+        // Set tốc độ di chuyển của nhân vật theo (x, y)
         player.SetVelocity(xInput * player.moveSpeed, rb.velocity.y);
 
 

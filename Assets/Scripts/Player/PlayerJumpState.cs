@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +12,7 @@ public class PlayerJumpState : PlayerState
     {
         base.Enter();
 
+        // Set tốc độ x, và lực nhảy Y
         rb.velocity = new Vector2(rb.velocity.x, player.jumpForce);
     }
 

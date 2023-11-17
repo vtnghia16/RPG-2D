@@ -26,8 +26,8 @@ public class UI_InGame : MonoBehaviour
 
     [Header("Souls info")]
     [SerializeField] private TextMeshProUGUI currentSouls;
-    [SerializeField] private float soulsAmount;
-    [SerializeField] private float increaseRate = 10;
+    [SerializeField] private float soulsScoreAmount;
+    //[SerializeField] private float increaseRate = 10;
 
     void Start()
     {
@@ -104,13 +104,13 @@ public class UI_InGame : MonoBehaviour
 
     private void UpdateSoulsUI()
     {
-        if (soulsAmount < PlayerManager.instance.GetCurrency())
-            soulsAmount += Time.deltaTime * increaseRate;
-        else
-            soulsAmount = PlayerManager.instance.GetCurrency();
+        //if (soulsScoreAmount < PlayerManager.instance.GetCurrency())
+        //    soulsScoreAmount += Time.deltaTime * increaseRate;
+        //else
+            soulsScoreAmount = PlayerManager.instance.GetCurrency();
 
 
-        currentSouls.text = ((int)soulsAmount).ToString();
+        currentSouls.text = ((int)soulsScoreAmount).ToString();
     }
 
     private void UpdateHealthUI()
