@@ -147,8 +147,8 @@ Transform:
   m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 7546619778332356704}
   - {fileID: 7546619777034299226}
+  - {fileID: 7546619778332356704}
   - {fileID: 2076073338763843978}
   - {fileID: 4796425262067334962}
   - {fileID: 5071073060974252859}
@@ -248,7 +248,7 @@ MonoBehaviour:
     baseValue: 5
     modifiers: 
   maxHealth:
-    baseValue: 75
+    baseValue: 150
     modifiers: 
   armor:
     baseValue: 0
@@ -371,7 +371,7 @@ RectTransform:
   m_Children:
   - {fileID: 7546619777122401679}
   m_Father: {fileID: 7546619776816806393}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -750,7 +750,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7546619776816806393}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7546619778332356733
 SpriteRenderer:

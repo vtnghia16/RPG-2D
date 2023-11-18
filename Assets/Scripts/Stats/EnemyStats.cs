@@ -68,7 +68,7 @@ public class EnemyStats : CharacterStats
         base.Die();
         enemy.Die();
 
-        PlayerManager.instance.currency += soulsDropAmount.GetValue();
+        PlayerManager.instance.score += soulsDropAmount.GetValue();
 
         // Thả vật phẩm khi quái vật die
         myDropSystem.GenerateDrop();

@@ -91,6 +91,7 @@ public class CharacterStats : MonoBehaviour
     public bool isInvincible { get; private set; }
     private bool isVulnerable;
 
+
     protected virtual void Start()
     {
         // critPower.SetDefaultValue(150);
@@ -117,7 +118,7 @@ public class CharacterStats : MonoBehaviour
         if (shockedTimer < 0)
             isShocked = false;
 
-        if(isIgnited)
+        if (isIgnited)
             ApplyIgniteDamage();
     }
 
@@ -170,13 +171,13 @@ public class CharacterStats : MonoBehaviour
         //    criticalStrike = true;
         //}
 
-        fx.CreateHitFx(_targetStats.transform,criticalStrike);
+        fx.CreateHitFx(_targetStats.transform, criticalStrike);
 
         totalDamage = CheckTargetArmor(_targetStats, totalDamage);
         _targetStats.TakeDamage(totalDamage);
 
 
-         DoMagicalDamage(_targetStats); // xóa nếu bạn không muốn áp dụng đòn đánh phép thuật vào đòn tấn công chính
+        DoMagicalDamage(_targetStats); // xóa nếu bạn không muốn áp dụng đòn đánh phép thuật vào đòn tấn công chính
 
     }
 
@@ -216,7 +217,7 @@ public class CharacterStats : MonoBehaviour
             {
                 canApplyIgnite = true;
                 _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock);
-                
+
                 return;
             }
 
@@ -224,14 +225,14 @@ public class CharacterStats : MonoBehaviour
             {
                 canApplyChill = true;
                 _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock);
-                
+
                 return;
             }
 
             if (Random.value < .5f && _lightingDamage > 0)
             {
                 canApplyShock = true;
-                
+
                 _targetStats.ApplyAilments(canApplyIgnite, canApplyChill, canApplyShock);
                 return;
 
@@ -378,7 +379,7 @@ public class CharacterStats : MonoBehaviour
         if (currentHealth > GetMaxHealthValue())
             currentHealth = GetMaxHealthValue();
 
-        if(onHealthChanged != null)
+        if (onHealthChanged != null)
             onHealthChanged();
     }
 
@@ -387,9 +388,10 @@ public class CharacterStats : MonoBehaviour
     {
 
         if (isVulnerable)
-            _damage = Mathf.RoundToInt( _damage * 1.1f);
+            _damage = Mathf.RoundToInt(_damage * 1.1f);
 
         currentHealth -= _damage;
+
 
         if (_damage > 0)
             fx.CreatePopUpText(_damage.ToString());

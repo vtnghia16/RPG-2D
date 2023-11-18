@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -11,6 +11,7 @@ public class SaveManager : MonoBehaviour
     [SerializeField] private string fileName;
     [SerializeField] private string filePath = "D:\\GameDev";
     [SerializeField] private bool encryptData;
+
     private GameData gameData;
     [SerializeField] private List<ISaveManager> saveManagers;
     private FileDataHandler dataHandler;
@@ -36,6 +37,8 @@ public class SaveManager : MonoBehaviour
     private void Start()
     {
         dataHandler = new FileDataHandler(filePath, fileName, encryptData);
+
+        // Tìm tất cả file quản lý lưu
         saveManagers = FindAllSaveManagers();
 
         //Invoke("LoadGame", .05f);
@@ -45,30 +48,35 @@ public class SaveManager : MonoBehaviour
         
     }
 
+    // Tạo data game mới
     public void NewGame()
     {
         gameData = new GameData();
     }
 
+    // Load data từ game
     public void LoadGame()
     {
         gameData = dataHandler.Load();
 
+        // Check file có lưu data nếu không thì new game
         if (this.gameData == null)
         {
-            Debug.Log("No saved data found!");
+            Debug.Log("Không tìm thấy dữ liệu đã lưu!");
             NewGame();
         }
 
-        foreach(ISaveManager saveManager in saveManagers)
+        // Xử lý dữ liệu để load data
+        foreach (ISaveManager saveManager in saveManagers)
         {
             saveManager.LoadData(gameData);
         }
     }
 
+    // Lưu data vào file
     public void SaveGame()
     {
-
+        // Xử lý dữ liệu để lưu data
         foreach(ISaveManager saveManager in saveManagers)
         {
             saveManager.SaveData(ref gameData);
@@ -77,6 +85,7 @@ public class SaveManager : MonoBehaviour
         dataHandler.Save(gameData);
     }
 
+    // Thoát khỏi app khi đã lưu data
     private void OnApplicationQuit()
     {
         SaveGame();

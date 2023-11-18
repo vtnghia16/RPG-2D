@@ -43,6 +43,7 @@ public class Inventory : MonoBehaviour , ISaveManager
     public List<ItemData> itemDataBase;
     public List<InventoryItem> loadedItems;
     public List<ItemData_Equipment> loadedEquipment;
+
     private void Awake()
     {
         if (instance == null)
@@ -78,6 +79,7 @@ public class Inventory : MonoBehaviour , ISaveManager
             EquipItem(item);
         }
         
+        // Thêm số vật phẩm sau khi craft vào trong kho khi load dữ liệu từ database
         if (loadedItems.Count > 0)
         {
             foreach (InventoryItem item in loadedItems)
@@ -351,6 +353,7 @@ public class Inventory : MonoBehaviour , ISaveManager
 
     public void LoadData(GameData _data)
     {
+        // Load các vật phẩm có trong kho
         foreach (KeyValuePair<string, int> pair in _data.inventory)
         {
             foreach (var item in itemDataBase)
@@ -365,6 +368,7 @@ public class Inventory : MonoBehaviour , ISaveManager
             }
         }
 
+        // Load các trang bị của nhân vật có trong database
         foreach (string loadedItemId in _data.equipmentId)
         {
             foreach (var item in itemDataBase)
@@ -383,16 +387,19 @@ public class Inventory : MonoBehaviour , ISaveManager
         _data.inventory.Clear();
         _data.equipmentId.Clear();
 
+        // Lưu các giá trị trong kho
         foreach (KeyValuePair<ItemData, InventoryItem> pair in inventoryDictianory)
         {
             _data.inventory.Add(pair.Key.itemId, pair.Value.stackSize);
         }
 
+        // Lưu các giá trị stash để craft vật phẩm
         foreach (KeyValuePair<ItemData, InventoryItem> pair in stashDictianory)
         {
             _data.inventory.Add(pair.Key.itemId, pair.Value.stackSize);
         }
 
+        // Lưu các vật phẩm trang bị cho nhân vật
         foreach (KeyValuePair<ItemData_Equipment, InventoryItem> pair in equipmentDictionary)
         {
             _data.equipmentId.Add(pair.Key.itemId);
@@ -405,6 +412,7 @@ public class Inventory : MonoBehaviour , ISaveManager
     [ContextMenu("Fill up item data base")]
     private void FillUpItemDataBase() => itemDataBase = new List<ItemData>(GetItemDataBase());
 
+    // Lấy các vật phẩm hiện có trong database để loadData trong game
     private List<ItemData> GetItemDataBase()
     {
         List<ItemData> itemDataBase = new List<ItemData>();

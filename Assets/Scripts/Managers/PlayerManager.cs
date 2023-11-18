@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour , ISaveManager
     public static PlayerManager instance;
     public Player player;
 
-    public int currency;
+    public int score;
 
     private void Awake()
     {
@@ -19,18 +19,18 @@ public class PlayerManager : MonoBehaviour , ISaveManager
 
     private void Start()
     {
-        //currency += 10;
+        //score += 10;
     }
 
-    public int GetCurrency() => currency;
+    public int GetCurrency() => score;
 
     public void LoadData(GameData _data)
     {
-        this.currency = _data.currency;
+        this.score = _data.Score;
     }
 
     public void SaveData(ref GameData _data)
     {
-        _data.currency = this.currency;
+        _data.Score = this.score;
     }
 }

@@ -1,9 +1,6 @@
 ﻿using System.Text;
 using UnityEngine;
 
-
-
-
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -21,13 +18,14 @@ public class ItemData : ScriptableObject
     public ItemType itemType;
     public string itemName;
     public Sprite itemIcon;
-    public string itemId;
+    public string itemId; // Lưu vật phẩm theo ID
 
     [Range(0,100)]
     public float dropChance; // Cơ hội rớt vật liệu
 
     protected StringBuilder sb = new StringBuilder();
 
+    // Lưu các vật phẩm vào DB, mỗi vật phẩm sẽ có 1 itemID
     private void OnValidate()
     {
 #if UNITY_EDITOR

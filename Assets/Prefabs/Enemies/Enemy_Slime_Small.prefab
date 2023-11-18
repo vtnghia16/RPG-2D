@@ -144,19 +144,10 @@ MonoBehaviour:
   vitality:
     baseValue: 0
     modifiers: 
-  damage:
-    baseValue: 5
-    modifiers: 
   critChance:
     baseValue: 0
     modifiers: 
   critPower:
-    baseValue: 0
-    modifiers: 
-  maxHealth:
-    baseValue: 75
-    modifiers: 
-  armor:
     baseValue: 0
     modifiers: 
   evasion:
@@ -177,6 +168,15 @@ MonoBehaviour:
   isIgnited: 0
   isChilled: 0
   isShocked: 0
+  damage:
+    baseValue: 5
+    modifiers: 
+  maxHealth:
+    baseValue: 100
+    modifiers: 
+  armor:
+    baseValue: 0
+    modifiers: 
   ailmentsDuration: 4
   shockStrikePrefab: {fileID: 4158689088258206225, guid: 90919e9c918fc84499a3a88be8033ade, type: 3}
   currentHealth: 0
@@ -200,18 +200,6 @@ MonoBehaviour:
   popUpTextPrefab: {fileID: 2894285104381243520, guid: 4b0d5792d42704c4bb5071d4a04d11b2, type: 3}
   flashDuration: 0.2
   hitMat: {fileID: 2100000, guid: 78758ed07969e5449922bd9487087aa7, type: 2}
-  igniteColor:
-  - {r: 0.990566, g: 0.38781592, b: 0.38781592, a: 1}
-  - {r: 0.9716981, g: 0.6737718, b: 0.6737718, a: 1}
-  chillColor:
-  - {r: 0.60784316, g: 0.83137256, b: 1, a: 1}
-  - {r: 0.6084906, g: 0.832423, b: 1, a: 1}
-  shockColor:
-  - {r: 1, g: 0.8901961, b: 0.38431373, a: 1}
-  - {r: 0.94509804, g: 0.8745098, b: 0.54901963, a: 1}
-  igniteFx: {fileID: 6898360377049860373}
-  chillFx: {fileID: 6378859467905896499}
-  shockFx: {fileID: 8954034460686019433}
   hitFx: {fileID: 4431538376159538090, guid: 2f387d67210ae6246b602d015d7b9968, type: 3}
   criticalHitFx: {fileID: 3347290265377545998, guid: b74d5da7ef04de04099c0144d41367ce, type: 3}
 --- !u!114 &3071017338756511567
@@ -981,11 +969,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 283d3449409af034e8c3ee7513141f6e, type: 3}
---- !u!198 &6898360377049860373 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8391695977692023482, guid: 283d3449409af034e8c3ee7513141f6e, type: 3}
-  m_PrefabInstance: {fileID: 3156650816606536623}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6898360377049860587 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8391695977692023364, guid: 283d3449409af034e8c3ee7513141f6e, type: 3}
@@ -1048,11 +1031,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ee4612ebbfdefb488b04fed763655b1, type: 3}
---- !u!198 &8954034460686019433 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3376266647829427752, guid: 5ee4612ebbfdefb488b04fed763655b1, type: 3}
-  m_PrefabInstance: {fileID: 5952059163140218177}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8954034460686019435 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3376266647829427754, guid: 5ee4612ebbfdefb488b04fed763655b1, type: 3}
@@ -1118,10 +1096,5 @@ PrefabInstance:
 --- !u!4 &6378859467905896497 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3038427717818873343, guid: 406035b4affc86141acb6b2db90f9cbd, type: 3}
-  m_PrefabInstance: {fileID: 8263237846863734222}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &6378859467905896499 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3038427717818873341, guid: 406035b4affc86141acb6b2db90f9cbd, type: 3}
   m_PrefabInstance: {fileID: 8263237846863734222}
   m_PrefabAsset: {fileID: 0}

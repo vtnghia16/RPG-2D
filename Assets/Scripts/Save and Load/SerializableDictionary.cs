@@ -1,10 +1,11 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
 public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue> , ISerializationCallbackReceiver
 {
+    // Lưu theo cặp khóa theo key, value
     [SerializeField] private List<TKey> keys = new List<TKey>();
     [SerializeField] private List<TValue> values = new List<TValue>();
 
@@ -25,7 +26,7 @@ public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue> , I
 
         if (keys.Count != values.Count)
         {
-            Debug.Log("Keys count is not equal to values count");
+            Debug.Log("Số lượng khóa không bằng số lượng giá trị");
         }
 
         for (int i = 0; i < keys.Count; i++)

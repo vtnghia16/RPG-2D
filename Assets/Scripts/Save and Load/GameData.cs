@@ -5,9 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
-    public int currency;
+    public int Score;
 
-    public SerializableDictionary<string, bool> skillTree;
+
     public SerializableDictionary<string, int> inventory;
     public List<string> equipmentId;
 
@@ -15,21 +15,21 @@ public class GameData
     public SerializableDictionary<string, bool> checkpoints;
     public string closestCheckpointId;
 
-    public float lostCurrencyX;
-    public float lostCurrencyY;
-    public int lostCurrencyAmount;
+    public float lostScoreX;
+    public float lostScoreY;
+    public int lostScoreAmount;
 
     public SerializableDictionary<string, float> volumeSettings;
 
     public GameData()
     {
-        this.lostCurrencyX = 0;
-        this.lostCurrencyY = 0;
-        this.lostCurrencyAmount = 0;
+        this.lostScoreX = 0;
+        this.lostScoreY = 0;
+        this.lostScoreAmount = 0;
 
 
-        this.currency = 0;
-        skillTree = new SerializableDictionary<string, bool>();
+        this.Score = 0;
+
         inventory = new SerializableDictionary<string, int>();
         equipmentId = new List<string>();
 

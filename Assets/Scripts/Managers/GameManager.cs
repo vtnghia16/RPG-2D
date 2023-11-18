@@ -79,9 +79,9 @@ public class GameManager : MonoBehaviour, ISaveManager
 
     private void LoadLostCurrency(GameData _data)
     {
-        lostCurrencyAmount = _data.lostCurrencyAmount;
-        lostCurrencyX = _data.lostCurrencyX;
-        lostCurrencyY = _data.lostCurrencyY;
+        lostCurrencyAmount = _data.lostScoreAmount;
+        lostCurrencyX = _data.lostScoreX;
+        lostCurrencyY = _data.lostScoreY;
 
         if (lostCurrencyAmount > 0)
         {
@@ -103,9 +103,9 @@ public class GameManager : MonoBehaviour, ISaveManager
 
     public void SaveData(ref GameData _data)
     {
-        _data.lostCurrencyAmount = lostCurrencyAmount;
-        _data.lostCurrencyX = player.position.x;
-        _data.lostCurrencyY = player.position.y;
+        _data.lostScoreAmount = lostCurrencyAmount;
+        _data.lostScoreX = player.position.x;
+        _data.lostScoreY = player.position.y;
 
 
         if(FindClosestCheckpoint() != null)

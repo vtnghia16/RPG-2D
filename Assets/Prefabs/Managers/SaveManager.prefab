@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: data.alexdev
+  filePath: D:\GameDev
   encryptData: 1
