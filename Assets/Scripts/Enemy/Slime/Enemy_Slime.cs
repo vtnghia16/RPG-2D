@@ -1,15 +1,18 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Tạo các loại slime 
 public enum SlimeType { big,medium,small}
 
 public class Enemy_Slime : Enemy
 {
     [Header("Slime spesific")]
     [SerializeField] private SlimeType slimeType;
-    [SerializeField] private int slimesToCreate;
+    [SerializeField] private int slimesToCreate; // Tạo ra số lượng slime
     [SerializeField] private GameObject slimePrefab;
+
+    // Set tốc độ cho slime theo (min, max)
     [SerializeField] private Vector2 minCreationVelocity;
     [SerializeField] private Vector2 maxCreationVelocity;
 
@@ -27,7 +30,8 @@ public class Enemy_Slime : Enemy
     {
         base.Awake();
 
-        SetupDefailtFacingDir(-1);
+        // Hướng mặc định của slime là -1
+        SetupDefaultFacingDir(-1);
 
         idleState = new SlimeIdleState(this, stateMachine, "Idle", this);
         moveState = new SlimeMoveState(this, stateMachine, "Move", this);
@@ -44,6 +48,7 @@ public class Enemy_Slime : Enemy
     {
         base.Start();
 
+        // State khởi tạo của quái vật khi bắt đầu
         stateMachine.Initialize(idleState);
     }
 
@@ -74,6 +79,7 @@ public class Enemy_Slime : Enemy
 
         stateMachine.ChangeState(deadState);
 
+        // Nếu slime = small thì clear
         if (slimeType == SlimeType.small)
             return;
 
@@ -81,6 +87,7 @@ public class Enemy_Slime : Enemy
 
     }
 
+    // Tạo slime theo số lượng
     private void CreateSlimes(int _amountOfSlimes, GameObject _slimePrefab)
     {
         for (int i = 0; i < _amountOfSlimes; i++)
@@ -93,10 +100,11 @@ public class Enemy_Slime : Enemy
 
     public void SetupSlime(int _facingDir)
     {
-
+        // Thay đổi hướng của slime khi di chuyển
         if (_facingDir != facingDir)
             Flip();
 
+        // Set vận tốc di chuyển của slime theo random
         float xVelocity = Random.Range(minCreationVelocity.x, maxCreationVelocity.x);
         float yVelocity = Random.Range(minCreationVelocity.y, maxCreationVelocity.y);
 

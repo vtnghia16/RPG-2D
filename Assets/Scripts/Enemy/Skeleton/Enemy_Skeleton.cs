@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,7 +20,8 @@ public class Enemy_Skeleton : Enemy
     protected override void Awake()
     {
         base.Awake();
-        
+
+        // Truyền các trạng thái của nhân vật thông qua EnemyStateMachine
         idleState = new SkeletonIdleState(this, stateMachine, "Idle", this);
         moveState = new SkeletonMoveState(this, stateMachine, "Move", this);
         battleState = new SkeletonBattleState(this, stateMachine, "Move", this);
@@ -32,6 +33,8 @@ public class Enemy_Skeleton : Enemy
     protected override void Start()
     {
         base.Start();
+
+        // State khởi tạo của quái vật khi bắt đầu
         stateMachine.Initialize(idleState);
     }
 

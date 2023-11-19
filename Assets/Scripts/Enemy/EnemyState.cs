@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +12,7 @@ public class EnemyState
     private string animBoolName;
 
     protected float stateTimer;
-    protected bool triggerCalled;
+    protected bool triggerCalled; // kết hợp anim khi gọi
 
     public EnemyState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName)
     {
@@ -23,7 +23,7 @@ public class EnemyState
 
     public virtual void Update()
     {
-        stateTimer -= Time.deltaTime;
+        stateTimer -= Time.deltaTime; // Thời gian quái vật theo delta
     }
 
 
@@ -31,13 +31,13 @@ public class EnemyState
     {
         triggerCalled = false;
         rb = enemyBase.rb;
-        enemyBase.anim.SetBool(animBoolName, true);
-        
+        enemyBase.anim.SetBool(animBoolName, true); // Hiệu ứng nhân vật
+
     }
 
     public virtual void Exit()
     {
-        enemyBase.anim.SetBool(animBoolName, false);
+        enemyBase.anim.SetBool(animBoolName, false);  // Thoát hiệu ứng nhân vật
         enemyBase.AssignLastAnimName(animBoolName);
     }
 

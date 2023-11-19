@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,6 +28,7 @@ public class SlimeGroundedState : EnemyState
     {
         base.Update();
 
+        // Khoảng cách battle giữa người chơi và quái vật
         if (enemy.IsPlayerDetected() || Vector2.Distance(enemy.transform.position, player.transform.position) < enemy.agroDistance)
         {
             stateMachine.ChangeState(enemy.battleState);

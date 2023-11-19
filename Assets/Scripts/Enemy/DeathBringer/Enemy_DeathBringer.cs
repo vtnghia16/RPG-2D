@@ -34,7 +34,7 @@ public class Enemy_DeathBringer : Enemy
     {
         base.Awake();
 
-        SetupDefailtFacingDir(-1);
+        SetupDefaultFacingDir(-1);
 
         idleState = new DeathBringerIdleState(this, stateMachine, "Idle", this);
 

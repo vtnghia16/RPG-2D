@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 
@@ -19,15 +19,15 @@ public class Enemy : Entity
     [SerializeField] protected GameObject counterImage;
 
     [Header("Move info")]
-    public float moveSpeed = 1.5f;
-    public float idleTime = 2;
-    public float battleTime = 7;
+    public float moveSpeed = 1.5f; // Tốc độ
+    public float idleTime = 2; // Thời gian nhân vật Flip khi idle
+    public float battleTime = 7; // Thời gian để quái vật ignore
     private float defaultMoveSpeed;
 
     [Header("Attack info")]
     public float agroDistance = 2;
-    public float attackDistance = 2;
-    public float attackCooldown;
+    public float attackDistance = 2; // Khoảng cách tấn công của quái vâjt
+    public float attackCooldown; // Thời gian hồi chiêu khi tấn công
     public float minAttackCooldown = 1;
     public float maxAttackCooldown= 2;
     [HideInInspector] public float lastTimeAttacked;
@@ -36,6 +36,7 @@ public class Enemy : Entity
     public EntityFX fx { get; private set; }
     private Player player;
     public string lastAnimBoolName {  get; private set; }
+
     protected override void Awake()
     {
         base.Awake();
@@ -63,7 +64,7 @@ public class Enemy : Entity
 
     public virtual void AssignLastAnimName(string _animBoolName) => lastAnimBoolName = _animBoolName;
 
-
+    // Làm chậm kẻ địch
     public override void SlowEntityBy(float _slowPercentage, float _slowDuration)
     {
         moveSpeed = moveSpeed * (1 - _slowPercentage);
@@ -79,6 +80,7 @@ public class Enemy : Entity
         moveSpeed = defaultMoveSpeed;
     }
 
+    // Thời gian đóng băng quái vật
     public virtual void FreezeTime(bool _timeFrozen)
     {
         if (_timeFrozen)
@@ -118,6 +120,7 @@ public class Enemy : Entity
     }
     #endregion
 
+    // Gây choáng cho quái vật
     public virtual bool CanBeStunned()
     {
         if (canBeStunned)
@@ -128,14 +131,18 @@ public class Enemy : Entity
 
         return false;
     }
-
+    // Kích hoạt anim của quái vật
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
+
     public virtual void AnimationSpecialAttackTrigger()
     {
 
     }
 
+    // Check quái vật khi phát hiện người chơi
     public virtual RaycastHit2D IsPlayerDetected() => Physics2D.Raycast(wallCheck.position, Vector2.right * facingDir, 50, whatIsPlayer);
+
+    // Vẽ đường check phạm vi attack distance 
     protected override void OnDrawGizmos()
     {
         base.OnDrawGizmos();

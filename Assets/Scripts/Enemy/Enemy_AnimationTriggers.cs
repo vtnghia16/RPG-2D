@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +6,7 @@ public class Enemy_AnimationTriggers : MonoBehaviour
 {
     private Enemy enemy => GetComponentInParent<Enemy>();
 
+    // Kích hoạt trạng thái anim ngay lập tức làm ngưng các state khác
     private void AnimationTrigger()
     {
         enemy.AnimationFinishTrigger();

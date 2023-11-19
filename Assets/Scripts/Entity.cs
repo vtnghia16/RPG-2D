@@ -85,7 +85,7 @@ public class Entity : MonoBehaviour
         float xOffset = Random.Range(knockbackOffset.x, knockbackOffset.y); // Tốc độ bị đẩy lùi theo hướng
 
 
-        if (knockbackPower.x > 0 || knockbackPower.y > 0) // This line makes player immune to freeze effect when he takes hit
+        if (knockbackPower.x > 0 || knockbackPower.y > 0) 
             rb.velocity = new Vector2((knockbackPower.x + xOffset) * knockbackDir, knockbackPower.y);
 
         yield return new WaitForSeconds(knockbackDuration); // Khoảng thời gian bị knockback
@@ -148,7 +148,7 @@ public class Entity : MonoBehaviour
             Flip();
     }
 
-    public virtual void SetupDefailtFacingDir(int _direction)
+    public virtual void SetupDefaultFacingDir(int _direction)
     {
         facingDir = _direction;
 

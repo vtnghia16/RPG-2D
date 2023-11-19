@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,8 +22,10 @@ public class SkeletonMoveState : SkeletonGroundedState
     {
         base.Update();
 
+        // set tốc độ di chuyển của quái vật
         enemy.SetVelocity(enemy.moveSpeed * enemy.facingDir, rb.velocity.y);
 
+        // Khi quái vật phát hiện vật cản sẽ quay lại
         if (enemy.IsWallDetected() || !enemy.IsGroundDetected())
         {
             enemy.Flip();
