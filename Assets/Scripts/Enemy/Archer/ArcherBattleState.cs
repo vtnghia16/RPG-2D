@@ -6,7 +6,8 @@ public class ArcherBattleState : EnemyState
 {
     private Transform player;
     private Enemy_Archer enemy;
-    private int moveDir;
+    private int moveDir ;// Hướng di chuyến
+
     public ArcherBattleState(Enemy _enemyBase, EnemyStateMachine _stateMachine, string _animBoolName, Enemy_Archer _enemy) : base(_enemyBase, _stateMachine, _animBoolName)
     {
         this.enemy = _enemy;
@@ -28,16 +29,19 @@ public class ArcherBattleState : EnemyState
     {
         base.Update();
 
+        // Tấn công người chơi khi phát hiện
         if (enemy.IsPlayerDetected())
         {
             stateTimer = enemy.battleTime;
 
+            // ĐK ancher ở khoảng các không an toàn quái vật jumpState
             if (enemy.IsPlayerDetected().distance < enemy.safeDistance)
             {
                 if (CanJump())
                     stateMachine.ChangeState(enemy.jumpState);
             }
 
+            // ĐK ancher ở khoảng cách có thể tấn công
             if (enemy.IsPlayerDetected().distance < enemy.attackDistance)
             {
                 if (CanAttack())
@@ -46,6 +50,7 @@ public class ArcherBattleState : EnemyState
         }
         else
         {
+            // check đk không tấn công & Flip
             if (stateTimer < 0 || Vector2.Distance(player.transform.position, enemy.transform.position) > 7)
                 stateMachine.ChangeState(enemy.idleState);
         }
@@ -67,10 +72,12 @@ public class ArcherBattleState : EnemyState
         base.Exit();
     }
 
+    // Logic tấn công của ancher
     private bool CanAttack()
     {
         if (Time.time >= enemy.lastTimeAttacked + enemy.attackCooldown)
         {
+            // Hàm random tính thời gian hồi tấn công của ancher
             enemy.attackCooldown = Random.Range(enemy.minAttackCooldown, enemy.maxAttackCooldown);
             enemy.lastTimeAttacked = Time.time;
             return true;
@@ -79,11 +86,12 @@ public class ArcherBattleState : EnemyState
         return false;
     }
 
+    // Logic nhảy của ancher
     private bool CanJump()
     {
+        // Kiểm tra bề mặt sau ancher khi jump
         if (enemy.GroundBehind() == false || enemy.WallBehind() == true)
             return false;
-
 
         if (Time.time >= enemy.lastTimeJumped + enemy.jumpCooldown)
         {

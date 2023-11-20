@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using System.Collections;
 using UnityEditor;
 using UnityEngine;
@@ -16,14 +16,15 @@ public class Enemy_Shady : Enemy
 
     #region States
 
+    // Truyền các trạng thái của nhân vật thông qua EnemyStateMachine
     public ShadyIdleState idleState { get; private set; }
     public ShadyMoveState moveState { get; private set; }
     public ShadyDeadState deadState { get; private set; }
     public ShadyStunnedState stunnedState { get; private set; }
     public ShadyBattleState battleState { get; private set; }
 
-
     #endregion
+
     protected override void Awake()
     {
         base.Awake();
@@ -41,10 +42,11 @@ public class Enemy_Shady : Enemy
     {
         base.Start();
 
+        // State khởi tạo của quái vật khi bắt đầu
         stateMachine.Initialize(idleState);
     }
 
-    
+    // Gây choáng cho quái vật
     public override bool CanBeStunned()
     {
         if (base.CanBeStunned())
@@ -67,7 +69,7 @@ public class Enemy_Shady : Enemy
         base.Update();
     }
 
-
+    // Kích hoạt tấn công explosive của shady
     public override void AnimationSpecialAttackTrigger()
     {
         GameObject newExplosive = Instantiate(explosivePrefab, attackCheck.position, Quaternion.identity);
@@ -77,6 +79,7 @@ public class Enemy_Shady : Enemy
         rb.gravityScale = 0;
     }
 
+    // Phá hủy object khi explosive
     public void SelfDestroy() => Destroy(gameObject);
 
 }

@@ -59,7 +59,7 @@ public class PlayerStats : CharacterStats
         if (TargetCanAvoidAttack(_targetStats))
             return;
 
-        int totalDamage = damage.GetValue() + strength.GetValue();
+        int totalDamage = damage.GetValue();
 
         if (_multiplier > 0)
             totalDamage = Mathf.RoundToInt(totalDamage * _multiplier);

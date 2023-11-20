@@ -19,6 +19,7 @@ public class ArcherAttackState : EnemyState
     {
         base.Exit();
 
+        // Get thời gian đòn tấn công cuối
         enemy.lastTimeAttacked = Time.time;
     }
 
@@ -26,10 +27,10 @@ public class ArcherAttackState : EnemyState
     {
         base.Update();
 
+        // khi quái vật tấn công set velocity = 0
         enemy.SetZeroVelocity();
 
-
-
+        // Gọi trigger khi quái vật tấn công (ngược lại)
         if (triggerCalled)
             stateMachine.ChangeState(enemy.battleState);
     }

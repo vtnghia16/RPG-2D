@@ -15,13 +15,13 @@ public class ShadyDeadState : EnemyState
     {
         base.Enter();
 
-
     }
 
     public override void Update()
     {
         base.Update();
 
+        // Tự clear khi phát nổ gây sát thương cho người chơi
         if (triggerCalled)
             enemy.SelfDestroy();
     }

@@ -10,7 +10,7 @@ public class Arrow_Controller : MonoBehaviour
     [SerializeField] private string targetLayerName = "Player"; // Mục tiêu tấn công player
 
 
-    [SerializeField] private float xVelocity;
+    [SerializeField] private float xVelocity; // Tốc độ của mũi tên theo X
     [SerializeField] private Rigidbody2D rb;
 
     [SerializeField] private bool canMove;
@@ -30,6 +30,7 @@ public class Arrow_Controller : MonoBehaviour
         stats = _stats;
     }
 
+    // Xử lý va chạm khi mũi tên tiếp xúc với nhân vật
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer(targetLayerName))
@@ -39,6 +40,7 @@ public class Arrow_Controller : MonoBehaviour
 
             stats.DoDamage(collision.GetComponent<CharacterStats>());
 
+            // Nếu va chạm quái vật thì clear arrow
             if (targetLayerName == "Enemy")
                 Destroy(gameObject);
 
@@ -54,11 +56,13 @@ public class Arrow_Controller : MonoBehaviour
         // Không gây sát thương khi arrow mắc kẹt vào nhân vật
         GetComponentInChildren<ParticleSystem>().Stop();
         GetComponent<CapsuleCollider2D>().enabled = false;
+
         canMove = false;
         rb.isKinematic = true;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         transform.parent = collision.transform;
 
+        // Khi mắc kẹt clear arrow 5-7s
         Destroy(gameObject, Random.Range(5, 7));
     }
 

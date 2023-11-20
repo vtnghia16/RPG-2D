@@ -5,10 +5,6 @@ using UnityEngine.UI;
 
 public class Blackhole_Skill : Skill
 {
-
-
-    //[SerializeField] private UI_SkillTreeSlot blackHoleUnlockButton;
-    //public bool blackholeUnlocked;// { get; private set; }
     [SerializeField] private int amountOfAttacks; // Số lần tấn công
     [SerializeField] private float cloneCooldown; // Thời gian hồi chiêu
     [SerializeField] private float blackholeDuration; // KTG blackHole
@@ -21,14 +17,6 @@ public class Blackhole_Skill : Skill
 
     Blackhole_Skill_Controller currentBlackhole;
 
-    
-
-    //private void UnlockBlackhole()
-    //{
-    //    //if (blackHoleUnlockButton.unlocked)
-    //        blackholeUnlocked = true;
-
-    //}
 
     public override bool CanUseSkill()
     {
@@ -57,7 +45,6 @@ public class Blackhole_Skill : Skill
     {
         base.Start();
 
-        //blackHoleUnlockButton.GetComponent<Button>().onClick.AddListener(UnlockBlackhole);
     }
 
     protected override void Update()
@@ -87,10 +74,4 @@ public class Blackhole_Skill : Skill
         return maxSize / 2;
     }
 
-    //protected override void CheckUnlock()
-    //{
-    //    base.CheckUnlock();
-
-    //    UnlockBlackhole();
-    //}
 }

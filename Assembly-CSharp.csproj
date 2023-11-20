@@ -103,7 +103,6 @@
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\Heal_Effect.cs" />
     <Compile Include="Assets\Scripts\Enemy\Slime\Enemy_Slime.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\ItemObject_Trigger.cs" />
-    <Compile Include="Assets\Scripts\UI\UI_SkillToolTip.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\Effects\Buff_Effect.cs" />
     <Compile Include="Assets\Scripts\Items and Inventory\ItemObject.cs" />
     <Compile Include="Assets\Scripts\UI\UI_CraftList.cs" />

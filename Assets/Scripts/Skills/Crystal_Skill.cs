@@ -9,28 +9,15 @@ public class Crystal_Skill : Skill
     [SerializeField] private GameObject crystalPrefab;
     private GameObject currentCrystal;
 
-    //[Header("Crystal simple")]
-    //[SerializeField] private UI_SkillTreeSlot unlockCrystalButton;
-    //public bool crystalUnlocked { get; private set; }
-
-    //[Header("Crystal mirage")]
-    //[SerializeField] private UI_SkillTreeSlot unlockCloneInstaedButton;
-    //[SerializeField] private bool cloneInsteadOfCrystal;
-
     [Header("Explosive crystal")]
-    // [SerializeField] private UI_SkillTreeSlot unlockExplosiveButton;
     [SerializeField] private float explisoveCooldown;
     [SerializeField] private bool canExplode; // Crytal nổ
 
-
     [Header("Moving crystal")]
-    // [SerializeField] private UI_SkillTreeSlot unlockMovingCrystalButton;
     [SerializeField] private bool canMoveToEnemy;
     [SerializeField] private float moveSpeed; // Tốc độ crystal tới quái vật
 
-
     [Header("Multi stacking crystal")]
-    // [SerializeField] private UI_SkillTreeSlot unlockMultiStackButton;
     [SerializeField] private bool canUseMultiStacks;
     [SerializeField] private int amountOfStacks; // Số Crystal
     [SerializeField] private float multiStackCooldown; // Hồi chiêu
@@ -48,64 +35,8 @@ public class Crystal_Skill : Skill
 
         canUseMultiStacks = true;
 
-        // unlockCrystalButton.GetComponent<Button>().onClick.AddListener(UnlockCrystal);
-        // unlockCloneInstaedButton.GetComponent<Button>().onClick.AddListener(UnlockCrystalMirage);
-        // unlockExplosiveButton.GetComponent<Button>().onClick.AddListener(UnlockExplosiveCrystal);
-        // unlockMovingCrystalButton.GetComponent<Button>().onClick.AddListener(UnlockMovingCrystal);
-        // unlockMultiStackButton.GetComponent<Button>().onClick.AddListener(UnlockMultiStack);
-
     }
 
-
-    // here we unlock crystal skills
-    #region Unlock skill region
-
-    //protected override void CheckUnlock()
-    //{
-    //    //UnlockCrystal();
-    //    //UnlockCrystalMirage();
-    //    // UnlockExplosiveCrystal();
-    //    // UnlockMovingCrystal();
-    //    UnlockMultiStack();
-
-
-    //}
-
-    //private void UnlockCrystal()
-    //{
-    //    if (unlockCrystalButton.unlocked)
-    //        crystalUnlocked = true;
-    //}
-
-    //private void UnlockCrystalMirage()
-    //{
-    //    if (unlockCloneInstaedButton.unlocked)
-    //        cloneInsteadOfCrystal = true;
-    //}
-
-    //private void UnlockExplosiveCrystal()
-    //{
-    //    //if (unlockExplosiveButton.unlocked)
-    //    //{
-          
-    //    //}
-
-
-    //}
-
-    //private void UnlockMovingCrystal()
-    //{
-    //    if (unlockMovingCrystalButton.unlocked)
-       
-    //}
-
-    //private void UnlockMultiStack()
-    //{
-    //    if (unlockMovingCrystalButton.unlocked)
-     
-    //}
-
-    #endregion     // here we unlock crystal skills
 
     public override void UseSkill()
     {
@@ -128,15 +59,6 @@ public class Crystal_Skill : Skill
             player.transform.position = currentCrystal.transform.position;
             currentCrystal.transform.position = playerPos; // Chuyển đổi vị trí crystal thành vị trí của người chơi
 
-            //if (cloneInsteadOfCrystal)
-            //{
-            //    SkillManager.instance.clone.CreateClone(currentCrystal.transform, Vector3.zero);
-            //    Destroy(currentCrystal);
-            //} 
-            //else
-            //{
-            //    currentCrystal.GetComponent<Crystal_Skill_Controller>()?.FinishCrystal();
-            //}
         }
     }
 

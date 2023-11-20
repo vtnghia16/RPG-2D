@@ -25,7 +25,7 @@ public class Enemy : Entity
     private float defaultMoveSpeed;
 
     [Header("Attack info")]
-    public float agroDistance = 2;
+    public float agroDistance = 2; // khoảng các battle 
     public float attackDistance = 2; // Khoảng cách tấn công của quái vâjt
     public float attackCooldown; // Thời gian hồi chiêu khi tấn công
     public float minAttackCooldown = 1;
@@ -131,6 +131,7 @@ public class Enemy : Entity
 
         return false;
     }
+
     // Kích hoạt anim của quái vật
     public virtual void AnimationFinishTrigger() => stateMachine.currentState.AnimationFinishTrigger();
 

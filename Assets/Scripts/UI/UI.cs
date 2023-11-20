@@ -12,14 +12,11 @@ public class UI : MonoBehaviour, ISaveManager
     [Space]
 
     [SerializeField] private GameObject charcaterUI;
-    [SerializeField] private GameObject skillTreeUI;
     [SerializeField] private GameObject craftUI;
     [SerializeField] private GameObject optionsUI;
     [SerializeField] private GameObject inGameUI;
 
 
-
-    public UI_SkillToolTip skillToolTip;
     public UI_ItemTooltip itemToolTip;
     public UI_StatToolTip statToolTip;
     public UI_CraftWindow craftWindow;
@@ -29,7 +26,6 @@ public class UI : MonoBehaviour, ISaveManager
     private void Awake()
     {
 
-        SwitchTo(skillTreeUI); // we need this to assign events on skill tree slots before we asssign events on skill scripts
         fadeScreen.gameObject.SetActive(true);
     }
 

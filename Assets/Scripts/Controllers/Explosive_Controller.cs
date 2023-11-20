@@ -27,13 +27,14 @@ public class Explosive_Controller : MonoBehaviour
 
     }
 
+    // Setup các thuộc tính explosive
     public void SetupExplosive(CharacterStats _myStats,float _growSpeed,float _maxSize,float _radius)
     {
         anim= GetComponent<Animator>();
 
-        myStats= _myStats;
-        growSpeed= _growSpeed;
-        maxSize= _maxSize;
+        myStats = _myStats;
+        growSpeed = _growSpeed;
+        maxSize = _maxSize;
         explosionRadius = _radius;
     }
 

@@ -25,6 +25,7 @@ public class ArcherDeadState : EnemyState
     {
         base.Update();
 
+        // Khi quái vật die tốc độ rớt theo chiều Y
         if (stateTimer > 0)
             rb.velocity = new Vector2(0, 10);
     }
