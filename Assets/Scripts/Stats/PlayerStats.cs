@@ -5,12 +5,15 @@ using UnityEngine;
 public class PlayerStats : CharacterStats
 {
     private Player player;
+    [SerializeField] private PlayerStats playerStats;
+
 
     protected override void Start()
     {
         base.Start();
 
         player= GetComponent<Player>();
+
     }
 
     public override void TakeDamage(int _damage)
@@ -23,7 +26,7 @@ public class PlayerStats : CharacterStats
         base.Die();
         player.Die();
 
-        GameManager.instance.lostCurrencyAmount = PlayerManager.instance.score;
+        GameManager.instance.lostScoreAmount = PlayerManager.instance.score;
         PlayerManager.instance.score = 0;
 
         GetComponent<PlayerItemDrop>()?.GenerateDrop();
@@ -56,22 +59,13 @@ public class PlayerStats : CharacterStats
 
     public void CloneDoDamage(CharacterStats _targetStats,float _multiplier)
     {
-        if (TargetCanAvoidAttack(_targetStats))
-            return;
-
         int totalDamage = damage.GetValue();
 
         if (_multiplier > 0)
             totalDamage = Mathf.RoundToInt(totalDamage * _multiplier);
 
-        if (CanCrit())
-        {
-            totalDamage = CalculateCriticalDamage(totalDamage);
-        }
-
         totalDamage = CheckTargetArmor(_targetStats, totalDamage);
         _targetStats.TakeDamage(totalDamage);
-
 
         DoMagicalDamage(_targetStats); // remove if you don't want to apply magic hit on primary attack
     }

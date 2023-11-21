@@ -27,25 +27,9 @@ public class EnemyStats : CharacterStats
 
     private void ApplyLevelModifiers()
     {
-        //Modify(strength);
-        //Modify(agility);
-        //Modify(intelligence);
-        //Modify(vitality);
-
         Modify(damage);
-        //Modify(critChance);
-        //Modify(critPower);
-
-        //Modify(maxHealth);
-        //Modify(armor);
-        //Modify(evasion);
-        //Modify(magicResistance);
-
-        //Modify(fireDamage);
-        //Modify(iceDamage);
-        //Modify(lightingDamage);
-
-        //Modify(soulsDropAmount);
+        Modify(maxHealth);
+        Modify(armor);
     }
 
     private void Modify(Stat _stat)

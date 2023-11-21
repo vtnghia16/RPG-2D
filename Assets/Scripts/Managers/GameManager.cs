@@ -13,11 +13,11 @@ public class GameManager : MonoBehaviour, ISaveManager
     [SerializeField] private Checkpoint[] checkpoints;
     [SerializeField] private string closestCheckpointId;
 
-    [Header("Lost currency")]
-    [SerializeField] private GameObject lostCurrencyPrefab;
-    public int lostCurrencyAmount;
-    [SerializeField] private float lostCurrencyX;
-    [SerializeField] private float lostCurrencyY;
+    [Header("Lost score")]
+    [SerializeField] private GameObject lostScorePrefab;
+    public int lostScoreAmount;
+    [SerializeField] private float lostScoreX;
+    [SerializeField] private float lostScoreY;
     private bool pasuedGame;
 
     private void Awake()
@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour, ISaveManager
 
         player = PlayerManager.instance.player.transform;
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.M))
@@ -77,19 +78,19 @@ public class GameManager : MonoBehaviour, ISaveManager
         }
     }
 
-    private void LoadLostCurrency(GameData _data)
+    private void LoadLostScore(GameData _data)
     {
-        lostCurrencyAmount = _data.lostScoreAmount;
-        lostCurrencyX = _data.lostScoreX;
-        lostCurrencyY = _data.lostScoreY;
+        lostScoreAmount = _data.lostScoreAmount;
+        lostScoreX = _data.lostScoreX;
+        lostScoreY = _data.lostScoreY;
 
-        if (lostCurrencyAmount > 0)
+        if (lostScoreAmount > 0)
         {
-            GameObject newLostCurrency = Instantiate(lostCurrencyPrefab,new Vector3(lostCurrencyX,lostCurrencyY),Quaternion.identity);
-            newLostCurrency.GetComponent<LostCurrencyController>().currency = lostCurrencyAmount;
+            GameObject newLostCurrency = Instantiate(lostScorePrefab,new Vector3(lostScoreX,lostScoreY),Quaternion.identity);
+            newLostCurrency.GetComponent<LostCurrencyController>().currency = lostScoreAmount;
         }
 
-        lostCurrencyAmount = 0;
+        lostScoreAmount = 0;
     }
 
     private IEnumerator LoadWithDelay(GameData _data)
@@ -98,12 +99,12 @@ public class GameManager : MonoBehaviour, ISaveManager
 
         LoadCheckpoints(_data);
         LoadClosestCheckpoint(_data);
-        LoadLostCurrency(_data);
+        LoadLostScore(_data);
     }
 
     public void SaveData(ref GameData _data)
     {
-        _data.lostScoreAmount = lostCurrencyAmount;
+        _data.lostScoreAmount = lostScoreAmount;
         _data.lostScoreX = player.position.x;
         _data.lostScoreY = player.position.y;
 
