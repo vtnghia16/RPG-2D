@@ -205,30 +205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0803900c4e0a04941ab732f042356749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength:
-    baseValue: 0
-    modifiers: 
-  agility:
-    baseValue: 0
-    modifiers: 
-  intelligence:
-    baseValue: 0
-    modifiers: 
-  vitality:
-    baseValue: 0
-    modifiers: 
-  critChance:
-    baseValue: 0
-    modifiers: 
-  critPower:
-    baseValue: 0
-    modifiers: 
-  evasion:
-    baseValue: 0
-    modifiers: 
-  magicResistance:
-    baseValue: 0
-    modifiers: 
   fireDamage:
     baseValue: 0
     modifiers: 
@@ -250,8 +226,6 @@ MonoBehaviour:
   armor:
     baseValue: 0
     modifiers: 
-  ailmentsDuration: 4
-  shockStrikePrefab: {fileID: 4158689088258206225, guid: 90919e9c918fc84499a3a88be8033ade, type: 3}
   currentHealth: 0
   soulsDropAmount:
     baseValue: 0

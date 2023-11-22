@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Controllers\Skill_Controllers\Blackhole_Skill_Controller.cs" />
     <Compile Include="Assets\Scripts\Enemy\Shady\ShadyStunnedState.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerWallJumpState.cs" />
+    <Compile Include="Assets\ScoreScript.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMoveState.cs" />
     <Compile Include="Assets\Scripts\DeadZone.cs" />
     <Compile Include="Assets\Scripts\Enemy\Archer\Enemy_Archer.cs" />

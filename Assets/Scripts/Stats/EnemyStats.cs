@@ -54,6 +54,9 @@ public class EnemyStats : CharacterStats
 
         PlayerManager.instance.score += soulsDropAmount.GetValue();
 
+        // Hiển thị số điểm cuối cùng khi nhân vật die
+        ScoreScript.scoreValue += soulsDropAmount.GetValue();
+
         // Thả vật phẩm khi quái vật die
         myDropSystem.GenerateDrop();
         Destroy(gameObject, 5f);

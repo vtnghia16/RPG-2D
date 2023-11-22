@@ -8,6 +8,7 @@ public class UI : MonoBehaviour, ISaveManager
     [Header("End screen")]
     [SerializeField] private UI_FadeScreen fadeScreen;
     [SerializeField] private GameObject endText;
+    [SerializeField] private GameObject scoreText;
     [SerializeField] private GameObject restartButton;
     [Space]
 
@@ -125,12 +126,19 @@ public class UI : MonoBehaviour, ISaveManager
     {
         yield return new WaitForSeconds(1);
         endText.SetActive(true);
+        yield return new WaitForSeconds(1);
+        scoreText.SetActive(true);
+
         yield return new WaitForSeconds(1.5f);
         restartButton.SetActive(true);
 
     }
 
-    public void RestartGameButton() => GameManager.instance.RestartScene();
+    public void RestartGameButton() 
+    {
+        ScoreScript.scoreValue = 0;
+        GameManager.instance.RestartScene();
+    }
 
     public void LoadData(GameData _data)
     {

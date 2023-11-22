@@ -18,7 +18,7 @@ public class UI_InGame : MonoBehaviour
     [Header("Skill sword info")]
     [SerializeField] private Image regularImage;
     [SerializeField] private Image BounceImage;
-    [SerializeField] private Image PierceImage; 
+    [SerializeField] private Image PierceImage;
     [SerializeField] private Image SpinImage;
 
     private SkillManager skills;
@@ -37,7 +37,7 @@ public class UI_InGame : MonoBehaviour
         skills = SkillManager.instance;
     }
 
-    
+
     void Update()
     {
         UpdateSoulsUI();
@@ -104,11 +104,8 @@ public class UI_InGame : MonoBehaviour
 
     private void UpdateSoulsUI()
     {
-        //if (soulsScoreAmount < PlayerManager.instance.GetCurrency())
-        //    soulsScoreAmount += Time.deltaTime * increaseRate;
-        //else
-            soulsScoreAmount = PlayerManager.instance.GetCurrency();
 
+        soulsScoreAmount = PlayerManager.instance.GetCurrency();
 
         currentSouls.text = ((int)soulsScoreAmount).ToString();
     }
