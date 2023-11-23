@@ -15,7 +15,7 @@ D:/GameDev/RPG-2D
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-55947
+64592
 Successfully changed project path to: D:/GameDev/RPG-2D
 D:/GameDev/RPG-2D
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ D:/GameDev/RPG-2D
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [29392] Host "[IP] 192.168.1.8 [Port] 0 [Flags] 2 [Guid] 3655799770 [EditorId] 3655799770 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-795K8U1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [29100] Host "[IP] 192.168.1.8 [Port] 0 [Flags] 2 [Guid] 917587354 [EditorId] 917587354 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-795K8U1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [29392] Host "[IP] 192.168.1.8 [Port] 0 [Flags] 2 [Guid] 3655799770 [EditorId] 3655799770 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-795K8U1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [29100] Host "[IP] 192.168.1.8 [Port] 0 [Flags] 2 [Guid] 917587354 [EditorId] 917587354 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-795K8U1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 135.86 ms, found 6 plugins.
+Refreshing native plugins compatible for Editor in 144.39 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.16f1 (4016570cf34f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/Unity 2021.3.16f1/Editor/Data/Resources/UnitySubsystems
@@ -67,75 +67,75 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/Unity 2021.3.16f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/Unity 2021.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/Unity 2021.3.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56340
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56596
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/Unity 2021.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007764 seconds.
+Registered in 0.007359 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 105.39 ms, found 6 plugins.
+Refreshing native plugins compatible for Editor in 118.50 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.331 seconds
+- Completed reload, in  0.759 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1332ms)
-		BeginReloadAssembly (235ms)
+	ReloadAssembly (759ms)
+		BeginReloadAssembly (90ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (949ms)
-			LoadAssemblies (231ms)
+		EndReloadAssembly (550ms)
+			LoadAssemblies (87ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (539ms)
+			SetupTypeCache (145ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (316ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (308ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (8ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (105ms)
+				RefreshPlugins (119ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (141ms)
-				ProcessInitializeOnLoadMethodAttributes (60ms)
+				ProcessInitializeOnLoadAttributes (130ms)
+				ProcessInitializeOnLoadMethodAttributes (49ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005512 seconds.
+Registered in 0.005901 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 101.97 ms, found 6 plugins.
+Refreshing native plugins compatible for Editor in 108.84 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.566 seconds
+- Completed reload, in  1.345 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1567ms)
+	ReloadAssembly (1346ms)
 		BeginReloadAssembly (119ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (21ms)
-		EndReloadAssembly (1332ms)
-			LoadAssemblies (93ms)
+		EndReloadAssembly (1103ms)
+			LoadAssemblies (97ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (470ms)
+			SetupTypeCache (286ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (71ms)
-			SetupLoadedEditorAssemblies (651ms)
+			RebuildScriptCaches (80ms)
+			SetupLoadedEditorAssemblies (578ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (102ms)
-				BeforeProcessingInitializeOnLoad (103ms)
-				ProcessInitializeOnLoadAttributes (388ms)
-				ProcessInitializeOnLoadMethodAttributes (44ms)
+				RefreshPlugins (109ms)
+				BeforeProcessingInitializeOnLoad (108ms)
+				ProcessInitializeOnLoadAttributes (299ms)
+				ProcessInitializeOnLoadMethodAttributes (49ms)
 				AfterProcessingInitializeOnLoad (8ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -144,12 +144,12 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 1.02 ms, found 6 plugins.
+Refreshing native plugins compatible for Editor in 1.25 ms, found 6 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4493 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 59 unused Assets / (270.1 KB). Loaded Objects now: 4946.
 Memory consumption went from 167.8 MB to 167.5 MB.
-Total: 6.217300 ms (FindLiveObjects: 0.400700 ms CreateObjectMapping: 0.342000 ms MarkObjects: 5.247700 ms  DeleteObjects: 0.226100 ms)
+Total: 4.508800 ms (FindLiveObjects: 0.491600 ms CreateObjectMapping: 0.451400 ms MarkObjects: 3.400600 ms  DeleteObjects: 0.164000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -163,609 +163,425 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 367606.271127 seconds.
-  path: Assets/Animation/Controllers/UI/YouDied_AC.controller
-  artifactKey: Guid(50a02a587d795a741b73c28641651ed2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Controllers/UI/YouDied_AC.controller using Guid(50a02a587d795a741b73c28641651ed2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd8b70fd6b69386b2ffc4251b36b64dc') in 0.071850 seconds 
+  Time since last request: 447699.047103 seconds.
+  path: Assets/Materials
+  artifactKey: Guid(fff93779d70e21141abd1fc8b269a901) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials using Guid(fff93779d70e21141abd1fc8b269a901) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e641a917837dd8d72d990b1468f3666') in 0.015274 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.483860 seconds.
-  path: Assets/Animation/Controllers/UI/Score_AC.controller
-  artifactKey: Guid(89c1c0b2a3163bf44852819375c9b7b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Controllers/UI/Score_AC.controller using Guid(89c1c0b2a3163bf44852819375c9b7b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ed8f5de62857cc4d3d66eca68fbb2c6') in 0.012177 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006961 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.50 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.963 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1964ms)
-		BeginReloadAssembly (255ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (11ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (76ms)
-		EndReloadAssembly (1514ms)
-			LoadAssemblies (198ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (499ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (87ms)
-			SetupLoadedEditorAssemblies (682ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (22ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (137ms)
-				ProcessInitializeOnLoadAttributes (429ms)
-				ProcessInitializeOnLoadMethodAttributes (78ms)
-				AfterProcessingInitializeOnLoad (11ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (16ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 3.64 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4466 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (236.7 KB). Loaded Objects now: 4962.
-Memory consumption went from 165.5 MB to 165.3 MB.
-Total: 6.962100 ms (FindLiveObjects: 0.461800 ms CreateObjectMapping: 0.247700 ms MarkObjects: 5.656200 ms  DeleteObjects: 0.594300 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  Time since last request: 0.000059 seconds.
+  path: Assets/Materials/FlashFXMaterial.mat
+  artifactKey: Guid(78758ed07969e5449922bd9487087aa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/FlashFXMaterial.mat using Guid(78758ed07969e5449922bd9487087aa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7c4fe05a06d594012dde2154951a33b') in 0.183698 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 413.066364 seconds.
-  path: Assets/Animation
-  artifactKey: Guid(40e00271b1e498c4cb230b879fd79d75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation using Guid(40e00271b1e498c4cb230b879fd79d75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a557a23dce66c6e0e2c452099c6de54e') in 0.016814 seconds 
+  Time since last request: 0.130940 seconds.
+  path: Assets/Graphics
+  artifactKey: Guid(a8659c24d65b33b46996f712972442b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics using Guid(a8659c24d65b33b46996f712972442b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c3e8894c5409ce892b45f6e5f0f04a4') in 0.009210 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.810786 seconds.
-  path: Assets/Animation/Animations
-  artifactKey: Guid(31ee20a2e2dbff54cbe2fcde99cb5ded) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Animations using Guid(31ee20a2e2dbff54cbe2fcde99cb5ded) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e99f4355db7c70353520eadfb7dc9b57') in 0.009555 seconds 
+  Time since last request: 2.008381 seconds.
+  path: Assets/Graphics/UI
+  artifactKey: Guid(a868531e7a294244a92354be33756e50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/UI using Guid(a868531e7a294244a92354be33756e50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81199e157db09ef0d57396796ba5d5a4') in 0.009090 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.811180 seconds.
-  path: Assets/Animation/Animations/UI
-  artifactKey: Guid(fb43a3cccc09596468c3add01bb1a872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Animations/UI using Guid(fb43a3cccc09596468c3add01bb1a872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fe34780fea7b717bcef1fe27061ecc6') in 0.011496 seconds 
+  Time since last request: 0.045437 seconds.
+  path: Assets/Graphics/UI/Cursor_Normal.png
+  artifactKey: Guid(7c0bf37397b5a2d498ef2f8a4dc0ea9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/UI/Cursor_Normal.png using Guid(7c0bf37397b5a2d498ef2f8a4dc0ea9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '554588544b50a97afd19450a0fd1eb63') in 0.062651 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.194897 seconds.
-  path: Assets/Animation/Animations/UI/Score
-  artifactKey: Guid(d72c638246ee49f449d72f3fdc67f672) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Animations/UI/Score using Guid(d72c638246ee49f449d72f3fdc67f672) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3b0a1f9f16b798afa9885341b9c8fae') in 0.003278 seconds 
+  Time since last request: 0.000051 seconds.
+  path: Assets/Graphics/UI/UI_HealthBar.png
+  artifactKey: Guid(b74cd7c92b66ff949804935b8e1b2a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/UI/UI_HealthBar.png using Guid(b74cd7c92b66ff949804935b8e1b2a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bbbef83aca3c5c96ffd4b12e87a76dc') in 0.032746 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.937312 seconds.
-  path: Assets/Animation/Animations/UI/Score/Score.anim
-  artifactKey: Guid(a1f744a569fd2f34ab02185c65d5400a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animation/Animations/UI/Score/Score.anim using Guid(a1f744a569fd2f34ab02185c65d5400a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd966c479e02ab39c0e580d2719019958') in 0.018276 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008107 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.43 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.877 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1879ms)
-		BeginReloadAssembly (171ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (13ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (51ms)
-		EndReloadAssembly (1565ms)
-			LoadAssemblies (116ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (482ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (114ms)
-			SetupLoadedEditorAssemblies (735ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (18ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (168ms)
-				ProcessInitializeOnLoadAttributes (468ms)
-				ProcessInitializeOnLoadMethodAttributes (66ms)
-				AfterProcessingInitializeOnLoad (12ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (16ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 3.96 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4466 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (236.8 KB). Loaded Objects now: 4977.
-Memory consumption went from 165.5 MB to 165.3 MB.
-Total: 9.522400 ms (FindLiveObjects: 0.902600 ms CreateObjectMapping: 0.726500 ms MarkObjects: 7.430600 ms  DeleteObjects: 0.433000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005862 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.19 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.574 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1575ms)
-		BeginReloadAssembly (179ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (60ms)
-		EndReloadAssembly (1293ms)
-			LoadAssemblies (119ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (316ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (103ms)
-			SetupLoadedEditorAssemblies (664ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (20ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (136ms)
-				ProcessInitializeOnLoadAttributes (421ms)
-				ProcessInitializeOnLoadMethodAttributes (68ms)
-				AfterProcessingInitializeOnLoad (15ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (16ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 4.40 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4466 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (237.9 KB). Loaded Objects now: 4992.
-Memory consumption went from 165.5 MB to 165.3 MB.
-Total: 6.171300 ms (FindLiveObjects: 0.565500 ms CreateObjectMapping: 0.840000 ms MarkObjects: 4.552700 ms  DeleteObjects: 0.211800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005337 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.88 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.551 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1553ms)
-		BeginReloadAssembly (138ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (40ms)
-		EndReloadAssembly (1299ms)
-			LoadAssemblies (94ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (301ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (91ms)
-			SetupLoadedEditorAssemblies (690ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (26ms)
-				SetLoadedEditorAssemblies (2ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (136ms)
-				ProcessInitializeOnLoadAttributes (436ms)
-				ProcessInitializeOnLoadMethodAttributes (72ms)
-				AfterProcessingInitializeOnLoad (14ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (19ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 5.54 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4466 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (236.6 KB). Loaded Objects now: 5007.
-Memory consumption went from 165.5 MB to 165.3 MB.
-Total: 8.263800 ms (FindLiveObjects: 0.811200 ms CreateObjectMapping: 1.742700 ms MarkObjects: 5.270400 ms  DeleteObjects: 0.437000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005313 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.96 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.614 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1615ms)
-		BeginReloadAssembly (162ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (43ms)
-		EndReloadAssembly (1297ms)
-			LoadAssemblies (132ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (500ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (95ms)
-			SetupLoadedEditorAssemblies (499ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (18ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (120ms)
-				ProcessInitializeOnLoadAttributes (295ms)
-				ProcessInitializeOnLoadMethodAttributes (53ms)
-				AfterProcessingInitializeOnLoad (11ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 3.02 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4466 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (237.9 KB). Loaded Objects now: 5022.
-Memory consumption went from 165.6 MB to 165.3 MB.
-Total: 4.893000 ms (FindLiveObjects: 0.328800 ms CreateObjectMapping: 0.347500 ms MarkObjects: 4.045800 ms  DeleteObjects: 0.170300 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  Time since last request: 0.000038 seconds.
+  path: Assets/Graphics/UI/UI_SkillTree.png
+  artifactKey: Guid(1f038efaafd8bff4194e5ef38be4e67b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/UI/UI_SkillTree.png using Guid(1f038efaafd8bff4194e5ef38be4e67b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a55c8c5b672c33d305bdb9e1b600238') in 0.154001 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 216.220525 seconds.
-  path: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
-  artifactKey: Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TextMesh Pro/Fonts/LiberationSans.ttf using Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86e85d55384b22641579099d0f1ce7e8') in 0.283090 seconds 
+  Time since last request: 0.000035 seconds.
+  path: Assets/Graphics/UI/UI_White_Transperent.png
+  artifactKey: Guid(9c219e936a4117a4b9658c1e40f8bc84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/UI/UI_White_Transperent.png using Guid(9c219e936a4117a4b9658c1e40f8bc84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b498a49c67cbb413bc4851901df31f96') in 0.043951 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006632 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.58 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.863 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1864ms)
-		BeginReloadAssembly (183ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (62ms)
-		EndReloadAssembly (1553ms)
-			LoadAssemblies (133ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (445ms)
-			ReleaseScriptCaches (4ms)
-			RebuildScriptCaches (94ms)
-			SetupLoadedEditorAssemblies (739ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (24ms)
-				SetLoadedEditorAssemblies (2ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (132ms)
-				ProcessInitializeOnLoadAttributes (487ms)
-				ProcessInitializeOnLoadMethodAttributes (80ms)
-				AfterProcessingInitializeOnLoad (12ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (16ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 7.55 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4466 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (236.9 KB). Loaded Objects now: 5081.
-Memory consumption went from 170.3 MB to 170.0 MB.
-Total: 8.122700 ms (FindLiveObjects: 0.495700 ms CreateObjectMapping: 0.386400 ms MarkObjects: 6.921800 ms  DeleteObjects: 0.317500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 2.614162 seconds.
+  path: Assets/Graphics/Surroundings
+  artifactKey: Guid(497ac38ae2e7a4c4f8bf6b836d9b814d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings using Guid(497ac38ae2e7a4c4f8bf6b836d9b814d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc64bd2af35f9859aa8d4837df1a4468') in 0.011882 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005852 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.97 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.663 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1664ms)
-		BeginReloadAssembly (146ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (44ms)
-		EndReloadAssembly (1403ms)
-			LoadAssemblies (108ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (363ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (106ms)
-			SetupLoadedEditorAssemblies (708ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (24ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (142ms)
-				ProcessInitializeOnLoadAttributes (454ms)
-				ProcessInitializeOnLoadMethodAttributes (71ms)
-				AfterProcessingInitializeOnLoad (13ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (15ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 3.80 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4466 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (236.5 KB). Loaded Objects now: 5096.
-Memory consumption went from 170.3 MB to 170.0 MB.
-Total: 7.322200 ms (FindLiveObjects: 0.715200 ms CreateObjectMapping: 0.665100 ms MarkObjects: 5.547100 ms  DeleteObjects: 0.393800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 0.722240 seconds.
+  path: Assets/Graphics/Surroundings/Valley_Decor
+  artifactKey: Guid(6fcb1cce232e12943954fc69904292e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Valley_Decor using Guid(6fcb1cce232e12943954fc69904292e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a171f578f65960d949c5421de8c3062a') in 0.010823 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006315 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.68 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.672 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1674ms)
-		BeginReloadAssembly (148ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (44ms)
-		EndReloadAssembly (1419ms)
-			LoadAssemblies (103ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (393ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (111ms)
-			SetupLoadedEditorAssemblies (698ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (19ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (136ms)
-				ProcessInitializeOnLoadAttributes (452ms)
-				ProcessInitializeOnLoadMethodAttributes (75ms)
-				AfterProcessingInitializeOnLoad (12ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (18ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 5.84 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4466 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (236.7 KB). Loaded Objects now: 5111.
-Memory consumption went from 170.3 MB to 170.1 MB.
-Total: 8.623600 ms (FindLiveObjects: 1.114100 ms CreateObjectMapping: 0.589600 ms MarkObjects: 6.712900 ms  DeleteObjects: 0.205800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 0.056308 seconds.
+  path: Assets/Graphics/Surroundings/Valley_Decor/fence_1.png
+  artifactKey: Guid(6b0483375c47b524f8c4a847e4e74a98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Valley_Decor/fence_1.png using Guid(6b0483375c47b524f8c4a847e4e74a98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '901d8b1d3b3484cb16a1d03e4825e7ee') in 0.031611 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.005427 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.61 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.568 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1569ms)
-		BeginReloadAssembly (153ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (43ms)
-		EndReloadAssembly (1308ms)
-			LoadAssemblies (107ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (341ms)
-			ReleaseScriptCaches (4ms)
-			RebuildScriptCaches (116ms)
-			SetupLoadedEditorAssemblies (642ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (21ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (126ms)
-				ProcessInitializeOnLoadAttributes (410ms)
-				ProcessInitializeOnLoadMethodAttributes (68ms)
-				AfterProcessingInitializeOnLoad (13ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (18ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 4.75 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4466 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (236.9 KB). Loaded Objects now: 5126.
-Memory consumption went from 170.3 MB to 170.1 MB.
-Total: 7.156800 ms (FindLiveObjects: 0.432500 ms CreateObjectMapping: 0.333400 ms MarkObjects: 5.838700 ms  DeleteObjects: 0.550400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Graphics/Surroundings/Valley_Decor/lamp.png
+  artifactKey: Guid(695ab07178d13d74c9094b2518e703c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Valley_Decor/lamp.png using Guid(695ab07178d13d74c9094b2518e703c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dba594fecf8d4d35319e97d530c4515a') in 0.029468 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007684 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\GameDev\RPG-2D\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.53 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.794 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1795ms)
-		BeginReloadAssembly (205ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (14ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (66ms)
-		EndReloadAssembly (1470ms)
-			LoadAssemblies (126ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (422ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (120ms)
-			SetupLoadedEditorAssemblies (696ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (30ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (118ms)
-				ProcessInitializeOnLoadAttributes (468ms)
-				ProcessInitializeOnLoadMethodAttributes (65ms)
-				AfterProcessingInitializeOnLoad (12ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (17ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 4.85 ms, found 6 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4466 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (237.8 KB). Loaded Objects now: 5141.
-Memory consumption went from 170.3 MB to 170.1 MB.
-Total: 6.943500 ms (FindLiveObjects: 0.689700 ms CreateObjectMapping: 0.652200 ms MarkObjects: 4.775200 ms  DeleteObjects: 0.823800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Graphics/Surroundings/Valley_Decor/rock_3.png
+  artifactKey: Guid(0a552fff71aacca449f42ce54bebfeb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Valley_Decor/rock_3.png using Guid(0a552fff71aacca449f42ce54bebfeb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c745bf7478335db678092a229ce31d4f') in 0.030573 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Graphics/Surroundings/Valley_Decor/rock_2.png
+  artifactKey: Guid(f524a6445a4f6dc4ba5af0912d1798a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Valley_Decor/rock_2.png using Guid(f524a6445a4f6dc4ba5af0912d1798a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbef74615c2f4b43d38ac06ff35c0477') in 0.031037 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000068 seconds.
+  path: Assets/Graphics/Surroundings/Valley_Decor/grass_2.png
+  artifactKey: Guid(1037d5b1d410e6840b6a375495f12dad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Valley_Decor/grass_2.png using Guid(1037d5b1d410e6840b6a375495f12dad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '150b18907d36d875873a70336a39df2f') in 0.028745 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Graphics/Surroundings/Valley_Decor/sign.png
+  artifactKey: Guid(4a3856daac7219147ad0274f9e5a683c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Valley_Decor/sign.png using Guid(4a3856daac7219147ad0274f9e5a683c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f20523d44f91439fb3f54ce48b6513b') in 0.029615 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.187342 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/arch_2.png
+  artifactKey: Guid(e304f0905b9817145925173225717182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/arch_2.png using Guid(e304f0905b9817145925173225717182) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cb798c0d536abdcd7e1b11073ded3ef') in 0.025765 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/brick_7.png
+  artifactKey: Guid(d71019cc67aee9649908a3ec00481116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/brick_7.png using Guid(d71019cc67aee9649908a3ec00481116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc4ae2ba2cd5a76f0e75a1b16957a053') in 0.019289 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/brick_5.png
+  artifactKey: Guid(10cbcf6de1e5d944e9ec5c7eca828155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/brick_5.png using Guid(10cbcf6de1e5d944e9ec5c7eca828155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e1d0d8b0014de024ce12c1bf73f34c8') in 0.020854 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/arch_6.png
+  artifactKey: Guid(667a0cfe5f65b5e41a378f8dc0fe16df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/arch_6.png using Guid(667a0cfe5f65b5e41a378f8dc0fe16df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fad8c2029f557bcc5de609d8590e3fa') in 0.022253 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/brick_10.png
+  artifactKey: Guid(9e6c2c224003ae748b50c28deaedf011) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/brick_10.png using Guid(9e6c2c224003ae748b50c28deaedf011) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ec598df594328aae16f7bc62a8236ec') in 0.020923 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/arch_4.png
+  artifactKey: Guid(f68480ff96a44bc448159a5a580fb362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/arch_4.png using Guid(f68480ff96a44bc448159a5a580fb362) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b0f63e7c25b4d530c9451171b8369a8') in 0.023812 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/arch_5.png
+  artifactKey: Guid(ea0d14634f3229545bf579347c52f9c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/arch_5.png using Guid(ea0d14634f3229545bf579347c52f9c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cbac04580a5319efcbe4cf28d4e3cac') in 0.022974 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000108 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/brick_9.png
+  artifactKey: Guid(76fc3ecd247b1e049a125e5eeef95ec0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/brick_9.png using Guid(76fc3ecd247b1e049a125e5eeef95ec0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fac56cdd6e98eb274a6ff111234b9f7b') in 0.023271 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/blank.png
+  artifactKey: Guid(7bae39282af46fa449bb7fd77041f40d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/blank.png using Guid(7bae39282af46fa449bb7fd77041f40d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b1fb39ccfc1c730c92948aed06e5474') in 0.016680 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.349247 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/brick_15.png
+  artifactKey: Guid(5f6f2b834f9bd7d44bd8eb3ef4bacb78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/brick_15.png using Guid(5f6f2b834f9bd7d44bd8eb3ef4bacb78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ab25a9fbb1eec93cfab876b61d99a09') in 0.023507 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/brick_side_left_2.png
+  artifactKey: Guid(a26b128cf9fa2564e96985f75eb1b3ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/brick_side_left_2.png using Guid(a26b128cf9fa2564e96985f75eb1b3ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a460d8b76398c8a25520bd1b860e1e75') in 0.021516 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000075 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/ceiling_1.png
+  artifactKey: Guid(a3036aee198b81844b0cd72f1d750767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/ceiling_1.png using Guid(a3036aee198b81844b0cd72f1d750767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8290e57daecc3bd1993432c80c6db147') in 0.023128 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.157850 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/ceiling_4.png
+  artifactKey: Guid(5f63243b766321d49a1712958eeb6832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/ceiling_4.png using Guid(5f63243b766321d49a1712958eeb6832) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5792c64fc4fac11bfc1125ef5c19317f') in 0.023331 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/ceiling_corner_right.png
+  artifactKey: Guid(595eec6e7a5a85149ac1bcc064d0d630) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/ceiling_corner_right.png using Guid(595eec6e7a5a85149ac1bcc064d0d630) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5188d6669a5ce85dc84c906b376134ee') in 0.024895 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/column_5.png
+  artifactKey: Guid(9766537c54c445c48af63db6a8b9639a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/column_5.png using Guid(9766537c54c445c48af63db6a8b9639a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a73826f548f0ee86e971cabc90aab7ba') in 0.022605 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/column_8.png
+  artifactKey: Guid(745bc26d6cbec6a4889a7d01db069677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/column_8.png using Guid(745bc26d6cbec6a4889a7d01db069677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b2b8ffc52d1ac6090f72e326115caa2') in 0.020095 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000076 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/column_4.png
+  artifactKey: Guid(a74e7db62a1363949b5015c4779759d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/column_4.png using Guid(a74e7db62a1363949b5015c4779759d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cbc385cfeb9c4c85a9dc7a294199553') in 0.021159 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.085026 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/damaged_brick_3.png
+  artifactKey: Guid(b9f4667dd135ffb41bdaa37f4af99a86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/damaged_brick_3.png using Guid(b9f4667dd135ffb41bdaa37f4af99a86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '930bc1191ad75537ddf3d6f068419938') in 0.022437 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_tile_1.png
+  artifactKey: Guid(7f1c70acd3a44df4594d7d5a99659736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_tile_1.png using Guid(7f1c70acd3a44df4594d7d5a99659736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '054709fa2b854d454462847c2d90a9cd') in 0.019933 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_2.png
+  artifactKey: Guid(85be1dce0299c4648a5579365f7b7043) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_2.png using Guid(85be1dce0299c4648a5579365f7b7043) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec48303bc392b6bca8fd76f9607daf3d') in 0.021138 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_corner_left.png
+  artifactKey: Guid(bac35cba8c5bbb9478ef9d60d40c74c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_corner_left.png using Guid(bac35cba8c5bbb9478ef9d60d40c74c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24ec4f6ab4e50bf488153c1e522ba327') in 0.030619 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.366105 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_transition_1.png
+  artifactKey: Guid(d596ca9ad1650574d94dfe28b7f56db2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_tile_carpet_transition_1.png using Guid(d596ca9ad1650574d94dfe28b7f56db2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76bdd068e23f0d4a0b350c570fe95824') in 0.022167 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.015206 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_tile_corner_right.png
+  artifactKey: Guid(8bcda0a82f1b8e544b0c8fc5454e9768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_tile_corner_right.png using Guid(8bcda0a82f1b8e544b0c8fc5454e9768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8f36908cee65f9ae3f1ad6e0639111c') in 0.020647 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_tile_wood_transition_2.png
+  artifactKey: Guid(d3e6e897b9988194191f7e5c0aa1f3de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_tile_wood_transition_2.png using Guid(d3e6e897b9988194191f7e5c0aa1f3de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2137d7430fa297b5d12e9eecce59c905') in 0.024249 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_wood_1.png
+  artifactKey: Guid(840dbd00375d02646b8d5128da6bb675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_wood_1.png using Guid(840dbd00375d02646b8d5128da6bb675) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7f09bcca367ea8e9fd99dacafd2e409') in 0.029780 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.031140 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_wood_carpet_1.png
+  artifactKey: Guid(1d49ea0bb4e92f64ea7d550b0b5b40c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_wood_carpet_1.png using Guid(1d49ea0bb4e92f64ea7d550b0b5b40c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1129f46713c788e30b496d3614fb5a4') in 0.026991 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.477035 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_wood_carpet_4.png
+  artifactKey: Guid(838e285c495df804797a20a6d6d966fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_wood_carpet_4.png using Guid(838e285c495df804797a20a6d6d966fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d19ad24db8b0e9fcbf387551f98580c') in 0.032760 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_wood_carpet_transition_2.png
+  artifactKey: Guid(073bbe473b3236b4093ae67caa1fdc1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/floor_wood_carpet_transition_2.png using Guid(073bbe473b3236b4093ae67caa1fdc1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e8b5ea3a7b87c8687fa021ae9df4fae') in 0.033122 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/lion_column_1.png
+  artifactKey: Guid(71ee4a1119a06ef4fb0108c30f743247) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/lion_column_1.png using Guid(71ee4a1119a06ef4fb0108c30f743247) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d7ae086a5a4e90c3a65593a5aa0c0ee') in 0.021994 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/lion_column_2.png
+  artifactKey: Guid(744dbe626ed63d4459752bad264adc73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/lion_column_2.png using Guid(744dbe626ed63d4459752bad264adc73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6088f8294f3539725de27b30ba0e567') in 0.022031 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.307043 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/lion_column_6.png
+  artifactKey: Guid(57681defe31da3747a502846191f9c82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/lion_column_6.png using Guid(57681defe31da3747a502846191f9c82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f5d89dd5a1367da3dccaa8574aa4aa4') in 0.020212 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001066 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/lion_column_8.png
+  artifactKey: Guid(f7a57042f2dc3a84195ce2050e5f2b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/lion_column_8.png using Guid(f7a57042f2dc3a84195ce2050e5f2b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '057c586c90b243ca53d5fa0852d2d96b') in 0.042697 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.103499 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/lion_column_12.png
+  artifactKey: Guid(cfd815d94d108c043a65641ac099daf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/lion_column_12.png using Guid(cfd815d94d108c043a65641ac099daf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f99a54e417c20cf4f79d9fe12326b95') in 0.032461 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.019259 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/merlons_3.png
+  artifactKey: Guid(842630091d3f800468dc265605bcefe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/merlons_3.png using Guid(842630091d3f800468dc265605bcefe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acc3472bf7259b8ffd2f2376b5bf0ba7') in 0.021827 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.018381 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/platform_1.png
+  artifactKey: Guid(67ef20fa1b2819940a8aa379817f475b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/platform_1.png using Guid(67ef20fa1b2819940a8aa379817f475b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8df891baef2b0940bb9127af2814725') in 0.031276 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.155372 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/platform_4.png
+  artifactKey: Guid(3f2c973f5a4eeab4a922450edf0e4fa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/platform_4.png using Guid(3f2c973f5a4eeab4a922450edf0e4fa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce2d1a08cf9b312034e93a75dad95c99') in 0.030146 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.009020 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/platform_wall_connection_right.png
+  artifactKey: Guid(c5ddb9d64dd94a5449d90ab2f6fdc424) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/platform_wall_connection_right.png using Guid(c5ddb9d64dd94a5449d90ab2f6fdc424) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '186fcdd47150943579d8a5262d649c85') in 0.035551 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/stairs_tile_2.png
+  artifactKey: Guid(cf9f2c27f2f7383459c02f19e52d39f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/stairs_tile_2.png using Guid(cf9f2c27f2f7383459c02f19e52d39f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f3f8d489dab7a58d7e6e00f5bf4967b') in 0.032894 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/stairs_tile_4.png
+  artifactKey: Guid(ca516cb029cd96f48b0141b2fabfd1bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/stairs_tile_4.png using Guid(ca516cb029cd96f48b0141b2fabfd1bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '677f6110394dea3f307ad44af815887b') in 0.029121 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.506077 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/stairs_tile_carpet_4.png
+  artifactKey: Guid(144d3d24dd4ef564793252831ec72d2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/stairs_tile_carpet_4.png using Guid(144d3d24dd4ef564793252831ec72d2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '840c1cc916484606fc11345a446eb2e8') in 0.032214 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.040410 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/stairs_wood_3.png
+  artifactKey: Guid(5cc12d9812a5d024c841c0cfd0d8d4bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/stairs_wood_3.png using Guid(5cc12d9812a5d024c841c0cfd0d8d4bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1759deb133992b4ad42e90e0c8f06c96') in 0.036134 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.446163 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/stairs_wood_carpet_2.png
+  artifactKey: Guid(58c0cce462cd37e40a6109f634f63653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/stairs_wood_carpet_2.png using Guid(58c0cce462cd37e40a6109f634f63653) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4aebddfc73e894d4646b68ef44ed39f8') in 0.033871 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.123150 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/tile_side_left.png
+  artifactKey: Guid(e5db2e6269cab6942b3c1a074c187b31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/tile_side_left.png using Guid(e5db2e6269cab6942b3c1a074c187b31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0c05157e45f6e8343b2f0970fe74bae') in 0.022022 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.212064 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/wall_2.png
+  artifactKey: Guid(1e9c76bb3db07ba4b8a626a9bda93021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/wall_2.png using Guid(1e9c76bb3db07ba4b8a626a9bda93021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61e89effcc39554947c6e8312afcc230') in 0.030574 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.225729 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/wall_5.png
+  artifactKey: Guid(636d43db49409984bb6c26af74278d31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/wall_5.png using Guid(636d43db49409984bb6c26af74278d31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24a870c2d56b5d363ffda8091a511932') in 0.025343 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.575386 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/wall_8.png
+  artifactKey: Guid(33b6f47b14f904e48b546823a34a98ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/wall_8.png using Guid(33b6f47b14f904e48b546823a34a98ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f85e196d13118e8fe05762da2d83e929') in 0.026633 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.023644 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/wall_11.png
+  artifactKey: Guid(f3bee91161a72cb4fb40565ffee19c23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/wall_11.png using Guid(f3bee91161a72cb4fb40565ffee19c23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97a9475e6ee4390de950d29ca07e5717') in 0.022956 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.038286 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/wall_14.png
+  artifactKey: Guid(27a25f5948ee593419ccf3e45cfaea6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/wall_14.png using Guid(27a25f5948ee593419ccf3e45cfaea6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f365df431165f7c670b18e53a43bcde4') in 0.034050 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.510633 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/wall_17.png
+  artifactKey: Guid(0f491d38c2652ec4d9a5b12d04ce685e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/wall_17.png using Guid(0f491d38c2652ec4d9a5b12d04ce685e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd2c0b6faae27bd71884bcfac7769980') in 0.025457 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.759673 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/window_big_2.png
+  artifactKey: Guid(c2766a89a431b95418d630f5d8296400) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/window_big_2.png using Guid(c2766a89a431b95418d630f5d8296400) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be81ac81345eca2442a9185c6653c27b') in 0.021119 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.014579 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/window_big_5.png
+  artifactKey: Guid(84a154988fd18bf419241ccacb7417d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/window_big_5.png using Guid(84a154988fd18bf419241ccacb7417d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '537e926bde51c0bcd74a9108598bda40') in 0.023583 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.269126 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/window_glass_2.png
+  artifactKey: Guid(4ff9d0a2ce1f0ab4b8313491e636a5a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/window_glass_2.png using Guid(4ff9d0a2ce1f0ab4b8313491e636a5a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ce4ca6dc7459ff0580d79e4dafc37da') in 0.027027 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.273332 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/window_glass_tall_3.png
+  artifactKey: Guid(842c90d596abfb2419d2e90240b7ecda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/window_glass_tall_3.png using Guid(842c90d596abfb2419d2e90240b7ecda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dd6eff5ff606a4a2dd5d0f188b9b650') in 0.023764 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Graphics/Surroundings/Medieval_Castle/Tiles/window_small_2.png
+  artifactKey: Guid(1d2573e5870e5d345b59f6bf93168139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Graphics/Surroundings/Medieval_Castle/Tiles/window_small_2.png using Guid(1d2573e5870e5d345b59f6bf93168139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4683e55836ed6ad2a68ec5579fbce41a') in 0.017336 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

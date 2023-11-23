@@ -25,6 +25,7 @@ public class EnemyStats : CharacterStats
         myDropSystem = GetComponent<ItemDrop>();
     }
 
+    // Chỉnh sửa Level của quái vật
     private void ApplyLevelModifiers()
     {
         Modify(damage);
