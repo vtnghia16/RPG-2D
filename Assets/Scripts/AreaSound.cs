@@ -1,9 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AreaSound : MonoBehaviour
 {
+    // Giới hạn vùng va chạm của quái vật
     [SerializeField] private int areaSoundIndex;
 
 

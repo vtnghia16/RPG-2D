@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-
+// Trạng thái sử dụng phép thuật của quái vật
 public class DeathBringerSpellCastState : EnemyState
 {
     private Enemy_DeathBringer enemy;
@@ -30,7 +30,7 @@ public class DeathBringerSpellCastState : EnemyState
         if (CanCast())
             enemy.CastSpell();
 
-
+        // khi thực hiện hết Spell thì quay lại trạng thái dịch chuyển
         if (amountOfSpells <= 0)
             stateMachine.ChangeState(enemy.teleportState);
     }
@@ -42,6 +42,7 @@ public class DeathBringerSpellCastState : EnemyState
         enemy.lastTimeCast = Time.time;
     }
 
+    // Xử lý spell khi đã thực hiện
     private bool CanCast()
     {
         if (amountOfSpells > 0 && spellTimer < 0)

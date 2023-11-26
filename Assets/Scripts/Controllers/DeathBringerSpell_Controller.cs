@@ -1,17 +1,18 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DeathBringerSpell_Controller : MonoBehaviour
 {
     [SerializeField] private Transform check;
-    [SerializeField] private Vector2 boxSize;
+    [SerializeField] private Vector2 boxSize; // Giới hạn kích thước của spell
     [SerializeField] private LayerMask whatIsPlayer;
 
     private CharacterStats myStats;
 
     public void SetupSpell(CharacterStats _stats) => myStats = _stats;
 
+    // Kích hoạt trạng thái của anims
     private void AnimationTrigger()
     {
         Collider2D[] colliders = Physics2D.OverlapBoxAll(check.position, boxSize, whatIsPlayer);

@@ -13,6 +13,7 @@ public class DeathBringerAttackState : EnemyState
     {
         base.Enter();
 
+        // Tăng 5% mỗi lần dịch chuyển của quái vật
         enemy.chanceToTeleport += 5;
     }
 
@@ -27,10 +28,10 @@ public class DeathBringerAttackState : EnemyState
     {
         base.Update();
 
+        // khi quái vật tấn công set velocity = 0
         enemy.SetZeroVelocity();
 
-
-
+        // Gọi trigger khi quái vật tấn công (ngược lại)
         if (triggerCalled)
         {
             if (enemy.CanTeleport())

@@ -282,8 +282,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9085990}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 144.4, y: 1.1, z: 0}
-  m_LocalScale: {x: 6, y: 12, z: 1}
+  m_LocalPosition: {x: 42.8, y: 3, z: 0}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1500100401}
@@ -7380,7 +7380,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12
+  orthographic size: 11
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7404,7 +7404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 168.8397, y: 11.200001, z: -11.148502}
+  m_LocalPosition: {x: -23.464735, y: 1.3899996, z: -11.148502}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13748,6 +13748,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7546619776816806393, guid: 9d312431d24ade14da63b0e9ec620ca8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7546619777122401678, guid: 9d312431d24ade14da63b0e9ec620ca8, type: 3}
+      propertyPath: m_Interactable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7546619778469512793, guid: 9d312431d24ade14da63b0e9ec620ca8, type: 3}
@@ -26553,6 +26557,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 857688075}
     m_Modifications:
+    - target: {fileID: 5413061282819264825, guid: c1a2356bb51a6194d985ea5b453dfdfb, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5413061283461557538, guid: c1a2356bb51a6194d985ea5b453dfdfb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -32137,7 +32145,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 784283902}
   m_HandleRect: {fileID: 0}
@@ -32833,7 +32841,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195560128}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 173.47, y: 10.4, z: 0}
+  m_LocalPosition: {x: -20.59, y: -3.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -32912,7 +32920,7 @@ MonoBehaviour:
   isChilled: 0
   isShocked: 0
   damage:
-    baseValue: 100
+    baseValue: 20
     modifiers: 
   maxHealth:
     baseValue: 1000
@@ -62297,7 +62305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 0, y: -7.213357, z: 0}
+  m_TrackedObjectOffset: {x: 0, y: -2.6133587, z: 0}
   m_LookaheadTime: 0.6
   m_LookaheadSmoothing: 0.4
   m_LookaheadIgnoreY: 0
@@ -77812,7 +77820,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1195560130}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 12
+    OrthographicSize: 11
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -77836,7 +77844,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836490064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 168.8397, y: 11.200001, z: -11.148502}
+  m_LocalPosition: {x: -23.464735, y: 1.3899996, z: -11.148502}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -79494,7 +79502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86873055e088f6f4ba73123fc48328be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 60
+  cooldown: 20
   cooldownTimer: 0
   amountOfAttacks: 15
   cloneCooldown: 0.35
@@ -81569,11 +81577,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1290535682190687544, guid: 877781d8660980f49a831a6c3e0dbaff, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1290535682190687544, guid: 877781d8660980f49a831a6c3e0dbaff, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290535682347148016, guid: 877781d8660980f49a831a6c3e0dbaff, type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1290535682618644353, guid: 877781d8660980f49a831a6c3e0dbaff, type: 3}
       propertyPath: shockStrikePrefab
@@ -81605,7 +81617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1290535682618644357, guid: 877781d8660980f49a831a6c3e0dbaff, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1290535682618644414, guid: 877781d8660980f49a831a6c3e0dbaff, type: 3}
       propertyPath: m_RootOrder
@@ -81617,7 +81629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1290535682618644414, guid: 877781d8660980f49a831a6c3e0dbaff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.59
+      value: -3.8
       objectReference: {fileID: 0}
     - target: {fileID: 1290535682618644414, guid: 877781d8660980f49a831a6c3e0dbaff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -81809,6 +81821,10 @@ PrefabInstance:
     - target: {fileID: 3525408568487707901, guid: 470f8bf2ff8447f4ea80d769a3c24ae3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525408569190053854, guid: 470f8bf2ff8447f4ea80d769a3c24ae3, type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3525408569785757198, guid: 470f8bf2ff8447f4ea80d769a3c24ae3, type: 3}
       propertyPath: m_RootOrder
@@ -83005,6 +83021,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 857688075}
     m_Modifications:
+    - target: {fileID: 5529630771188878232, guid: ed803d54e06511f4e8d3a86dc8f21df9, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5529630771492725837, guid: ed803d54e06511f4e8d3a86dc8f21df9, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
