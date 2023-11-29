@@ -160,7 +160,6 @@
     <Compile Include="Assets\Scripts\Enemy\Skeleton\Enemy_Skeleton.cs" />
     <Compile Include="Assets\Scripts\Controllers\IceAndFire_Controller.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerCounterAttackState.cs" />
-    <Compile Include="Assets\Scripts\Items and Inventory\Effects\FreezeEnemies_Effect.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonGroundedState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_HealthBar.cs" />
     <Compile Include="Assets\Scripts\Enemy\Archer\ArcherJumpState.cs" />
