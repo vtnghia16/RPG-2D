@@ -521,7 +521,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 3525408568487707901}
   m_HandleRect: {fileID: 0}
@@ -780,30 +780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0803900c4e0a04941ab732f042356749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength:
-    baseValue: 0
-    modifiers: 
-  agility:
-    baseValue: 0
-    modifiers: 
-  intelligence:
-    baseValue: 0
-    modifiers: 
-  vitality:
-    baseValue: 0
-    modifiers: 
-  critChance:
-    baseValue: 0
-    modifiers: 
-  critPower:
-    baseValue: 0
-    modifiers: 
-  evasion:
-    baseValue: 0
-    modifiers: 
-  magicResistance:
-    baseValue: 0
-    modifiers: 
   fireDamage:
     baseValue: 0
     modifiers: 
@@ -825,14 +801,10 @@ MonoBehaviour:
   armor:
     baseValue: 0
     modifiers: 
-  ailmentsDuration: 4
-  shockStrikePrefab: {fileID: 0}
   currentHealth: 0
   soulsDropAmount:
     baseValue: 250
     modifiers: 
-  level: 1
-  percantageModifier: 0.4
 --- !u!114 &3525408569785757234
 MonoBehaviour:
   m_ObjectHideFlags: 0

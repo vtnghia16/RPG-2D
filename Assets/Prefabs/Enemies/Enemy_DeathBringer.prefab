@@ -238,7 +238,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1290535682190687544}
   m_HandleRect: {fileID: 0}
@@ -342,30 +342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0803900c4e0a04941ab732f042356749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength:
-    baseValue: 0
-    modifiers: 
-  agility:
-    baseValue: 0
-    modifiers: 
-  intelligence:
-    baseValue: 0
-    modifiers: 
-  vitality:
-    baseValue: 0
-    modifiers: 
-  critChance:
-    baseValue: 0
-    modifiers: 
-  critPower:
-    baseValue: 0
-    modifiers: 
-  evasion:
-    baseValue: 0
-    modifiers: 
-  magicResistance:
-    baseValue: 0
-    modifiers: 
   fireDamage:
     baseValue: 0
     modifiers: 
@@ -382,19 +358,15 @@ MonoBehaviour:
     baseValue: 60
     modifiers: 
   maxHealth:
-    baseValue: 500
+    baseValue: 1000
     modifiers: 
   armor:
     baseValue: 0
     modifiers: 
-  ailmentsDuration: 4
-  shockStrikePrefab: {fileID: 0}
   currentHealth: 0
   soulsDropAmount:
     baseValue: 0
     modifiers: 
-  level: 1
-  percantageModifier: 0.4
 --- !u!114 &1290535682618644354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,7 +441,7 @@ MonoBehaviour:
   bossFightBegun: 0
   spellPrefab: {fileID: 1212147843073526107, guid: b1bbb11d99cd26245b90390736d31ca5, type: 3}
   amountOfSpells: 5
-  spellCooldown: 2
+  spellCooldown: 0.8
   lastTimeCast: 0
   spellStateCooldown: 10
   spellOffset: {x: 3, y: 3}

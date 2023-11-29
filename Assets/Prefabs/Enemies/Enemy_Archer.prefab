@@ -289,7 +289,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 5529630771492725837}
   m_HandleRect: {fileID: 0}
@@ -781,30 +781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0803900c4e0a04941ab732f042356749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength:
-    baseValue: 0
-    modifiers: 
-  agility:
-    baseValue: 0
-    modifiers: 
-  intelligence:
-    baseValue: 0
-    modifiers: 
-  vitality:
-    baseValue: 0
-    modifiers: 
-  critChance:
-    baseValue: 0
-    modifiers: 
-  critPower:
-    baseValue: 0
-    modifiers: 
-  evasion:
-    baseValue: 0
-    modifiers: 
-  magicResistance:
-    baseValue: 0
-    modifiers: 
   fireDamage:
     baseValue: 0
     modifiers: 
@@ -826,14 +802,10 @@ MonoBehaviour:
   armor:
     baseValue: 0
     modifiers: 
-  ailmentsDuration: 4
-  shockStrikePrefab: {fileID: 0}
   currentHealth: 0
   soulsDropAmount:
     baseValue: 0
     modifiers: 
-  level: 1
-  percantageModifier: 0.4
 --- !u!114 &5529630772379239637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,8 +835,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d919b49c547184da9b10d7bfd2876f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possibleItemDrop: 0
-  possibleDrop: []
+  possibleItemDrop: 2
+  possibleDrop:
+  - {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
+  - {fileID: 11400000, guid: 6835c34bd80fc9c468d2f549f4b6220a, type: 2}
   dropPrefab: {fileID: 8730514117533583190, guid: 7aaa3324c1c4b054ebebaafe3343bf25, type: 3}
 --- !u!114 &5529630772379239639
 MonoBehaviour:
@@ -896,24 +870,24 @@ MonoBehaviour:
   stunDuration: 1
   stunDirection: {x: 10, y: 12}
   counterImage: {fileID: 5529630771342685509}
-  moveSpeed: 3
+  moveSpeed: 2.5
   idleTime: 2
   battleTime: 7
   agroDistance: 2
   attackDistance: 15
   attackCooldown: 0
-  minAttackCooldown: 0.5
-  maxAttackCooldown: 1.2
+  minAttackCooldown: 1
+  maxAttackCooldown: 3
   lastTimeAttacked: 0
   arrowPrefab: {fileID: 3020597457762813650, guid: 2dd85fc3a711e924a923721e2dc4eccb, type: 3}
-  arrowSpeed: 7
+  arrowSpeed: 10
   arrowDamage: 0
   jumpVelocity: {x: 20, y: 15}
   jumpCooldown: 2.5
   safeDistance: 3
   lastTimeJumped: 0
   groundBehindCheck: {fileID: 5529630772597620251}
-  groundBehindCheckSize: {x: 2, y: 7.99}
+  groundBehindCheckSize: {x: 2, y: 8}
 --- !u!1 &5529630772597620260
 GameObject:
   m_ObjectHideFlags: 0
