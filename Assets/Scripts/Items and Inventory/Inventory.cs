@@ -1,27 +1,30 @@
 ﻿using Newtonsoft.Json.Converters;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 
+// Kho vật phẩm của người chơi
 public class Inventory : MonoBehaviour , ISaveManager
 {
     public static Inventory instance;
 
+    // DS các vật phẩm trong kho (equipment, material)
     public List<ItemData> startingItems;
 
+    // DS các vật phẩm trang bị vào người chơi
     public List<InventoryItem> equipment;
     public Dictionary<ItemData_Equipment, InventoryItem> equipmentDictionary;
 
+    // DS các vật phẩm đang tồn tại trong kho 
     public List<InventoryItem> inventory;
     public Dictionary<ItemData, InventoryItem> inventoryDictianory;
 
+    // DS các vật liệu có trong stash 
     public List<InventoryItem> stash;
     public Dictionary<ItemData, InventoryItem> stashDictianory;
 
-
-
     [Header("Inventory UI")]
-
     [SerializeField] private Transform inventorySlotParent;
     [SerializeField] private Transform stashSlotParent;
     [SerializeField] private Transform equpmentSlotParent;
@@ -54,16 +57,19 @@ public class Inventory : MonoBehaviour , ISaveManager
 
     private void Start()
     {
+        // DS các vật phẩm đang tồn tại trong kho 
         inventory = new List<InventoryItem>();
         inventoryDictianory = new Dictionary<ItemData, InventoryItem>();
 
+        // DS các vật liệu có trong stash 
         stash = new List<InventoryItem>();
         stashDictianory = new Dictionary<ItemData, InventoryItem>();
 
+        // DS các vật phẩm trang bị vào người chơi
         equipment = new List<InventoryItem>();
         equipmentDictionary = new Dictionary<ItemData_Equipment, InventoryItem>();
 
-
+        // Hiển thị các UI
         inventoryItemSlot = inventorySlotParent.GetComponentsInChildren<UI_ItemSlot>();
         stashItemSlot = stashSlotParent.GetComponentsInChildren<UI_ItemSlot>();
         equipmentSlot = equpmentSlotParent.GetComponentsInChildren<UI_EquipmentSlot>();
@@ -72,6 +78,7 @@ public class Inventory : MonoBehaviour , ISaveManager
         AddStartingItems();
     }
 
+    // Hiển thị các vật phẩm gồm equipment & material
     private void AddStartingItems()
     {
         foreach (ItemData_Equipment item in loadedEquipment)
@@ -101,6 +108,7 @@ public class Inventory : MonoBehaviour , ISaveManager
         }
     }
 
+    // Trang bị vật phẩm trong kho cho nhân vật
     public void EquipItem(ItemData _item)
     {
         ItemData_Equipment newEquipment = _item as ItemData_Equipment;
@@ -123,6 +131,8 @@ public class Inventory : MonoBehaviour , ISaveManager
 
         equipment.Add(newItem);
         equipmentDictionary.Add(newEquipment, newItem);
+
+        // Thay đổi chỉ số khi thêm vật phẩm
         newEquipment.AddModifiers();
 
         RemoveItem(_item);
@@ -130,16 +140,20 @@ public class Inventory : MonoBehaviour , ISaveManager
         UpdateSlotUI();
     }
 
+    // Gỡ bỏ trang bị ra khỏi nhân vật
     public void UnequipItem(ItemData_Equipment itemToRemove)
     {
         if (equipmentDictionary.TryGetValue(itemToRemove, out InventoryItem value))
         {
             equipment.Remove(value);
             equipmentDictionary.Remove(itemToRemove);
+
+            // Thay đổi chỉ số khi gỡ bỏ vật phẩm
             itemToRemove.RemoveModifiers();
         }
     }
 
+    // Cập nhật lại slot UI sau khi thêm và xóa
     private void UpdateSlotUI()
     {
         for (int i = 0; i < equipmentSlot.Length; i++)
@@ -183,6 +197,7 @@ public class Inventory : MonoBehaviour , ISaveManager
         }
     }
 
+    // Thêm vật phẩm vào kho hoặc stash
     public void AddItem(ItemData _item)
     {
         if (_item.itemType == ItemType.Equipment && CanAddItem())
@@ -190,11 +205,10 @@ public class Inventory : MonoBehaviour , ISaveManager
         else if (_item.itemType == ItemType.Material)
             AddToStash(_item);
 
-
-
         UpdateSlotUI();
     }
 
+    // Thêm vật liệu sau khi nhặt vào stash (material)
     private void AddToStash(ItemData _item)
     {
         if (stashDictianory.TryGetValue(_item, out InventoryItem value))
@@ -209,6 +223,7 @@ public class Inventory : MonoBehaviour , ISaveManager
         }
     }
 
+    // Thêm vật phẩm vào kho (equipment)
     private void AddToInventory(ItemData _item)
     {
         if (inventoryDictianory.TryGetValue(_item, out InventoryItem value))
@@ -223,8 +238,10 @@ public class Inventory : MonoBehaviour , ISaveManager
         }
     }
 
+    // Xóa vật phẩm ra khỏi kho 
     public void RemoveItem(ItemData _item)
     {
+        // ĐK xóa item khỏi inventory
         if (inventoryDictianory.TryGetValue(_item, out InventoryItem value))
         {
             if (value.stackSize <= 1)
@@ -236,7 +253,7 @@ public class Inventory : MonoBehaviour , ISaveManager
                 value.RemoveStack();
         }
 
-
+        // ĐK xóa material khỏi stash
         if (stashDictianory.TryGetValue(_item, out InventoryItem stashValue))
         {
             if (stashValue.stackSize <= 1)
@@ -262,6 +279,7 @@ public class Inventory : MonoBehaviour , ISaveManager
         return true;
     }
 
+    // Craft quy đổi vật phẩm
     public bool CanCraft(ItemData_Equipment _itemToCraft, List<InventoryItem> _requiredMaterials)
     {
         List<InventoryItem> materialsToRemove = new List<InventoryItem>();
@@ -272,20 +290,22 @@ public class Inventory : MonoBehaviour , ISaveManager
             {
                 if (stashValue.stackSize < _requiredMaterials[i].stackSize)
                 {
-                    Debug.Log("Not enough materials");
+                    Debug.Log("Không đủ vật liệu!");
                     return false;
                 }
                 else
                 {
                     materialsToRemove.Add(stashValue);
+
                 }
 
             }
             else
             {
-                Debug.Log("Materials not found");
+                Debug.Log("Vật liệu không được tìm thấy!");
                 return false;
             }
+
         }
 
 

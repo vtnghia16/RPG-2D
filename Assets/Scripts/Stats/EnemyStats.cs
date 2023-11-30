@@ -1,23 +1,48 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyStats : CharacterStats
 {
     private Enemy enemy;
+
+    [Header("Level details")]
+    [SerializeField] private int level = 1;
+    [Range(0f, 1f)]
+    [SerializeField] private float percantageModifier = .4f;
+
+    [Space]
     private ItemDrop myDropSystem; // Hệ thống rơi của vật phẩm
     public Stat soulsDropAmount;
-
 
     protected override void Start()
     {
         soulsDropAmount.SetDefaultValue(1);
-        //ApplyLevelModifiers();
+        ApplyLevelModifiers();
 
         base.Start();
 
         enemy = GetComponent<Enemy>();
         myDropSystem = GetComponent<ItemDrop>();
+    }
+
+    private void ApplyLevelModifiers()
+    {
+        Modify(damage);
+        Modify(maxHealth);
+        Modify(armor);
+
+    }
+
+    private void Modify(Stat _stat)
+    {
+        for (int i = 1; i < level; i++)
+        {
+            float modifier = _stat.GetValue() * percantageModifier;
+
+            _stat.AddModifier(Mathf.RoundToInt(modifier));
+        }
     }
 
     public override void TakeDamage(int _damage)

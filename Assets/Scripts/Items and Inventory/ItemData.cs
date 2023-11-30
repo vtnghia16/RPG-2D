@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
+// Lưu các loại item
 public enum ItemType
 {
     Material,

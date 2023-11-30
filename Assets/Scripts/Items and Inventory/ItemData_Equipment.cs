@@ -11,6 +11,7 @@ public enum EquipmentType
     Flask
 }
 
+// Trang bị vật phẩm vào người chơi
 [CreateAssetMenu(fileName = "New Item Data", menuName = "Data/Equipment")]
 public class ItemData_Equipment : ItemData
 {
@@ -20,12 +21,10 @@ public class ItemData_Equipment : ItemData
     public float itemCooldown;
     public ItemEffect[] itemEffects;
 
-
     [Header("Stats")]
     public int damage;
     public int health;
     public int armor;
-
 
     [Header("Craft requirements")]
     
@@ -41,6 +40,7 @@ public class ItemData_Equipment : ItemData
         }
     }
 
+    // Chỉnh sửa chỉ số khi trang bị vật phẩm
     public void AddModifiers()
     {
         PlayerStats playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
@@ -51,6 +51,7 @@ public class ItemData_Equipment : ItemData
 
     }
 
+    // Xóa các chỉ số
     public void RemoveModifiers() 
     {
         PlayerStats playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();

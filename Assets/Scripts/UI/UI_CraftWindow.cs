@@ -37,6 +37,8 @@ public class UI_CraftWindow : MonoBehaviour
 
             materialSlotText.text = _data.craftingMaterials[i].stackSize.ToString();
             materialSlotText.color = Color.white;
+
+            Debug.Log("Crafting material: " + _data.craftingMaterials.Count);
         }
 
 

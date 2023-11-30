@@ -17,6 +17,7 @@ public class UI_ItemSlot : MonoBehaviour , IPointerDownHandler ,IPointerEnterHan
         ui = GetComponentInParent<UI>();
     }
 
+    // Cập nhật các ô chứa của vật phẩm trong inventory
     public void UpdateSlot(InventoryItem _newItem)
     {
         item = _newItem;
@@ -27,6 +28,7 @@ public class UI_ItemSlot : MonoBehaviour , IPointerDownHandler ,IPointerEnterHan
         {
             itemImage.sprite = item.data.itemIcon;
 
+            // Nếu có SL stack thì hiển thị amount
             if (item.stackSize > 1)
             {
                 itemText.text = item.stackSize.ToString();
@@ -38,6 +40,7 @@ public class UI_ItemSlot : MonoBehaviour , IPointerDownHandler ,IPointerEnterHan
         }
     }
 
+    // Ẩn vật phẩm khỏi kho
     public void CleanUpSlot()
     {
         item = null;
@@ -47,6 +50,7 @@ public class UI_ItemSlot : MonoBehaviour , IPointerDownHandler ,IPointerEnterHan
         itemText.text = "";
     }
 
+    // Xóa vật phẩm ra khỏi kho
     public virtual void OnPointerDown(PointerEventData eventData)
     {
         if (item == null)
@@ -60,6 +64,7 @@ public class UI_ItemSlot : MonoBehaviour , IPointerDownHandler ,IPointerEnterHan
             return;
         }
 
+        // Chọn vật phẩm thêm vào nhân vật
         if (item.data.itemType == ItemType.Equipment)
             Inventory.instance.EquipItem(item.data);
 

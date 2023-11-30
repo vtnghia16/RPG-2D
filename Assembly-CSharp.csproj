@@ -178,6 +178,7 @@
     <Compile Include="Assets\Scripts\Enemy\DeathBringer\DeathBringerBattleState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_ItemSlot.cs" />
     <Compile Include="Assets\Scripts\Effects\PopUpTextFx.cs" />
+    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\Skeleton\SkeletonAttackState.cs" />
     <Compile Include="Assets\Scripts\Save and Load\GameData.cs" />
@@ -189,7 +190,6 @@
     <Compile Include="Assets\Scripts\Enemy\Slime\SlimeGroundedState.cs" />
     <Compile Include="Assets\Scripts\UI\UI_InGame.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStateMachine.cs" />
-    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
