@@ -295,8 +295,11 @@ public class Inventory : MonoBehaviour , ISaveManager
                 }
                 else
                 {
-                    materialsToRemove.Add(stashValue);
+                    // SL stash trong kho - SL stash yêu cầu
+                    stashValue.stackSize -= (_requiredMaterials[i].stackSize - 1);
 
+                    materialsToRemove.Add(stashValue);
+                    //Debug.Log("_requiredMaterials[i].stackSize: " + _requiredMaterials[i].stackSize);
                 }
 
             }
@@ -311,7 +314,7 @@ public class Inventory : MonoBehaviour , ISaveManager
 
         for (int i = 0; i < materialsToRemove.Count; i++)
         {
-            RemoveItem(materialsToRemove[i].data);
+            RemoveItem(materialsToRemove[i].data);  
         }
 
         AddItem(_itemToCraft);
