@@ -162,7 +162,6 @@ public class CharacterStats : MonoBehaviour
 
     protected virtual void DecreaseHealthBy(int _damage)
     {
-
         if (isVulnerable)
             _damage = Mathf.RoundToInt(_damage * 1.1f);
 

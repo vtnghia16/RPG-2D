@@ -10,7 +10,7 @@ public class EnemyStats : CharacterStats
     [Header("Level details")]
     [SerializeField] private int level = 1;
     [Range(0f, 1f)]
-    [SerializeField] private float percantageModifier = .4f;
+    [SerializeField] private float percantageModifier = .5f;
 
     [Space]
     private ItemDrop myDropSystem; // Hệ thống rơi của vật phẩm
@@ -39,6 +39,7 @@ public class EnemyStats : CharacterStats
     {
         for (int i = 1; i < level; i++)
         {
+            // CT:  _stat.GetValue() + (_stat.GetValue() * percantageModifier)
             float modifier = _stat.GetValue() * percantageModifier;
 
             _stat.AddModifier(Mathf.RoundToInt(modifier));

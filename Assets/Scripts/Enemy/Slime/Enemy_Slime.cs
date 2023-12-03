@@ -56,8 +56,6 @@ public class Enemy_Slime : Enemy
     {
         base.Update();
 
-        //if(Input.GetKeyDown(KeyCode.D))
-        //    CreateSlimes(slimesToCreate, slimePrefab);
     }
 
     public override bool CanBeStunned()
@@ -70,8 +68,6 @@ public class Enemy_Slime : Enemy
 
         return false;
     }
-
-  
 
     public override void Die()
     {

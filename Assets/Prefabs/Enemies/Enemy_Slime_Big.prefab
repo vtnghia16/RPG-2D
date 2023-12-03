@@ -221,12 +221,14 @@ MonoBehaviour:
     baseValue: 5
     modifiers: 
   maxHealth:
-    baseValue: 150
+    baseValue: 600
     modifiers: 
   armor:
     baseValue: 0
     modifiers: 
   currentHealth: 0
+  level: 1
+  percantageModifier: 0.4
   soulsDropAmount:
     baseValue: 0
     modifiers: 

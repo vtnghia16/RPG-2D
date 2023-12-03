@@ -21,11 +21,11 @@ MonoBehaviour:
   itemCooldown: 0
   itemEffects:
   - {fileID: 11400000, guid: 6c856b30363c5aa4a9b61061df07fd57, type: 2}
-  damage: 12
+  damage: 15
   health: 0
   armor: 0
   craftingMaterials:
   - data: {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
-    stackSize: 2
+    stackSize: 6
   - data: {fileID: 11400000, guid: 6835c34bd80fc9c468d2f549f4b6220a, type: 2}
-    stackSize: 5
+    stackSize: 7

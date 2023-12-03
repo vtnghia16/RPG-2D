@@ -25,5 +25,7 @@ MonoBehaviour:
   health: 0
   armor: 0
   craftingMaterials:
+  - data: {fileID: 11400000, guid: b1342fd16e2c376479833731e2df12f3, type: 2}
+    stackSize: 6
   - data: {fileID: 11400000, guid: 6835c34bd80fc9c468d2f549f4b6220a, type: 2}
-    stackSize: 4
+    stackSize: 8

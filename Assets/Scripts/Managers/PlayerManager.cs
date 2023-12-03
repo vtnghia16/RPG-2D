@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,5 +33,10 @@ public class PlayerManager : MonoBehaviour , ISaveManager
     public void SaveData(ref GameData _data)
     {
         _data.Score = this.score;
+    }
+
+    public static implicit operator PlayerManager(CharacterStats v)
+    {
+        throw new NotImplementedException();
     }
 }
