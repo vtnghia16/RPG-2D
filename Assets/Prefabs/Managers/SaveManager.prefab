@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b377107fe42e74ab62543a163102d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: data.alexdev
+  fileName: data.gamedev
   filePath: D:\GameDev
-  encryptData: 1
+  encryptData: 0

@@ -10,5 +10,6 @@ public class DeadZone : MonoBehaviour
             collision.GetComponent<CharacterStats>().KillEntity();
         else
             Destroy(collision.gameObject);
+   
     }
 }

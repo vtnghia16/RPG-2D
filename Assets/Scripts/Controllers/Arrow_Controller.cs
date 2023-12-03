@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro.EditorUtilities;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Arrow_Controller : MonoBehaviour
 {
@@ -20,11 +17,11 @@ public class Arrow_Controller : MonoBehaviour
 
     private void Update()
     {
-        if(canMove)
-            rb.velocity = new Vector2(xVelocity,rb.velocity.y);
+        if (canMove)
+            rb.velocity = new Vector2(xVelocity, rb.velocity.y);
     }
 
-    public void SetupArrow( float _speed,CharacterStats _stats)
+    public void SetupArrow(float _speed, CharacterStats _stats)
     {
         xVelocity = _speed;
         stats = _stats;
