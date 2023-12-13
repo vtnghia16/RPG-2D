@@ -1,7 +1,8 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour, ISaveManager
 {
@@ -19,6 +20,11 @@ public class GameManager : MonoBehaviour, ISaveManager
     [SerializeField] private float lostScoreX;
     [SerializeField] private float lostScoreY;
     private bool pasuedGame;
+
+    [Header("Show text")]
+    public Text displayTextPause;
+    public string textToShowPause = "Key Pressed!";
+
 
     private void Awake()
     {
@@ -39,24 +45,27 @@ public class GameManager : MonoBehaviour, ISaveManager
     {
         if (Input.GetKeyDown(KeyCode.M))
             RestartScene();
+ 
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             if (!pasuedGame)
             {
                 pasuedGame = true;
                 GameManager.instance.PauseGame(pasuedGame);
+                displayTextPause.text = textToShowPause;
             }
             else
             {
                 pasuedGame = false;
                 GameManager.instance.PauseGame(pasuedGame);
+                displayTextPause.text = "";
             }
 
         }
     }
     public void RestartScene()
-    {   
+    {
         SaveManager.instance.SaveGame();
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
