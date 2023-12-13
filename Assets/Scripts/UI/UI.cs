@@ -10,6 +10,7 @@ public class UI : MonoBehaviour, ISaveManager
     [SerializeField] private GameObject endText;
     [SerializeField] private GameObject scoreText;
     [SerializeField] private GameObject restartButton;
+    [SerializeField] private GameObject ExitButton;
     [Space]
 
     [SerializeField] private GameObject charcaterUI;
@@ -46,17 +47,6 @@ public class UI : MonoBehaviour, ISaveManager
 
         if (Input.GetKeyDown(KeyCode.Tab))
             SwitchWithKeyTo(charcaterUI);
-
-        //if (Input.GetKeyDown(KeyCode.B))
-        //    SwitchWithKeyTo(craftUI);
-
-
-        //if (Input.GetKeyDown(KeyCode.K))
-        //    SwitchWithKeyTo(skillTreeUI);
-
-        //if (Input.GetKeyDown(KeyCode.O))
-        //    SwitchWithKeyTo(optionsUI);
-
 
 
     }
@@ -124,13 +114,17 @@ public class UI : MonoBehaviour, ISaveManager
 
     IEnumerator EndScreenCorutione()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         endText.SetActive(true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         scoreText.SetActive(true);
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         restartButton.SetActive(true);
+
+        yield return new WaitForSeconds(0.3f);
+        ExitButton.SetActive(true);
+
 
     }
 
@@ -138,6 +132,11 @@ public class UI : MonoBehaviour, ISaveManager
     {
         ScoreScript.scoreValue = 0;
         GameManager.instance.RestartScene();
+    }
+
+    public void ExitGameButton()
+    {
+        Application.Quit();
     }
 
     public void LoadData(GameData _data)
