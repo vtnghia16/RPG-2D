@@ -180,30 +180,31 @@ public class Sword_Skill_Controller : MonoBehaviour
     {
         if (isBouncing && enemyTarget.Count > 0)
         {
-
-
-            transform.position = Vector2.MoveTowards(transform.position, enemyTarget[targetIndex].position, bounceSpeed * Time.deltaTime);
-
-            // Thanh kiếm dịch chuyển giữa các mục tiêu
-            if (Vector2.Distance(transform.position, enemyTarget[targetIndex].position) < .1f)
+            if (enemyTarget[targetIndex] != null) // Add null check
             {
+                transform.position = Vector2.MoveTowards(transform.position, enemyTarget[targetIndex].position, bounceSpeed * Time.deltaTime);
 
-                SwordSkillDamage(enemyTarget[targetIndex].GetComponent<Enemy>());
-
-                targetIndex++;
-                bounceAmount--;
-
-                if (bounceAmount <= 0)
+                // Thanh kiếm dịch chuyển giữa các mục tiêu
+                if (Vector2.Distance(transform.position, enemyTarget[targetIndex].position) < .1f)
                 {
-                    isBouncing = false;
-                    isReturning = true;
-                }
+                    SwordSkillDamage(enemyTarget[targetIndex].GetComponent<Enemy>());
 
-                if (targetIndex >= enemyTarget.Count)
-                    targetIndex = 0;
+                    targetIndex++;
+                    bounceAmount--;
+
+                    if (bounceAmount <= 0)
+                    {
+                        isBouncing = false;
+                        isReturning = true;
+                    }
+
+                    if (targetIndex >= enemyTarget.Count)
+                        targetIndex = 0;
+                }
             }
         }
     }
+
 
     // Check va chạm thanh kiếm và quái vật khi xoay
     private void OnTriggerEnter2D(Collider2D collision)
