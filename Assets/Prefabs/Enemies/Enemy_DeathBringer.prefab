@@ -369,6 +369,7 @@ MonoBehaviour:
   soulsDropAmount:
     baseValue: 0
     modifiers: 
+  baseScore: 10
 --- !u!114 &1290535682618644354
 MonoBehaviour:
   m_ObjectHideFlags: 0

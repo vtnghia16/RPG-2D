@@ -16,4 +16,4 @@ MonoBehaviour:
   itemName: Material.2
   itemIcon: {fileID: 1025795234, guid: a9ca9a41598dd2e44b125928045c518f, type: 3}
   itemId: 6835c34bd80fc9c468d2f549f4b6220a
-  dropChance: 52.7
+  dropChance: 100

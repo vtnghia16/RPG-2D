@@ -803,9 +803,12 @@ MonoBehaviour:
     baseValue: 0
     modifiers: 
   currentHealth: 0
+  level: 1
+  percantageModifier: 0.5
   soulsDropAmount:
     baseValue: 0
     modifiers: 
+  baseScore: 1
 --- !u!114 &5529630772379239637
 MonoBehaviour:
   m_ObjectHideFlags: 0

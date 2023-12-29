@@ -14,7 +14,7 @@ public class UI_MainMenu : MonoBehaviour
         if (SaveManager.instance.HasSavedData() == false)
             continueButton.SetActive(false);
     }
-
+    
     public void ContinueGame()
     {
         StartCoroutine(LoadSceneWithFadeEffect(1.5f));

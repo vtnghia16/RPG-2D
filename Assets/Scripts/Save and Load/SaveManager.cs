@@ -25,6 +25,22 @@ public class SaveManager : MonoBehaviour
 
     }
 
+    [Header("Save scene")]
+    public int sceneBuildIndex;
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        print("Trigger Entered");
+
+        SaveGame();
+
+        if (other.tag == "Player")
+        {
+            print("Switch sene to " + sceneBuildIndex);
+            SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+        }
+    }
+
     private void Awake()
     {
         if (instance != null)
@@ -72,6 +88,7 @@ public class SaveManager : MonoBehaviour
             saveManager.LoadData(gameData);
         }
     }
+
 
     // Lưu data vào file
     public void SaveGame()

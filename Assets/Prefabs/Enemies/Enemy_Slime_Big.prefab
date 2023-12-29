@@ -232,6 +232,7 @@ MonoBehaviour:
   soulsDropAmount:
     baseValue: 0
     modifiers: 
+  baseScore: 1
 --- !u!114 &7546619776816806397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,8 +298,8 @@ MonoBehaviour:
   moveSpeed: 1.5
   idleTime: 2
   battleTime: 5
-  agroDistance: 1
-  attackDistance: 1
+  agroDistance: 4
+  attackDistance: 4
   attackCooldown: 0
   minAttackCooldown: 0.8
   maxAttackCooldown: 1

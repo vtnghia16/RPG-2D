@@ -64,11 +64,14 @@ public class GameManager : MonoBehaviour, ISaveManager
 
         }
     }
+
+    [SerializeField] private string sceneName = "MainScene";
+
     public void RestartScene()
     {
         SaveManager.instance.SaveGame();
         Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
+        SceneManager.LoadScene(sceneName);
     }
 
     

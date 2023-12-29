@@ -16,9 +16,11 @@ public class EnemyStats : CharacterStats
     private ItemDrop myDropSystem; // Hệ thống rơi của vật phẩm
     public Stat soulsDropAmount;
 
+    [SerializeField] private int baseScore;
+
     protected override void Start()
     {
-        soulsDropAmount.SetDefaultValue(1);
+        soulsDropAmount.SetDefaultValue(baseScore);
         ApplyLevelModifiers();
 
         base.Start();
