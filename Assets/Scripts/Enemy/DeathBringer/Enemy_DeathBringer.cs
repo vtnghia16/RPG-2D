@@ -84,8 +84,16 @@ public class Enemy_DeathBringer : Enemy
     }
 
     // Tìm vị trí của quái vật trên map
+    // Tìm vị trí của quái vật trên map
     public void FindPosition()
     {
+        // Kiểm tra nếu arena là null thì không thực hiện gì cả
+        if (arena == null)
+        {
+            Debug.LogError("Arena is null. Cannot find position.");
+            return;
+        }
+
         // Set random vị trí trong khu vực theo (x, y)
         float x = Random.Range(arena.bounds.min.x + 3, arena.bounds.max.x - 3);
         float y = Random.Range(arena.bounds.min.y + 3, arena.bounds.max.y - 3);
@@ -100,6 +108,7 @@ public class Enemy_DeathBringer : Enemy
             FindPosition();
         }
     }
+
 
 
     // Check các vị trí xung quanh quái vật

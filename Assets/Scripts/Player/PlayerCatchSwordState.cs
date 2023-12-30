@@ -14,6 +14,12 @@ public class PlayerCatchSwordState : PlayerState
     {
         base.Enter();
 
+        // Check if player or player.sword is null before accessing properties
+        if (player == null || player.sword == null)
+        {
+            return;
+        }
+
         sword = player.sword.transform;
 
         player.fx.PlayDustFX();
@@ -27,9 +33,8 @@ public class PlayerCatchSwordState : PlayerState
 
         // Tốc độ nhân vật khi thanh kiếm trả về 
         rb.velocity = new Vector2(player.swordReturnImpact * -player.facingDir, rb.velocity.y);
-
-            
     }
+
 
     public override void Exit()
     {

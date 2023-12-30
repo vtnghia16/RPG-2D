@@ -876,9 +876,9 @@ MonoBehaviour:
   moveSpeed: 2.5
   idleTime: 2
   battleTime: 7
-  agroDistance: 2
+  agroDistance: 4
   attackDistance: 15
-  attackCooldown: 0
+  attackCooldown: 2
   minAttackCooldown: 1
   maxAttackCooldown: 3
   lastTimeAttacked: 0

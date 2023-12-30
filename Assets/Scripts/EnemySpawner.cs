@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
             if (randomPrefab != null)
             {
                 // Tính toán vị trí spawn dựa trên vị trí của người chơi và offset
-                Vector3 spawnPosition = new Vector3(player.transform.position.x + 5 + Random.Range(-10, 20) , 8, 0);
+                Vector3 spawnPosition = new Vector3(player.transform.position.x + 5 + Random.Range(-10, 20) , 16, 0);
 
                 // Spawn enemy sử dụng prefab được chọn và vị trí ngẫu nhiên
                 GameObject newEnemy = Instantiate(randomPrefab, spawnPosition, Quaternion.identity);

@@ -218,7 +218,7 @@ MonoBehaviour:
   isChilled: 0
   isShocked: 0
   damage:
-    baseValue: 5
+    baseValue: 40
     modifiers: 
   maxHealth:
     baseValue: 600
@@ -298,8 +298,8 @@ MonoBehaviour:
   moveSpeed: 1.5
   idleTime: 2
   battleTime: 5
-  agroDistance: 4
-  attackDistance: 4
+  agroDistance: 5
+  attackDistance: 5
   attackCooldown: 0
   minAttackCooldown: 0.8
   maxAttackCooldown: 1

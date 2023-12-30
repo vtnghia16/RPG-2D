@@ -145,7 +145,7 @@ MonoBehaviour:
   isChilled: 0
   isShocked: 0
   damage:
-    baseValue: 5
+    baseValue: 30
     modifiers: 
   maxHealth:
     baseValue: 400
